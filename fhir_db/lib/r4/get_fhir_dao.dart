@@ -40,10 +40,11 @@ class GetFhirDao {
   Future<Resource> save(String? password, Resource? resource) async {
     if (resource != null) {
       if (resource.resourceType != null) {
-        _addResourceType(password, resource.resourceType!);
+        await _addResourceType(password, resource.resourceType!);
 
         _setStoreType(resource.resourceTypeString()!);
 
+        print(find(null, resourceType: resource.resourceType, id: resource.id));
         return resource.id == null
             ? await _insert(password, resource)
             : (find(null, resourceType: resource.resourceType, id: resource.id))
@@ -61,6 +62,7 @@ class GetFhirDao {
   /// function used to save a new resource in the db
   Future<Resource> _insert(String? password, Resource resource) async {
     final _newResource = resource.newVersion();
+    print(_newResource.toJson());
     if (_resourceStore != null) {
       await _resourceStore!
           .write(_newResource.id.toString(), _newResource.toJson());
@@ -236,7 +238,7 @@ class GetFhirDao {
       _setStoreType(ResourceUtils
           .resourceTypeToStringMap[resource?.resourceType ?? resourceType]!);
       if (_resourceStore != null && fhirFinder?.id != null) {
-        return _resourceStore!.remove(fhirFinder!.id);
+        await _resourceStore!.remove(fhirFinder!.id);
       } else {
         throw const FormatException('Resource Store was not set properly');
       }
@@ -259,8 +261,8 @@ class GetFhirDao {
       if (deleteType != null) {
         _setStoreType(deleteType);
         if (_resourceStore != null) {
-          _resourceStore!.erase();
-          _removeResourceTypes(password, [deleteType]);
+          await _resourceStore!.erase();
+          await _removeResourceTypes(password, [deleteType]);
         } else {
           throw const FormatException('Resource Store was not set properly');
         }
@@ -269,19 +271,19 @@ class GetFhirDao {
   }
 
   /// Deletes all resources, including historical versions
-  void deleteAllResources(String? password) {
+  Future<void> deleteAllResources(String? password) async {
     final resourceTypes = _getResourceTypes(password);
 
     for (var type in resourceTypes) {
       _setStoreType(type);
       if (_resourceStore != null) {
-        _resourceStore!.erase();
+        await _resourceStore!.erase();
       } else {
         throw const FormatException('Resource Store was not set properly');
       }
     }
-    _history.erase();
-    _typesStore.erase();
+    await _history.erase();
+    await _typesStore.erase();
   }
 
   /// remove the resourceType from the list of types stored in the db
@@ -293,12 +295,15 @@ class GetFhirDao {
 
   /// ultimate search function, must pass in finder
   List<Resource> _search(String? password, FhirFinder finder) {
-    final mapFromStore = _typesStore.read(finder.id);
-    if (mapFromStore != null) {
-      return [Resource.fromJson(mapFromStore)];
-    } else {
-      return [];
+    if (_resourceStore != null) {
+      final mapFromStore = _resourceStore!.read(finder.id);
+      if (mapFromStore != null) {
+        return [Resource.fromJson(mapFromStore)];
+      } else {
+        return [];
+      }
     }
+    return <Resource>[];
   }
 }
 

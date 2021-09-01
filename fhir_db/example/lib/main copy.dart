@@ -9,7 +9,7 @@ Future<void> main() async {
   final getFhirDao = GetFhirDao();
 
   // getFhirDao.updatePw('newPw', null);
-  getFhirDao.deleteAllResources(null);
+  // await getFhirDao.deleteAllResources(null);
 
   // group('Playing with passwords', () {
   //   test('Playing with Passwords', () async {
@@ -83,341 +83,341 @@ Future<void> main() async {
       expect(saved.meta?.versionId, Id('2'));
     });
 
-    test('Save Observation2', () async {
-      final observation2 = Observation(
-        id: Id('obs2'),
-        code: CodeableConcept(text: 'Observation #2'),
-        effectiveDateTime: FhirDateTime(DateTime(1981, 09, 18)),
-      );
-      print(observation2.toJson());
-      final saved = await getFhirDao.save(null, observation2);
-      print(saved.toJson());
-      expect(saved.id, Id('obs2'));
+    //   test('Save Observation2', () async {
+    //     final observation2 = Observation(
+    //       id: Id('obs2'),
+    //       code: CodeableConcept(text: 'Observation #2'),
+    //       effectiveDateTime: FhirDateTime(DateTime(1981, 09, 18)),
+    //     );
+    //     print(observation2.toJson());
+    //     final saved = await getFhirDao.save(null, observation2);
+    //     print(saved.toJson());
+    //     expect(saved.id, Id('obs2'));
 
-      expect((saved as Observation).code.text, 'Observation #2');
-    });
+    //     expect((saved as Observation).code.text, 'Observation #2');
+    //   });
 
-    test('Save Observation3', () async {
-      final observation3 = Observation(
-        id: Id('obs3'),
-        code: CodeableConcept(text: 'Observation #3'),
-        effectiveDateTime: FhirDateTime(DateTime(1981, 09, 18)),
-      );
-      final saved = await getFhirDao.save(null, observation3);
+    // test('Save Observation3', () async {
+    //   final observation3 = Observation(
+    //     id: Id('obs3'),
+    //     code: CodeableConcept(text: 'Observation #3'),
+    //     effectiveDateTime: FhirDateTime(DateTime(1981, 09, 18)),
+    //   );
+    //   final saved = await getFhirDao.save(null, observation3);
 
-      expect(saved.id, Id('obs3'));
+    //   expect(saved.id, Id('obs3'));
 
-      expect((saved as Observation).code.text, 'Observation #3');
-    });
+    //   expect((saved as Observation).code.text, 'Observation #3');
+    // });
   });
 
-  group('Finding Things:', () {
-    test('Find 1st Patient', () async {
-      final search =
-          getFhirDao.find(null, resourceType: R4ResourceType.Patient, id: id);
-      final humanName = HumanName(family: 'Atreides', given: ['Duke']);
+  // group('Finding Things:', () {
+  //   test('Find 1st Patient', () async {
+  //     final search =
+  //         getFhirDao.find(null, resourceType: R4ResourceType.Patient, id: id);
+  //     final humanName = HumanName(family: 'Atreides', given: ['Duke']);
 
-      expect(search.length, 1);
+  //     expect(search.length, 1);
 
-      expect((search[0] as Patient).name?[0], humanName);
-    });
+  //     expect((search[0] as Patient).name?[0], humanName);
+  //   });
 
-    test('Find 3rd Observation', () async {
-      final search = getFhirDao.find(null,
-          resourceType: R4ResourceType.Observation, id: Id('obs3'));
+  //   test('Find 3rd Observation', () async {
+  //     final search = getFhirDao.find(null,
+  //         resourceType: R4ResourceType.Observation, id: Id('obs3'));
 
-      expect(search.length, 1);
+  //     expect(search.length, 1);
 
-      expect(search[0].id, Id('obs3'));
+  //     expect(search[0].id, Id('obs3'));
 
-      expect((search[0] as Observation).code.text, 'Observation #3');
-    });
+  //     expect((search[0] as Observation).code.text, 'Observation #3');
+  //   });
 
-    test('Find All Observations', () async {
-      final search = getFhirDao.getResourceType(
-        null,
-        resourceTypes: [R4ResourceType.Observation],
-      );
+  //   test('Find All Observations', () async {
+  //     final search = getFhirDao.getResourceType(
+  //       null,
+  //       resourceTypes: [R4ResourceType.Observation],
+  //     );
 
-      expect(search.length, 3);
+  //     expect(search.length, 3);
 
-      final idList = [];
-      for (final obs in search) {
-        idList.add(obs.id.toString());
-      }
+  //     final idList = [];
+  //     for (final obs in search) {
+  //       idList.add(obs.id.toString());
+  //     }
 
-      expect(idList.contains('obs1'), true);
+  //     expect(idList.contains('obs1'), true);
 
-      expect(idList.contains('obs2'), true);
+  //     expect(idList.contains('obs2'), true);
 
-      expect(idList.contains('obs3'), true);
-    });
+  //     expect(idList.contains('obs3'), true);
+  //   });
 
-    test('Find All (non-historical) Resources', () async {
-      final search = getFhirDao.getAll(null);
+  //   test('Find All (non-historical) Resources', () async {
+  //     final search = getFhirDao.getAll(null);
 
-      expect(search.length, 5);
-      final patList = search.toList();
-      final orgList = search.toList();
-      final obsList = search.toList();
-      patList.retainWhere(
-          (resource) => resource.resourceType == R4ResourceType.Patient);
-      orgList.retainWhere(
-          (resource) => resource.resourceType == R4ResourceType.Organization);
-      obsList.retainWhere(
-          (resource) => resource.resourceType == R4ResourceType.Observation);
+  //     expect(search.length, 5);
+  //     final patList = search.toList();
+  //     final orgList = search.toList();
+  //     final obsList = search.toList();
+  //     patList.retainWhere(
+  //         (resource) => resource.resourceType == R4ResourceType.Patient);
+  //     orgList.retainWhere(
+  //         (resource) => resource.resourceType == R4ResourceType.Organization);
+  //     obsList.retainWhere(
+  //         (resource) => resource.resourceType == R4ResourceType.Observation);
 
-      expect(patList.length, 1);
+  //     expect(patList.length, 1);
 
-      expect(orgList.length, 1);
+  //     expect(orgList.length, 1);
 
-      expect(obsList.length, 3);
-    });
-  });
+  //     expect(obsList.length, 3);
+  //   });
+  // });
 
-  group('Deleting Things:', () {
-    test('Delete 2nd Observation', () async {
-      getFhirDao.delete(
-          null, null, R4ResourceType.Observation, Id('obs2'), null, null);
+  // group('Deleting Things:', () {
+  //   test('Delete 2nd Observation', () async {
+  //     getFhirDao.delete(
+  //         null, null, R4ResourceType.Observation, Id('obs2'), null, null);
 
-      final search = getFhirDao.getResourceType(
-        null,
-        resourceTypes: [R4ResourceType.Observation],
-      );
+  //     final search = getFhirDao.getResourceType(
+  //       null,
+  //       resourceTypes: [R4ResourceType.Observation],
+  //     );
 
-      expect(search.length, 2);
+  //     expect(search.length, 2);
 
-      final idList = [];
-      for (final obs in search) {
-        idList.add(obs.id.toString());
-      }
+  //     final idList = [];
+  //     for (final obs in search) {
+  //       idList.add(obs.id.toString());
+  //     }
 
-      expect(idList.contains('obs1'), true);
+  //     expect(idList.contains('obs1'), true);
 
-      expect(idList.contains('obs2'), false);
+  //     expect(idList.contains('obs2'), false);
 
-      expect(idList.contains('obs3'), true);
-    });
+  //     expect(idList.contains('obs3'), true);
+  //   });
 
-    test('Delete All Observations', () async {
-      getFhirDao.deleteSingleType(null,
-          resourceType: R4ResourceType.Observation);
+  //   test('Delete All Observations', () async {
+  //     getFhirDao.deleteSingleType(null,
+  //         resourceType: R4ResourceType.Observation);
 
-      final search = getFhirDao.getAll(null);
+  //     final search = getFhirDao.getAll(null);
 
-      expect(search.length, 2);
+  //     expect(search.length, 2);
 
-      final patList = search.toList();
-      final orgList = search.toList();
-      patList.retainWhere(
-          (resource) => resource.resourceType == R4ResourceType.Patient);
-      orgList.retainWhere(
-          (resource) => resource.resourceType == R4ResourceType.Organization);
+  //     final patList = search.toList();
+  //     final orgList = search.toList();
+  //     patList.retainWhere(
+  //         (resource) => resource.resourceType == R4ResourceType.Patient);
+  //     orgList.retainWhere(
+  //         (resource) => resource.resourceType == R4ResourceType.Organization);
 
-      expect(patList.length, 1);
+  //     expect(patList.length, 1);
 
-      expect(patList.length, 1);
-    });
+  //     expect(patList.length, 1);
+  //   });
 
-    test('Delete All Resources', () async {
-      getFhirDao.deleteAllResources(null);
+  //   test('Delete All Resources', () async {
+  //     getFhirDao.deleteAllResources(null);
 
-      final search = getFhirDao.getAll(null);
+  //     final search = getFhirDao.getAll(null);
 
-      expect(search.length, 0);
-    });
-  });
+  //     expect(search.length, 0);
+  //   });
+  // });
 
-  group('Password - Saving Things:', () {
-    test('Save Patient', () async {
-      // getFhirDao.updatePw(null, 'newPw');
-      final humanName = HumanName(family: 'Atreides', given: ['Duke']);
-      final patient = Patient(id: id, name: [humanName]);
-      final saved = await getFhirDao.save('newPw', patient);
+  // group('Password - Saving Things:', () {
+  //   test('Save Patient', () async {
+  //     // getFhirDao.updatePw(null, 'newPw');
+  //     final humanName = HumanName(family: 'Atreides', given: ['Duke']);
+  //     final patient = Patient(id: id, name: [humanName]);
+  //     final saved = await getFhirDao.save('newPw', patient);
 
-      expect(saved.id, id);
+  //     expect(saved.id, id);
 
-      expect((saved as Patient).name?[0], humanName);
-    });
+  //     expect((saved as Patient).name?[0], humanName);
+  //   });
 
-    test('Save Organization', () async {
-      final organization = Organization(id: id, name: 'FhirFli');
-      final saved = await getFhirDao.save('newPw', organization);
+  //   test('Save Organization', () async {
+  //     final organization = Organization(id: id, name: 'FhirFli');
+  //     final saved = await getFhirDao.save('newPw', organization);
 
-      expect(saved.id, id);
+  //     expect(saved.id, id);
 
-      expect((saved as Organization).name, 'FhirFli');
-    });
+  //     expect((saved as Organization).name, 'FhirFli');
+  //   });
 
-    test('Save Observation1', () async {
-      final observation1 = Observation(
-        id: Id('obs1'),
-        code: CodeableConcept(text: 'Observation #1'),
-        effectiveDateTime: FhirDateTime(DateTime(1981, 09, 18)),
-      );
-      final saved = await getFhirDao.save('newPw', observation1);
+  //   test('Save Observation1', () async {
+  //     final observation1 = Observation(
+  //       id: Id('obs1'),
+  //       code: CodeableConcept(text: 'Observation #1'),
+  //       effectiveDateTime: FhirDateTime(DateTime(1981, 09, 18)),
+  //     );
+  //     final saved = await getFhirDao.save('newPw', observation1);
 
-      expect(saved.id, Id('obs1'));
+  //     expect(saved.id, Id('obs1'));
 
-      expect((saved as Observation).code.text, 'Observation #1');
-    });
+  //     expect((saved as Observation).code.text, 'Observation #1');
+  //   });
 
-    test('Save Observation1 Again', () async {
-      final observation1 = Observation(
-          id: Id('obs1'),
-          code: CodeableConcept(text: 'Observation #1 - Updated'));
-      final saved = await getFhirDao.save('newPw', observation1);
+  //   test('Save Observation1 Again', () async {
+  //     final observation1 = Observation(
+  //         id: Id('obs1'),
+  //         code: CodeableConcept(text: 'Observation #1 - Updated'));
+  //     final saved = await getFhirDao.save('newPw', observation1);
 
-      expect(saved.id, Id('obs1'));
+  //     expect(saved.id, Id('obs1'));
 
-      expect((saved as Observation).code.text, 'Observation #1 - Updated');
+  //     expect((saved as Observation).code.text, 'Observation #1 - Updated');
 
-      expect(saved.meta?.versionId, Id('2'));
-    });
+  //     expect(saved.meta?.versionId, Id('2'));
+  //   });
 
-    test('Save Observation2', () async {
-      final observation2 = Observation(
-        id: Id('obs2'),
-        code: CodeableConcept(text: 'Observation #2'),
-        effectiveDateTime: FhirDateTime(DateTime(1981, 09, 18)),
-      );
-      final saved = await getFhirDao.save('newPw', observation2);
+  //   test('Save Observation2', () async {
+  //     final observation2 = Observation(
+  //       id: Id('obs2'),
+  //       code: CodeableConcept(text: 'Observation #2'),
+  //       effectiveDateTime: FhirDateTime(DateTime(1981, 09, 18)),
+  //     );
+  //     final saved = await getFhirDao.save('newPw', observation2);
 
-      expect(saved.id, Id('obs2'));
+  //     expect(saved.id, Id('obs2'));
 
-      expect((saved as Observation).code.text, 'Observation #2');
-    });
+  //     expect((saved as Observation).code.text, 'Observation #2');
+  //   });
 
-    test('Save Observation3', () async {
-      final observation3 = Observation(
-        id: Id('obs3'),
-        code: CodeableConcept(text: 'Observation #3'),
-        effectiveDateTime: FhirDateTime(DateTime(1981, 09, 18)),
-      );
-      final saved = await getFhirDao.save('newPw', observation3);
+  //   test('Save Observation3', () async {
+  //     final observation3 = Observation(
+  //       id: Id('obs3'),
+  //       code: CodeableConcept(text: 'Observation #3'),
+  //       effectiveDateTime: FhirDateTime(DateTime(1981, 09, 18)),
+  //     );
+  //     final saved = await getFhirDao.save('newPw', observation3);
 
-      expect(saved.id, Id('obs3'));
+  //     expect(saved.id, Id('obs3'));
 
-      expect((saved as Observation).code.text, 'Observation #3');
-    });
-  });
+  //     expect((saved as Observation).code.text, 'Observation #3');
+  //   });
+  // });
 
-  group('Password - Finding Things:', () {
-    test('Find 1st Patient', () async {
-      final search = getFhirDao.find('newPw',
-          resourceType: R4ResourceType.Patient, id: id);
-      final humanName = HumanName(family: 'Atreides', given: ['Duke']);
+  // group('Password - Finding Things:', () {
+  //   test('Find 1st Patient', () async {
+  //     final search = getFhirDao.find('newPw',
+  //         resourceType: R4ResourceType.Patient, id: id);
+  //     final humanName = HumanName(family: 'Atreides', given: ['Duke']);
 
-      expect(search.length, 1);
+  //     expect(search.length, 1);
 
-      expect((search[0] as Patient).name?[0], humanName);
-    });
+  //     expect((search[0] as Patient).name?[0], humanName);
+  //   });
 
-    test('Find 3rd Observation', () async {
-      final search = getFhirDao.find('newPw',
-          resourceType: R4ResourceType.Observation, id: Id('obs3'));
+  //   test('Find 3rd Observation', () async {
+  //     final search = getFhirDao.find('newPw',
+  //         resourceType: R4ResourceType.Observation, id: Id('obs3'));
 
-      expect(search.length, 1);
+  //     expect(search.length, 1);
 
-      expect(search[0].id, Id('obs3'));
+  //     expect(search[0].id, Id('obs3'));
 
-      expect((search[0] as Observation).code.text, 'Observation #3');
-    });
+  //     expect((search[0] as Observation).code.text, 'Observation #3');
+  //   });
 
-    test('Find All Observations', () async {
-      final search = getFhirDao.getResourceType(
-        'newPw',
-        resourceTypes: [R4ResourceType.Observation],
-      );
+  //   test('Find All Observations', () async {
+  //     final search = getFhirDao.getResourceType(
+  //       'newPw',
+  //       resourceTypes: [R4ResourceType.Observation],
+  //     );
 
-      expect(search.length, 3);
+  //     expect(search.length, 3);
 
-      final idList = [];
-      for (final obs in search) {
-        idList.add(obs.id.toString());
-      }
+  //     final idList = [];
+  //     for (final obs in search) {
+  //       idList.add(obs.id.toString());
+  //     }
 
-      expect(idList.contains('obs1'), true);
+  //     expect(idList.contains('obs1'), true);
 
-      expect(idList.contains('obs2'), true);
+  //     expect(idList.contains('obs2'), true);
 
-      expect(idList.contains('obs3'), true);
-    });
+  //     expect(idList.contains('obs3'), true);
+  //   });
 
-    test('Find All (non-historical) Resources', () async {
-      final search = getFhirDao.getAll('newPw');
+  //   test('Find All (non-historical) Resources', () async {
+  //     final search = getFhirDao.getAll('newPw');
 
-      expect(search.length, 5);
-      final patList = search.toList();
-      final orgList = search.toList();
-      final obsList = search.toList();
-      patList.retainWhere(
-          (resource) => resource.resourceType == R4ResourceType.Patient);
-      orgList.retainWhere(
-          (resource) => resource.resourceType == R4ResourceType.Organization);
-      obsList.retainWhere(
-          (resource) => resource.resourceType == R4ResourceType.Observation);
+  //     expect(search.length, 5);
+  //     final patList = search.toList();
+  //     final orgList = search.toList();
+  //     final obsList = search.toList();
+  //     patList.retainWhere(
+  //         (resource) => resource.resourceType == R4ResourceType.Patient);
+  //     orgList.retainWhere(
+  //         (resource) => resource.resourceType == R4ResourceType.Organization);
+  //     obsList.retainWhere(
+  //         (resource) => resource.resourceType == R4ResourceType.Observation);
 
-      expect(patList.length, 1);
+  //     expect(patList.length, 1);
 
-      expect(orgList.length, 1);
+  //     expect(orgList.length, 1);
 
-      expect(obsList.length, 3);
-    });
-  });
+  //     expect(obsList.length, 3);
+  //   });
+  // });
 
-  group('Password - Deleting Things:', () {
-    test('Delete 2nd Observation', () async {
-      getFhirDao.delete(
-          'newPw', null, R4ResourceType.Observation, Id('obs2'), null, null);
+  // group('Password - Deleting Things:', () {
+  //   test('Delete 2nd Observation', () async {
+  //     getFhirDao.delete(
+  //         'newPw', null, R4ResourceType.Observation, Id('obs2'), null, null);
 
-      final search = getFhirDao.getResourceType(
-        'newPw',
-        resourceTypes: [R4ResourceType.Observation],
-      );
+  //     final search = getFhirDao.getResourceType(
+  //       'newPw',
+  //       resourceTypes: [R4ResourceType.Observation],
+  //     );
 
-      expect(search.length, 2);
+  //     expect(search.length, 2);
 
-      final idList = [];
-      for (final obs in search) {
-        idList.add(obs.id.toString());
-      }
+  //     final idList = [];
+  //     for (final obs in search) {
+  //       idList.add(obs.id.toString());
+  //     }
 
-      expect(idList.contains('obs1'), true);
+  //     expect(idList.contains('obs1'), true);
 
-      expect(idList.contains('obs2'), false);
+  //     expect(idList.contains('obs2'), false);
 
-      expect(idList.contains('obs3'), true);
-    });
+  //     expect(idList.contains('obs3'), true);
+  //   });
 
-    test('Delete All Observations', () async {
-      getFhirDao.deleteSingleType('newPw',
-          resourceType: R4ResourceType.Observation);
+  //   test('Delete All Observations', () async {
+  //     getFhirDao.deleteSingleType('newPw',
+  //         resourceType: R4ResourceType.Observation);
 
-      final search = getFhirDao.getAll('newPw');
+  //     final search = getFhirDao.getAll('newPw');
 
-      expect(search.length, 2);
+  //     expect(search.length, 2);
 
-      final patList = search.toList();
-      final orgList = search.toList();
-      patList.retainWhere(
-          (resource) => resource.resourceType == R4ResourceType.Patient);
-      orgList.retainWhere(
-          (resource) => resource.resourceType == R4ResourceType.Organization);
+  //     final patList = search.toList();
+  //     final orgList = search.toList();
+  //     patList.retainWhere(
+  //         (resource) => resource.resourceType == R4ResourceType.Patient);
+  //     orgList.retainWhere(
+  //         (resource) => resource.resourceType == R4ResourceType.Organization);
 
-      expect(patList.length, 1);
+  //     expect(patList.length, 1);
 
-      expect(patList.length, 1);
-    });
+  //     expect(patList.length, 1);
+  //   });
 
-    test('Delete All Resources', () async {
-      getFhirDao.deleteAllResources('newPw');
+  //   test('Delete All Resources', () async {
+  //     getFhirDao.deleteAllResources('newPw');
 
-      final search = getFhirDao.getAll('newPw');
+  //     final search = getFhirDao.getAll('newPw');
 
-      expect(search.length, 0);
+  //     expect(search.length, 0);
 
-      // getFhirDao.updatePw('newPw', null);
-    });
-  });
+  //     // getFhirDao.updatePw('newPw', null);
+  //   });
+  // });
 }
