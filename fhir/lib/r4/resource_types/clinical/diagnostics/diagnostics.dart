@@ -2549,7 +2549,7 @@ class ObservationComponent with _$ObservationComponent {
     String? id,
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
     List<FhirExtension>? modifierExtension,
-    required CodeableConcept code,
+    CodeableConcept? code,
     Quantity? valueQuantity,
     CodeableConcept? valueCodeableConcept,
     String? valueString,

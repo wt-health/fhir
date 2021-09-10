@@ -2126,7 +2126,9 @@ _$_ObservationComponent _$$_ObservationComponentFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
-      code: CodeableConcept.fromJson(json['code'] as Map<String, dynamic>),
+      code: json['code'] == null
+          ? null
+          : CodeableConcept.fromJson(json['code'] as Map<String, dynamic>),
       valueQuantity: json['valueQuantity'] == null
           ? null
           : Quantity.fromJson(json['valueQuantity'] as Map<String, dynamic>),
@@ -2202,7 +2204,7 @@ Map<String, dynamic> _$$_ObservationComponentToJson(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('modifierExtension',
       instance.modifierExtension?.map((e) => e.toJson()).toList());
-  val['code'] = instance.code.toJson();
+  writeNotNull('code', instance.code?.toJson());
   writeNotNull('valueQuantity', instance.valueQuantity?.toJson());
   writeNotNull('valueCodeableConcept', instance.valueCodeableConcept?.toJson());
   writeNotNull('valueString', instance.valueString);
