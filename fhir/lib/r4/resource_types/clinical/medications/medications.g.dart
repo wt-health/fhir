@@ -50,8 +50,10 @@ _$_Immunization _$$_ImmunizationFromJson(Map<String, dynamic> json) =>
           ? null
           : CodeableConcept.fromJson(
               json['statusReason'] as Map<String, dynamic>),
-      vaccineCode:
-          CodeableConcept.fromJson(json['vaccineCode'] as Map<String, dynamic>),
+      vaccineCode: json['vaccineCode'] == null
+          ? null
+          : CodeableConcept.fromJson(
+              json['vaccineCode'] as Map<String, dynamic>),
       patient: Reference.fromJson(json['patient'] as Map<String, dynamic>),
       encounter: json['encounter'] == null
           ? null
@@ -179,7 +181,7 @@ Map<String, dynamic> _$$_ImmunizationToJson(_$_Immunization instance) {
   writeNotNull('status', instance.status?.toJson());
   writeNotNull('_status', instance.statusElement?.toJson());
   writeNotNull('statusReason', instance.statusReason?.toJson());
-  val['vaccineCode'] = instance.vaccineCode.toJson();
+  writeNotNull('vaccineCode', instance.vaccineCode?.toJson());
   val['patient'] = instance.patient.toJson();
   writeNotNull('encounter', instance.encounter?.toJson());
   writeNotNull('occurrenceDateTime', instance.occurrenceDateTime?.toJson());
@@ -1266,7 +1268,8 @@ _$_MedicationAdministration _$$_MedicationAdministrationFromJson(
           ?.map((e) => FhirUri.fromJson(e))
           .toList(),
       instantiatesElement: (json['_instantiates'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       partOf: (json['partOf'] as List<dynamic>?)
           ?.map((e) => Reference.fromJson(e as Map<String, dynamic>))
@@ -1829,7 +1832,8 @@ _$_MedicationKnowledge _$$_MedicationKnowledgeFromJson(
       synonym:
           (json['synonym'] as List<dynamic>?)?.map((e) => e as String).toList(),
       synonymElement: (json['_synonym'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       relatedMedicationKnowledge: (json['relatedMedicationKnowledge']
               as List<dynamic>?)
@@ -2287,7 +2291,9 @@ _$_MedicationKnowledgePatientCharacteristics
               ?.map((e) => e as String)
               .toList(),
           valueElement: (json['_value'] as List<dynamic>?)
-              ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => e == null
+                  ? null
+                  : Element.fromJson(e as Map<String, dynamic>))
               .toList(),
         );
 
@@ -2778,7 +2784,8 @@ _$_MedicationRequest _$$_MedicationRequestFromJson(Map<String, dynamic> json) =>
           ?.map((e) => FhirUri.fromJson(e))
           .toList(),
       instantiatesUriElement: (json['_instantiatesUri'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       basedOn: (json['basedOn'] as List<dynamic>?)
           ?.map((e) => Reference.fromJson(e as Map<String, dynamic>))

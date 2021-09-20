@@ -183,7 +183,7 @@ class Immunization with Resource, _$Immunization {
     Code? status,
     @JsonKey(name: '_status') Element? statusElement,
     CodeableConcept? statusReason,
-    required CodeableConcept vaccineCode,
+    CodeableConcept? vaccineCode,
     required Reference patient,
     Reference? encounter,
     FhirDateTime? occurrenceDateTime,

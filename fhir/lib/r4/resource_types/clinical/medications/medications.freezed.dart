@@ -1,3 +1,4 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
@@ -41,7 +42,7 @@ class _$ImmunizationTearOff {
       @JsonKey(name: '_status')
           Element? statusElement,
       CodeableConcept? statusReason,
-      required CodeableConcept vaccineCode,
+      CodeableConcept? vaccineCode,
       required Reference patient,
       Reference? encounter,
       FhirDateTime? occurrenceDateTime,
@@ -164,7 +165,7 @@ mixin _$Immunization {
   @JsonKey(name: '_status')
   Element? get statusElement => throw _privateConstructorUsedError;
   CodeableConcept? get statusReason => throw _privateConstructorUsedError;
-  CodeableConcept get vaccineCode => throw _privateConstructorUsedError;
+  CodeableConcept? get vaccineCode => throw _privateConstructorUsedError;
   Reference get patient => throw _privateConstructorUsedError;
   Reference? get encounter => throw _privateConstructorUsedError;
   FhirDateTime? get occurrenceDateTime => throw _privateConstructorUsedError;
@@ -243,7 +244,7 @@ abstract class $ImmunizationCopyWith<$Res> {
       @JsonKey(name: '_status')
           Element? statusElement,
       CodeableConcept? statusReason,
-      CodeableConcept vaccineCode,
+      CodeableConcept? vaccineCode,
       Reference patient,
       Reference? encounter,
       FhirDateTime? occurrenceDateTime,
@@ -290,7 +291,7 @@ abstract class $ImmunizationCopyWith<$Res> {
   $NarrativeCopyWith<$Res>? get text;
   $ElementCopyWith<$Res>? get statusElement;
   $CodeableConceptCopyWith<$Res>? get statusReason;
-  $CodeableConceptCopyWith<$Res> get vaccineCode;
+  $CodeableConceptCopyWith<$Res>? get vaccineCode;
   $ReferenceCopyWith<$Res> get patient;
   $ReferenceCopyWith<$Res>? get encounter;
   $ElementCopyWith<$Res>? get occurrenceDateTimeElement;
@@ -432,7 +433,7 @@ class _$ImmunizationCopyWithImpl<$Res> implements $ImmunizationCopyWith<$Res> {
       vaccineCode: vaccineCode == freezed
           ? _value.vaccineCode
           : vaccineCode // ignore: cast_nullable_to_non_nullable
-              as CodeableConcept,
+              as CodeableConcept?,
       patient: patient == freezed
           ? _value.patient
           : patient // ignore: cast_nullable_to_non_nullable
@@ -631,8 +632,12 @@ class _$ImmunizationCopyWithImpl<$Res> implements $ImmunizationCopyWith<$Res> {
   }
 
   @override
-  $CodeableConceptCopyWith<$Res> get vaccineCode {
-    return $CodeableConceptCopyWith<$Res>(_value.vaccineCode, (value) {
+  $CodeableConceptCopyWith<$Res>? get vaccineCode {
+    if (_value.vaccineCode == null) {
+      return null;
+    }
+
+    return $CodeableConceptCopyWith<$Res>(_value.vaccineCode!, (value) {
       return _then(_value.copyWith(vaccineCode: value));
     });
   }
@@ -838,7 +843,7 @@ abstract class _$ImmunizationCopyWith<$Res>
       @JsonKey(name: '_status')
           Element? statusElement,
       CodeableConcept? statusReason,
-      CodeableConcept vaccineCode,
+      CodeableConcept? vaccineCode,
       Reference patient,
       Reference? encounter,
       FhirDateTime? occurrenceDateTime,
@@ -892,7 +897,7 @@ abstract class _$ImmunizationCopyWith<$Res>
   @override
   $CodeableConceptCopyWith<$Res>? get statusReason;
   @override
-  $CodeableConceptCopyWith<$Res> get vaccineCode;
+  $CodeableConceptCopyWith<$Res>? get vaccineCode;
   @override
   $ReferenceCopyWith<$Res> get patient;
   @override
@@ -1052,7 +1057,7 @@ class __$ImmunizationCopyWithImpl<$Res> extends _$ImmunizationCopyWithImpl<$Res>
       vaccineCode: vaccineCode == freezed
           ? _value.vaccineCode
           : vaccineCode // ignore: cast_nullable_to_non_nullable
-              as CodeableConcept,
+              as CodeableConcept?,
       patient: patient == freezed
           ? _value.patient
           : patient // ignore: cast_nullable_to_non_nullable
@@ -1209,7 +1214,7 @@ class _$_Immunization extends _Immunization {
       @JsonKey(name: '_status')
           this.statusElement,
       this.statusReason,
-      required this.vaccineCode,
+      this.vaccineCode,
       required this.patient,
       this.encounter,
       this.occurrenceDateTime,
@@ -1290,7 +1295,7 @@ class _$_Immunization extends _Immunization {
   @override
   final CodeableConcept? statusReason;
   @override
-  final CodeableConcept vaccineCode;
+  final CodeableConcept? vaccineCode;
   @override
   final Reference patient;
   @override
@@ -1549,7 +1554,7 @@ abstract class _Immunization extends Immunization {
       @JsonKey(name: '_status')
           Element? statusElement,
       CodeableConcept? statusReason,
-      required CodeableConcept vaccineCode,
+      CodeableConcept? vaccineCode,
       required Reference patient,
       Reference? encounter,
       FhirDateTime? occurrenceDateTime,
@@ -1631,7 +1636,7 @@ abstract class _Immunization extends Immunization {
   @override
   CodeableConcept? get statusReason => throw _privateConstructorUsedError;
   @override
-  CodeableConcept get vaccineCode => throw _privateConstructorUsedError;
+  CodeableConcept? get vaccineCode => throw _privateConstructorUsedError;
   @override
   Reference get patient => throw _privateConstructorUsedError;
   @override
