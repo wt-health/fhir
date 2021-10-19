@@ -1147,7 +1147,7 @@ class DocumentReference with Resource, _$DocumentReference {
     String? description,
     @JsonKey(name: '_description') Element? descriptionElement,
     List<CodeableConcept>? securityLabel,
-    required List<DocumentReferenceContent> content,
+    List<DocumentReferenceContent>? content,
     DocumentReferenceContext? context,
   }) = _DocumentReference;
 
