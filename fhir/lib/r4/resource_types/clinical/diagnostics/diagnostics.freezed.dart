@@ -872,7 +872,7 @@ class _$DiagnosticReportTearOff {
       @JsonKey(name: '_status')
           Element? statusElement,
       List<CodeableConcept>? category,
-      required CodeableConcept code,
+      CodeableConcept? code,
       Reference? subject,
       Reference? encounter,
       FhirDateTime? effectiveDateTime,
@@ -964,7 +964,7 @@ mixin _$DiagnosticReport {
   @JsonKey(name: '_status')
   Element? get statusElement => throw _privateConstructorUsedError;
   List<CodeableConcept>? get category => throw _privateConstructorUsedError;
-  CodeableConcept get code => throw _privateConstructorUsedError;
+  CodeableConcept? get code => throw _privateConstructorUsedError;
   Reference? get subject => throw _privateConstructorUsedError;
   Reference? get encounter => throw _privateConstructorUsedError;
   FhirDateTime? get effectiveDateTime => throw _privateConstructorUsedError;
@@ -1021,7 +1021,7 @@ abstract class $DiagnosticReportCopyWith<$Res> {
       @JsonKey(name: '_status')
           Element? statusElement,
       List<CodeableConcept>? category,
-      CodeableConcept code,
+      CodeableConcept? code,
       Reference? subject,
       Reference? encounter,
       FhirDateTime? effectiveDateTime,
@@ -1048,7 +1048,7 @@ abstract class $DiagnosticReportCopyWith<$Res> {
   $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
   $ElementCopyWith<$Res>? get statusElement;
-  $CodeableConceptCopyWith<$Res> get code;
+  $CodeableConceptCopyWith<$Res>? get code;
   $ReferenceCopyWith<$Res>? get subject;
   $ReferenceCopyWith<$Res>? get encounter;
   $ElementCopyWith<$Res>? get effectiveDateTimeElement;
@@ -1171,7 +1171,7 @@ class _$DiagnosticReportCopyWithImpl<$Res>
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as CodeableConcept,
+              as CodeableConcept?,
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
@@ -1299,8 +1299,12 @@ class _$DiagnosticReportCopyWithImpl<$Res>
   }
 
   @override
-  $CodeableConceptCopyWith<$Res> get code {
-    return $CodeableConceptCopyWith<$Res>(_value.code, (value) {
+  $CodeableConceptCopyWith<$Res>? get code {
+    if (_value.code == null) {
+      return null;
+    }
+
+    return $CodeableConceptCopyWith<$Res>(_value.code!, (value) {
       return _then(_value.copyWith(code: value));
     });
   }
@@ -1402,7 +1406,7 @@ abstract class _$DiagnosticReportCopyWith<$Res>
       @JsonKey(name: '_status')
           Element? statusElement,
       List<CodeableConcept>? category,
-      CodeableConcept code,
+      CodeableConcept? code,
       Reference? subject,
       Reference? encounter,
       FhirDateTime? effectiveDateTime,
@@ -1435,7 +1439,7 @@ abstract class _$DiagnosticReportCopyWith<$Res>
   @override
   $ElementCopyWith<$Res>? get statusElement;
   @override
-  $CodeableConceptCopyWith<$Res> get code;
+  $CodeableConceptCopyWith<$Res>? get code;
   @override
   $ReferenceCopyWith<$Res>? get subject;
   @override
@@ -1566,7 +1570,7 @@ class __$DiagnosticReportCopyWithImpl<$Res>
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as CodeableConcept,
+              as CodeableConcept?,
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
@@ -1665,7 +1669,7 @@ class _$_DiagnosticReport extends _DiagnosticReport {
       @JsonKey(name: '_status')
           this.statusElement,
       this.category,
-      required this.code,
+      this.code,
       this.subject,
       this.encounter,
       this.effectiveDateTime,
@@ -1730,7 +1734,7 @@ class _$_DiagnosticReport extends _DiagnosticReport {
   @override
   final List<CodeableConcept>? category;
   @override
-  final CodeableConcept code;
+  final CodeableConcept? code;
   @override
   final Reference? subject;
   @override
@@ -1929,7 +1933,7 @@ abstract class _DiagnosticReport extends DiagnosticReport {
       @JsonKey(name: '_status')
           Element? statusElement,
       List<CodeableConcept>? category,
-      required CodeableConcept code,
+      CodeableConcept? code,
       Reference? subject,
       Reference? encounter,
       FhirDateTime? effectiveDateTime,
@@ -1995,7 +1999,7 @@ abstract class _DiagnosticReport extends DiagnosticReport {
   @override
   List<CodeableConcept>? get category => throw _privateConstructorUsedError;
   @override
-  CodeableConcept get code => throw _privateConstructorUsedError;
+  CodeableConcept? get code => throw _privateConstructorUsedError;
   @override
   Reference? get subject => throw _privateConstructorUsedError;
   @override
@@ -12860,7 +12864,7 @@ class _$ObservationTearOff {
       @JsonKey(name: '_status')
           Element? statusElement,
       List<CodeableConcept>? category,
-      required CodeableConcept code,
+      CodeableConcept? code,
       Reference? subject,
       List<Reference>? focus,
       Reference? encounter,
@@ -13003,7 +13007,7 @@ mixin _$Observation {
   @JsonKey(name: '_status')
   Element? get statusElement => throw _privateConstructorUsedError;
   List<CodeableConcept>? get category => throw _privateConstructorUsedError;
-  CodeableConcept get code => throw _privateConstructorUsedError;
+  CodeableConcept? get code => throw _privateConstructorUsedError;
   Reference? get subject => throw _privateConstructorUsedError;
   List<Reference>? get focus => throw _privateConstructorUsedError;
   Reference? get encounter => throw _privateConstructorUsedError;
@@ -13091,7 +13095,7 @@ abstract class $ObservationCopyWith<$Res> {
       @JsonKey(name: '_status')
           Element? statusElement,
       List<CodeableConcept>? category,
-      CodeableConcept code,
+      CodeableConcept? code,
       Reference? subject,
       List<Reference>? focus,
       Reference? encounter,
@@ -13145,7 +13149,7 @@ abstract class $ObservationCopyWith<$Res> {
   $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
   $ElementCopyWith<$Res>? get statusElement;
-  $CodeableConceptCopyWith<$Res> get code;
+  $CodeableConceptCopyWith<$Res>? get code;
   $ReferenceCopyWith<$Res>? get subject;
   $ReferenceCopyWith<$Res>? get encounter;
   $ElementCopyWith<$Res>? get effectiveDateTimeElement;
@@ -13311,7 +13315,7 @@ class _$ObservationCopyWithImpl<$Res> implements $ObservationCopyWith<$Res> {
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as CodeableConcept,
+              as CodeableConcept?,
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
@@ -13527,8 +13531,12 @@ class _$ObservationCopyWithImpl<$Res> implements $ObservationCopyWith<$Res> {
   }
 
   @override
-  $CodeableConceptCopyWith<$Res> get code {
-    return $CodeableConceptCopyWith<$Res>(_value.code, (value) {
+  $CodeableConceptCopyWith<$Res>? get code {
+    if (_value.code == null) {
+      return null;
+    }
+
+    return $CodeableConceptCopyWith<$Res>(_value.code!, (value) {
       return _then(_value.copyWith(code: value));
     });
   }
@@ -13819,7 +13827,7 @@ abstract class _$ObservationCopyWith<$Res>
       @JsonKey(name: '_status')
           Element? statusElement,
       List<CodeableConcept>? category,
-      CodeableConcept code,
+      CodeableConcept? code,
       Reference? subject,
       List<Reference>? focus,
       Reference? encounter,
@@ -13879,7 +13887,7 @@ abstract class _$ObservationCopyWith<$Res>
   @override
   $ElementCopyWith<$Res>? get statusElement;
   @override
-  $CodeableConceptCopyWith<$Res> get code;
+  $CodeableConceptCopyWith<$Res>? get code;
   @override
   $ReferenceCopyWith<$Res>? get subject;
   @override
@@ -14070,7 +14078,7 @@ class __$ObservationCopyWithImpl<$Res> extends _$ObservationCopyWithImpl<$Res>
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as CodeableConcept,
+              as CodeableConcept?,
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
@@ -14258,7 +14266,7 @@ class _$_Observation extends _Observation {
       @JsonKey(name: '_status')
           this.statusElement,
       this.category,
-      required this.code,
+      this.code,
       this.subject,
       this.focus,
       this.encounter,
@@ -14352,7 +14360,7 @@ class _$_Observation extends _Observation {
   @override
   final List<CodeableConcept>? category;
   @override
-  final CodeableConcept code;
+  final CodeableConcept? code;
   @override
   final Reference? subject;
   @override
@@ -14647,7 +14655,7 @@ abstract class _Observation extends Observation {
       @JsonKey(name: '_status')
           Element? statusElement,
       List<CodeableConcept>? category,
-      required CodeableConcept code,
+      CodeableConcept? code,
       Reference? subject,
       List<Reference>? focus,
       Reference? encounter,
@@ -14742,7 +14750,7 @@ abstract class _Observation extends Observation {
   @override
   List<CodeableConcept>? get category => throw _privateConstructorUsedError;
   @override
-  CodeableConcept get code => throw _privateConstructorUsedError;
+  CodeableConcept? get code => throw _privateConstructorUsedError;
   @override
   Reference? get subject => throw _privateConstructorUsedError;
   @override
