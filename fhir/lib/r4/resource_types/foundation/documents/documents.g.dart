@@ -996,8 +996,8 @@ _$_DocumentReference _$$_DocumentReferenceFromJson(Map<String, dynamic> json) =>
       securityLabel: (json['securityLabel'] as List<dynamic>?)
           ?.map((e) => CodeableConcept.fromJson(e as Map<String, dynamic>))
           .toList(),
-      content: (json['content'] as List<dynamic>)
-          .map((e) =>
+      content: (json['content'] as List<dynamic>?)
+          ?.map((e) =>
               DocumentReferenceContent.fromJson(e as Map<String, dynamic>))
           .toList(),
       context: json['context'] == null
@@ -1052,7 +1052,7 @@ Map<String, dynamic> _$$_DocumentReferenceToJson(
   writeNotNull('_description', instance.descriptionElement?.toJson());
   writeNotNull(
       'securityLabel', instance.securityLabel?.map((e) => e.toJson()).toList());
-  val['content'] = instance.content.map((e) => e.toJson()).toList();
+  writeNotNull('content', instance.content?.map((e) => e.toJson()).toList());
   writeNotNull('context', instance.context?.toJson());
   return val;
 }

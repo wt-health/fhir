@@ -1,7 +1,16 @@
 targets:
     $default:
       builders:
+        # freezed:
+        #   enabled: true
+        #   generate_for:
+        #     include:
+        #       - lib/r4/resource_types/clinical/diagnostics/*.dart
         json_serializable:
+          # enabled: true
+          # generate_for:
+          #   include:
+          #     - lib/r4/resource_types/clinical/diagnostics/*.dart
           options:
             # Options configure how source code is generated for every
             # `@JsonSerializable`-annotated class in the package.

@@ -1,3 +1,4 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
@@ -5565,7 +5566,7 @@ class _$DocumentReferenceTearOff {
       @JsonKey(name: '_description')
           Element? descriptionElement,
       List<CodeableConcept>? securityLabel,
-      required List<DocumentReferenceContent> content,
+      List<DocumentReferenceContent>? content,
       DocumentReferenceContext? context}) {
     return _DocumentReference(
       resourceType: resourceType,
@@ -5653,7 +5654,7 @@ mixin _$DocumentReference {
   Element? get descriptionElement => throw _privateConstructorUsedError;
   List<CodeableConcept>? get securityLabel =>
       throw _privateConstructorUsedError;
-  List<DocumentReferenceContent> get content =>
+  List<DocumentReferenceContent>? get content =>
       throw _privateConstructorUsedError;
   DocumentReferenceContext? get context => throw _privateConstructorUsedError;
 
@@ -5707,7 +5708,7 @@ abstract class $DocumentReferenceCopyWith<$Res> {
       @JsonKey(name: '_description')
           Element? descriptionElement,
       List<CodeableConcept>? securityLabel,
-      List<DocumentReferenceContent> content,
+      List<DocumentReferenceContent>? content,
       DocumentReferenceContext? context});
 
   $MetaCopyWith<$Res>? get meta;
@@ -5889,7 +5890,7 @@ class _$DocumentReferenceCopyWithImpl<$Res>
       content: content == freezed
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as List<DocumentReferenceContent>,
+              as List<DocumentReferenceContent>?,
       context: context == freezed
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -6098,7 +6099,7 @@ abstract class _$DocumentReferenceCopyWith<$Res>
       @JsonKey(name: '_description')
           Element? descriptionElement,
       List<CodeableConcept>? securityLabel,
-      List<DocumentReferenceContent> content,
+      List<DocumentReferenceContent>? content,
       DocumentReferenceContext? context});
 
   @override
@@ -6296,7 +6297,7 @@ class __$DocumentReferenceCopyWithImpl<$Res>
       content: content == freezed
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as List<DocumentReferenceContent>,
+              as List<DocumentReferenceContent>?,
       context: context == freezed
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -6347,7 +6348,7 @@ class _$_DocumentReference extends _DocumentReference {
       @JsonKey(name: '_description')
           this.descriptionElement,
       this.securityLabel,
-      required this.content,
+      this.content,
       this.context})
       : super._();
 
@@ -6422,7 +6423,7 @@ class _$_DocumentReference extends _DocumentReference {
   @override
   final List<CodeableConcept>? securityLabel;
   @override
-  final List<DocumentReferenceContent> content;
+  final List<DocumentReferenceContent>? content;
   @override
   final DocumentReferenceContext? context;
 
@@ -6597,7 +6598,7 @@ abstract class _DocumentReference extends DocumentReference {
       @JsonKey(name: '_description')
           Element? descriptionElement,
       List<CodeableConcept>? securityLabel,
-      required List<DocumentReferenceContent> content,
+      List<DocumentReferenceContent>? content,
       DocumentReferenceContext? context}) = _$_DocumentReference;
   _DocumentReference._() : super._();
 
@@ -6675,7 +6676,7 @@ abstract class _DocumentReference extends DocumentReference {
   List<CodeableConcept>? get securityLabel =>
       throw _privateConstructorUsedError;
   @override
-  List<DocumentReferenceContent> get content =>
+  List<DocumentReferenceContent>? get content =>
       throw _privateConstructorUsedError;
   @override
   DocumentReferenceContext? get context => throw _privateConstructorUsedError;
