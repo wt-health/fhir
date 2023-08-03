@@ -10,7 +10,6 @@ import 'package:sqflite/sqflite.dart' as sqflite;
 import 'package:sqflite_common_ffi/sqflite_ffi.dart' as sqflite_common_ffi;
 
 import '../encrypt/aes.dart';
-// import '../salsa.dart';
 
 class FhirDb {
   /// Private Constructor
@@ -66,8 +65,7 @@ class FhirDb {
     _dbOpenCompleter = null;
   }
 
-  Future _openDatabase(String? pw) async {
-    /// Get the actual db
+  Future _openDatabase(String pw) async {
     final database = await _getDb('fhir.db', pw);
 
     /// Complete!
@@ -93,7 +91,6 @@ class FhirDb {
   /// This is just for getting the codec
   SembastCodec? _codec(String? pw) =>
       pw == null || pw == '' ? null : getEncryptSembastCodecAES(password: pw);
-  // getEncryptSembastCodecSalsa20(password: pw);
 
   Future _updatePw(String? oldPw, String? newPw) async {
     /// Platform-specific directory

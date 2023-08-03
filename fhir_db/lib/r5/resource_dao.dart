@@ -7,14 +7,11 @@ import 'fhir_db.dart';
 class ResourceDao {
   ResourceDao({
     this.databaseMode = mode.DatabaseMode.PERSISTENCE_DB,
-    bool isForTesting = false,
-  }) {
-    if (isForTesting) FhirDb.prepareForTesting();
-  }
+  });
 
   mode.DatabaseMode databaseMode;
 
-  late StoreRef<String, Map<String, dynamic>> _resourceStore;
+  StoreRef<String, Map<String, dynamic>> _resourceStore;
   final _typesStore = StoreRef<String, List>.main();
   final _history = StoreRef<String, Map<String, dynamic>>.main();
 
@@ -58,9 +55,13 @@ class ResourceDao {
   }
 
   /// Saves a [Resource] to the local Db, [password] is optional (but after set,
-  /// it must always be used everytime), will update the meta fields of the
-  /// [Resource] and adds an id if none is already given.
-  Future<Resource> save(String? password, Resource? resource) async {
+  /// it must always be used everytime).
+  /// If the [fhir_db] is used as main persistence layer it will update
+  /// the [meta] fields of the [Resource] and it will add an [id] if
+  /// none is already given.
+  /// If the [fhir_db] is used for local caching it will not increase
+  /// the version number on resource update.
+  Future<Resource> save(String password, Resource resource) async {
     if (resource != null) {
       if (resource.resourceType != null) {
         await _addResourceType(password, resource.resourceType!);
@@ -93,8 +94,10 @@ class ResourceDao {
   }
 
   /// functions used to update a resource who has already been saved into the
-  /// db, will also save the old version
-  Future<Resource> _update(String? password, Resource resource) async {
+  /// db. If the mode is [PERSISTENCE_DB], it increases the version number
+  /// and it saves the old resource. If the mode is [CACHE_DB] just adds the
+  /// resource to the local database.
+  Future<Resource> _update(String password, Resource resource) async {
     final String id = resource.id.toString();
     final dbResource = await _resourceStore.record(id).get(await _db(password));
     if (dbResource == null) {
@@ -108,26 +111,25 @@ class ResourceDao {
           .record(historyId)
           .put(await _db(password), oldResource.toJson());
 
-      Resource _newResource;
+    Resource _newResource;
 
-      switch (databaseMode) {
-        case mode.DatabaseMode.PERSISTENCE_DB:
-          _newResource = oldResource.meta == null
-              ? resource.newVersion()
-              : oldResource.meta == null
-                  ? resource.newVersion()
-                  : resource.newVersion(oldMeta: oldResource.meta);
-          break;
-        case mode.DatabaseMode.CACHE_DB:
-          _newResource = resource;
-          break;
-      }
-
-      await _resourceStore
-          .record(id)
-          .put(await _db(password), _newResource.toJson(), merge: true);
-      return _newResource;
+    switch (databaseMode) {
+      case mode.DatabaseMode.PERSISTENCE_DB:
+        _newResource = oldResource == null
+            ? resource.newVersion()
+            : oldResource.meta == null
+            ? resource.newVersion()
+            : resource.newVersion(oldMeta: oldResource.meta);
+        break;
+      case mode.DatabaseMode.CACHE_DB:
+        _newResource = resource;
+        break;
     }
+
+    await _resourceStore
+        .record(id)
+        .put(await _db(password), _newResource.toJson(), merge: true);
+    return _newResource;
   }
 
   /// searches for a specific [Resource]. That resource can be defined by
