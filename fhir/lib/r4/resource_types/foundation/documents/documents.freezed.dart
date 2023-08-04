@@ -8392,6 +8392,8 @@ class _$_DocumentReference extends _DocumentReference {
   ///  content element repetitions, each with a different format.
   @override
   List<DocumentReferenceContent>? get content {
+    final value = _content;
+    if (value == null) return null;
     if (_content is EqualUnmodifiableListView) return _content;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_content);
