@@ -8386,7 +8386,7 @@ class _$_DocumentReference extends _DocumentReference {
 
   /// [content] The document and format referenced. There may be multiple
   ///  content element repetitions, each with a different format.
-  final List<DocumentReferenceContent> _content;
+  final List<DocumentReferenceContent>? _content;
 
   /// [content] The document and format referenced. There may be multiple
   ///  content element repetitions, each with a different format.
