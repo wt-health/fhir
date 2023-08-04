@@ -8396,7 +8396,7 @@ class _$_DocumentReference extends _DocumentReference {
     if (value == null) return null;
     if (_content is EqualUnmodifiableListView) return _content;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_content);
+    return EqualUnmodifiableListView(value);
   }
 
   /// [context] The clinical context in which the document was prepared.
