@@ -1,15 +1,20 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:fhir/stu3.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:http/http.dart';
 
+// Project imports:
 import 'from_bulk.dart';
 import 'which_resource.dart';
 
 part 'bulk_request.freezed.dart';
 
 @freezed
+
+/// Freezed union class for making different types of Bulk Requests
 class BulkRequest with _$BulkRequest {
   BulkRequest._();
 
@@ -38,6 +43,7 @@ class BulkRequest with _$BulkRequest {
     Client? client,
   }) = _BulkSystemRequest;
 
+  /// Actually perform the request by type
   Future<List<Resource?>> request({
     required Map<String, String> headers,
   }) async {
@@ -65,6 +71,7 @@ class BulkRequest with _$BulkRequest {
     );
   }
 
+  /// Returns the string of parameters allowed in the request
   String _parameters(
     FhirDateTime? since,
     List<WhichResource>? types,
@@ -87,6 +94,7 @@ class BulkRequest with _$BulkRequest {
     return '$sinceString$typeString';
   }
 
+  /// Actual request (private class) after all formatting and parameters have been added
   Future<List<Resource?>> _request(
     RestfulRequest type,
     String uri,
@@ -140,7 +148,7 @@ class BulkRequest with _$BulkRequest {
       try {
         final ndjsonList =
             await client.get(Uri.parse(link['url']), headers: headers);
-        returnList.addAll(FhirBulk.fromData(ndjsonList.body));
+        returnList.addAll(FhirBulk.fromNdJson(ndjsonList.body));
       } catch (e) {
         return _operationOutcome('Failed to download from ${link['url']}',
             diagnostics: 'Exception: $e');
@@ -149,6 +157,7 @@ class BulkRequest with _$BulkRequest {
     return returnList;
   }
 
+  /// Creates and returns an OperationOutcome if the http request is unsuccessful
   List<OperationOutcome> _failedHttp(int statusCode, Response result) {
     return [
       OperationOutcome(
@@ -167,6 +176,7 @@ class BulkRequest with _$BulkRequest {
     ];
   }
 
+  /// Convenience class to create an operationOutcome if the request fails
   List<OperationOutcome> _operationOutcome(
     String issue, {
     String? diagnostics,
@@ -184,6 +194,7 @@ class BulkRequest with _$BulkRequest {
         ),
       ];
 
+  /// Map of error codes to be able to return more useful information than just a number
   static const _errorCodes = {
     400: 'Bad Request',
     401: 'Not Authorized',
@@ -195,6 +206,7 @@ class BulkRequest with _$BulkRequest {
   };
 }
 
+/// Types of requests allowed
 enum RestfulRequest {
   get_,
   put_,

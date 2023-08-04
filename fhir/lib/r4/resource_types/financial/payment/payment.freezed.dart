@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'payment.dart';
 
@@ -10,123 +12,132 @@ part of 'payment.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PaymentNotice _$PaymentNoticeFromJson(Map<String, dynamic> json) {
   return _PaymentNotice.fromJson(json);
 }
 
 /// @nodoc
-class _$PaymentNoticeTearOff {
-  const _$PaymentNoticeTearOff();
-
-  _PaymentNotice call(
-      {@JsonKey(unknownEnumValue: R4ResourceType.PaymentNotice)
-          R4ResourceType resourceType = R4ResourceType.PaymentNotice,
-      Id? id,
-      Meta? meta,
-      FhirUri? implicitRules,
-      @JsonKey(name: '_implicitRules')
-          Element? implicitRulesElement,
-      Code? language,
-      @JsonKey(name: '_language')
-          Element? languageElement,
-      Narrative? text,
-      List<Resource>? contained,
-      @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
-      List<FhirExtension>? modifierExtension,
-      List<Identifier>? identifier,
-      Code? status,
-      @JsonKey(name: '_status')
-          Element? statusElement,
-      Reference? request,
-      Reference? response,
-      FhirDateTime? created,
-      @JsonKey(name: '_created')
-          Element? createdElement,
-      Reference? provider,
-      required Reference payment,
-      Date? paymentDate,
-      @JsonKey(name: '_paymentDate')
-          Element? paymentDateElement,
-      Reference? payee,
-      required Reference recipient,
-      required Money amount,
-      CodeableConcept? paymentStatus}) {
-    return _PaymentNotice(
-      resourceType: resourceType,
-      id: id,
-      meta: meta,
-      implicitRules: implicitRules,
-      implicitRulesElement: implicitRulesElement,
-      language: language,
-      languageElement: languageElement,
-      text: text,
-      contained: contained,
-      extension_: extension_,
-      modifierExtension: modifierExtension,
-      identifier: identifier,
-      status: status,
-      statusElement: statusElement,
-      request: request,
-      response: response,
-      created: created,
-      createdElement: createdElement,
-      provider: provider,
-      payment: payment,
-      paymentDate: paymentDate,
-      paymentDateElement: paymentDateElement,
-      payee: payee,
-      recipient: recipient,
-      amount: amount,
-      paymentStatus: paymentStatus,
-    );
-  }
-
-  PaymentNotice fromJson(Map<String, Object> json) {
-    return PaymentNotice.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PaymentNotice = _$PaymentNoticeTearOff();
-
-/// @nodoc
 mixin _$PaymentNotice {
   @JsonKey(unknownEnumValue: R4ResourceType.PaymentNotice)
   R4ResourceType get resourceType => throw _privateConstructorUsedError;
-  Id? get id => throw _privateConstructorUsedError;
+
+  /// [id] The logical id of the resource, as used in the URL for the resource.
+  ///  Once assigned, this value never changes.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// [meta] The metadata about the resource. This is content that is
+  /// maintained by the infrastructure. Changes to the content might not always
+  ///  be associated with version changes to the resource.
   Meta? get meta => throw _privateConstructorUsedError;
+
+  /// [implicitRules] A reference to a set of rules that were followed when the
+  /// resource was constructed, and which must be understood when processing the
+  /// content. Often, this is a reference to an implementation guide that
+  ///  defines the special rules along with other profiles etc.
   FhirUri? get implicitRules => throw _privateConstructorUsedError;
+
+  /// [implicitRulesElement] Extensions for implicitRules
   @JsonKey(name: '_implicitRules')
   Element? get implicitRulesElement => throw _privateConstructorUsedError;
+
+  /// [language] The base language in which the resource is written.
   Code? get language => throw _privateConstructorUsedError;
+
+  /// [languageElement] Extensions for language
   @JsonKey(name: '_language')
   Element? get languageElement => throw _privateConstructorUsedError;
+
+  /// [text] A human-readable narrative that contains a summary of the resource
+  /// and can be used to represent the content of the resource to a human. The
+  /// narrative need not encode all the structured data, but is required to
+  /// contain sufficient detail to make it "clinically safe" for a human to just
+  /// read the narrative. Resource definitions may define what content should be
+  ///  represented in the narrative to ensure clinical safety.
   Narrative? get text => throw _privateConstructorUsedError;
+
+  /// [contained] These resources do not have an independent existence apart
+  /// from the resource that contains them - they cannot be identified
+  /// independently, and nor can they have their own independent transaction
+  ///  scope.
   List<Resource>? get contained => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the resource. To make the use of
+  /// extensions safe and manageable, there is a strict set of governance
+  /// applied to the definition and use of extensions. Though any implementer
+  /// can define an extension, there is a set of requirements that SHALL be met
+  ///  as part of the definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the resource and that modifies the
+  /// understanding of the element that contains it and/or the understanding of
+  /// the containing element's descendants. Usually modifier elements provide
+  /// negation or qualification. To make the use of extensions safe and
+  /// manageable, there is a strict set of governance applied to the definition
+  /// and use of extensions. Though any implementer is allowed to define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+
+  /// [identifier] A unique identifier assigned to this payment notice.
   List<Identifier>? get identifier => throw _privateConstructorUsedError;
+
+  /// [status] The status of the resource instance.
   Code? get status => throw _privateConstructorUsedError;
+
+  /// [statusElement] Extensions for status
   @JsonKey(name: '_status')
   Element? get statusElement => throw _privateConstructorUsedError;
+
+  /// [request] Reference of resource for which payment is being made.
   Reference? get request => throw _privateConstructorUsedError;
+
+  /// [response] Reference of response to resource for which payment is being
+  ///  made.
   Reference? get response => throw _privateConstructorUsedError;
+
+  /// [created] The date when this resource was created.
   FhirDateTime? get created => throw _privateConstructorUsedError;
+
+  /// [createdElement] Extensions for created
   @JsonKey(name: '_created')
   Element? get createdElement => throw _privateConstructorUsedError;
+
+  /// [provider] The practitioner who is responsible for the services rendered
+  ///  to the patient.
   Reference? get provider => throw _privateConstructorUsedError;
+
+  /// [payment] A reference to the payment which is the subject of this notice.
   Reference get payment => throw _privateConstructorUsedError;
+
+  /// [paymentDate] The date when the above payment action occurred.
   Date? get paymentDate => throw _privateConstructorUsedError;
+
+  /// [paymentDateElement] Extensions for paymentDate
   @JsonKey(name: '_paymentDate')
   Element? get paymentDateElement => throw _privateConstructorUsedError;
+
+  /// [payee] The party who will receive or has received payment that is the
+  ///  subject of this notification.
   Reference? get payee => throw _privateConstructorUsedError;
+
+  /// [recipient] The party who is notified of the payment status.
   Reference get recipient => throw _privateConstructorUsedError;
+
+  /// [amount] The amount sent to the payee.
   Money get amount => throw _privateConstructorUsedError;
+
+  /// [paymentStatus] A code indicating whether payment has been sent or
+  ///  cleared.
   CodeableConcept? get paymentStatus => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -139,11 +150,12 @@ mixin _$PaymentNotice {
 abstract class $PaymentNoticeCopyWith<$Res> {
   factory $PaymentNoticeCopyWith(
           PaymentNotice value, $Res Function(PaymentNotice) then) =
-      _$PaymentNoticeCopyWithImpl<$Res>;
+      _$PaymentNoticeCopyWithImpl<$Res, PaymentNotice>;
+  @useResult
   $Res call(
       {@JsonKey(unknownEnumValue: R4ResourceType.PaymentNotice)
           R4ResourceType resourceType,
-      Id? id,
+      String? id,
       Meta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules')
@@ -193,17 +205,19 @@ abstract class $PaymentNoticeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PaymentNoticeCopyWithImpl<$Res>
+class _$PaymentNoticeCopyWithImpl<$Res, $Val extends PaymentNotice>
     implements $PaymentNoticeCopyWith<$Res> {
   _$PaymentNoticeCopyWithImpl(this._value, this._then);
 
-  final PaymentNotice _value;
   // ignore: unused_field
-  final $Res Function(PaymentNotice) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? resourceType = freezed,
+    Object? resourceType = null,
     Object? id = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
@@ -222,287 +236,303 @@ class _$PaymentNoticeCopyWithImpl<$Res>
     Object? created = freezed,
     Object? createdElement = freezed,
     Object? provider = freezed,
-    Object? payment = freezed,
+    Object? payment = null,
     Object? paymentDate = freezed,
     Object? paymentDateElement = freezed,
     Object? payee = freezed,
-    Object? recipient = freezed,
-    Object? amount = freezed,
+    Object? recipient = null,
+    Object? amount = null,
     Object? paymentStatus = freezed,
   }) {
     return _then(_value.copyWith(
-      resourceType: resourceType == freezed
+      resourceType: null == resourceType
           ? _value.resourceType
           : resourceType // ignore: cast_nullable_to_non_nullable
               as R4ResourceType,
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as Id?,
-      meta: meta == freezed
+              as String?,
+      meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
               as Meta?,
-      implicitRules: implicitRules == freezed
+      implicitRules: freezed == implicitRules
           ? _value.implicitRules
           : implicitRules // ignore: cast_nullable_to_non_nullable
               as FhirUri?,
-      implicitRulesElement: implicitRulesElement == freezed
+      implicitRulesElement: freezed == implicitRulesElement
           ? _value.implicitRulesElement
           : implicitRulesElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      language: language == freezed
+      language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Code?,
-      languageElement: languageElement == freezed
+      languageElement: freezed == languageElement
           ? _value.languageElement
           : languageElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      text: text == freezed
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as Narrative?,
-      contained: contained == freezed
+      contained: freezed == contained
           ? _value.contained
           : contained // ignore: cast_nullable_to_non_nullable
               as List<Resource>?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      modifierExtension: modifierExtension == freezed
+      modifierExtension: freezed == modifierExtension
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      identifier: identifier == freezed
+      identifier: freezed == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as List<Identifier>?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Code?,
-      statusElement: statusElement == freezed
+      statusElement: freezed == statusElement
           ? _value.statusElement
           : statusElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      request: request == freezed
+      request: freezed == request
           ? _value.request
           : request // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      response: response == freezed
+      response: freezed == response
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      created: created == freezed
+      created: freezed == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as FhirDateTime?,
-      createdElement: createdElement == freezed
+      createdElement: freezed == createdElement
           ? _value.createdElement
           : createdElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      provider: provider == freezed
+      provider: freezed == provider
           ? _value.provider
           : provider // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      payment: payment == freezed
+      payment: null == payment
           ? _value.payment
           : payment // ignore: cast_nullable_to_non_nullable
               as Reference,
-      paymentDate: paymentDate == freezed
+      paymentDate: freezed == paymentDate
           ? _value.paymentDate
           : paymentDate // ignore: cast_nullable_to_non_nullable
               as Date?,
-      paymentDateElement: paymentDateElement == freezed
+      paymentDateElement: freezed == paymentDateElement
           ? _value.paymentDateElement
           : paymentDateElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      payee: payee == freezed
+      payee: freezed == payee
           ? _value.payee
           : payee // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      recipient: recipient == freezed
+      recipient: null == recipient
           ? _value.recipient
           : recipient // ignore: cast_nullable_to_non_nullable
               as Reference,
-      amount: amount == freezed
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as Money,
-      paymentStatus: paymentStatus == freezed
+      paymentStatus: freezed == paymentStatus
           ? _value.paymentStatus
           : paymentStatus // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MetaCopyWith<$Res>? get meta {
     if (_value.meta == null) {
       return null;
     }
 
     return $MetaCopyWith<$Res>(_value.meta!, (value) {
-      return _then(_value.copyWith(meta: value));
+      return _then(_value.copyWith(meta: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get implicitRulesElement {
     if (_value.implicitRulesElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value));
+      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get languageElement {
     if (_value.languageElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value));
+      return _then(_value.copyWith(languageElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
     }
 
     return $NarrativeCopyWith<$Res>(_value.text!, (value) {
-      return _then(_value.copyWith(text: value));
+      return _then(_value.copyWith(text: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get statusElement {
     if (_value.statusElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value));
+      return _then(_value.copyWith(statusElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get request {
     if (_value.request == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.request!, (value) {
-      return _then(_value.copyWith(request: value));
+      return _then(_value.copyWith(request: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get response {
     if (_value.response == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.response!, (value) {
-      return _then(_value.copyWith(response: value));
+      return _then(_value.copyWith(response: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get createdElement {
     if (_value.createdElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.createdElement!, (value) {
-      return _then(_value.copyWith(createdElement: value));
+      return _then(_value.copyWith(createdElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get provider {
     if (_value.provider == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.provider!, (value) {
-      return _then(_value.copyWith(provider: value));
+      return _then(_value.copyWith(provider: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res> get payment {
     return $ReferenceCopyWith<$Res>(_value.payment, (value) {
-      return _then(_value.copyWith(payment: value));
+      return _then(_value.copyWith(payment: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get paymentDateElement {
     if (_value.paymentDateElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.paymentDateElement!, (value) {
-      return _then(_value.copyWith(paymentDateElement: value));
+      return _then(_value.copyWith(paymentDateElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get payee {
     if (_value.payee == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.payee!, (value) {
-      return _then(_value.copyWith(payee: value));
+      return _then(_value.copyWith(payee: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res> get recipient {
     return $ReferenceCopyWith<$Res>(_value.recipient, (value) {
-      return _then(_value.copyWith(recipient: value));
+      return _then(_value.copyWith(recipient: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MoneyCopyWith<$Res> get amount {
     return $MoneyCopyWith<$Res>(_value.amount, (value) {
-      return _then(_value.copyWith(amount: value));
+      return _then(_value.copyWith(amount: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get paymentStatus {
     if (_value.paymentStatus == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.paymentStatus!, (value) {
-      return _then(_value.copyWith(paymentStatus: value));
+      return _then(_value.copyWith(paymentStatus: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$PaymentNoticeCopyWith<$Res>
+abstract class _$$_PaymentNoticeCopyWith<$Res>
     implements $PaymentNoticeCopyWith<$Res> {
-  factory _$PaymentNoticeCopyWith(
-          _PaymentNotice value, $Res Function(_PaymentNotice) then) =
-      __$PaymentNoticeCopyWithImpl<$Res>;
+  factory _$$_PaymentNoticeCopyWith(
+          _$_PaymentNotice value, $Res Function(_$_PaymentNotice) then) =
+      __$$_PaymentNoticeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(unknownEnumValue: R4ResourceType.PaymentNotice)
           R4ResourceType resourceType,
-      Id? id,
+      String? id,
       Meta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules')
@@ -567,19 +597,17 @@ abstract class _$PaymentNoticeCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PaymentNoticeCopyWithImpl<$Res>
-    extends _$PaymentNoticeCopyWithImpl<$Res>
-    implements _$PaymentNoticeCopyWith<$Res> {
-  __$PaymentNoticeCopyWithImpl(
-      _PaymentNotice _value, $Res Function(_PaymentNotice) _then)
-      : super(_value, (v) => _then(v as _PaymentNotice));
+class __$$_PaymentNoticeCopyWithImpl<$Res>
+    extends _$PaymentNoticeCopyWithImpl<$Res, _$_PaymentNotice>
+    implements _$$_PaymentNoticeCopyWith<$Res> {
+  __$$_PaymentNoticeCopyWithImpl(
+      _$_PaymentNotice _value, $Res Function(_$_PaymentNotice) _then)
+      : super(_value, _then);
 
-  @override
-  _PaymentNotice get _value => super._value as _PaymentNotice;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? resourceType = freezed,
+    Object? resourceType = null,
     Object? id = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
@@ -598,116 +626,116 @@ class __$PaymentNoticeCopyWithImpl<$Res>
     Object? created = freezed,
     Object? createdElement = freezed,
     Object? provider = freezed,
-    Object? payment = freezed,
+    Object? payment = null,
     Object? paymentDate = freezed,
     Object? paymentDateElement = freezed,
     Object? payee = freezed,
-    Object? recipient = freezed,
-    Object? amount = freezed,
+    Object? recipient = null,
+    Object? amount = null,
     Object? paymentStatus = freezed,
   }) {
-    return _then(_PaymentNotice(
-      resourceType: resourceType == freezed
+    return _then(_$_PaymentNotice(
+      resourceType: null == resourceType
           ? _value.resourceType
           : resourceType // ignore: cast_nullable_to_non_nullable
               as R4ResourceType,
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as Id?,
-      meta: meta == freezed
+              as String?,
+      meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
               as Meta?,
-      implicitRules: implicitRules == freezed
+      implicitRules: freezed == implicitRules
           ? _value.implicitRules
           : implicitRules // ignore: cast_nullable_to_non_nullable
               as FhirUri?,
-      implicitRulesElement: implicitRulesElement == freezed
+      implicitRulesElement: freezed == implicitRulesElement
           ? _value.implicitRulesElement
           : implicitRulesElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      language: language == freezed
+      language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Code?,
-      languageElement: languageElement == freezed
+      languageElement: freezed == languageElement
           ? _value.languageElement
           : languageElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      text: text == freezed
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as Narrative?,
-      contained: contained == freezed
-          ? _value.contained
+      contained: freezed == contained
+          ? _value._contained
           : contained // ignore: cast_nullable_to_non_nullable
               as List<Resource>?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      modifierExtension: modifierExtension == freezed
-          ? _value.modifierExtension
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      identifier: identifier == freezed
-          ? _value.identifier
+      identifier: freezed == identifier
+          ? _value._identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as List<Identifier>?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Code?,
-      statusElement: statusElement == freezed
+      statusElement: freezed == statusElement
           ? _value.statusElement
           : statusElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      request: request == freezed
+      request: freezed == request
           ? _value.request
           : request // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      response: response == freezed
+      response: freezed == response
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      created: created == freezed
+      created: freezed == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as FhirDateTime?,
-      createdElement: createdElement == freezed
+      createdElement: freezed == createdElement
           ? _value.createdElement
           : createdElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      provider: provider == freezed
+      provider: freezed == provider
           ? _value.provider
           : provider // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      payment: payment == freezed
+      payment: null == payment
           ? _value.payment
           : payment // ignore: cast_nullable_to_non_nullable
               as Reference,
-      paymentDate: paymentDate == freezed
+      paymentDate: freezed == paymentDate
           ? _value.paymentDate
           : paymentDate // ignore: cast_nullable_to_non_nullable
               as Date?,
-      paymentDateElement: paymentDateElement == freezed
+      paymentDateElement: freezed == paymentDateElement
           ? _value.paymentDateElement
           : paymentDateElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      payee: payee == freezed
+      payee: freezed == payee
           ? _value.payee
           : payee // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      recipient: recipient == freezed
+      recipient: null == recipient
           ? _value.recipient
           : recipient // ignore: cast_nullable_to_non_nullable
               as Reference,
-      amount: amount == freezed
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as Money,
-      paymentStatus: paymentStatus == freezed
+      paymentStatus: freezed == paymentStatus
           ? _value.paymentStatus
           : paymentStatus // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
@@ -730,11 +758,11 @@ class _$_PaymentNotice extends _PaymentNotice {
       @JsonKey(name: '_language')
           this.languageElement,
       this.text,
-      this.contained,
+      final List<Resource>? contained,
       @JsonKey(name: 'extension')
-          this.extension_,
-      this.modifierExtension,
-      this.identifier,
+          final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final List<Identifier>? identifier,
       this.status,
       @JsonKey(name: '_status')
           this.statusElement,
@@ -752,7 +780,11 @@ class _$_PaymentNotice extends _PaymentNotice {
       required this.recipient,
       required this.amount,
       this.paymentStatus})
-      : super._();
+      : _contained = contained,
+        _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _identifier = identifier,
+        super._();
 
   factory _$_PaymentNotice.fromJson(Map<String, dynamic> json) =>
       _$$_PaymentNoticeFromJson(json);
@@ -760,60 +792,202 @@ class _$_PaymentNotice extends _PaymentNotice {
   @override
   @JsonKey(unknownEnumValue: R4ResourceType.PaymentNotice)
   final R4ResourceType resourceType;
+
+  /// [id] The logical id of the resource, as used in the URL for the resource.
+  ///  Once assigned, this value never changes.
   @override
-  final Id? id;
+  final String? id;
+
+  /// [meta] The metadata about the resource. This is content that is
+  /// maintained by the infrastructure. Changes to the content might not always
+  ///  be associated with version changes to the resource.
   @override
   final Meta? meta;
+
+  /// [implicitRules] A reference to a set of rules that were followed when the
+  /// resource was constructed, and which must be understood when processing the
+  /// content. Often, this is a reference to an implementation guide that
+  ///  defines the special rules along with other profiles etc.
   @override
   final FhirUri? implicitRules;
+
+  /// [implicitRulesElement] Extensions for implicitRules
   @override
   @JsonKey(name: '_implicitRules')
   final Element? implicitRulesElement;
+
+  /// [language] The base language in which the resource is written.
   @override
   final Code? language;
+
+  /// [languageElement] Extensions for language
   @override
   @JsonKey(name: '_language')
   final Element? languageElement;
+
+  /// [text] A human-readable narrative that contains a summary of the resource
+  /// and can be used to represent the content of the resource to a human. The
+  /// narrative need not encode all the structured data, but is required to
+  /// contain sufficient detail to make it "clinically safe" for a human to just
+  /// read the narrative. Resource definitions may define what content should be
+  ///  represented in the narrative to ensure clinical safety.
   @override
   final Narrative? text;
+
+  /// [contained] These resources do not have an independent existence apart
+  /// from the resource that contains them - they cannot be identified
+  /// independently, and nor can they have their own independent transaction
+  ///  scope.
+  final List<Resource>? _contained;
+
+  /// [contained] These resources do not have an independent existence apart
+  /// from the resource that contains them - they cannot be identified
+  /// independently, and nor can they have their own independent transaction
+  ///  scope.
   @override
-  final List<Resource>? contained;
+  List<Resource>? get contained {
+    final value = _contained;
+    if (value == null) return null;
+    if (_contained is EqualUnmodifiableListView) return _contained;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the resource. To make the use of
+  /// extensions safe and manageable, there is a strict set of governance
+  /// applied to the definition and use of extensions. Though any implementer
+  /// can define an extension, there is a set of requirements that SHALL be met
+  ///  as part of the definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the resource. To make the use of
+  /// extensions safe and manageable, there is a strict set of governance
+  /// applied to the definition and use of extensions. Though any implementer
+  /// can define an extension, there is a set of requirements that SHALL be met
+  ///  as part of the definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the resource and that modifies the
+  /// understanding of the element that contains it and/or the understanding of
+  /// the containing element's descendants. Usually modifier elements provide
+  /// negation or qualification. To make the use of extensions safe and
+  /// manageable, there is a strict set of governance applied to the definition
+  /// and use of extensions. Though any implementer is allowed to define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
+  final List<FhirExtension>? _modifierExtension;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the resource and that modifies the
+  /// understanding of the element that contains it and/or the understanding of
+  /// the containing element's descendants. Usually modifier elements provide
+  /// negation or qualification. To make the use of extensions safe and
+  /// manageable, there is a strict set of governance applied to the definition
+  /// and use of extensions. Though any implementer is allowed to define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
   @override
-  final List<FhirExtension>? modifierExtension;
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [identifier] A unique identifier assigned to this payment notice.
+  final List<Identifier>? _identifier;
+
+  /// [identifier] A unique identifier assigned to this payment notice.
   @override
-  final List<Identifier>? identifier;
+  List<Identifier>? get identifier {
+    final value = _identifier;
+    if (value == null) return null;
+    if (_identifier is EqualUnmodifiableListView) return _identifier;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [status] The status of the resource instance.
   @override
   final Code? status;
+
+  /// [statusElement] Extensions for status
   @override
   @JsonKey(name: '_status')
   final Element? statusElement;
+
+  /// [request] Reference of resource for which payment is being made.
   @override
   final Reference? request;
+
+  /// [response] Reference of response to resource for which payment is being
+  ///  made.
   @override
   final Reference? response;
+
+  /// [created] The date when this resource was created.
   @override
   final FhirDateTime? created;
+
+  /// [createdElement] Extensions for created
   @override
   @JsonKey(name: '_created')
   final Element? createdElement;
+
+  /// [provider] The practitioner who is responsible for the services rendered
+  ///  to the patient.
   @override
   final Reference? provider;
+
+  /// [payment] A reference to the payment which is the subject of this notice.
   @override
   final Reference payment;
+
+  /// [paymentDate] The date when the above payment action occurred.
   @override
   final Date? paymentDate;
+
+  /// [paymentDateElement] Extensions for paymentDate
   @override
   @JsonKey(name: '_paymentDate')
   final Element? paymentDateElement;
+
+  /// [payee] The party who will receive or has received payment that is the
+  ///  subject of this notification.
   @override
   final Reference? payee;
+
+  /// [recipient] The party who is notified of the payment status.
   @override
   final Reference recipient;
+
+  /// [amount] The amount sent to the payee.
   @override
   final Money amount;
+
+  /// [paymentStatus] A code indicating whether payment has been sent or
+  ///  cleared.
   @override
   final CodeableConcept? paymentStatus;
 
@@ -825,154 +999,134 @@ class _$_PaymentNotice extends _PaymentNotice {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PaymentNotice &&
+        (other.runtimeType == runtimeType &&
+            other is _$_PaymentNotice &&
             (identical(other.resourceType, resourceType) ||
-                const DeepCollectionEquality()
-                    .equals(other.resourceType, resourceType)) &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.meta, meta) ||
-                const DeepCollectionEquality().equals(other.meta, meta)) &&
+                other.resourceType == resourceType) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.implicitRules, implicitRules) ||
-                const DeepCollectionEquality()
-                    .equals(other.implicitRules, implicitRules)) &&
+                other.implicitRules == implicitRules) &&
             (identical(other.implicitRulesElement, implicitRulesElement) ||
-                const DeepCollectionEquality().equals(
-                    other.implicitRulesElement, implicitRulesElement)) &&
+                other.implicitRulesElement == implicitRulesElement) &&
             (identical(other.language, language) ||
-                const DeepCollectionEquality()
-                    .equals(other.language, language)) &&
+                other.language == language) &&
             (identical(other.languageElement, languageElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.languageElement, languageElement)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.contained, contained) ||
-                const DeepCollectionEquality()
-                    .equals(other.contained, contained)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
-            (identical(other.modifierExtension, modifierExtension) ||
-                const DeepCollectionEquality()
-                    .equals(other.modifierExtension, modifierExtension)) &&
-            (identical(other.identifier, identifier) ||
-                const DeepCollectionEquality()
-                    .equals(other.identifier, identifier)) &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
+                other.languageElement == languageElement) &&
+            (identical(other.text, text) || other.text == text) &&
+            const DeepCollectionEquality()
+                .equals(other._contained, _contained) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._identifier, _identifier) &&
+            (identical(other.status, status) || other.status == status) &&
             (identical(other.statusElement, statusElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.statusElement, statusElement)) &&
-            (identical(other.request, request) ||
-                const DeepCollectionEquality()
-                    .equals(other.request, request)) &&
+                other.statusElement == statusElement) &&
+            (identical(other.request, request) || other.request == request) &&
             (identical(other.response, response) ||
-                const DeepCollectionEquality()
-                    .equals(other.response, response)) &&
-            (identical(other.created, created) ||
-                const DeepCollectionEquality()
-                    .equals(other.created, created)) &&
+                other.response == response) &&
+            (identical(other.created, created) || other.created == created) &&
             (identical(other.createdElement, createdElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.createdElement, createdElement)) &&
+                other.createdElement == createdElement) &&
             (identical(other.provider, provider) ||
-                const DeepCollectionEquality()
-                    .equals(other.provider, provider)) &&
-            (identical(other.payment, payment) ||
-                const DeepCollectionEquality()
-                    .equals(other.payment, payment)) &&
+                other.provider == provider) &&
+            (identical(other.payment, payment) || other.payment == payment) &&
             (identical(other.paymentDate, paymentDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.paymentDate, paymentDate)) &&
+                other.paymentDate == paymentDate) &&
             (identical(other.paymentDateElement, paymentDateElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.paymentDateElement, paymentDateElement)) &&
-            (identical(other.payee, payee) ||
-                const DeepCollectionEquality().equals(other.payee, payee)) &&
+                other.paymentDateElement == paymentDateElement) &&
+            (identical(other.payee, payee) || other.payee == payee) &&
             (identical(other.recipient, recipient) ||
-                const DeepCollectionEquality()
-                    .equals(other.recipient, recipient)) &&
-            (identical(other.amount, amount) || const DeepCollectionEquality().equals(other.amount, amount)) &&
-            (identical(other.paymentStatus, paymentStatus) || const DeepCollectionEquality().equals(other.paymentStatus, paymentStatus)));
+                other.recipient == recipient) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.paymentStatus, paymentStatus) ||
+                other.paymentStatus == paymentStatus));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(resourceType) ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(meta) ^
-      const DeepCollectionEquality().hash(implicitRules) ^
-      const DeepCollectionEquality().hash(implicitRulesElement) ^
-      const DeepCollectionEquality().hash(language) ^
-      const DeepCollectionEquality().hash(languageElement) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(contained) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(modifierExtension) ^
-      const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(statusElement) ^
-      const DeepCollectionEquality().hash(request) ^
-      const DeepCollectionEquality().hash(response) ^
-      const DeepCollectionEquality().hash(created) ^
-      const DeepCollectionEquality().hash(createdElement) ^
-      const DeepCollectionEquality().hash(provider) ^
-      const DeepCollectionEquality().hash(payment) ^
-      const DeepCollectionEquality().hash(paymentDate) ^
-      const DeepCollectionEquality().hash(paymentDateElement) ^
-      const DeepCollectionEquality().hash(payee) ^
-      const DeepCollectionEquality().hash(recipient) ^
-      const DeepCollectionEquality().hash(amount) ^
-      const DeepCollectionEquality().hash(paymentStatus);
 
   @JsonKey(ignore: true)
   @override
-  _$PaymentNoticeCopyWith<_PaymentNotice> get copyWith =>
-      __$PaymentNoticeCopyWithImpl<_PaymentNotice>(this, _$identity);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        resourceType,
+        id,
+        meta,
+        implicitRules,
+        implicitRulesElement,
+        language,
+        languageElement,
+        text,
+        const DeepCollectionEquality().hash(_contained),
+        const DeepCollectionEquality().hash(_extension_),
+        const DeepCollectionEquality().hash(_modifierExtension),
+        const DeepCollectionEquality().hash(_identifier),
+        status,
+        statusElement,
+        request,
+        response,
+        created,
+        createdElement,
+        provider,
+        payment,
+        paymentDate,
+        paymentDateElement,
+        payee,
+        recipient,
+        amount,
+        paymentStatus
+      ]);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PaymentNoticeCopyWith<_$_PaymentNotice> get copyWith =>
+      __$$_PaymentNoticeCopyWithImpl<_$_PaymentNotice>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PaymentNoticeToJson(this);
+    return _$$_PaymentNoticeToJson(
+      this,
+    );
   }
 }
 
 abstract class _PaymentNotice extends PaymentNotice {
   factory _PaymentNotice(
       {@JsonKey(unknownEnumValue: R4ResourceType.PaymentNotice)
-          R4ResourceType resourceType,
-      Id? id,
-      Meta? meta,
-      FhirUri? implicitRules,
+          final R4ResourceType resourceType,
+      final String? id,
+      final Meta? meta,
+      final FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules')
-          Element? implicitRulesElement,
-      Code? language,
+          final Element? implicitRulesElement,
+      final Code? language,
       @JsonKey(name: '_language')
-          Element? languageElement,
-      Narrative? text,
-      List<Resource>? contained,
+          final Element? languageElement,
+      final Narrative? text,
+      final List<Resource>? contained,
       @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
-      List<FhirExtension>? modifierExtension,
-      List<Identifier>? identifier,
-      Code? status,
+          final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final List<Identifier>? identifier,
+      final Code? status,
       @JsonKey(name: '_status')
-          Element? statusElement,
-      Reference? request,
-      Reference? response,
-      FhirDateTime? created,
+          final Element? statusElement,
+      final Reference? request,
+      final Reference? response,
+      final FhirDateTime? created,
       @JsonKey(name: '_created')
-          Element? createdElement,
-      Reference? provider,
-      required Reference payment,
-      Date? paymentDate,
+          final Element? createdElement,
+      final Reference? provider,
+      required final Reference payment,
+      final Date? paymentDate,
       @JsonKey(name: '_paymentDate')
-          Element? paymentDateElement,
-      Reference? payee,
-      required Reference recipient,
-      required Money amount,
-      CodeableConcept? paymentStatus}) = _$_PaymentNotice;
+          final Element? paymentDateElement,
+      final Reference? payee,
+      required final Reference recipient,
+      required final Money amount,
+      final CodeableConcept? paymentStatus}) = _$_PaymentNotice;
   _PaymentNotice._() : super._();
 
   factory _PaymentNotice.fromJson(Map<String, dynamic> json) =
@@ -980,67 +1134,151 @@ abstract class _PaymentNotice extends PaymentNotice {
 
   @override
   @JsonKey(unknownEnumValue: R4ResourceType.PaymentNotice)
-  R4ResourceType get resourceType => throw _privateConstructorUsedError;
+  R4ResourceType get resourceType;
   @override
-  Id? get id => throw _privateConstructorUsedError;
+
+  /// [id] The logical id of the resource, as used in the URL for the resource.
+  ///  Once assigned, this value never changes.
+  String? get id;
   @override
-  Meta? get meta => throw _privateConstructorUsedError;
+
+  /// [meta] The metadata about the resource. This is content that is
+  /// maintained by the infrastructure. Changes to the content might not always
+  ///  be associated with version changes to the resource.
+  Meta? get meta;
   @override
-  FhirUri? get implicitRules => throw _privateConstructorUsedError;
+
+  /// [implicitRules] A reference to a set of rules that were followed when the
+  /// resource was constructed, and which must be understood when processing the
+  /// content. Often, this is a reference to an implementation guide that
+  ///  defines the special rules along with other profiles etc.
+  FhirUri? get implicitRules;
   @override
+
+  /// [implicitRulesElement] Extensions for implicitRules
   @JsonKey(name: '_implicitRules')
-  Element? get implicitRulesElement => throw _privateConstructorUsedError;
+  Element? get implicitRulesElement;
   @override
-  Code? get language => throw _privateConstructorUsedError;
+
+  /// [language] The base language in which the resource is written.
+  Code? get language;
   @override
+
+  /// [languageElement] Extensions for language
   @JsonKey(name: '_language')
-  Element? get languageElement => throw _privateConstructorUsedError;
+  Element? get languageElement;
   @override
-  Narrative? get text => throw _privateConstructorUsedError;
+
+  /// [text] A human-readable narrative that contains a summary of the resource
+  /// and can be used to represent the content of the resource to a human. The
+  /// narrative need not encode all the structured data, but is required to
+  /// contain sufficient detail to make it "clinically safe" for a human to just
+  /// read the narrative. Resource definitions may define what content should be
+  ///  represented in the narrative to ensure clinical safety.
+  Narrative? get text;
   @override
-  List<Resource>? get contained => throw _privateConstructorUsedError;
+
+  /// [contained] These resources do not have an independent existence apart
+  /// from the resource that contains them - they cannot be identified
+  /// independently, and nor can they have their own independent transaction
+  ///  scope.
+  List<Resource>? get contained;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the resource. To make the use of
+  /// extensions safe and manageable, there is a strict set of governance
+  /// applied to the definition and use of extensions. Though any implementer
+  /// can define an extension, there is a set of requirements that SHALL be met
+  ///  as part of the definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
-  List<FhirExtension>? get modifierExtension =>
-      throw _privateConstructorUsedError;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the resource and that modifies the
+  /// understanding of the element that contains it and/or the understanding of
+  /// the containing element's descendants. Usually modifier elements provide
+  /// negation or qualification. To make the use of extensions safe and
+  /// manageable, there is a strict set of governance applied to the definition
+  /// and use of extensions. Though any implementer is allowed to define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
+  List<FhirExtension>? get modifierExtension;
   @override
-  List<Identifier>? get identifier => throw _privateConstructorUsedError;
+
+  /// [identifier] A unique identifier assigned to this payment notice.
+  List<Identifier>? get identifier;
   @override
-  Code? get status => throw _privateConstructorUsedError;
+
+  /// [status] The status of the resource instance.
+  Code? get status;
   @override
+
+  /// [statusElement] Extensions for status
   @JsonKey(name: '_status')
-  Element? get statusElement => throw _privateConstructorUsedError;
+  Element? get statusElement;
   @override
-  Reference? get request => throw _privateConstructorUsedError;
+
+  /// [request] Reference of resource for which payment is being made.
+  Reference? get request;
   @override
-  Reference? get response => throw _privateConstructorUsedError;
+
+  /// [response] Reference of response to resource for which payment is being
+  ///  made.
+  Reference? get response;
   @override
-  FhirDateTime? get created => throw _privateConstructorUsedError;
+
+  /// [created] The date when this resource was created.
+  FhirDateTime? get created;
   @override
+
+  /// [createdElement] Extensions for created
   @JsonKey(name: '_created')
-  Element? get createdElement => throw _privateConstructorUsedError;
+  Element? get createdElement;
   @override
-  Reference? get provider => throw _privateConstructorUsedError;
+
+  /// [provider] The practitioner who is responsible for the services rendered
+  ///  to the patient.
+  Reference? get provider;
   @override
-  Reference get payment => throw _privateConstructorUsedError;
+
+  /// [payment] A reference to the payment which is the subject of this notice.
+  Reference get payment;
   @override
-  Date? get paymentDate => throw _privateConstructorUsedError;
+
+  /// [paymentDate] The date when the above payment action occurred.
+  Date? get paymentDate;
   @override
+
+  /// [paymentDateElement] Extensions for paymentDate
   @JsonKey(name: '_paymentDate')
-  Element? get paymentDateElement => throw _privateConstructorUsedError;
+  Element? get paymentDateElement;
   @override
-  Reference? get payee => throw _privateConstructorUsedError;
+
+  /// [payee] The party who will receive or has received payment that is the
+  ///  subject of this notification.
+  Reference? get payee;
   @override
-  Reference get recipient => throw _privateConstructorUsedError;
+
+  /// [recipient] The party who is notified of the payment status.
+  Reference get recipient;
   @override
-  Money get amount => throw _privateConstructorUsedError;
+
+  /// [amount] The amount sent to the payee.
+  Money get amount;
   @override
-  CodeableConcept? get paymentStatus => throw _privateConstructorUsedError;
+
+  /// [paymentStatus] A code indicating whether payment has been sent or
+  ///  cleared.
+  CodeableConcept? get paymentStatus;
   @override
   @JsonKey(ignore: true)
-  _$PaymentNoticeCopyWith<_PaymentNotice> get copyWith =>
+  _$$_PaymentNoticeCopyWith<_$_PaymentNotice> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1050,139 +1288,147 @@ PaymentReconciliation _$PaymentReconciliationFromJson(
 }
 
 /// @nodoc
-class _$PaymentReconciliationTearOff {
-  const _$PaymentReconciliationTearOff();
-
-  _PaymentReconciliation call(
-      {@JsonKey(unknownEnumValue: R4ResourceType.PaymentReconciliation)
-          R4ResourceType resourceType = R4ResourceType.PaymentReconciliation,
-      Id? id,
-      Meta? meta,
-      FhirUri? implicitRules,
-      @JsonKey(name: '_implicitRules')
-          Element? implicitRulesElement,
-      Code? language,
-      @JsonKey(name: '_language')
-          Element? languageElement,
-      Narrative? text,
-      List<Resource>? contained,
-      @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
-      List<FhirExtension>? modifierExtension,
-      List<Identifier>? identifier,
-      Code? status,
-      @JsonKey(name: '_status')
-          Element? statusElement,
-      Period? period,
-      FhirDateTime? created,
-      @JsonKey(name: '_created')
-          Element? createdElement,
-      Reference? paymentIssuer,
-      Reference? request,
-      Reference? requestor,
-      @JsonKey(unknownEnumValue: PaymentReconciliationOutcome.unknown)
-          PaymentReconciliationOutcome? outcome,
-      @JsonKey(name: '_outcome')
-          Element? outcomeElement,
-      String? disposition,
-      @JsonKey(name: '_disposition')
-          Element? dispositionElement,
-      Date? paymentDate,
-      @JsonKey(name: '_paymentDate')
-          Element? paymentDateElement,
-      required Money paymentAmount,
-      Identifier? paymentIdentifier,
-      List<PaymentReconciliationDetail>? detail,
-      CodeableConcept? formCode,
-      List<PaymentReconciliationProcessNote>? processNote}) {
-    return _PaymentReconciliation(
-      resourceType: resourceType,
-      id: id,
-      meta: meta,
-      implicitRules: implicitRules,
-      implicitRulesElement: implicitRulesElement,
-      language: language,
-      languageElement: languageElement,
-      text: text,
-      contained: contained,
-      extension_: extension_,
-      modifierExtension: modifierExtension,
-      identifier: identifier,
-      status: status,
-      statusElement: statusElement,
-      period: period,
-      created: created,
-      createdElement: createdElement,
-      paymentIssuer: paymentIssuer,
-      request: request,
-      requestor: requestor,
-      outcome: outcome,
-      outcomeElement: outcomeElement,
-      disposition: disposition,
-      dispositionElement: dispositionElement,
-      paymentDate: paymentDate,
-      paymentDateElement: paymentDateElement,
-      paymentAmount: paymentAmount,
-      paymentIdentifier: paymentIdentifier,
-      detail: detail,
-      formCode: formCode,
-      processNote: processNote,
-    );
-  }
-
-  PaymentReconciliation fromJson(Map<String, Object> json) {
-    return PaymentReconciliation.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PaymentReconciliation = _$PaymentReconciliationTearOff();
-
-/// @nodoc
 mixin _$PaymentReconciliation {
   @JsonKey(unknownEnumValue: R4ResourceType.PaymentReconciliation)
   R4ResourceType get resourceType => throw _privateConstructorUsedError;
-  Id? get id => throw _privateConstructorUsedError;
+
+  /// [id] The logical id of the resource, as used in the URL for the resource.
+  ///  Once assigned, this value never changes.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// [meta] The metadata about the resource. This is content that is
+  /// maintained by the infrastructure. Changes to the content might not always
+  ///  be associated with version changes to the resource.
   Meta? get meta => throw _privateConstructorUsedError;
+
+  /// [implicitRules] A reference to a set of rules that were followed when the
+  /// resource was constructed, and which must be understood when processing the
+  /// content. Often, this is a reference to an implementation guide that
+  ///  defines the special rules along with other profiles etc.
   FhirUri? get implicitRules => throw _privateConstructorUsedError;
+
+  /// [implicitRulesElement] Extensions for implicitRules
   @JsonKey(name: '_implicitRules')
   Element? get implicitRulesElement => throw _privateConstructorUsedError;
+
+  /// [language] The base language in which the resource is written.
   Code? get language => throw _privateConstructorUsedError;
+
+  /// [languageElement] Extensions for language
   @JsonKey(name: '_language')
   Element? get languageElement => throw _privateConstructorUsedError;
+
+  /// [text] A human-readable narrative that contains a summary of the resource
+  /// and can be used to represent the content of the resource to a human. The
+  /// narrative need not encode all the structured data, but is required to
+  /// contain sufficient detail to make it "clinically safe" for a human to just
+  /// read the narrative. Resource definitions may define what content should be
+  ///  represented in the narrative to ensure clinical safety.
   Narrative? get text => throw _privateConstructorUsedError;
+
+  /// [contained] These resources do not have an independent existence apart
+  /// from the resource that contains them - they cannot be identified
+  /// independently, and nor can they have their own independent transaction
+  ///  scope.
   List<Resource>? get contained => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the resource. To make the use of
+  /// extensions safe and manageable, there is a strict set of governance
+  /// applied to the definition and use of extensions. Though any implementer
+  /// can define an extension, there is a set of requirements that SHALL be met
+  ///  as part of the definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the resource and that modifies the
+  /// understanding of the element that contains it and/or the understanding of
+  /// the containing element's descendants. Usually modifier elements provide
+  /// negation or qualification. To make the use of extensions safe and
+  /// manageable, there is a strict set of governance applied to the definition
+  /// and use of extensions. Though any implementer is allowed to define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+
+  /// [identifier] A unique identifier assigned to this payment reconciliation.
   List<Identifier>? get identifier => throw _privateConstructorUsedError;
+
+  /// [status] The status of the resource instance.
   Code? get status => throw _privateConstructorUsedError;
+
+  /// [statusElement] Extensions for status
   @JsonKey(name: '_status')
   Element? get statusElement => throw _privateConstructorUsedError;
+
+  /// [period] The period of time for which payments have been gathered into
+  ///  this bulk payment for settlement.
   Period? get period => throw _privateConstructorUsedError;
+
+  /// [created] The date when the resource was created.
   FhirDateTime? get created => throw _privateConstructorUsedError;
+
+  /// [createdElement] Extensions for created
   @JsonKey(name: '_created')
   Element? get createdElement => throw _privateConstructorUsedError;
+
+  /// [paymentIssuer] The party who generated the payment.
   Reference? get paymentIssuer => throw _privateConstructorUsedError;
+
+  /// [request] Original request resource reference.
   Reference? get request => throw _privateConstructorUsedError;
+
+  /// [requestor] The practitioner who is responsible for the services rendered
+  ///  to the patient.
   Reference? get requestor => throw _privateConstructorUsedError;
-  @JsonKey(unknownEnumValue: PaymentReconciliationOutcome.unknown)
-  PaymentReconciliationOutcome? get outcome =>
-      throw _privateConstructorUsedError;
+
+  /// [outcome] The outcome of a request for a reconciliation.
+  Code? get outcome => throw _privateConstructorUsedError;
+
+  /// [outcomeElement] Extensions for outcome
   @JsonKey(name: '_outcome')
   Element? get outcomeElement => throw _privateConstructorUsedError;
+
+  /// [disposition] A human readable description of the status of the request
+  ///  for the reconciliation.
   String? get disposition => throw _privateConstructorUsedError;
+
+  /// [dispositionElement] Extensions for disposition
   @JsonKey(name: '_disposition')
   Element? get dispositionElement => throw _privateConstructorUsedError;
+
+  /// [paymentDate] The date of payment as indicated on the financial
+  ///  instrument.
   Date? get paymentDate => throw _privateConstructorUsedError;
+
+  /// [paymentDateElement] Extensions for paymentDate
   @JsonKey(name: '_paymentDate')
   Element? get paymentDateElement => throw _privateConstructorUsedError;
+
+  /// [paymentAmount] Total payment amount as indicated on the financial
+  ///  instrument.
   Money get paymentAmount => throw _privateConstructorUsedError;
+
+  /// [paymentIdentifier] Issuer's unique identifier for the payment
+  ///  instrument.
   Identifier? get paymentIdentifier => throw _privateConstructorUsedError;
+
+  /// [detail] Distribution of the payment amount for a previously acknowledged
+  ///  payable.
   List<PaymentReconciliationDetail>? get detail =>
       throw _privateConstructorUsedError;
+
+  /// [formCode] A code for the form to be used for printing the content.
   CodeableConcept? get formCode => throw _privateConstructorUsedError;
+
+  /// [processNote] A note that describes or explains the processing in a human
+  ///  readable form.
   List<PaymentReconciliationProcessNote>? get processNote =>
       throw _privateConstructorUsedError;
 
@@ -1196,11 +1442,12 @@ mixin _$PaymentReconciliation {
 abstract class $PaymentReconciliationCopyWith<$Res> {
   factory $PaymentReconciliationCopyWith(PaymentReconciliation value,
           $Res Function(PaymentReconciliation) then) =
-      _$PaymentReconciliationCopyWithImpl<$Res>;
+      _$PaymentReconciliationCopyWithImpl<$Res, PaymentReconciliation>;
+  @useResult
   $Res call(
       {@JsonKey(unknownEnumValue: R4ResourceType.PaymentReconciliation)
           R4ResourceType resourceType,
-      Id? id,
+      String? id,
       Meta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules')
@@ -1224,8 +1471,7 @@ abstract class $PaymentReconciliationCopyWith<$Res> {
       Reference? paymentIssuer,
       Reference? request,
       Reference? requestor,
-      @JsonKey(unknownEnumValue: PaymentReconciliationOutcome.unknown)
-          PaymentReconciliationOutcome? outcome,
+      Code? outcome,
       @JsonKey(name: '_outcome')
           Element? outcomeElement,
       String? disposition,
@@ -1259,17 +1505,20 @@ abstract class $PaymentReconciliationCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PaymentReconciliationCopyWithImpl<$Res>
+class _$PaymentReconciliationCopyWithImpl<$Res,
+        $Val extends PaymentReconciliation>
     implements $PaymentReconciliationCopyWith<$Res> {
   _$PaymentReconciliationCopyWithImpl(this._value, this._then);
 
-  final PaymentReconciliation _value;
   // ignore: unused_field
-  final $Res Function(PaymentReconciliation) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? resourceType = freezed,
+    Object? resourceType = null,
     Object? id = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
@@ -1295,324 +1544,341 @@ class _$PaymentReconciliationCopyWithImpl<$Res>
     Object? dispositionElement = freezed,
     Object? paymentDate = freezed,
     Object? paymentDateElement = freezed,
-    Object? paymentAmount = freezed,
+    Object? paymentAmount = null,
     Object? paymentIdentifier = freezed,
     Object? detail = freezed,
     Object? formCode = freezed,
     Object? processNote = freezed,
   }) {
     return _then(_value.copyWith(
-      resourceType: resourceType == freezed
+      resourceType: null == resourceType
           ? _value.resourceType
           : resourceType // ignore: cast_nullable_to_non_nullable
               as R4ResourceType,
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as Id?,
-      meta: meta == freezed
+              as String?,
+      meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
               as Meta?,
-      implicitRules: implicitRules == freezed
+      implicitRules: freezed == implicitRules
           ? _value.implicitRules
           : implicitRules // ignore: cast_nullable_to_non_nullable
               as FhirUri?,
-      implicitRulesElement: implicitRulesElement == freezed
+      implicitRulesElement: freezed == implicitRulesElement
           ? _value.implicitRulesElement
           : implicitRulesElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      language: language == freezed
+      language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Code?,
-      languageElement: languageElement == freezed
+      languageElement: freezed == languageElement
           ? _value.languageElement
           : languageElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      text: text == freezed
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as Narrative?,
-      contained: contained == freezed
+      contained: freezed == contained
           ? _value.contained
           : contained // ignore: cast_nullable_to_non_nullable
               as List<Resource>?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      modifierExtension: modifierExtension == freezed
+      modifierExtension: freezed == modifierExtension
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      identifier: identifier == freezed
+      identifier: freezed == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as List<Identifier>?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Code?,
-      statusElement: statusElement == freezed
+      statusElement: freezed == statusElement
           ? _value.statusElement
           : statusElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      period: period == freezed
+      period: freezed == period
           ? _value.period
           : period // ignore: cast_nullable_to_non_nullable
               as Period?,
-      created: created == freezed
+      created: freezed == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as FhirDateTime?,
-      createdElement: createdElement == freezed
+      createdElement: freezed == createdElement
           ? _value.createdElement
           : createdElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      paymentIssuer: paymentIssuer == freezed
+      paymentIssuer: freezed == paymentIssuer
           ? _value.paymentIssuer
           : paymentIssuer // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      request: request == freezed
+      request: freezed == request
           ? _value.request
           : request // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      requestor: requestor == freezed
+      requestor: freezed == requestor
           ? _value.requestor
           : requestor // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      outcome: outcome == freezed
+      outcome: freezed == outcome
           ? _value.outcome
           : outcome // ignore: cast_nullable_to_non_nullable
-              as PaymentReconciliationOutcome?,
-      outcomeElement: outcomeElement == freezed
+              as Code?,
+      outcomeElement: freezed == outcomeElement
           ? _value.outcomeElement
           : outcomeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      disposition: disposition == freezed
+      disposition: freezed == disposition
           ? _value.disposition
           : disposition // ignore: cast_nullable_to_non_nullable
               as String?,
-      dispositionElement: dispositionElement == freezed
+      dispositionElement: freezed == dispositionElement
           ? _value.dispositionElement
           : dispositionElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      paymentDate: paymentDate == freezed
+      paymentDate: freezed == paymentDate
           ? _value.paymentDate
           : paymentDate // ignore: cast_nullable_to_non_nullable
               as Date?,
-      paymentDateElement: paymentDateElement == freezed
+      paymentDateElement: freezed == paymentDateElement
           ? _value.paymentDateElement
           : paymentDateElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      paymentAmount: paymentAmount == freezed
+      paymentAmount: null == paymentAmount
           ? _value.paymentAmount
           : paymentAmount // ignore: cast_nullable_to_non_nullable
               as Money,
-      paymentIdentifier: paymentIdentifier == freezed
+      paymentIdentifier: freezed == paymentIdentifier
           ? _value.paymentIdentifier
           : paymentIdentifier // ignore: cast_nullable_to_non_nullable
               as Identifier?,
-      detail: detail == freezed
+      detail: freezed == detail
           ? _value.detail
           : detail // ignore: cast_nullable_to_non_nullable
               as List<PaymentReconciliationDetail>?,
-      formCode: formCode == freezed
+      formCode: freezed == formCode
           ? _value.formCode
           : formCode // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      processNote: processNote == freezed
+      processNote: freezed == processNote
           ? _value.processNote
           : processNote // ignore: cast_nullable_to_non_nullable
               as List<PaymentReconciliationProcessNote>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MetaCopyWith<$Res>? get meta {
     if (_value.meta == null) {
       return null;
     }
 
     return $MetaCopyWith<$Res>(_value.meta!, (value) {
-      return _then(_value.copyWith(meta: value));
+      return _then(_value.copyWith(meta: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get implicitRulesElement {
     if (_value.implicitRulesElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value));
+      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get languageElement {
     if (_value.languageElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value));
+      return _then(_value.copyWith(languageElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
     }
 
     return $NarrativeCopyWith<$Res>(_value.text!, (value) {
-      return _then(_value.copyWith(text: value));
+      return _then(_value.copyWith(text: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get statusElement {
     if (_value.statusElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value));
+      return _then(_value.copyWith(statusElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PeriodCopyWith<$Res>? get period {
     if (_value.period == null) {
       return null;
     }
 
     return $PeriodCopyWith<$Res>(_value.period!, (value) {
-      return _then(_value.copyWith(period: value));
+      return _then(_value.copyWith(period: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get createdElement {
     if (_value.createdElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.createdElement!, (value) {
-      return _then(_value.copyWith(createdElement: value));
+      return _then(_value.copyWith(createdElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get paymentIssuer {
     if (_value.paymentIssuer == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.paymentIssuer!, (value) {
-      return _then(_value.copyWith(paymentIssuer: value));
+      return _then(_value.copyWith(paymentIssuer: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get request {
     if (_value.request == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.request!, (value) {
-      return _then(_value.copyWith(request: value));
+      return _then(_value.copyWith(request: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get requestor {
     if (_value.requestor == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.requestor!, (value) {
-      return _then(_value.copyWith(requestor: value));
+      return _then(_value.copyWith(requestor: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get outcomeElement {
     if (_value.outcomeElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.outcomeElement!, (value) {
-      return _then(_value.copyWith(outcomeElement: value));
+      return _then(_value.copyWith(outcomeElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get dispositionElement {
     if (_value.dispositionElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.dispositionElement!, (value) {
-      return _then(_value.copyWith(dispositionElement: value));
+      return _then(_value.copyWith(dispositionElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get paymentDateElement {
     if (_value.paymentDateElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.paymentDateElement!, (value) {
-      return _then(_value.copyWith(paymentDateElement: value));
+      return _then(_value.copyWith(paymentDateElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MoneyCopyWith<$Res> get paymentAmount {
     return $MoneyCopyWith<$Res>(_value.paymentAmount, (value) {
-      return _then(_value.copyWith(paymentAmount: value));
+      return _then(_value.copyWith(paymentAmount: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $IdentifierCopyWith<$Res>? get paymentIdentifier {
     if (_value.paymentIdentifier == null) {
       return null;
     }
 
     return $IdentifierCopyWith<$Res>(_value.paymentIdentifier!, (value) {
-      return _then(_value.copyWith(paymentIdentifier: value));
+      return _then(_value.copyWith(paymentIdentifier: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get formCode {
     if (_value.formCode == null) {
       return null;
     }
 
     return $CodeableConceptCopyWith<$Res>(_value.formCode!, (value) {
-      return _then(_value.copyWith(formCode: value));
+      return _then(_value.copyWith(formCode: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$PaymentReconciliationCopyWith<$Res>
+abstract class _$$_PaymentReconciliationCopyWith<$Res>
     implements $PaymentReconciliationCopyWith<$Res> {
-  factory _$PaymentReconciliationCopyWith(_PaymentReconciliation value,
-          $Res Function(_PaymentReconciliation) then) =
-      __$PaymentReconciliationCopyWithImpl<$Res>;
+  factory _$$_PaymentReconciliationCopyWith(_$_PaymentReconciliation value,
+          $Res Function(_$_PaymentReconciliation) then) =
+      __$$_PaymentReconciliationCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(unknownEnumValue: R4ResourceType.PaymentReconciliation)
           R4ResourceType resourceType,
-      Id? id,
+      String? id,
       Meta? meta,
       FhirUri? implicitRules,
       @JsonKey(name: '_implicitRules')
@@ -1636,8 +1902,7 @@ abstract class _$PaymentReconciliationCopyWith<$Res>
       Reference? paymentIssuer,
       Reference? request,
       Reference? requestor,
-      @JsonKey(unknownEnumValue: PaymentReconciliationOutcome.unknown)
-          PaymentReconciliationOutcome? outcome,
+      Code? outcome,
       @JsonKey(name: '_outcome')
           Element? outcomeElement,
       String? disposition,
@@ -1687,19 +1952,17 @@ abstract class _$PaymentReconciliationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PaymentReconciliationCopyWithImpl<$Res>
-    extends _$PaymentReconciliationCopyWithImpl<$Res>
-    implements _$PaymentReconciliationCopyWith<$Res> {
-  __$PaymentReconciliationCopyWithImpl(_PaymentReconciliation _value,
-      $Res Function(_PaymentReconciliation) _then)
-      : super(_value, (v) => _then(v as _PaymentReconciliation));
+class __$$_PaymentReconciliationCopyWithImpl<$Res>
+    extends _$PaymentReconciliationCopyWithImpl<$Res, _$_PaymentReconciliation>
+    implements _$$_PaymentReconciliationCopyWith<$Res> {
+  __$$_PaymentReconciliationCopyWithImpl(_$_PaymentReconciliation _value,
+      $Res Function(_$_PaymentReconciliation) _then)
+      : super(_value, _then);
 
-  @override
-  _PaymentReconciliation get _value => super._value as _PaymentReconciliation;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? resourceType = freezed,
+    Object? resourceType = null,
     Object? id = freezed,
     Object? meta = freezed,
     Object? implicitRules = freezed,
@@ -1725,135 +1988,135 @@ class __$PaymentReconciliationCopyWithImpl<$Res>
     Object? dispositionElement = freezed,
     Object? paymentDate = freezed,
     Object? paymentDateElement = freezed,
-    Object? paymentAmount = freezed,
+    Object? paymentAmount = null,
     Object? paymentIdentifier = freezed,
     Object? detail = freezed,
     Object? formCode = freezed,
     Object? processNote = freezed,
   }) {
-    return _then(_PaymentReconciliation(
-      resourceType: resourceType == freezed
+    return _then(_$_PaymentReconciliation(
+      resourceType: null == resourceType
           ? _value.resourceType
           : resourceType // ignore: cast_nullable_to_non_nullable
               as R4ResourceType,
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as Id?,
-      meta: meta == freezed
+              as String?,
+      meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
               as Meta?,
-      implicitRules: implicitRules == freezed
+      implicitRules: freezed == implicitRules
           ? _value.implicitRules
           : implicitRules // ignore: cast_nullable_to_non_nullable
               as FhirUri?,
-      implicitRulesElement: implicitRulesElement == freezed
+      implicitRulesElement: freezed == implicitRulesElement
           ? _value.implicitRulesElement
           : implicitRulesElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      language: language == freezed
+      language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Code?,
-      languageElement: languageElement == freezed
+      languageElement: freezed == languageElement
           ? _value.languageElement
           : languageElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      text: text == freezed
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as Narrative?,
-      contained: contained == freezed
-          ? _value.contained
+      contained: freezed == contained
+          ? _value._contained
           : contained // ignore: cast_nullable_to_non_nullable
               as List<Resource>?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      modifierExtension: modifierExtension == freezed
-          ? _value.modifierExtension
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      identifier: identifier == freezed
-          ? _value.identifier
+      identifier: freezed == identifier
+          ? _value._identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as List<Identifier>?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Code?,
-      statusElement: statusElement == freezed
+      statusElement: freezed == statusElement
           ? _value.statusElement
           : statusElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      period: period == freezed
+      period: freezed == period
           ? _value.period
           : period // ignore: cast_nullable_to_non_nullable
               as Period?,
-      created: created == freezed
+      created: freezed == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as FhirDateTime?,
-      createdElement: createdElement == freezed
+      createdElement: freezed == createdElement
           ? _value.createdElement
           : createdElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      paymentIssuer: paymentIssuer == freezed
+      paymentIssuer: freezed == paymentIssuer
           ? _value.paymentIssuer
           : paymentIssuer // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      request: request == freezed
+      request: freezed == request
           ? _value.request
           : request // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      requestor: requestor == freezed
+      requestor: freezed == requestor
           ? _value.requestor
           : requestor // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      outcome: outcome == freezed
+      outcome: freezed == outcome
           ? _value.outcome
           : outcome // ignore: cast_nullable_to_non_nullable
-              as PaymentReconciliationOutcome?,
-      outcomeElement: outcomeElement == freezed
+              as Code?,
+      outcomeElement: freezed == outcomeElement
           ? _value.outcomeElement
           : outcomeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      disposition: disposition == freezed
+      disposition: freezed == disposition
           ? _value.disposition
           : disposition // ignore: cast_nullable_to_non_nullable
               as String?,
-      dispositionElement: dispositionElement == freezed
+      dispositionElement: freezed == dispositionElement
           ? _value.dispositionElement
           : dispositionElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      paymentDate: paymentDate == freezed
+      paymentDate: freezed == paymentDate
           ? _value.paymentDate
           : paymentDate // ignore: cast_nullable_to_non_nullable
               as Date?,
-      paymentDateElement: paymentDateElement == freezed
+      paymentDateElement: freezed == paymentDateElement
           ? _value.paymentDateElement
           : paymentDateElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      paymentAmount: paymentAmount == freezed
+      paymentAmount: null == paymentAmount
           ? _value.paymentAmount
           : paymentAmount // ignore: cast_nullable_to_non_nullable
               as Money,
-      paymentIdentifier: paymentIdentifier == freezed
+      paymentIdentifier: freezed == paymentIdentifier
           ? _value.paymentIdentifier
           : paymentIdentifier // ignore: cast_nullable_to_non_nullable
               as Identifier?,
-      detail: detail == freezed
-          ? _value.detail
+      detail: freezed == detail
+          ? _value._detail
           : detail // ignore: cast_nullable_to_non_nullable
               as List<PaymentReconciliationDetail>?,
-      formCode: formCode == freezed
+      formCode: freezed == formCode
           ? _value.formCode
           : formCode // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      processNote: processNote == freezed
-          ? _value.processNote
+      processNote: freezed == processNote
+          ? _value._processNote
           : processNote // ignore: cast_nullable_to_non_nullable
               as List<PaymentReconciliationProcessNote>?,
     ));
@@ -1875,11 +2138,11 @@ class _$_PaymentReconciliation extends _PaymentReconciliation {
       @JsonKey(name: '_language')
           this.languageElement,
       this.text,
-      this.contained,
+      final List<Resource>? contained,
       @JsonKey(name: 'extension')
-          this.extension_,
-      this.modifierExtension,
-      this.identifier,
+          final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final List<Identifier>? identifier,
       this.status,
       @JsonKey(name: '_status')
           this.statusElement,
@@ -1890,8 +2153,7 @@ class _$_PaymentReconciliation extends _PaymentReconciliation {
       this.paymentIssuer,
       this.request,
       this.requestor,
-      @JsonKey(unknownEnumValue: PaymentReconciliationOutcome.unknown)
-          this.outcome,
+      this.outcome,
       @JsonKey(name: '_outcome')
           this.outcomeElement,
       this.disposition,
@@ -1902,10 +2164,16 @@ class _$_PaymentReconciliation extends _PaymentReconciliation {
           this.paymentDateElement,
       required this.paymentAmount,
       this.paymentIdentifier,
-      this.detail,
+      final List<PaymentReconciliationDetail>? detail,
       this.formCode,
-      this.processNote})
-      : super._();
+      final List<PaymentReconciliationProcessNote>? processNote})
+      : _contained = contained,
+        _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _identifier = identifier,
+        _detail = detail,
+        _processNote = processNote,
+        super._();
 
   factory _$_PaymentReconciliation.fromJson(Map<String, dynamic> json) =>
       _$$_PaymentReconciliationFromJson(json);
@@ -1913,75 +2181,250 @@ class _$_PaymentReconciliation extends _PaymentReconciliation {
   @override
   @JsonKey(unknownEnumValue: R4ResourceType.PaymentReconciliation)
   final R4ResourceType resourceType;
+
+  /// [id] The logical id of the resource, as used in the URL for the resource.
+  ///  Once assigned, this value never changes.
   @override
-  final Id? id;
+  final String? id;
+
+  /// [meta] The metadata about the resource. This is content that is
+  /// maintained by the infrastructure. Changes to the content might not always
+  ///  be associated with version changes to the resource.
   @override
   final Meta? meta;
+
+  /// [implicitRules] A reference to a set of rules that were followed when the
+  /// resource was constructed, and which must be understood when processing the
+  /// content. Often, this is a reference to an implementation guide that
+  ///  defines the special rules along with other profiles etc.
   @override
   final FhirUri? implicitRules;
+
+  /// [implicitRulesElement] Extensions for implicitRules
   @override
   @JsonKey(name: '_implicitRules')
   final Element? implicitRulesElement;
+
+  /// [language] The base language in which the resource is written.
   @override
   final Code? language;
+
+  /// [languageElement] Extensions for language
   @override
   @JsonKey(name: '_language')
   final Element? languageElement;
+
+  /// [text] A human-readable narrative that contains a summary of the resource
+  /// and can be used to represent the content of the resource to a human. The
+  /// narrative need not encode all the structured data, but is required to
+  /// contain sufficient detail to make it "clinically safe" for a human to just
+  /// read the narrative. Resource definitions may define what content should be
+  ///  represented in the narrative to ensure clinical safety.
   @override
   final Narrative? text;
+
+  /// [contained] These resources do not have an independent existence apart
+  /// from the resource that contains them - they cannot be identified
+  /// independently, and nor can they have their own independent transaction
+  ///  scope.
+  final List<Resource>? _contained;
+
+  /// [contained] These resources do not have an independent existence apart
+  /// from the resource that contains them - they cannot be identified
+  /// independently, and nor can they have their own independent transaction
+  ///  scope.
   @override
-  final List<Resource>? contained;
+  List<Resource>? get contained {
+    final value = _contained;
+    if (value == null) return null;
+    if (_contained is EqualUnmodifiableListView) return _contained;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the resource. To make the use of
+  /// extensions safe and manageable, there is a strict set of governance
+  /// applied to the definition and use of extensions. Though any implementer
+  /// can define an extension, there is a set of requirements that SHALL be met
+  ///  as part of the definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the resource. To make the use of
+  /// extensions safe and manageable, there is a strict set of governance
+  /// applied to the definition and use of extensions. Though any implementer
+  /// can define an extension, there is a set of requirements that SHALL be met
+  ///  as part of the definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the resource and that modifies the
+  /// understanding of the element that contains it and/or the understanding of
+  /// the containing element's descendants. Usually modifier elements provide
+  /// negation or qualification. To make the use of extensions safe and
+  /// manageable, there is a strict set of governance applied to the definition
+  /// and use of extensions. Though any implementer is allowed to define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
+  final List<FhirExtension>? _modifierExtension;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the resource and that modifies the
+  /// understanding of the element that contains it and/or the understanding of
+  /// the containing element's descendants. Usually modifier elements provide
+  /// negation or qualification. To make the use of extensions safe and
+  /// manageable, there is a strict set of governance applied to the definition
+  /// and use of extensions. Though any implementer is allowed to define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
   @override
-  final List<FhirExtension>? modifierExtension;
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [identifier] A unique identifier assigned to this payment reconciliation.
+  final List<Identifier>? _identifier;
+
+  /// [identifier] A unique identifier assigned to this payment reconciliation.
   @override
-  final List<Identifier>? identifier;
+  List<Identifier>? get identifier {
+    final value = _identifier;
+    if (value == null) return null;
+    if (_identifier is EqualUnmodifiableListView) return _identifier;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [status] The status of the resource instance.
   @override
   final Code? status;
+
+  /// [statusElement] Extensions for status
   @override
   @JsonKey(name: '_status')
   final Element? statusElement;
+
+  /// [period] The period of time for which payments have been gathered into
+  ///  this bulk payment for settlement.
   @override
   final Period? period;
+
+  /// [created] The date when the resource was created.
   @override
   final FhirDateTime? created;
+
+  /// [createdElement] Extensions for created
   @override
   @JsonKey(name: '_created')
   final Element? createdElement;
+
+  /// [paymentIssuer] The party who generated the payment.
   @override
   final Reference? paymentIssuer;
+
+  /// [request] Original request resource reference.
   @override
   final Reference? request;
+
+  /// [requestor] The practitioner who is responsible for the services rendered
+  ///  to the patient.
   @override
   final Reference? requestor;
+
+  /// [outcome] The outcome of a request for a reconciliation.
   @override
-  @JsonKey(unknownEnumValue: PaymentReconciliationOutcome.unknown)
-  final PaymentReconciliationOutcome? outcome;
+  final Code? outcome;
+
+  /// [outcomeElement] Extensions for outcome
   @override
   @JsonKey(name: '_outcome')
   final Element? outcomeElement;
+
+  /// [disposition] A human readable description of the status of the request
+  ///  for the reconciliation.
   @override
   final String? disposition;
+
+  /// [dispositionElement] Extensions for disposition
   @override
   @JsonKey(name: '_disposition')
   final Element? dispositionElement;
+
+  /// [paymentDate] The date of payment as indicated on the financial
+  ///  instrument.
   @override
   final Date? paymentDate;
+
+  /// [paymentDateElement] Extensions for paymentDate
   @override
   @JsonKey(name: '_paymentDate')
   final Element? paymentDateElement;
+
+  /// [paymentAmount] Total payment amount as indicated on the financial
+  ///  instrument.
   @override
   final Money paymentAmount;
+
+  /// [paymentIdentifier] Issuer's unique identifier for the payment
+  ///  instrument.
   @override
   final Identifier? paymentIdentifier;
+
+  /// [detail] Distribution of the payment amount for a previously acknowledged
+  ///  payable.
+  final List<PaymentReconciliationDetail>? _detail;
+
+  /// [detail] Distribution of the payment amount for a previously acknowledged
+  ///  payable.
   @override
-  final List<PaymentReconciliationDetail>? detail;
+  List<PaymentReconciliationDetail>? get detail {
+    final value = _detail;
+    if (value == null) return null;
+    if (_detail is EqualUnmodifiableListView) return _detail;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [formCode] A code for the form to be used for printing the content.
   @override
   final CodeableConcept? formCode;
+
+  /// [processNote] A note that describes or explains the processing in a human
+  ///  readable form.
+  final List<PaymentReconciliationProcessNote>? _processNote;
+
+  /// [processNote] A note that describes or explains the processing in a human
+  ///  readable form.
   @override
-  final List<PaymentReconciliationProcessNote>? processNote;
+  List<PaymentReconciliationProcessNote>? get processNote {
+    final value = _processNote;
+    if (value == null) return null;
+    if (_processNote is EqualUnmodifiableListView) return _processNote;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -1991,173 +2434,157 @@ class _$_PaymentReconciliation extends _PaymentReconciliation {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PaymentReconciliation &&
+        (other.runtimeType == runtimeType &&
+            other is _$_PaymentReconciliation &&
             (identical(other.resourceType, resourceType) ||
-                const DeepCollectionEquality()
-                    .equals(other.resourceType, resourceType)) &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.meta, meta) ||
-                const DeepCollectionEquality().equals(other.meta, meta)) &&
+                other.resourceType == resourceType) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.meta, meta) || other.meta == meta) &&
             (identical(other.implicitRules, implicitRules) ||
-                const DeepCollectionEquality()
-                    .equals(other.implicitRules, implicitRules)) &&
+                other.implicitRules == implicitRules) &&
             (identical(other.implicitRulesElement, implicitRulesElement) ||
-                const DeepCollectionEquality().equals(
-                    other.implicitRulesElement, implicitRulesElement)) &&
+                other.implicitRulesElement == implicitRulesElement) &&
             (identical(other.language, language) ||
-                const DeepCollectionEquality()
-                    .equals(other.language, language)) &&
+                other.language == language) &&
             (identical(other.languageElement, languageElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.languageElement, languageElement)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.contained, contained) ||
-                const DeepCollectionEquality()
-                    .equals(other.contained, contained)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
-            (identical(other.modifierExtension, modifierExtension) ||
-                const DeepCollectionEquality()
-                    .equals(other.modifierExtension, modifierExtension)) &&
-            (identical(other.identifier, identifier) ||
-                const DeepCollectionEquality()
-                    .equals(other.identifier, identifier)) &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
+                other.languageElement == languageElement) &&
+            (identical(other.text, text) || other.text == text) &&
+            const DeepCollectionEquality()
+                .equals(other._contained, _contained) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
+            const DeepCollectionEquality()
+                .equals(other._identifier, _identifier) &&
+            (identical(other.status, status) || other.status == status) &&
             (identical(other.statusElement, statusElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.statusElement, statusElement)) &&
-            (identical(other.period, period) ||
-                const DeepCollectionEquality().equals(other.period, period)) &&
-            (identical(other.created, created) ||
-                const DeepCollectionEquality()
-                    .equals(other.created, created)) &&
+                other.statusElement == statusElement) &&
+            (identical(other.period, period) || other.period == period) &&
+            (identical(other.created, created) || other.created == created) &&
             (identical(other.createdElement, createdElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.createdElement, createdElement)) &&
+                other.createdElement == createdElement) &&
             (identical(other.paymentIssuer, paymentIssuer) ||
-                const DeepCollectionEquality()
-                    .equals(other.paymentIssuer, paymentIssuer)) &&
-            (identical(other.request, request) ||
-                const DeepCollectionEquality()
-                    .equals(other.request, request)) &&
+                other.paymentIssuer == paymentIssuer) &&
+            (identical(other.request, request) || other.request == request) &&
             (identical(other.requestor, requestor) ||
-                const DeepCollectionEquality()
-                    .equals(other.requestor, requestor)) &&
-            (identical(other.outcome, outcome) ||
-                const DeepCollectionEquality()
-                    .equals(other.outcome, outcome)) &&
+                other.requestor == requestor) &&
+            (identical(other.outcome, outcome) || other.outcome == outcome) &&
             (identical(other.outcomeElement, outcomeElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.outcomeElement, outcomeElement)) &&
+                other.outcomeElement == outcomeElement) &&
             (identical(other.disposition, disposition) ||
-                const DeepCollectionEquality()
-                    .equals(other.disposition, disposition)) &&
+                other.disposition == disposition) &&
             (identical(other.dispositionElement, dispositionElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.dispositionElement, dispositionElement)) &&
-            (identical(other.paymentDate, paymentDate) || const DeepCollectionEquality().equals(other.paymentDate, paymentDate)) &&
-            (identical(other.paymentDateElement, paymentDateElement) || const DeepCollectionEquality().equals(other.paymentDateElement, paymentDateElement)) &&
-            (identical(other.paymentAmount, paymentAmount) || const DeepCollectionEquality().equals(other.paymentAmount, paymentAmount)) &&
-            (identical(other.paymentIdentifier, paymentIdentifier) || const DeepCollectionEquality().equals(other.paymentIdentifier, paymentIdentifier)) &&
-            (identical(other.detail, detail) || const DeepCollectionEquality().equals(other.detail, detail)) &&
-            (identical(other.formCode, formCode) || const DeepCollectionEquality().equals(other.formCode, formCode)) &&
-            (identical(other.processNote, processNote) || const DeepCollectionEquality().equals(other.processNote, processNote)));
+                other.dispositionElement == dispositionElement) &&
+            (identical(other.paymentDate, paymentDate) ||
+                other.paymentDate == paymentDate) &&
+            (identical(other.paymentDateElement, paymentDateElement) ||
+                other.paymentDateElement == paymentDateElement) &&
+            (identical(other.paymentAmount, paymentAmount) ||
+                other.paymentAmount == paymentAmount) &&
+            (identical(other.paymentIdentifier, paymentIdentifier) ||
+                other.paymentIdentifier == paymentIdentifier) &&
+            const DeepCollectionEquality().equals(other._detail, _detail) &&
+            (identical(other.formCode, formCode) ||
+                other.formCode == formCode) &&
+            const DeepCollectionEquality()
+                .equals(other._processNote, _processNote));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(resourceType) ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(meta) ^
-      const DeepCollectionEquality().hash(implicitRules) ^
-      const DeepCollectionEquality().hash(implicitRulesElement) ^
-      const DeepCollectionEquality().hash(language) ^
-      const DeepCollectionEquality().hash(languageElement) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(contained) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(modifierExtension) ^
-      const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(statusElement) ^
-      const DeepCollectionEquality().hash(period) ^
-      const DeepCollectionEquality().hash(created) ^
-      const DeepCollectionEquality().hash(createdElement) ^
-      const DeepCollectionEquality().hash(paymentIssuer) ^
-      const DeepCollectionEquality().hash(request) ^
-      const DeepCollectionEquality().hash(requestor) ^
-      const DeepCollectionEquality().hash(outcome) ^
-      const DeepCollectionEquality().hash(outcomeElement) ^
-      const DeepCollectionEquality().hash(disposition) ^
-      const DeepCollectionEquality().hash(dispositionElement) ^
-      const DeepCollectionEquality().hash(paymentDate) ^
-      const DeepCollectionEquality().hash(paymentDateElement) ^
-      const DeepCollectionEquality().hash(paymentAmount) ^
-      const DeepCollectionEquality().hash(paymentIdentifier) ^
-      const DeepCollectionEquality().hash(detail) ^
-      const DeepCollectionEquality().hash(formCode) ^
-      const DeepCollectionEquality().hash(processNote);
 
   @JsonKey(ignore: true)
   @override
-  _$PaymentReconciliationCopyWith<_PaymentReconciliation> get copyWith =>
-      __$PaymentReconciliationCopyWithImpl<_PaymentReconciliation>(
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        resourceType,
+        id,
+        meta,
+        implicitRules,
+        implicitRulesElement,
+        language,
+        languageElement,
+        text,
+        const DeepCollectionEquality().hash(_contained),
+        const DeepCollectionEquality().hash(_extension_),
+        const DeepCollectionEquality().hash(_modifierExtension),
+        const DeepCollectionEquality().hash(_identifier),
+        status,
+        statusElement,
+        period,
+        created,
+        createdElement,
+        paymentIssuer,
+        request,
+        requestor,
+        outcome,
+        outcomeElement,
+        disposition,
+        dispositionElement,
+        paymentDate,
+        paymentDateElement,
+        paymentAmount,
+        paymentIdentifier,
+        const DeepCollectionEquality().hash(_detail),
+        formCode,
+        const DeepCollectionEquality().hash(_processNote)
+      ]);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PaymentReconciliationCopyWith<_$_PaymentReconciliation> get copyWith =>
+      __$$_PaymentReconciliationCopyWithImpl<_$_PaymentReconciliation>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PaymentReconciliationToJson(this);
+    return _$$_PaymentReconciliationToJson(
+      this,
+    );
   }
 }
 
 abstract class _PaymentReconciliation extends PaymentReconciliation {
   factory _PaymentReconciliation(
           {@JsonKey(unknownEnumValue: R4ResourceType.PaymentReconciliation)
-              R4ResourceType resourceType,
-          Id? id,
-          Meta? meta,
-          FhirUri? implicitRules,
+              final R4ResourceType resourceType,
+          final String? id,
+          final Meta? meta,
+          final FhirUri? implicitRules,
           @JsonKey(name: '_implicitRules')
-              Element? implicitRulesElement,
-          Code? language,
+              final Element? implicitRulesElement,
+          final Code? language,
           @JsonKey(name: '_language')
-              Element? languageElement,
-          Narrative? text,
-          List<Resource>? contained,
+              final Element? languageElement,
+          final Narrative? text,
+          final List<Resource>? contained,
           @JsonKey(name: 'extension')
-              List<FhirExtension>? extension_,
-          List<FhirExtension>? modifierExtension,
-          List<Identifier>? identifier,
-          Code? status,
+              final List<FhirExtension>? extension_,
+          final List<FhirExtension>? modifierExtension,
+          final List<Identifier>? identifier,
+          final Code? status,
           @JsonKey(name: '_status')
-              Element? statusElement,
-          Period? period,
-          FhirDateTime? created,
+              final Element? statusElement,
+          final Period? period,
+          final FhirDateTime? created,
           @JsonKey(name: '_created')
-              Element? createdElement,
-          Reference? paymentIssuer,
-          Reference? request,
-          Reference? requestor,
-          @JsonKey(unknownEnumValue: PaymentReconciliationOutcome.unknown)
-              PaymentReconciliationOutcome? outcome,
+              final Element? createdElement,
+          final Reference? paymentIssuer,
+          final Reference? request,
+          final Reference? requestor,
+          final Code? outcome,
           @JsonKey(name: '_outcome')
-              Element? outcomeElement,
-          String? disposition,
+              final Element? outcomeElement,
+          final String? disposition,
           @JsonKey(name: '_disposition')
-              Element? dispositionElement,
-          Date? paymentDate,
+              final Element? dispositionElement,
+          final Date? paymentDate,
           @JsonKey(name: '_paymentDate')
-              Element? paymentDateElement,
-          required Money paymentAmount,
-          Identifier? paymentIdentifier,
-          List<PaymentReconciliationDetail>? detail,
-          CodeableConcept? formCode,
-          List<PaymentReconciliationProcessNote>? processNote}) =
+              final Element? paymentDateElement,
+          required final Money paymentAmount,
+          final Identifier? paymentIdentifier,
+          final List<PaymentReconciliationDetail>? detail,
+          final CodeableConcept? formCode,
+          final List<PaymentReconciliationProcessNote>? processNote}) =
       _$_PaymentReconciliation;
   _PaymentReconciliation._() : super._();
 
@@ -2166,83 +2593,177 @@ abstract class _PaymentReconciliation extends PaymentReconciliation {
 
   @override
   @JsonKey(unknownEnumValue: R4ResourceType.PaymentReconciliation)
-  R4ResourceType get resourceType => throw _privateConstructorUsedError;
+  R4ResourceType get resourceType;
   @override
-  Id? get id => throw _privateConstructorUsedError;
+
+  /// [id] The logical id of the resource, as used in the URL for the resource.
+  ///  Once assigned, this value never changes.
+  String? get id;
   @override
-  Meta? get meta => throw _privateConstructorUsedError;
+
+  /// [meta] The metadata about the resource. This is content that is
+  /// maintained by the infrastructure. Changes to the content might not always
+  ///  be associated with version changes to the resource.
+  Meta? get meta;
   @override
-  FhirUri? get implicitRules => throw _privateConstructorUsedError;
+
+  /// [implicitRules] A reference to a set of rules that were followed when the
+  /// resource was constructed, and which must be understood when processing the
+  /// content. Often, this is a reference to an implementation guide that
+  ///  defines the special rules along with other profiles etc.
+  FhirUri? get implicitRules;
   @override
+
+  /// [implicitRulesElement] Extensions for implicitRules
   @JsonKey(name: '_implicitRules')
-  Element? get implicitRulesElement => throw _privateConstructorUsedError;
+  Element? get implicitRulesElement;
   @override
-  Code? get language => throw _privateConstructorUsedError;
+
+  /// [language] The base language in which the resource is written.
+  Code? get language;
   @override
+
+  /// [languageElement] Extensions for language
   @JsonKey(name: '_language')
-  Element? get languageElement => throw _privateConstructorUsedError;
+  Element? get languageElement;
   @override
-  Narrative? get text => throw _privateConstructorUsedError;
+
+  /// [text] A human-readable narrative that contains a summary of the resource
+  /// and can be used to represent the content of the resource to a human. The
+  /// narrative need not encode all the structured data, but is required to
+  /// contain sufficient detail to make it "clinically safe" for a human to just
+  /// read the narrative. Resource definitions may define what content should be
+  ///  represented in the narrative to ensure clinical safety.
+  Narrative? get text;
   @override
-  List<Resource>? get contained => throw _privateConstructorUsedError;
+
+  /// [contained] These resources do not have an independent existence apart
+  /// from the resource that contains them - they cannot be identified
+  /// independently, and nor can they have their own independent transaction
+  ///  scope.
+  List<Resource>? get contained;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the resource. To make the use of
+  /// extensions safe and manageable, there is a strict set of governance
+  /// applied to the definition and use of extensions. Though any implementer
+  /// can define an extension, there is a set of requirements that SHALL be met
+  ///  as part of the definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
-  List<FhirExtension>? get modifierExtension =>
-      throw _privateConstructorUsedError;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the resource and that modifies the
+  /// understanding of the element that contains it and/or the understanding of
+  /// the containing element's descendants. Usually modifier elements provide
+  /// negation or qualification. To make the use of extensions safe and
+  /// manageable, there is a strict set of governance applied to the definition
+  /// and use of extensions. Though any implementer is allowed to define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
+  List<FhirExtension>? get modifierExtension;
   @override
-  List<Identifier>? get identifier => throw _privateConstructorUsedError;
+
+  /// [identifier] A unique identifier assigned to this payment reconciliation.
+  List<Identifier>? get identifier;
   @override
-  Code? get status => throw _privateConstructorUsedError;
+
+  /// [status] The status of the resource instance.
+  Code? get status;
   @override
+
+  /// [statusElement] Extensions for status
   @JsonKey(name: '_status')
-  Element? get statusElement => throw _privateConstructorUsedError;
+  Element? get statusElement;
   @override
-  Period? get period => throw _privateConstructorUsedError;
+
+  /// [period] The period of time for which payments have been gathered into
+  ///  this bulk payment for settlement.
+  Period? get period;
   @override
-  FhirDateTime? get created => throw _privateConstructorUsedError;
+
+  /// [created] The date when the resource was created.
+  FhirDateTime? get created;
   @override
+
+  /// [createdElement] Extensions for created
   @JsonKey(name: '_created')
-  Element? get createdElement => throw _privateConstructorUsedError;
+  Element? get createdElement;
   @override
-  Reference? get paymentIssuer => throw _privateConstructorUsedError;
+
+  /// [paymentIssuer] The party who generated the payment.
+  Reference? get paymentIssuer;
   @override
-  Reference? get request => throw _privateConstructorUsedError;
+
+  /// [request] Original request resource reference.
+  Reference? get request;
   @override
-  Reference? get requestor => throw _privateConstructorUsedError;
+
+  /// [requestor] The practitioner who is responsible for the services rendered
+  ///  to the patient.
+  Reference? get requestor;
   @override
-  @JsonKey(unknownEnumValue: PaymentReconciliationOutcome.unknown)
-  PaymentReconciliationOutcome? get outcome =>
-      throw _privateConstructorUsedError;
+
+  /// [outcome] The outcome of a request for a reconciliation.
+  Code? get outcome;
   @override
+
+  /// [outcomeElement] Extensions for outcome
   @JsonKey(name: '_outcome')
-  Element? get outcomeElement => throw _privateConstructorUsedError;
+  Element? get outcomeElement;
   @override
-  String? get disposition => throw _privateConstructorUsedError;
+
+  /// [disposition] A human readable description of the status of the request
+  ///  for the reconciliation.
+  String? get disposition;
   @override
+
+  /// [dispositionElement] Extensions for disposition
   @JsonKey(name: '_disposition')
-  Element? get dispositionElement => throw _privateConstructorUsedError;
+  Element? get dispositionElement;
   @override
-  Date? get paymentDate => throw _privateConstructorUsedError;
+
+  /// [paymentDate] The date of payment as indicated on the financial
+  ///  instrument.
+  Date? get paymentDate;
   @override
+
+  /// [paymentDateElement] Extensions for paymentDate
   @JsonKey(name: '_paymentDate')
-  Element? get paymentDateElement => throw _privateConstructorUsedError;
+  Element? get paymentDateElement;
   @override
-  Money get paymentAmount => throw _privateConstructorUsedError;
+
+  /// [paymentAmount] Total payment amount as indicated on the financial
+  ///  instrument.
+  Money get paymentAmount;
   @override
-  Identifier? get paymentIdentifier => throw _privateConstructorUsedError;
+
+  /// [paymentIdentifier] Issuer's unique identifier for the payment
+  ///  instrument.
+  Identifier? get paymentIdentifier;
   @override
-  List<PaymentReconciliationDetail>? get detail =>
-      throw _privateConstructorUsedError;
+
+  /// [detail] Distribution of the payment amount for a previously acknowledged
+  ///  payable.
+  List<PaymentReconciliationDetail>? get detail;
   @override
-  CodeableConcept? get formCode => throw _privateConstructorUsedError;
+
+  /// [formCode] A code for the form to be used for printing the content.
+  CodeableConcept? get formCode;
   @override
-  List<PaymentReconciliationProcessNote>? get processNote =>
-      throw _privateConstructorUsedError;
+
+  /// [processNote] A note that describes or explains the processing in a human
+  ///  readable form.
+  List<PaymentReconciliationProcessNote>? get processNote;
   @override
   @JsonKey(ignore: true)
-  _$PaymentReconciliationCopyWith<_PaymentReconciliation> get copyWith =>
+  _$$_PaymentReconciliationCopyWith<_$_PaymentReconciliation> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2252,68 +2773,75 @@ PaymentReconciliationDetail _$PaymentReconciliationDetailFromJson(
 }
 
 /// @nodoc
-class _$PaymentReconciliationDetailTearOff {
-  const _$PaymentReconciliationDetailTearOff();
-
-  _PaymentReconciliationDetail call(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      List<FhirExtension>? modifierExtension,
-      Identifier? identifier,
-      Identifier? predecessor,
-      required CodeableConcept type,
-      Reference? request,
-      Reference? submitter,
-      Reference? response,
-      Date? date,
-      @JsonKey(name: '_date') Element? dateElement,
-      Reference? responsible,
-      Reference? payee,
-      Money? amount}) {
-    return _PaymentReconciliationDetail(
-      id: id,
-      extension_: extension_,
-      modifierExtension: modifierExtension,
-      identifier: identifier,
-      predecessor: predecessor,
-      type: type,
-      request: request,
-      submitter: submitter,
-      response: response,
-      date: date,
-      dateElement: dateElement,
-      responsible: responsible,
-      payee: payee,
-      amount: amount,
-    );
-  }
-
-  PaymentReconciliationDetail fromJson(Map<String, Object> json) {
-    return PaymentReconciliationDetail.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PaymentReconciliationDetail = _$PaymentReconciliationDetailTearOff();
-
-/// @nodoc
 mixin _$PaymentReconciliationDetail {
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   String? get id => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+
+  /// [identifier] Unique identifier for the current payment item for the
+  ///  referenced payable.
   Identifier? get identifier => throw _privateConstructorUsedError;
+
+  /// [predecessor] Unique identifier for the prior payment item for the
+  ///  referenced payable.
   Identifier? get predecessor => throw _privateConstructorUsedError;
+
+  /// [type] Code to indicate the nature of the payment.
   CodeableConcept get type => throw _privateConstructorUsedError;
+
+  /// [request] A resource, such as a Claim, the evaluation of which could lead
+  ///  to payment.
   Reference? get request => throw _privateConstructorUsedError;
+
+  /// [submitter] The party which submitted the claim or financial transaction.
   Reference? get submitter => throw _privateConstructorUsedError;
+
+  /// [response] A resource, such as a ClaimResponse, which contains a
+  ///  commitment to payment.
   Reference? get response => throw _privateConstructorUsedError;
+
+  /// [date] The date from the response resource containing a commitment to
+  ///  pay.
   Date? get date => throw _privateConstructorUsedError;
+
+  /// [dateElement] Extensions for date
   @JsonKey(name: '_date')
   Element? get dateElement => throw _privateConstructorUsedError;
+
+  /// [responsible] A reference to the individual who is responsible for
+  ///  inquiries regarding the response and its payment.
   Reference? get responsible => throw _privateConstructorUsedError;
+
+  /// [payee] The party which is receiving the payment.
   Reference? get payee => throw _privateConstructorUsedError;
+
+  /// [amount] The monetary amount allocated from the total payment to the
+  ///  payable.
   Money? get amount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2327,7 +2855,9 @@ abstract class $PaymentReconciliationDetailCopyWith<$Res> {
   factory $PaymentReconciliationDetailCopyWith(
           PaymentReconciliationDetail value,
           $Res Function(PaymentReconciliationDetail) then) =
-      _$PaymentReconciliationDetailCopyWithImpl<$Res>;
+      _$PaymentReconciliationDetailCopyWithImpl<$Res,
+          PaymentReconciliationDetail>;
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -2357,14 +2887,17 @@ abstract class $PaymentReconciliationDetailCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PaymentReconciliationDetailCopyWithImpl<$Res>
+class _$PaymentReconciliationDetailCopyWithImpl<$Res,
+        $Val extends PaymentReconciliationDetail>
     implements $PaymentReconciliationDetailCopyWith<$Res> {
   _$PaymentReconciliationDetailCopyWithImpl(this._value, this._then);
 
-  final PaymentReconciliationDetail _value;
   // ignore: unused_field
-  final $Res Function(PaymentReconciliationDetail) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -2372,7 +2905,7 @@ class _$PaymentReconciliationDetailCopyWithImpl<$Res>
     Object? modifierExtension = freezed,
     Object? identifier = freezed,
     Object? predecessor = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? request = freezed,
     Object? submitter = freezed,
     Object? response = freezed,
@@ -2383,180 +2916,191 @@ class _$PaymentReconciliationDetailCopyWithImpl<$Res>
     Object? amount = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      modifierExtension: modifierExtension == freezed
+      modifierExtension: freezed == modifierExtension
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      identifier: identifier == freezed
+      identifier: freezed == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as Identifier?,
-      predecessor: predecessor == freezed
+      predecessor: freezed == predecessor
           ? _value.predecessor
           : predecessor // ignore: cast_nullable_to_non_nullable
               as Identifier?,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as CodeableConcept,
-      request: request == freezed
+      request: freezed == request
           ? _value.request
           : request // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      submitter: submitter == freezed
+      submitter: freezed == submitter
           ? _value.submitter
           : submitter // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      response: response == freezed
+      response: freezed == response
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      date: date == freezed
+      date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as Date?,
-      dateElement: dateElement == freezed
+      dateElement: freezed == dateElement
           ? _value.dateElement
           : dateElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      responsible: responsible == freezed
+      responsible: freezed == responsible
           ? _value.responsible
           : responsible // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      payee: payee == freezed
+      payee: freezed == payee
           ? _value.payee
           : payee // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      amount: amount == freezed
+      amount: freezed == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as Money?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $IdentifierCopyWith<$Res>? get identifier {
     if (_value.identifier == null) {
       return null;
     }
 
     return $IdentifierCopyWith<$Res>(_value.identifier!, (value) {
-      return _then(_value.copyWith(identifier: value));
+      return _then(_value.copyWith(identifier: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $IdentifierCopyWith<$Res>? get predecessor {
     if (_value.predecessor == null) {
       return null;
     }
 
     return $IdentifierCopyWith<$Res>(_value.predecessor!, (value) {
-      return _then(_value.copyWith(predecessor: value));
+      return _then(_value.copyWith(predecessor: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res> get type {
     return $CodeableConceptCopyWith<$Res>(_value.type, (value) {
-      return _then(_value.copyWith(type: value));
+      return _then(_value.copyWith(type: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get request {
     if (_value.request == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.request!, (value) {
-      return _then(_value.copyWith(request: value));
+      return _then(_value.copyWith(request: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get submitter {
     if (_value.submitter == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.submitter!, (value) {
-      return _then(_value.copyWith(submitter: value));
+      return _then(_value.copyWith(submitter: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get response {
     if (_value.response == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.response!, (value) {
-      return _then(_value.copyWith(response: value));
+      return _then(_value.copyWith(response: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get dateElement {
     if (_value.dateElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.dateElement!, (value) {
-      return _then(_value.copyWith(dateElement: value));
+      return _then(_value.copyWith(dateElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get responsible {
     if (_value.responsible == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.responsible!, (value) {
-      return _then(_value.copyWith(responsible: value));
+      return _then(_value.copyWith(responsible: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get payee {
     if (_value.payee == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.payee!, (value) {
-      return _then(_value.copyWith(payee: value));
+      return _then(_value.copyWith(payee: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MoneyCopyWith<$Res>? get amount {
     if (_value.amount == null) {
       return null;
     }
 
     return $MoneyCopyWith<$Res>(_value.amount!, (value) {
-      return _then(_value.copyWith(amount: value));
+      return _then(_value.copyWith(amount: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$PaymentReconciliationDetailCopyWith<$Res>
+abstract class _$$_PaymentReconciliationDetailCopyWith<$Res>
     implements $PaymentReconciliationDetailCopyWith<$Res> {
-  factory _$PaymentReconciliationDetailCopyWith(
-          _PaymentReconciliationDetail value,
-          $Res Function(_PaymentReconciliationDetail) then) =
-      __$PaymentReconciliationDetailCopyWithImpl<$Res>;
+  factory _$$_PaymentReconciliationDetailCopyWith(
+          _$_PaymentReconciliationDetail value,
+          $Res Function(_$_PaymentReconciliationDetail) then) =
+      __$$_PaymentReconciliationDetailCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -2596,18 +3140,16 @@ abstract class _$PaymentReconciliationDetailCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PaymentReconciliationDetailCopyWithImpl<$Res>
-    extends _$PaymentReconciliationDetailCopyWithImpl<$Res>
-    implements _$PaymentReconciliationDetailCopyWith<$Res> {
-  __$PaymentReconciliationDetailCopyWithImpl(
-      _PaymentReconciliationDetail _value,
-      $Res Function(_PaymentReconciliationDetail) _then)
-      : super(_value, (v) => _then(v as _PaymentReconciliationDetail));
+class __$$_PaymentReconciliationDetailCopyWithImpl<$Res>
+    extends _$PaymentReconciliationDetailCopyWithImpl<$Res,
+        _$_PaymentReconciliationDetail>
+    implements _$$_PaymentReconciliationDetailCopyWith<$Res> {
+  __$$_PaymentReconciliationDetailCopyWithImpl(
+      _$_PaymentReconciliationDetail _value,
+      $Res Function(_$_PaymentReconciliationDetail) _then)
+      : super(_value, _then);
 
-  @override
-  _PaymentReconciliationDetail get _value =>
-      super._value as _PaymentReconciliationDetail;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -2615,7 +3157,7 @@ class __$PaymentReconciliationDetailCopyWithImpl<$Res>
     Object? modifierExtension = freezed,
     Object? identifier = freezed,
     Object? predecessor = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? request = freezed,
     Object? submitter = freezed,
     Object? response = freezed,
@@ -2625,60 +3167,60 @@ class __$PaymentReconciliationDetailCopyWithImpl<$Res>
     Object? payee = freezed,
     Object? amount = freezed,
   }) {
-    return _then(_PaymentReconciliationDetail(
-      id: id == freezed
+    return _then(_$_PaymentReconciliationDetail(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      modifierExtension: modifierExtension == freezed
-          ? _value.modifierExtension
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      identifier: identifier == freezed
+      identifier: freezed == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
               as Identifier?,
-      predecessor: predecessor == freezed
+      predecessor: freezed == predecessor
           ? _value.predecessor
           : predecessor // ignore: cast_nullable_to_non_nullable
               as Identifier?,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as CodeableConcept,
-      request: request == freezed
+      request: freezed == request
           ? _value.request
           : request // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      submitter: submitter == freezed
+      submitter: freezed == submitter
           ? _value.submitter
           : submitter // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      response: response == freezed
+      response: freezed == response
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      date: date == freezed
+      date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as Date?,
-      dateElement: dateElement == freezed
+      dateElement: freezed == dateElement
           ? _value.dateElement
           : dateElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      responsible: responsible == freezed
+      responsible: freezed == responsible
           ? _value.responsible
           : responsible // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      payee: payee == freezed
+      payee: freezed == payee
           ? _value.payee
           : payee // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      amount: amount == freezed
+      amount: freezed == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as Money?,
@@ -2691,8 +3233,8 @@ class __$PaymentReconciliationDetailCopyWithImpl<$Res>
 class _$_PaymentReconciliationDetail extends _PaymentReconciliationDetail {
   _$_PaymentReconciliationDetail(
       {this.id,
-      @JsonKey(name: 'extension') this.extension_,
-      this.modifierExtension,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
       this.identifier,
       this.predecessor,
       required this.type,
@@ -2704,39 +3246,129 @@ class _$_PaymentReconciliationDetail extends _PaymentReconciliationDetail {
       this.responsible,
       this.payee,
       this.amount})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$_PaymentReconciliationDetail.fromJson(Map<String, dynamic> json) =>
       _$$_PaymentReconciliationDetailFromJson(json);
 
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   @override
   final String? id;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
+  final List<FhirExtension>? _modifierExtension;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
   @override
-  final List<FhirExtension>? modifierExtension;
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [identifier] Unique identifier for the current payment item for the
+  ///  referenced payable.
   @override
   final Identifier? identifier;
+
+  /// [predecessor] Unique identifier for the prior payment item for the
+  ///  referenced payable.
   @override
   final Identifier? predecessor;
+
+  /// [type] Code to indicate the nature of the payment.
   @override
   final CodeableConcept type;
+
+  /// [request] A resource, such as a Claim, the evaluation of which could lead
+  ///  to payment.
   @override
   final Reference? request;
+
+  /// [submitter] The party which submitted the claim or financial transaction.
   @override
   final Reference? submitter;
+
+  /// [response] A resource, such as a ClaimResponse, which contains a
+  ///  commitment to payment.
   @override
   final Reference? response;
+
+  /// [date] The date from the response resource containing a commitment to
+  ///  pay.
   @override
   final Date? date;
+
+  /// [dateElement] Extensions for date
   @override
   @JsonKey(name: '_date')
   final Element? dateElement;
+
+  /// [responsible] A reference to the individual who is responsible for
+  ///  inquiries regarding the response and its payment.
   @override
   final Reference? responsible;
+
+  /// [payee] The party which is receiving the payment.
   @override
   final Reference? payee;
+
+  /// [amount] The monetary amount allocated from the total payment to the
+  ///  payable.
   @override
   final Money? amount;
 
@@ -2748,132 +3380,174 @@ class _$_PaymentReconciliationDetail extends _PaymentReconciliationDetail {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PaymentReconciliationDetail &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
-            (identical(other.modifierExtension, modifierExtension) ||
-                const DeepCollectionEquality()
-                    .equals(other.modifierExtension, modifierExtension)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_PaymentReconciliationDetail &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.identifier, identifier) ||
-                const DeepCollectionEquality()
-                    .equals(other.identifier, identifier)) &&
+                other.identifier == identifier) &&
             (identical(other.predecessor, predecessor) ||
-                const DeepCollectionEquality()
-                    .equals(other.predecessor, predecessor)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.request, request) ||
-                const DeepCollectionEquality()
-                    .equals(other.request, request)) &&
+                other.predecessor == predecessor) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.request, request) || other.request == request) &&
             (identical(other.submitter, submitter) ||
-                const DeepCollectionEquality()
-                    .equals(other.submitter, submitter)) &&
+                other.submitter == submitter) &&
             (identical(other.response, response) ||
-                const DeepCollectionEquality()
-                    .equals(other.response, response)) &&
-            (identical(other.date, date) ||
-                const DeepCollectionEquality().equals(other.date, date)) &&
+                other.response == response) &&
+            (identical(other.date, date) || other.date == date) &&
             (identical(other.dateElement, dateElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.dateElement, dateElement)) &&
+                other.dateElement == dateElement) &&
             (identical(other.responsible, responsible) ||
-                const DeepCollectionEquality()
-                    .equals(other.responsible, responsible)) &&
-            (identical(other.payee, payee) ||
-                const DeepCollectionEquality().equals(other.payee, payee)) &&
-            (identical(other.amount, amount) ||
-                const DeepCollectionEquality().equals(other.amount, amount)));
+                other.responsible == responsible) &&
+            (identical(other.payee, payee) || other.payee == payee) &&
+            (identical(other.amount, amount) || other.amount == amount));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(modifierExtension) ^
-      const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(predecessor) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(request) ^
-      const DeepCollectionEquality().hash(submitter) ^
-      const DeepCollectionEquality().hash(response) ^
-      const DeepCollectionEquality().hash(date) ^
-      const DeepCollectionEquality().hash(dateElement) ^
-      const DeepCollectionEquality().hash(responsible) ^
-      const DeepCollectionEquality().hash(payee) ^
-      const DeepCollectionEquality().hash(amount);
 
   @JsonKey(ignore: true)
   @override
-  _$PaymentReconciliationDetailCopyWith<_PaymentReconciliationDetail>
-      get copyWith => __$PaymentReconciliationDetailCopyWithImpl<
-          _PaymentReconciliationDetail>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      identifier,
+      predecessor,
+      type,
+      request,
+      submitter,
+      response,
+      date,
+      dateElement,
+      responsible,
+      payee,
+      amount);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PaymentReconciliationDetailCopyWith<_$_PaymentReconciliationDetail>
+      get copyWith => __$$_PaymentReconciliationDetailCopyWithImpl<
+          _$_PaymentReconciliationDetail>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PaymentReconciliationDetailToJson(this);
+    return _$$_PaymentReconciliationDetailToJson(
+      this,
+    );
   }
 }
 
 abstract class _PaymentReconciliationDetail
     extends PaymentReconciliationDetail {
   factory _PaymentReconciliationDetail(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      List<FhirExtension>? modifierExtension,
-      Identifier? identifier,
-      Identifier? predecessor,
-      required CodeableConcept type,
-      Reference? request,
-      Reference? submitter,
-      Reference? response,
-      Date? date,
-      @JsonKey(name: '_date') Element? dateElement,
-      Reference? responsible,
-      Reference? payee,
-      Money? amount}) = _$_PaymentReconciliationDetail;
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final Identifier? identifier,
+      final Identifier? predecessor,
+      required final CodeableConcept type,
+      final Reference? request,
+      final Reference? submitter,
+      final Reference? response,
+      final Date? date,
+      @JsonKey(name: '_date') final Element? dateElement,
+      final Reference? responsible,
+      final Reference? payee,
+      final Money? amount}) = _$_PaymentReconciliationDetail;
   _PaymentReconciliationDetail._() : super._();
 
   factory _PaymentReconciliationDetail.fromJson(Map<String, dynamic> json) =
       _$_PaymentReconciliationDetail.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
+  String? get id;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
-  List<FhirExtension>? get modifierExtension =>
-      throw _privateConstructorUsedError;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
+  List<FhirExtension>? get modifierExtension;
   @override
-  Identifier? get identifier => throw _privateConstructorUsedError;
+
+  /// [identifier] Unique identifier for the current payment item for the
+  ///  referenced payable.
+  Identifier? get identifier;
   @override
-  Identifier? get predecessor => throw _privateConstructorUsedError;
+
+  /// [predecessor] Unique identifier for the prior payment item for the
+  ///  referenced payable.
+  Identifier? get predecessor;
   @override
-  CodeableConcept get type => throw _privateConstructorUsedError;
+
+  /// [type] Code to indicate the nature of the payment.
+  CodeableConcept get type;
   @override
-  Reference? get request => throw _privateConstructorUsedError;
+
+  /// [request] A resource, such as a Claim, the evaluation of which could lead
+  ///  to payment.
+  Reference? get request;
   @override
-  Reference? get submitter => throw _privateConstructorUsedError;
+
+  /// [submitter] The party which submitted the claim or financial transaction.
+  Reference? get submitter;
   @override
-  Reference? get response => throw _privateConstructorUsedError;
+
+  /// [response] A resource, such as a ClaimResponse, which contains a
+  ///  commitment to payment.
+  Reference? get response;
   @override
-  Date? get date => throw _privateConstructorUsedError;
+
+  /// [date] The date from the response resource containing a commitment to
+  ///  pay.
+  Date? get date;
   @override
+
+  /// [dateElement] Extensions for date
   @JsonKey(name: '_date')
-  Element? get dateElement => throw _privateConstructorUsedError;
+  Element? get dateElement;
   @override
-  Reference? get responsible => throw _privateConstructorUsedError;
+
+  /// [responsible] A reference to the individual who is responsible for
+  ///  inquiries regarding the response and its payment.
+  Reference? get responsible;
   @override
-  Reference? get payee => throw _privateConstructorUsedError;
+
+  /// [payee] The party which is receiving the payment.
+  Reference? get payee;
   @override
-  Money? get amount => throw _privateConstructorUsedError;
+
+  /// [amount] The monetary amount allocated from the total payment to the
+  ///  payable.
+  Money? get amount;
   @override
   @JsonKey(ignore: true)
-  _$PaymentReconciliationDetailCopyWith<_PaymentReconciliationDetail>
+  _$$_PaymentReconciliationDetailCopyWith<_$_PaymentReconciliationDetail>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2883,54 +3557,47 @@ PaymentReconciliationProcessNote _$PaymentReconciliationProcessNoteFromJson(
 }
 
 /// @nodoc
-class _$PaymentReconciliationProcessNoteTearOff {
-  const _$PaymentReconciliationProcessNoteTearOff();
-
-  _PaymentReconciliationProcessNote call(
-      {String? id,
-      @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
-      List<FhirExtension>? modifierExtension,
-      @JsonKey(unknownEnumValue: PaymentReconciliationProcessNoteType.unknown)
-          PaymentReconciliationProcessNoteType? type,
-      @JsonKey(name: '_type')
-          Element? typeElement,
-      String? text,
-      @JsonKey(name: '_text')
-          Element? textElement}) {
-    return _PaymentReconciliationProcessNote(
-      id: id,
-      extension_: extension_,
-      modifierExtension: modifierExtension,
-      type: type,
-      typeElement: typeElement,
-      text: text,
-      textElement: textElement,
-    );
-  }
-
-  PaymentReconciliationProcessNote fromJson(Map<String, Object> json) {
-    return PaymentReconciliationProcessNote.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PaymentReconciliationProcessNote =
-    _$PaymentReconciliationProcessNoteTearOff();
-
-/// @nodoc
 mixin _$PaymentReconciliationProcessNote {
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   String? get id => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
-  @JsonKey(unknownEnumValue: PaymentReconciliationProcessNoteType.unknown)
-  PaymentReconciliationProcessNoteType? get type =>
-      throw _privateConstructorUsedError;
+
+  /// [type] The business purpose of the note text.
+  Code? get type => throw _privateConstructorUsedError;
+
+  /// [typeElement] Extensions for type
   @JsonKey(name: '_type')
   Element? get typeElement => throw _privateConstructorUsedError;
+
+  /// [text] The explanation or description associated with the processing.
   String? get text => throw _privateConstructorUsedError;
+
+  /// [textElement] Extensions for text
   @JsonKey(name: '_text')
   Element? get textElement => throw _privateConstructorUsedError;
 
@@ -2945,33 +3612,34 @@ abstract class $PaymentReconciliationProcessNoteCopyWith<$Res> {
   factory $PaymentReconciliationProcessNoteCopyWith(
           PaymentReconciliationProcessNote value,
           $Res Function(PaymentReconciliationProcessNote) then) =
-      _$PaymentReconciliationProcessNoteCopyWithImpl<$Res>;
+      _$PaymentReconciliationProcessNoteCopyWithImpl<$Res,
+          PaymentReconciliationProcessNote>;
+  @useResult
   $Res call(
       {String? id,
-      @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
-      @JsonKey(unknownEnumValue: PaymentReconciliationProcessNoteType.unknown)
-          PaymentReconciliationProcessNoteType? type,
-      @JsonKey(name: '_type')
-          Element? typeElement,
+      Code? type,
+      @JsonKey(name: '_type') Element? typeElement,
       String? text,
-      @JsonKey(name: '_text')
-          Element? textElement});
+      @JsonKey(name: '_text') Element? textElement});
 
   $ElementCopyWith<$Res>? get typeElement;
   $ElementCopyWith<$Res>? get textElement;
 }
 
 /// @nodoc
-class _$PaymentReconciliationProcessNoteCopyWithImpl<$Res>
+class _$PaymentReconciliationProcessNoteCopyWithImpl<$Res,
+        $Val extends PaymentReconciliationProcessNote>
     implements $PaymentReconciliationProcessNoteCopyWith<$Res> {
   _$PaymentReconciliationProcessNoteCopyWithImpl(this._value, this._then);
 
-  final PaymentReconciliationProcessNote _value;
   // ignore: unused_field
-  final $Res Function(PaymentReconciliationProcessNote) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -2983,80 +3651,79 @@ class _$PaymentReconciliationProcessNoteCopyWithImpl<$Res>
     Object? textElement = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      modifierExtension: modifierExtension == freezed
+      modifierExtension: freezed == modifierExtension
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as PaymentReconciliationProcessNoteType?,
-      typeElement: typeElement == freezed
+              as Code?,
+      typeElement: freezed == typeElement
           ? _value.typeElement
           : typeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      text: text == freezed
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String?,
-      textElement: textElement == freezed
+      textElement: freezed == textElement
           ? _value.textElement
           : textElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get typeElement {
     if (_value.typeElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.typeElement!, (value) {
-      return _then(_value.copyWith(typeElement: value));
+      return _then(_value.copyWith(typeElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get textElement {
     if (_value.textElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.textElement!, (value) {
-      return _then(_value.copyWith(textElement: value));
+      return _then(_value.copyWith(textElement: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$PaymentReconciliationProcessNoteCopyWith<$Res>
+abstract class _$$_PaymentReconciliationProcessNoteCopyWith<$Res>
     implements $PaymentReconciliationProcessNoteCopyWith<$Res> {
-  factory _$PaymentReconciliationProcessNoteCopyWith(
-          _PaymentReconciliationProcessNote value,
-          $Res Function(_PaymentReconciliationProcessNote) then) =
-      __$PaymentReconciliationProcessNoteCopyWithImpl<$Res>;
+  factory _$$_PaymentReconciliationProcessNoteCopyWith(
+          _$_PaymentReconciliationProcessNote value,
+          $Res Function(_$_PaymentReconciliationProcessNote) then) =
+      __$$_PaymentReconciliationProcessNoteCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
-      @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       List<FhirExtension>? modifierExtension,
-      @JsonKey(unknownEnumValue: PaymentReconciliationProcessNoteType.unknown)
-          PaymentReconciliationProcessNoteType? type,
-      @JsonKey(name: '_type')
-          Element? typeElement,
+      Code? type,
+      @JsonKey(name: '_type') Element? typeElement,
       String? text,
-      @JsonKey(name: '_text')
-          Element? textElement});
+      @JsonKey(name: '_text') Element? textElement});
 
   @override
   $ElementCopyWith<$Res>? get typeElement;
@@ -3065,18 +3732,16 @@ abstract class _$PaymentReconciliationProcessNoteCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PaymentReconciliationProcessNoteCopyWithImpl<$Res>
-    extends _$PaymentReconciliationProcessNoteCopyWithImpl<$Res>
-    implements _$PaymentReconciliationProcessNoteCopyWith<$Res> {
-  __$PaymentReconciliationProcessNoteCopyWithImpl(
-      _PaymentReconciliationProcessNote _value,
-      $Res Function(_PaymentReconciliationProcessNote) _then)
-      : super(_value, (v) => _then(v as _PaymentReconciliationProcessNote));
+class __$$_PaymentReconciliationProcessNoteCopyWithImpl<$Res>
+    extends _$PaymentReconciliationProcessNoteCopyWithImpl<$Res,
+        _$_PaymentReconciliationProcessNote>
+    implements _$$_PaymentReconciliationProcessNoteCopyWith<$Res> {
+  __$$_PaymentReconciliationProcessNoteCopyWithImpl(
+      _$_PaymentReconciliationProcessNote _value,
+      $Res Function(_$_PaymentReconciliationProcessNote) _then)
+      : super(_value, _then);
 
-  @override
-  _PaymentReconciliationProcessNote get _value =>
-      super._value as _PaymentReconciliationProcessNote;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -3087,32 +3752,32 @@ class __$PaymentReconciliationProcessNoteCopyWithImpl<$Res>
     Object? text = freezed,
     Object? textElement = freezed,
   }) {
-    return _then(_PaymentReconciliationProcessNote(
-      id: id == freezed
+    return _then(_$_PaymentReconciliationProcessNote(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      modifierExtension: modifierExtension == freezed
-          ? _value.modifierExtension
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as PaymentReconciliationProcessNoteType?,
-      typeElement: typeElement == freezed
+              as Code?,
+      typeElement: freezed == typeElement
           ? _value.typeElement
           : typeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      text: text == freezed
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String?,
-      textElement: textElement == freezed
+      textElement: freezed == textElement
           ? _value.textElement
           : textElement // ignore: cast_nullable_to_non_nullable
               as Element?,
@@ -3126,37 +3791,101 @@ class _$_PaymentReconciliationProcessNote
     extends _PaymentReconciliationProcessNote {
   _$_PaymentReconciliationProcessNote(
       {this.id,
-      @JsonKey(name: 'extension')
-          this.extension_,
-      this.modifierExtension,
-      @JsonKey(unknownEnumValue: PaymentReconciliationProcessNoteType.unknown)
-          this.type,
-      @JsonKey(name: '_type')
-          this.typeElement,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.type,
+      @JsonKey(name: '_type') this.typeElement,
       this.text,
-      @JsonKey(name: '_text')
-          this.textElement})
-      : super._();
+      @JsonKey(name: '_text') this.textElement})
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$_PaymentReconciliationProcessNote.fromJson(
           Map<String, dynamic> json) =>
       _$$_PaymentReconciliationProcessNoteFromJson(json);
 
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   @override
   final String? id;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
+  final List<FhirExtension>? _modifierExtension;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
   @override
-  final List<FhirExtension>? modifierExtension;
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [type] The business purpose of the note text.
   @override
-  @JsonKey(unknownEnumValue: PaymentReconciliationProcessNoteType.unknown)
-  final PaymentReconciliationProcessNoteType? type;
+  final Code? type;
+
+  /// [typeElement] Extensions for type
   @override
   @JsonKey(name: '_type')
   final Element? typeElement;
+
+  /// [text] The explanation or description associated with the processing.
   @override
   final String? text;
+
+  /// [textElement] Extensions for text
   @override
   @JsonKey(name: '_text')
   final Element? textElement;
@@ -3169,91 +3898,117 @@ class _$_PaymentReconciliationProcessNote
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PaymentReconciliationProcessNote &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
-            (identical(other.modifierExtension, modifierExtension) ||
-                const DeepCollectionEquality()
-                    .equals(other.modifierExtension, modifierExtension)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_PaymentReconciliationProcessNote &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.typeElement, typeElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.typeElement, typeElement)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
+                other.typeElement == typeElement) &&
+            (identical(other.text, text) || other.text == text) &&
             (identical(other.textElement, textElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.textElement, textElement)));
+                other.textElement == textElement));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(modifierExtension) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(typeElement) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(textElement);
 
   @JsonKey(ignore: true)
   @override
-  _$PaymentReconciliationProcessNoteCopyWith<_PaymentReconciliationProcessNote>
-      get copyWith => __$PaymentReconciliationProcessNoteCopyWithImpl<
-          _PaymentReconciliationProcessNote>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      type,
+      typeElement,
+      text,
+      textElement);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PaymentReconciliationProcessNoteCopyWith<
+          _$_PaymentReconciliationProcessNote>
+      get copyWith => __$$_PaymentReconciliationProcessNoteCopyWithImpl<
+          _$_PaymentReconciliationProcessNote>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PaymentReconciliationProcessNoteToJson(this);
+    return _$$_PaymentReconciliationProcessNoteToJson(
+      this,
+    );
   }
 }
 
 abstract class _PaymentReconciliationProcessNote
     extends PaymentReconciliationProcessNote {
   factory _PaymentReconciliationProcessNote(
-      {String? id,
-      @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
-      List<FhirExtension>? modifierExtension,
-      @JsonKey(unknownEnumValue: PaymentReconciliationProcessNoteType.unknown)
-          PaymentReconciliationProcessNoteType? type,
-      @JsonKey(name: '_type')
-          Element? typeElement,
-      String? text,
-      @JsonKey(name: '_text')
-          Element? textElement}) = _$_PaymentReconciliationProcessNote;
+          {final String? id,
+          @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+          final List<FhirExtension>? modifierExtension,
+          final Code? type,
+          @JsonKey(name: '_type') final Element? typeElement,
+          final String? text,
+          @JsonKey(name: '_text') final Element? textElement}) =
+      _$_PaymentReconciliationProcessNote;
   _PaymentReconciliationProcessNote._() : super._();
 
   factory _PaymentReconciliationProcessNote.fromJson(
       Map<String, dynamic> json) = _$_PaymentReconciliationProcessNote.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
+  String? get id;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
-  List<FhirExtension>? get modifierExtension =>
-      throw _privateConstructorUsedError;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
+  List<FhirExtension>? get modifierExtension;
   @override
-  @JsonKey(unknownEnumValue: PaymentReconciliationProcessNoteType.unknown)
-  PaymentReconciliationProcessNoteType? get type =>
-      throw _privateConstructorUsedError;
+
+  /// [type] The business purpose of the note text.
+  Code? get type;
   @override
+
+  /// [typeElement] Extensions for type
   @JsonKey(name: '_type')
-  Element? get typeElement => throw _privateConstructorUsedError;
+  Element? get typeElement;
   @override
-  String? get text => throw _privateConstructorUsedError;
+
+  /// [text] The explanation or description associated with the processing.
+  String? get text;
   @override
+
+  /// [textElement] Extensions for text
   @JsonKey(name: '_text')
-  Element? get textElement => throw _privateConstructorUsedError;
+  Element? get textElement;
   @override
   @JsonKey(ignore: true)
-  _$PaymentReconciliationProcessNoteCopyWith<_PaymentReconciliationProcessNote>
+  _$$_PaymentReconciliationProcessNoteCopyWith<
+          _$_PaymentReconciliationProcessNote>
       get copyWith => throw _privateConstructorUsedError;
 }

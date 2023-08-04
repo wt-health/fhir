@@ -1,28 +1,32 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:yaml/yaml.dart';
 
+// Project imports:
 import 'fhir_number.dart';
+import 'primitive_type_exceptions.dart';
 
 class PositiveInt extends FhirNumber {
-  const PositiveInt._(
-      String valueString, int? valueNumber, bool isValid, bool isString)
-      : super(valueString, valueNumber, isValid, isString);
+  const PositiveInt._(String valueString, int? valueNumber, bool isValid)
+      : super(valueString, valueNumber, isValid);
 
   factory PositiveInt(dynamic inValue) {
     if (inValue is int) {
       return inValue > 0
-          ? PositiveInt._(inValue.toString(), inValue, true, false)
-          : PositiveInt._(inValue.toString(), null, false, false);
-    } else if (inValue is String) {
-      final int? tempPositiveInt = int.tryParse(inValue);
+          ? PositiveInt._(inValue.toString(), inValue, true)
+          : PositiveInt._(inValue.toString(), null, false);
+    } else if (inValue is num) {
+      final int? tempPositiveInt = int.tryParse(inValue.toString());
       return tempPositiveInt == null
-          ? PositiveInt._(inValue, null, false, true)
+          ? PositiveInt._(inValue.toString(), null, false)
           : tempPositiveInt > 0
-              ? PositiveInt._(inValue, tempPositiveInt, true, true)
-              : PositiveInt._(inValue, null, false, true);
+              ? PositiveInt._(inValue.toString(), tempPositiveInt, true)
+              : PositiveInt._(inValue.toString(), null, false);
     }
-    throw ArgumentError('PositiveInt cannot be constructed from $inValue.');
+    throw CannotBeConstructed<PositiveInt>(
+        'PositiveInt cannot be constructed from $inValue.');
   }
 
   factory PositiveInt.fromJson(dynamic json) => PositiveInt(json);
@@ -31,7 +35,7 @@ class PositiveInt extends FhirNumber {
       ? PositiveInt.fromJson(jsonDecode(jsonEncode(loadYaml(yaml))))
       : yaml is YamlMap
           ? PositiveInt.fromJson(jsonDecode(jsonEncode(yaml)))
-          : throw FormatException(
+          : throw YamlFormatException<PositiveInt>(
               'FormatException: "$json" is not a valid Yaml string or YamlMap.');
 
   int? get value => valueNumber as int?;

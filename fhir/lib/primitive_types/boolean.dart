@@ -1,9 +1,15 @@
 //ignore_for_file: avoid_equals_and_hash_code_on_mutable_classes, avoid_renaming_method_parameters, avoid_bool_literals_in_conditional_expressions
 
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:yaml/yaml.dart';
-// import 'package:flutter/foundation.dart';
+
+// Project imports:
+import 'primitive_type_exceptions.dart';
+
+//
 
 class Boolean {
   const Boolean._(this._valueString, this._valueBoolean, this._isValid,
@@ -17,8 +23,9 @@ class Boolean {
           ? Boolean._(inValue, inValue.toLowerCase() == 'true', true, false)
           : Boolean._(inValue, null, false, false);
     } else {
-      throw ArgumentError(
-          "Boolean cannot be constructed from $inValue of type '${inValue.runtimeType.toString()}'.");
+      throw CannotBeConstructed<Boolean>(
+          'Boolean cannot be constructed from $inValue of type '
+          "'${inValue.runtimeType}'.");
     }
   }
 
@@ -28,7 +35,7 @@ class Boolean {
       ? Boolean.fromJson(jsonDecode(jsonEncode(loadYaml(yaml))))
       : yaml is YamlMap
           ? Boolean.fromJson(jsonDecode(jsonEncode(yaml)))
-          : throw FormatException(
+          : throw YamlFormatException<Boolean>(
               'FormatException: "$json" is not a valid Yaml string or YamlMap.');
 
   final String _valueString;

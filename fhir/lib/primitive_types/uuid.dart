@@ -1,8 +1,13 @@
 //ignore_for_file: avoid_equals_and_hash_code_on_mutable_classes, avoid_renaming_method_parameters, avoid_bool_literals_in_conditional_expressions
 
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:yaml/yaml.dart';
+
+// Project imports:
+import 'primitive_type_exceptions.dart';
 
 class Uuid {
   const Uuid._(this._valueString, this._valueUri, this._isValid);
@@ -20,7 +25,7 @@ class Uuid {
       ? Uuid.fromJson(jsonDecode(jsonEncode(loadYaml(yaml))))
       : yaml is YamlMap
           ? Uuid.fromJson(jsonDecode(jsonEncode(yaml)))
-          : throw FormatException(
+          : throw YamlFormatException<Uuid>(
               'FormatException: "$json" is not a valid Yaml string or YamlMap.');
 
   final String _valueString;

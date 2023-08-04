@@ -11,7 +11,7 @@ _$_Narrative _$$_NarrativeFromJson(Map<String, dynamic> json) => _$_Narrative(
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
-      status: _$enumDecodeNullable(_$NarrativeStatusEnumMap, json['status'],
+      status: $enumDecodeNullable(_$NarrativeStatusEnumMap, json['status'],
           unknownValue: NarrativeStatus.unknown),
       statusElement: json['_status'] == null
           ? null
@@ -37,43 +37,6 @@ Map<String, dynamic> _$$_NarrativeToJson(_$_Narrative instance) {
   return val;
 }
 
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
-
 const _$NarrativeStatusEnumMap = {
   NarrativeStatus.generated: 'generated',
   NarrativeStatus.extensions: 'extensions',
@@ -81,6 +44,38 @@ const _$NarrativeStatusEnumMap = {
   NarrativeStatus.empty: 'empty',
   NarrativeStatus.unknown: 'unknown',
 };
+
+_$_CodeableReference _$$_CodeableReferenceFromJson(Map<String, dynamic> json) =>
+    _$_CodeableReference(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      concept: json['concept'] == null
+          ? null
+          : CodeableConcept.fromJson(json['concept'] as Map<String, dynamic>),
+      reference: json['reference'] == null
+          ? null
+          : Reference.fromJson(json['reference'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$_CodeableReferenceToJson(
+    _$_CodeableReference instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('concept', instance.concept?.toJson());
+  writeNotNull('reference', instance.reference?.toJson());
+  return val;
+}
 
 _$_Reference _$$_ReferenceFromJson(Map<String, dynamic> json) => _$_Reference(
       id: json['id'] as String?,
@@ -351,11 +346,11 @@ _$_ElementDefinition _$$_ElementDefinitionFromJson(Map<String, dynamic> json) =>
           ? null
           : Element.fromJson(json['_path'] as Map<String, dynamic>),
       representation: (json['representation'] as List<dynamic>?)
-          ?.map(
-              (e) => _$enumDecode(_$ElementDefinitionRepresentationEnumMap, e))
+          ?.map((e) => $enumDecode(_$ElementDefinitionRepresentationEnumMap, e))
           .toList(),
       representationElement: (json['_representation'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       sliceName: json['sliceName'] as String?,
       sliceNameElement: json['_sliceName'] == null
@@ -403,7 +398,8 @@ _$_ElementDefinition _$$_ElementDefinitionFromJson(Map<String, dynamic> json) =>
       alias:
           (json['alias'] as List<dynamic>?)?.map((e) => e as String).toList(),
       aliasElement: (json['_alias'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       min: json['min'] == null ? null : UnsignedInt.fromJson(json['min']),
       minElement: json['_min'] == null
@@ -569,6 +565,11 @@ _$_ElementDefinition _$$_ElementDefinitionFromJson(Map<String, dynamic> json) =>
           ? null
           : CodeableConcept.fromJson(
               json['defaultValueCodeableConcept'] as Map<String, dynamic>),
+      defaultValueCodeableReference: json['defaultValueCodeableReference'] ==
+              null
+          ? null
+          : CodeableReference.fromJson(
+              json['defaultValueCodeableReference'] as Map<String, dynamic>),
       defaultValueCoding: json['defaultValueCoding'] == null
           ? null
           : Coding.fromJson(json['defaultValueCoding'] as Map<String, dynamic>),
@@ -611,6 +612,10 @@ _$_ElementDefinition _$$_ElementDefinitionFromJson(Map<String, dynamic> json) =>
       defaultValueRatio: json['defaultValueRatio'] == null
           ? null
           : Ratio.fromJson(json['defaultValueRatio'] as Map<String, dynamic>),
+      defaultValueRatioRange: json['defaultValueRatioRange'] == null
+          ? null
+          : RatioRange.fromJson(
+              json['defaultValueRatioRange'] as Map<String, dynamic>),
       defaultValueReference: json['defaultValueReference'] == null
           ? null
           : Reference.fromJson(
@@ -664,9 +669,6 @@ _$_ElementDefinition _$$_ElementDefinitionFromJson(Map<String, dynamic> json) =>
       defaultValueDosage: json['defaultValueDosage'] == null
           ? null
           : Dosage.fromJson(json['defaultValueDosage'] as Map<String, dynamic>),
-      defaultValueMeta: json['defaultValueMeta'] == null
-          ? null
-          : Meta.fromJson(json['defaultValueMeta'] as Map<String, dynamic>),
       meaningWhenMissing: json['meaningWhenMissing'] == null
           ? null
           : Markdown.fromJson(json['meaningWhenMissing']),
@@ -800,6 +802,10 @@ _$_ElementDefinition _$$_ElementDefinitionFromJson(Map<String, dynamic> json) =>
           ? null
           : CodeableConcept.fromJson(
               json['fixedCodeableConcept'] as Map<String, dynamic>),
+      fixedCodeableReference: json['fixedCodeableReference'] == null
+          ? null
+          : CodeableReference.fromJson(
+              json['fixedCodeableReference'] as Map<String, dynamic>),
       fixedCoding: json['fixedCoding'] == null
           ? null
           : Coding.fromJson(json['fixedCoding'] as Map<String, dynamic>),
@@ -839,6 +845,10 @@ _$_ElementDefinition _$$_ElementDefinitionFromJson(Map<String, dynamic> json) =>
       fixedRatio: json['fixedRatio'] == null
           ? null
           : Ratio.fromJson(json['fixedRatio'] as Map<String, dynamic>),
+      fixedRatioRange: json['fixedRatioRange'] == null
+          ? null
+          : RatioRange.fromJson(
+              json['fixedRatioRange'] as Map<String, dynamic>),
       fixedReference: json['fixedReference'] == null
           ? null
           : Reference.fromJson(json['fixedReference'] as Map<String, dynamic>),
@@ -887,9 +897,6 @@ _$_ElementDefinition _$$_ElementDefinitionFromJson(Map<String, dynamic> json) =>
       fixedDosage: json['fixedDosage'] == null
           ? null
           : Dosage.fromJson(json['fixedDosage'] as Map<String, dynamic>),
-      fixedMeta: json['fixedMeta'] == null
-          ? null
-          : Meta.fromJson(json['fixedMeta'] as Map<String, dynamic>),
       patternBase64Binary: json['patternBase64Binary'] == null
           ? null
           : Base64Binary.fromJson(json['patternBase64Binary']),
@@ -1021,6 +1028,10 @@ _$_ElementDefinition _$$_ElementDefinitionFromJson(Map<String, dynamic> json) =>
           ? null
           : CodeableConcept.fromJson(
               json['patternCodeableConcept'] as Map<String, dynamic>),
+      patternCodeableReference: json['patternCodeableReference'] == null
+          ? null
+          : CodeableReference.fromJson(
+              json['patternCodeableReference'] as Map<String, dynamic>),
       patternCoding: json['patternCoding'] == null
           ? null
           : Coding.fromJson(json['patternCoding'] as Map<String, dynamic>),
@@ -1061,6 +1072,10 @@ _$_ElementDefinition _$$_ElementDefinitionFromJson(Map<String, dynamic> json) =>
       patternRatio: json['patternRatio'] == null
           ? null
           : Ratio.fromJson(json['patternRatio'] as Map<String, dynamic>),
+      patternRatioRange: json['patternRatioRange'] == null
+          ? null
+          : RatioRange.fromJson(
+              json['patternRatioRange'] as Map<String, dynamic>),
       patternReference: json['patternReference'] == null
           ? null
           : Reference.fromJson(
@@ -1111,9 +1126,6 @@ _$_ElementDefinition _$$_ElementDefinitionFromJson(Map<String, dynamic> json) =>
       patternDosage: json['patternDosage'] == null
           ? null
           : Dosage.fromJson(json['patternDosage'] as Map<String, dynamic>),
-      patternMeta: json['patternMeta'] == null
-          ? null
-          : Meta.fromJson(json['patternMeta'] as Map<String, dynamic>),
       example: (json['example'] as List<dynamic>?)
           ?.map((e) =>
               ElementDefinitionExample.fromJson(e as Map<String, dynamic>))
@@ -1234,7 +1246,8 @@ _$_ElementDefinition _$$_ElementDefinitionFromJson(Map<String, dynamic> json) =>
           ?.map((e) => Id.fromJson(e))
           .toList(),
       conditionElement: (json['_condition'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       constraint: (json['constraint'] as List<dynamic>?)
           ?.map((e) =>
@@ -1292,7 +1305,7 @@ Map<String, dynamic> _$$_ElementDefinitionToJson(
   writeNotNull(
       'representation',
       instance.representation
-          ?.map((e) => _$ElementDefinitionRepresentationEnumMap[e])
+          ?.map((e) => _$ElementDefinitionRepresentationEnumMap[e]!)
           .toList());
   writeNotNull('_representation',
       instance.representationElement?.map((e) => e?.toJson()).toList());
@@ -1385,6 +1398,8 @@ Map<String, dynamic> _$$_ElementDefinitionToJson(
       'defaultValueAttachment', instance.defaultValueAttachment?.toJson());
   writeNotNull('defaultValueCodeableConcept',
       instance.defaultValueCodeableConcept?.toJson());
+  writeNotNull('defaultValueCodeableReference',
+      instance.defaultValueCodeableReference?.toJson());
   writeNotNull('defaultValueCoding', instance.defaultValueCoding?.toJson());
   writeNotNull(
       'defaultValueContactPoint', instance.defaultValueContactPoint?.toJson());
@@ -1400,6 +1415,8 @@ Map<String, dynamic> _$$_ElementDefinitionToJson(
   writeNotNull('defaultValueQuantity', instance.defaultValueQuantity?.toJson());
   writeNotNull('defaultValueRange', instance.defaultValueRange?.toJson());
   writeNotNull('defaultValueRatio', instance.defaultValueRatio?.toJson());
+  writeNotNull(
+      'defaultValueRatioRange', instance.defaultValueRatioRange?.toJson());
   writeNotNull(
       'defaultValueReference', instance.defaultValueReference?.toJson());
   writeNotNull(
@@ -1424,7 +1441,6 @@ Map<String, dynamic> _$$_ElementDefinitionToJson(
   writeNotNull(
       'defaultValueUsageContext', instance.defaultValueUsageContext?.toJson());
   writeNotNull('defaultValueDosage', instance.defaultValueDosage?.toJson());
-  writeNotNull('defaultValueMeta', instance.defaultValueMeta?.toJson());
   writeNotNull('meaningWhenMissing', instance.meaningWhenMissing?.toJson());
   writeNotNull(
       '_meaningWhenMissing', instance.meaningWhenMissingElement?.toJson());
@@ -1474,6 +1490,8 @@ Map<String, dynamic> _$$_ElementDefinitionToJson(
   writeNotNull('fixedAnnotation', instance.fixedAnnotation?.toJson());
   writeNotNull('fixedAttachment', instance.fixedAttachment?.toJson());
   writeNotNull('fixedCodeableConcept', instance.fixedCodeableConcept?.toJson());
+  writeNotNull(
+      'fixedCodeableReference', instance.fixedCodeableReference?.toJson());
   writeNotNull('fixedCoding', instance.fixedCoding?.toJson());
   writeNotNull('fixedContactPoint', instance.fixedContactPoint?.toJson());
   writeNotNull('fixedCount', instance.fixedCount?.toJson());
@@ -1486,6 +1504,7 @@ Map<String, dynamic> _$$_ElementDefinitionToJson(
   writeNotNull('fixedQuantity', instance.fixedQuantity?.toJson());
   writeNotNull('fixedRange', instance.fixedRange?.toJson());
   writeNotNull('fixedRatio', instance.fixedRatio?.toJson());
+  writeNotNull('fixedRatioRange', instance.fixedRatioRange?.toJson());
   writeNotNull('fixedReference', instance.fixedReference?.toJson());
   writeNotNull('fixedSampledData', instance.fixedSampledData?.toJson());
   writeNotNull('fixedSignature', instance.fixedSignature?.toJson());
@@ -1501,7 +1520,6 @@ Map<String, dynamic> _$$_ElementDefinitionToJson(
       'fixedTriggerDefinition', instance.fixedTriggerDefinition?.toJson());
   writeNotNull('fixedUsageContext', instance.fixedUsageContext?.toJson());
   writeNotNull('fixedDosage', instance.fixedDosage?.toJson());
-  writeNotNull('fixedMeta', instance.fixedMeta?.toJson());
   writeNotNull('patternBase64Binary', instance.patternBase64Binary?.toJson());
   writeNotNull(
       '_patternBase64Binary', instance.patternBase64BinaryElement?.toJson());
@@ -1549,6 +1567,8 @@ Map<String, dynamic> _$$_ElementDefinitionToJson(
   writeNotNull('patternAttachment', instance.patternAttachment?.toJson());
   writeNotNull(
       'patternCodeableConcept', instance.patternCodeableConcept?.toJson());
+  writeNotNull(
+      'patternCodeableReference', instance.patternCodeableReference?.toJson());
   writeNotNull('patternCoding', instance.patternCoding?.toJson());
   writeNotNull('patternContactPoint', instance.patternContactPoint?.toJson());
   writeNotNull('patternCount', instance.patternCount?.toJson());
@@ -1561,6 +1581,7 @@ Map<String, dynamic> _$$_ElementDefinitionToJson(
   writeNotNull('patternQuantity', instance.patternQuantity?.toJson());
   writeNotNull('patternRange', instance.patternRange?.toJson());
   writeNotNull('patternRatio', instance.patternRatio?.toJson());
+  writeNotNull('patternRatioRange', instance.patternRatioRange?.toJson());
   writeNotNull('patternReference', instance.patternReference?.toJson());
   writeNotNull('patternSampledData', instance.patternSampledData?.toJson());
   writeNotNull('patternSignature', instance.patternSignature?.toJson());
@@ -1578,7 +1599,6 @@ Map<String, dynamic> _$$_ElementDefinitionToJson(
       'patternTriggerDefinition', instance.patternTriggerDefinition?.toJson());
   writeNotNull('patternUsageContext', instance.patternUsageContext?.toJson());
   writeNotNull('patternDosage', instance.patternDosage?.toJson());
-  writeNotNull('patternMeta', instance.patternMeta?.toJson());
   writeNotNull('example', instance.example?.map((e) => e.toJson()).toList());
   writeNotNull('minValueDate', instance.minValueDate?.toJson());
   writeNotNull('_minValueDate', instance.minValueDateElement?.toJson());
@@ -1671,7 +1691,7 @@ _$_ElementDefinitionSlicing _$$_ElementDefinitionSlicingFromJson(
       orderedElement: json['_ordered'] == null
           ? null
           : Element.fromJson(json['_ordered'] as Map<String, dynamic>),
-      rules: _$enumDecodeNullable(
+      rules: $enumDecodeNullable(
           _$ElementDefinitionSlicingRulesEnumMap, json['rules'],
           unknownValue: ElementDefinitionSlicingRules.unknown),
       rulesElement: json['_rules'] == null
@@ -1722,7 +1742,7 @@ _$_ElementDefinitionDiscriminator _$$_ElementDefinitionDiscriminatorFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
-      type: _$enumDecodeNullable(
+      type: $enumDecodeNullable(
           _$ElementDefinitionDiscriminatorTypeEnumMap, json['type'],
           unknownValue: ElementDefinitionDiscriminatorType.unknown),
       typeElement: json['_type'] == null
@@ -1832,19 +1852,21 @@ _$_ElementDefinitionType _$$_ElementDefinitionTypeFromJson(
           ?.map((e) => Canonical.fromJson(e))
           .toList(),
       profileElement: (json['_profile'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       targetProfile: (json['targetProfile'] as List<dynamic>?)
           ?.map((e) => Canonical.fromJson(e))
           .toList(),
       aggregation: (json['aggregation'] as List<dynamic>?)
           ?.map(
-              (e) => _$enumDecode(_$ElementDefinitionTypeAggregationEnumMap, e))
+              (e) => $enumDecode(_$ElementDefinitionTypeAggregationEnumMap, e))
           .toList(),
       aggregationElement: (json['_aggregation'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
-      versioning: _$enumDecodeNullable(
+      versioning: $enumDecodeNullable(
           _$ElementDefinitionTypeVersioningEnumMap, json['versioning'],
           unknownValue: ElementDefinitionTypeVersioning.unknown),
       versioningElement: json['_versioning'] == null
@@ -1877,7 +1899,7 @@ Map<String, dynamic> _$$_ElementDefinitionTypeToJson(
   writeNotNull(
       'aggregation',
       instance.aggregation
-          ?.map((e) => _$ElementDefinitionTypeAggregationEnumMap[e])
+          ?.map((e) => _$ElementDefinitionTypeAggregationEnumMap[e]!)
           .toList());
   writeNotNull('_aggregation',
       instance.aggregationElement?.map((e) => e?.toJson()).toList());
@@ -2037,6 +2059,10 @@ _$_ElementDefinitionExample _$$_ElementDefinitionExampleFromJson(
           ? null
           : CodeableConcept.fromJson(
               json['valueCodeableConcept'] as Map<String, dynamic>),
+      valueCodeableReference: json['valueCodeableReference'] == null
+          ? null
+          : CodeableReference.fromJson(
+              json['valueCodeableReference'] as Map<String, dynamic>),
       valueCoding: json['valueCoding'] == null
           ? null
           : Coding.fromJson(json['valueCoding'] as Map<String, dynamic>),
@@ -2076,6 +2102,10 @@ _$_ElementDefinitionExample _$$_ElementDefinitionExampleFromJson(
       valueRatio: json['valueRatio'] == null
           ? null
           : Ratio.fromJson(json['valueRatio'] as Map<String, dynamic>),
+      valueRatioRange: json['valueRatioRange'] == null
+          ? null
+          : RatioRange.fromJson(
+              json['valueRatioRange'] as Map<String, dynamic>),
       valueReference: json['valueReference'] == null
           ? null
           : Reference.fromJson(json['valueReference'] as Map<String, dynamic>),
@@ -2190,6 +2220,8 @@ Map<String, dynamic> _$$_ElementDefinitionExampleToJson(
   writeNotNull('valueAnnotation', instance.valueAnnotation?.toJson());
   writeNotNull('valueAttachment', instance.valueAttachment?.toJson());
   writeNotNull('valueCodeableConcept', instance.valueCodeableConcept?.toJson());
+  writeNotNull(
+      'valueCodeableReference', instance.valueCodeableReference?.toJson());
   writeNotNull('valueCoding', instance.valueCoding?.toJson());
   writeNotNull('valueContactPoint', instance.valueContactPoint?.toJson());
   writeNotNull('valueCount', instance.valueCount?.toJson());
@@ -2202,6 +2234,7 @@ Map<String, dynamic> _$$_ElementDefinitionExampleToJson(
   writeNotNull('valueQuantity', instance.valueQuantity?.toJson());
   writeNotNull('valueRange', instance.valueRange?.toJson());
   writeNotNull('valueRatio', instance.valueRatio?.toJson());
+  writeNotNull('valueRatioRange', instance.valueRatioRange?.toJson());
   writeNotNull('valueReference', instance.valueReference?.toJson());
   writeNotNull('valueSampledData', instance.valueSampledData?.toJson());
   writeNotNull('valueSignature', instance.valueSignature?.toJson());
@@ -2239,7 +2272,7 @@ _$_ElementDefinitionConstraint _$$_ElementDefinitionConstraintFromJson(
       requirementsElement: json['_requirements'] == null
           ? null
           : Element.fromJson(json['_requirements'] as Map<String, dynamic>),
-      severity: _$enumDecodeNullable(
+      severity: $enumDecodeNullable(
           _$ElementDefinitionConstraintSeverityEnumMap, json['severity'],
           unknownValue: ElementDefinitionConstraintSeverity.unknown),
       severityElement: json['_severity'] == null
@@ -2309,7 +2342,7 @@ _$_ElementDefinitionBinding _$$_ElementDefinitionBindingFromJson(
       modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
-      strength: _$enumDecodeNullable(
+      strength: $enumDecodeNullable(
           _$ElementDefinitionBindingStrengthEnumMap, json['strength'],
           unknownValue: ElementDefinitionBindingStrength.unknown),
       strengthElement: json['_strength'] == null

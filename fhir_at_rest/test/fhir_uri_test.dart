@@ -1,8 +1,11 @@
+// Package imports:
 import 'package:fhir/r4.dart';
-import 'package:fhir_at_rest/r4.dart';
 import 'package:test/test.dart';
 
-void main() {
+// Project imports:
+import 'package:fhir_at_rest/r4.dart';
+
+Future<void> fhirUriTest() async {
   const String mimeType = 'json';
 
   group('FHIR URI - READ:', () {
@@ -10,7 +13,7 @@ void main() {
       final request = FhirRequest.read(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4ResourceType.Patient,
-        id: Id('12345'),
+        id: '12345',
       );
       expect(
         request.uri(),
@@ -22,7 +25,7 @@ void main() {
       final request = FhirRequest.read(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4ResourceType.Patient,
-        id: Id('12345'),
+        id: '12345',
         pretty: true,
       );
       expect(
@@ -35,7 +38,7 @@ void main() {
       final request = FhirRequest.read(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4ResourceType.Patient,
-        id: Id('12345'),
+        id: '12345',
         pretty: true,
         summary: Summary.true_,
       );
@@ -49,7 +52,7 @@ void main() {
       final request = FhirRequest.read(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4ResourceType.Patient,
-        id: Id('12345'),
+        id: '12345',
         summary: Summary.count,
       );
       expect(
@@ -62,7 +65,7 @@ void main() {
       final request = FhirRequest.read(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4ResourceType.Patient,
-        id: Id('1227442'),
+        id: '1227442',
         pretty: true,
         elements: ['name'],
       );
@@ -77,7 +80,7 @@ void main() {
       final request = FhirRequest.read(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4ResourceType.Patient,
-        id: Id('1227442'),
+        id: '1227442',
         pretty: true,
         elements: ['name', 'gender'],
       );
@@ -93,7 +96,7 @@ void main() {
       final request = FhirRequest.vRead(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4ResourceType.Patient,
-        id: Id('12345'),
+        id: '12345',
         vid: Id('6789'),
       );
       expect(
@@ -106,7 +109,7 @@ void main() {
       final request = FhirRequest.vRead(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4ResourceType.Patient,
-        id: Id('12345'),
+        id: '12345',
         vid: Id('6789'),
         pretty: true,
       );
@@ -120,7 +123,7 @@ void main() {
       final request = FhirRequest.vRead(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4ResourceType.Patient,
-        id: Id('12345'),
+        id: '12345',
         vid: Id('6789'),
         pretty: true,
         summary: Summary.true_,
@@ -135,7 +138,7 @@ void main() {
       final request = FhirRequest.vRead(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4ResourceType.Patient,
-        id: Id('12345'),
+        id: '12345',
         vid: Id('6789'),
         summary: Summary.count,
       );
@@ -148,7 +151,7 @@ void main() {
 
   group('FHIR URI - TRANSACTION:', () {
     test('transaction/batch', () async {
-      final Bundle bundle = Bundle(id: Id('12345'));
+      final Bundle bundle = Bundle(id: '12345');
       final request = FhirRequest.transaction(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         bundle: bundle,
@@ -165,7 +168,7 @@ void main() {
       final request = FhirRequest.history(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4ResourceType.Observation,
-        id: Id('12345'),
+        id: '12345',
       );
       expect(
         request.uri(),
@@ -203,7 +206,7 @@ void main() {
       final request = FhirRequest.history(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4ResourceType.Observation,
-        id: Id('12345'),
+        id: '12345',
         parameters: parameters,
       );
 
@@ -217,7 +220,7 @@ void main() {
 
   group('FHIR URI - UPDATE:', () {
     test('update patient by id', () async {
-      final patient = Patient(id: Id('12345'));
+      final patient = Patient(id: '12345');
       final request = FhirRequest.update(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         resource: patient,
@@ -231,7 +234,7 @@ void main() {
 
   group('FHIR URI - PATCH:', () {
     test('patch patient by id', () async {
-      final patient = Patient(id: Id('12345'));
+      final patient = Patient(id: '12345');
       final request = FhirRequest.patch(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         resource: patient,
@@ -248,7 +251,7 @@ void main() {
       final request = FhirRequest.delete(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4ResourceType.Patient,
-        id: Id('12345'),
+        id: '12345',
       );
       expect(
         request.uri(),
@@ -259,7 +262,7 @@ void main() {
 
   group('FHIR URI - CREATE:', () {
     test('create patient', () async {
-      final patient = Patient(id: Id('12345'));
+      final patient = Patient(id: '12345');
       final request = FhirRequest.create(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         resource: patient,

@@ -1,14 +1,19 @@
 //ignore_for_file: avoid_equals_and_hash_code_on_mutable_classes, avoid_renaming_method_parameters, avoid_bool_literals_in_conditional_expressions
 
+// Dart imports:
 import 'dart:convert';
+
+// Package imports:
 import 'package:yaml/yaml.dart';
-// import 'package:flutter/foundation.dart';
+
+// Project imports:
+import 'primitive_type_exceptions.dart';
 
 class Base64Binary {
   const Base64Binary._(
       this._valueString, this._valueBase64Binary, this._isValid);
 
-// TODO: This regexp is the most correct way to check the validity of a base64
+// TODO(TILO): This regexp is the most correct way to check the validity of a base64
 // But crashes the library on release builds with large base64 strings (images)
 
 //  static final RegExp _base64RegExp = RegExp(
@@ -29,7 +34,7 @@ class Base64Binary {
       ? Base64Binary.fromJson(jsonDecode(jsonEncode(loadYaml(yaml))))
       : yaml is YamlMap
           ? Base64Binary.fromJson(jsonDecode(jsonEncode(yaml)))
-          : throw FormatException(
+          : throw YamlFormatException<Base64Binary>(
               'FormatException: "$json" is not a valid Yaml string or YamlMap.');
 
   final String _valueString;

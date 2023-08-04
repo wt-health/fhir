@@ -1,32 +1,44 @@
+// Dart imports:
 import 'dart:convert';
 
-import 'package:fhir_yaml/fhir_yaml.dart';
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:yaml/yaml.dart';
-// import 'package:flutter/foundation.dart';
 
+// Project imports:
 import '../../r4.dart';
 
 part 'element.freezed.dart';
 part 'element.g.dart';
 
+/// [Element] Base definition for all elements in a resource.
 @freezed
 class Element with _$Element {
+  /// [Element] Base definition for all elements in a resource.
   Element._();
 
-  /// [Element]: Base definition for all elements in a resource.
+  /// [Element] Base definition for all elements in a resource.
   ///
-  /// [id]: Unique id for the element within a resource (for internal
+  /// [id] Unique id for the element within a resource (for internal
   ///  references). This may be any string value that does not contain spaces.
   ///
-  /// [extension_]: May be used to represent additional information that is not
+  /// [extension_] May be used to represent additional information that is not
   /// part of the basic definition of the element. To make the use of extensions
   /// safe and manageable, there is a strict set of governance  applied to the
   /// definition and use of extensions. Though any implementer can define an
   /// extension, there is a set of requirements that SHALL be met as part of the
   ///  definition of the extension.
   factory Element({
+    /// [id] Unique id for the element within a resource (for internal
+    ///  references). This may be any string value that does not contain spaces.
     String? id,
+
+    /// [extension_] May be used to represent additional information that is not
+    /// part of the basic definition of the element. To make the use of extensions
+    /// safe and manageable, there is a strict set of governance  applied to the
+    /// definition and use of extensions. Though any implementer can define an
+    /// extension, there is a set of requirements that SHALL be met as part of the
+    ///  definition of the extension.
     @JsonKey(name: 'extension') List<FhirExtension>? extension_,
   }) = _Element;
 
@@ -47,4 +59,16 @@ class Element with _$Element {
   /// Factory constructor, accepts [Map<String, dynamic>] as an argument
   factory Element.fromJson(Map<String, dynamic> json) =>
       _$ElementFromJson(json);
+
+  /// Acts like a constructor, returns a [Element], accepts a
+  /// [String] as an argument, mostly because I got tired of typing it out
+  factory Element.fromJsonString(String source) {
+    final json = jsonDecode(source);
+    if (json is Map<String, dynamic>) {
+      return _$ElementFromJson(json);
+    } else {
+      throw FormatException('FormatException:\nYou passed $json\n'
+          'This does not properly decode to a Map<String,dynamic>.');
+    }
+  }
 }

@@ -1,8 +1,13 @@
 //ignore_for_file: avoid_equals_and_hash_code_on_mutable_classes, avoid_renaming_method_parameters, avoid_bool_literals_in_conditional_expressions
 
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:yaml/yaml.dart';
+
+// Project imports:
+import 'primitive_type_exceptions.dart';
 
 class FhirUrl {
   const FhirUrl._(this._valueString, this._valueUri, this._isValid);
@@ -14,7 +19,8 @@ class FhirUrl {
       final Uri? tempUri = Uri.tryParse(inValue);
       return FhirUrl._(inValue, tempUri, tempUri != null);
     }
-    throw ArgumentError('FhirUrl cannot be constructed from $inValue.');
+    throw CannotBeConstructed<FhirUrl>(
+        'FhirUrl cannot be constructed from $inValue.');
   }
 
   factory FhirUrl.fromJson(dynamic json) => FhirUrl(json);
@@ -23,7 +29,7 @@ class FhirUrl {
       ? FhirUrl.fromJson(jsonDecode(jsonEncode(loadYaml(yaml))))
       : yaml is YamlMap
           ? FhirUrl.fromJson(jsonDecode(jsonEncode(yaml)))
-          : throw FormatException(
+          : throw YamlFormatException<FhirUrl>(
               'FormatException: "$json" is not a valid Yaml string or YamlMap.');
 
   final String _valueString;

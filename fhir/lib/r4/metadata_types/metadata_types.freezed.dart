@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'metadata_types.dart';
 
@@ -10,47 +12,36 @@ part of 'metadata_types.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ContactDetail _$ContactDetailFromJson(Map<String, dynamic> json) {
   return _ContactDetail.fromJson(json);
 }
 
 /// @nodoc
-class _$ContactDetailTearOff {
-  const _$ContactDetailTearOff();
-
-  _ContactDetail call(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      String? name,
-      @JsonKey(name: '_name') Element? nameElement,
-      List<ContactPoint>? telecom}) {
-    return _ContactDetail(
-      id: id,
-      extension_: extension_,
-      name: name,
-      nameElement: nameElement,
-      telecom: telecom,
-    );
-  }
-
-  ContactDetail fromJson(Map<String, Object> json) {
-    return ContactDetail.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ContactDetail = _$ContactDetailTearOff();
-
-/// @nodoc
 mixin _$ContactDetail {
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   String? get id => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+
+  /// [name] The name of an individual to contact.
   String? get name => throw _privateConstructorUsedError;
+
+  /// [nameElement] Extensions for name
   @JsonKey(name: '_name')
   Element? get nameElement => throw _privateConstructorUsedError;
+
+  /// [telecom] The contact details for the individual (if a name was provided)
+  ///  or the organization.
   List<ContactPoint>? get telecom => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -63,7 +54,8 @@ mixin _$ContactDetail {
 abstract class $ContactDetailCopyWith<$Res> {
   factory $ContactDetailCopyWith(
           ContactDetail value, $Res Function(ContactDetail) then) =
-      _$ContactDetailCopyWithImpl<$Res>;
+      _$ContactDetailCopyWithImpl<$Res, ContactDetail>;
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -75,14 +67,16 @@ abstract class $ContactDetailCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ContactDetailCopyWithImpl<$Res>
+class _$ContactDetailCopyWithImpl<$Res, $Val extends ContactDetail>
     implements $ContactDetailCopyWith<$Res> {
   _$ContactDetailCopyWithImpl(this._value, this._then);
 
-  final ContactDetail _value;
   // ignore: unused_field
-  final $Res Function(ContactDetail) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -92,48 +86,50 @@ class _$ContactDetailCopyWithImpl<$Res>
     Object? telecom = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      nameElement: nameElement == freezed
+      nameElement: freezed == nameElement
           ? _value.nameElement
           : nameElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      telecom: telecom == freezed
+      telecom: freezed == telecom
           ? _value.telecom
           : telecom // ignore: cast_nullable_to_non_nullable
               as List<ContactPoint>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get nameElement {
     if (_value.nameElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.nameElement!, (value) {
-      return _then(_value.copyWith(nameElement: value));
+      return _then(_value.copyWith(nameElement: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$ContactDetailCopyWith<$Res>
+abstract class _$$_ContactDetailCopyWith<$Res>
     implements $ContactDetailCopyWith<$Res> {
-  factory _$ContactDetailCopyWith(
-          _ContactDetail value, $Res Function(_ContactDetail) then) =
-      __$ContactDetailCopyWithImpl<$Res>;
+  factory _$$_ContactDetailCopyWith(
+          _$_ContactDetail value, $Res Function(_$_ContactDetail) then) =
+      __$$_ContactDetailCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -146,16 +142,14 @@ abstract class _$ContactDetailCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ContactDetailCopyWithImpl<$Res>
-    extends _$ContactDetailCopyWithImpl<$Res>
-    implements _$ContactDetailCopyWith<$Res> {
-  __$ContactDetailCopyWithImpl(
-      _ContactDetail _value, $Res Function(_ContactDetail) _then)
-      : super(_value, (v) => _then(v as _ContactDetail));
+class __$$_ContactDetailCopyWithImpl<$Res>
+    extends _$ContactDetailCopyWithImpl<$Res, _$_ContactDetail>
+    implements _$$_ContactDetailCopyWith<$Res> {
+  __$$_ContactDetailCopyWithImpl(
+      _$_ContactDetail _value, $Res Function(_$_ContactDetail) _then)
+      : super(_value, _then);
 
-  @override
-  _ContactDetail get _value => super._value as _ContactDetail;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -164,25 +158,25 @@ class __$ContactDetailCopyWithImpl<$Res>
     Object? nameElement = freezed,
     Object? telecom = freezed,
   }) {
-    return _then(_ContactDetail(
-      id: id == freezed
+    return _then(_$_ContactDetail(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      nameElement: nameElement == freezed
+      nameElement: freezed == nameElement
           ? _value.nameElement
           : nameElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      telecom: telecom == freezed
-          ? _value.telecom
+      telecom: freezed == telecom
+          ? _value._telecom
           : telecom // ignore: cast_nullable_to_non_nullable
               as List<ContactPoint>?,
     ));
@@ -194,27 +188,69 @@ class __$ContactDetailCopyWithImpl<$Res>
 class _$_ContactDetail extends _ContactDetail {
   _$_ContactDetail(
       {this.id,
-      @JsonKey(name: 'extension') this.extension_,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       this.name,
       @JsonKey(name: '_name') this.nameElement,
-      this.telecom})
-      : super._();
+      final List<ContactPoint>? telecom})
+      : _extension_ = extension_,
+        _telecom = telecom,
+        super._();
 
   factory _$_ContactDetail.fromJson(Map<String, dynamic> json) =>
       _$$_ContactDetailFromJson(json);
 
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   @override
   final String? id;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [name] The name of an individual to contact.
   @override
   final String? name;
+
+  /// [nameElement] Extensions for name
   @override
   @JsonKey(name: '_name')
   final Element? nameElement;
+
+  /// [telecom] The contact details for the individual (if a name was provided)
+  ///  or the organization.
+  final List<ContactPoint>? _telecom;
+
+  /// [telecom] The contact details for the individual (if a name was provided)
+  ///  or the organization.
   @override
-  final List<ContactPoint>? telecom;
+  List<ContactPoint>? get telecom {
+    final value = _telecom;
+    if (value == null) return null;
+    if (_telecom is EqualUnmodifiableListView) return _telecom;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -224,68 +260,85 @@ class _$_ContactDetail extends _ContactDetail {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ContactDetail &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_ContactDetail &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.nameElement, nameElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.nameElement, nameElement)) &&
-            (identical(other.telecom, telecom) ||
-                const DeepCollectionEquality().equals(other.telecom, telecom)));
+                other.nameElement == nameElement) &&
+            const DeepCollectionEquality().equals(other._telecom, _telecom));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(nameElement) ^
-      const DeepCollectionEquality().hash(telecom);
 
   @JsonKey(ignore: true)
   @override
-  _$ContactDetailCopyWith<_ContactDetail> get copyWith =>
-      __$ContactDetailCopyWithImpl<_ContactDetail>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      name,
+      nameElement,
+      const DeepCollectionEquality().hash(_telecom));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ContactDetailCopyWith<_$_ContactDetail> get copyWith =>
+      __$$_ContactDetailCopyWithImpl<_$_ContactDetail>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ContactDetailToJson(this);
+    return _$$_ContactDetailToJson(
+      this,
+    );
   }
 }
 
 abstract class _ContactDetail extends ContactDetail {
   factory _ContactDetail(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      String? name,
-      @JsonKey(name: '_name') Element? nameElement,
-      List<ContactPoint>? telecom}) = _$_ContactDetail;
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final String? name,
+      @JsonKey(name: '_name') final Element? nameElement,
+      final List<ContactPoint>? telecom}) = _$_ContactDetail;
   _ContactDetail._() : super._();
 
   factory _ContactDetail.fromJson(Map<String, dynamic> json) =
       _$_ContactDetail.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
+  String? get id;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
-  String? get name => throw _privateConstructorUsedError;
+
+  /// [name] The name of an individual to contact.
+  String? get name;
   @override
+
+  /// [nameElement] Extensions for name
   @JsonKey(name: '_name')
-  Element? get nameElement => throw _privateConstructorUsedError;
+  Element? get nameElement;
   @override
-  List<ContactPoint>? get telecom => throw _privateConstructorUsedError;
+
+  /// [telecom] The contact details for the individual (if a name was provided)
+  ///  or the organization.
+  List<ContactPoint>? get telecom;
   @override
   @JsonKey(ignore: true)
-  _$ContactDetailCopyWith<_ContactDetail> get copyWith =>
+  _$$_ContactDetailCopyWith<_$_ContactDetail> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -294,48 +347,38 @@ Contributor _$ContributorFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$ContributorTearOff {
-  const _$ContributorTearOff();
-
-  _Contributor call(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      @JsonKey(unknownEnumValue: ContributorType.unknown) ContributorType? type,
-      @JsonKey(name: '_type') Element? typeElement,
-      String? name,
-      @JsonKey(name: '_name') Element? nameElement,
-      List<ContactDetail>? contact}) {
-    return _Contributor(
-      id: id,
-      extension_: extension_,
-      type: type,
-      typeElement: typeElement,
-      name: name,
-      nameElement: nameElement,
-      contact: contact,
-    );
-  }
-
-  Contributor fromJson(Map<String, Object> json) {
-    return Contributor.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Contributor = _$ContributorTearOff();
-
-/// @nodoc
 mixin _$Contributor {
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   String? get id => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+
+  /// [type] The type of contributor.
   @JsonKey(unknownEnumValue: ContributorType.unknown)
   ContributorType? get type => throw _privateConstructorUsedError;
+
+  /// [typeElement] Extensions for type
   @JsonKey(name: '_type')
   Element? get typeElement => throw _privateConstructorUsedError;
+
+  /// [name] The name of the individual or organization responsible for the
+  ///  contribution.
   String? get name => throw _privateConstructorUsedError;
+
+  /// [nameElement] Extensions for name
   @JsonKey(name: '_name')
   Element? get nameElement => throw _privateConstructorUsedError;
+
+  /// [contact] Contact details to assist a user in finding and communicating
+  ///  with the contributor.
   List<ContactDetail>? get contact => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -348,7 +391,8 @@ mixin _$Contributor {
 abstract class $ContributorCopyWith<$Res> {
   factory $ContributorCopyWith(
           Contributor value, $Res Function(Contributor) then) =
-      _$ContributorCopyWithImpl<$Res>;
+      _$ContributorCopyWithImpl<$Res, Contributor>;
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -363,13 +407,16 @@ abstract class $ContributorCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ContributorCopyWithImpl<$Res> implements $ContributorCopyWith<$Res> {
+class _$ContributorCopyWithImpl<$Res, $Val extends Contributor>
+    implements $ContributorCopyWith<$Res> {
   _$ContributorCopyWithImpl(this._value, this._then);
 
-  final Contributor _value;
   // ignore: unused_field
-  final $Res Function(Contributor) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -381,67 +428,70 @@ class _$ContributorCopyWithImpl<$Res> implements $ContributorCopyWith<$Res> {
     Object? contact = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ContributorType?,
-      typeElement: typeElement == freezed
+      typeElement: freezed == typeElement
           ? _value.typeElement
           : typeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      nameElement: nameElement == freezed
+      nameElement: freezed == nameElement
           ? _value.nameElement
           : nameElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      contact: contact == freezed
+      contact: freezed == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
               as List<ContactDetail>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get typeElement {
     if (_value.typeElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.typeElement!, (value) {
-      return _then(_value.copyWith(typeElement: value));
+      return _then(_value.copyWith(typeElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get nameElement {
     if (_value.nameElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.nameElement!, (value) {
-      return _then(_value.copyWith(nameElement: value));
+      return _then(_value.copyWith(nameElement: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$ContributorCopyWith<$Res>
+abstract class _$$_ContributorCopyWith<$Res>
     implements $ContributorCopyWith<$Res> {
-  factory _$ContributorCopyWith(
-          _Contributor value, $Res Function(_Contributor) then) =
-      __$ContributorCopyWithImpl<$Res>;
+  factory _$$_ContributorCopyWith(
+          _$_Contributor value, $Res Function(_$_Contributor) then) =
+      __$$_ContributorCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -458,15 +508,14 @@ abstract class _$ContributorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ContributorCopyWithImpl<$Res> extends _$ContributorCopyWithImpl<$Res>
-    implements _$ContributorCopyWith<$Res> {
-  __$ContributorCopyWithImpl(
-      _Contributor _value, $Res Function(_Contributor) _then)
-      : super(_value, (v) => _then(v as _Contributor));
+class __$$_ContributorCopyWithImpl<$Res>
+    extends _$ContributorCopyWithImpl<$Res, _$_Contributor>
+    implements _$$_ContributorCopyWith<$Res> {
+  __$$_ContributorCopyWithImpl(
+      _$_Contributor _value, $Res Function(_$_Contributor) _then)
+      : super(_value, _then);
 
-  @override
-  _Contributor get _value => super._value as _Contributor;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -477,33 +526,33 @@ class __$ContributorCopyWithImpl<$Res> extends _$ContributorCopyWithImpl<$Res>
     Object? nameElement = freezed,
     Object? contact = freezed,
   }) {
-    return _then(_Contributor(
-      id: id == freezed
+    return _then(_$_Contributor(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ContributorType?,
-      typeElement: typeElement == freezed
+      typeElement: freezed == typeElement
           ? _value.typeElement
           : typeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      nameElement: nameElement == freezed
+      nameElement: freezed == nameElement
           ? _value.nameElement
           : nameElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      contact: contact == freezed
-          ? _value.contact
+      contact: freezed == contact
+          ? _value._contact
           : contact // ignore: cast_nullable_to_non_nullable
               as List<ContactDetail>?,
     ));
@@ -515,35 +564,82 @@ class __$ContributorCopyWithImpl<$Res> extends _$ContributorCopyWithImpl<$Res>
 class _$_Contributor extends _Contributor {
   _$_Contributor(
       {this.id,
-      @JsonKey(name: 'extension') this.extension_,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       @JsonKey(unknownEnumValue: ContributorType.unknown) this.type,
       @JsonKey(name: '_type') this.typeElement,
       this.name,
       @JsonKey(name: '_name') this.nameElement,
-      this.contact})
-      : super._();
+      final List<ContactDetail>? contact})
+      : _extension_ = extension_,
+        _contact = contact,
+        super._();
 
   factory _$_Contributor.fromJson(Map<String, dynamic> json) =>
       _$$_ContributorFromJson(json);
 
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   @override
   final String? id;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [type] The type of contributor.
   @override
   @JsonKey(unknownEnumValue: ContributorType.unknown)
   final ContributorType? type;
+
+  /// [typeElement] Extensions for type
   @override
   @JsonKey(name: '_type')
   final Element? typeElement;
+
+  /// [name] The name of the individual or organization responsible for the
+  ///  contribution.
   @override
   final String? name;
+
+  /// [nameElement] Extensions for name
   @override
   @JsonKey(name: '_name')
   final Element? nameElement;
+
+  /// [contact] Contact details to assist a user in finding and communicating
+  ///  with the contributor.
+  final List<ContactDetail>? _contact;
+
+  /// [contact] Contact details to assist a user in finding and communicating
+  ///  with the contributor.
   @override
-  final List<ContactDetail>? contact;
+  List<ContactDetail>? get contact {
+    final value = _contact;
+    if (value == null) return null;
+    if (_contact is EqualUnmodifiableListView) return _contact;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -553,83 +649,107 @@ class _$_Contributor extends _Contributor {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Contributor &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Contributor &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.typeElement, typeElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.typeElement, typeElement)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+                other.typeElement == typeElement) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.nameElement, nameElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.nameElement, nameElement)) &&
-            (identical(other.contact, contact) ||
-                const DeepCollectionEquality().equals(other.contact, contact)));
+                other.nameElement == nameElement) &&
+            const DeepCollectionEquality().equals(other._contact, _contact));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(typeElement) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(nameElement) ^
-      const DeepCollectionEquality().hash(contact);
 
   @JsonKey(ignore: true)
   @override
-  _$ContributorCopyWith<_Contributor> get copyWith =>
-      __$ContributorCopyWithImpl<_Contributor>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      type,
+      typeElement,
+      name,
+      nameElement,
+      const DeepCollectionEquality().hash(_contact));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ContributorCopyWith<_$_Contributor> get copyWith =>
+      __$$_ContributorCopyWithImpl<_$_Contributor>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ContributorToJson(this);
+    return _$$_ContributorToJson(
+      this,
+    );
   }
 }
 
 abstract class _Contributor extends Contributor {
   factory _Contributor(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      @JsonKey(unknownEnumValue: ContributorType.unknown) ContributorType? type,
-      @JsonKey(name: '_type') Element? typeElement,
-      String? name,
-      @JsonKey(name: '_name') Element? nameElement,
-      List<ContactDetail>? contact}) = _$_Contributor;
+      {final String? id,
+      @JsonKey(name: 'extension')
+          final List<FhirExtension>? extension_,
+      @JsonKey(unknownEnumValue: ContributorType.unknown)
+          final ContributorType? type,
+      @JsonKey(name: '_type')
+          final Element? typeElement,
+      final String? name,
+      @JsonKey(name: '_name')
+          final Element? nameElement,
+      final List<ContactDetail>? contact}) = _$_Contributor;
   _Contributor._() : super._();
 
   factory _Contributor.fromJson(Map<String, dynamic> json) =
       _$_Contributor.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
+  String? get id;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
+
+  /// [type] The type of contributor.
   @JsonKey(unknownEnumValue: ContributorType.unknown)
-  ContributorType? get type => throw _privateConstructorUsedError;
+  ContributorType? get type;
   @override
+
+  /// [typeElement] Extensions for type
   @JsonKey(name: '_type')
-  Element? get typeElement => throw _privateConstructorUsedError;
+  Element? get typeElement;
   @override
-  String? get name => throw _privateConstructorUsedError;
+
+  /// [name] The name of the individual or organization responsible for the
+  ///  contribution.
+  String? get name;
   @override
+
+  /// [nameElement] Extensions for name
   @JsonKey(name: '_name')
-  Element? get nameElement => throw _privateConstructorUsedError;
+  Element? get nameElement;
   @override
-  List<ContactDetail>? get contact => throw _privateConstructorUsedError;
+
+  /// [contact] Contact details to assist a user in finding and communicating
+  ///  with the contributor.
+  List<ContactDetail>? get contact;
   @override
   @JsonKey(ignore: true)
-  _$ContributorCopyWith<_Contributor> get copyWith =>
+  _$$_ContributorCopyWith<_$_Contributor> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -638,72 +758,80 @@ DataRequirement _$DataRequirementFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$DataRequirementTearOff {
-  const _$DataRequirementTearOff();
-
-  _DataRequirement call(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      Code? type,
-      @JsonKey(name: '_type') Element? typeElement,
-      List<Canonical>? profile,
-      CodeableConcept? subjectCodeableConcept,
-      Reference? subjectReference,
-      List<String>? mustSupport,
-      @JsonKey(name: '_mustSupport') List<Element?>? mustSupportElement,
-      List<DataRequirementCodeFilter>? codeFilter,
-      List<DataRequirementDateFilter>? dateFilter,
-      PositiveInt? limit,
-      @JsonKey(name: '_limit') Element? limitElement,
-      List<DataRequirementSort>? sort}) {
-    return _DataRequirement(
-      id: id,
-      extension_: extension_,
-      type: type,
-      typeElement: typeElement,
-      profile: profile,
-      subjectCodeableConcept: subjectCodeableConcept,
-      subjectReference: subjectReference,
-      mustSupport: mustSupport,
-      mustSupportElement: mustSupportElement,
-      codeFilter: codeFilter,
-      dateFilter: dateFilter,
-      limit: limit,
-      limitElement: limitElement,
-      sort: sort,
-    );
-  }
-
-  DataRequirement fromJson(Map<String, Object> json) {
-    return DataRequirement.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DataRequirement = _$DataRequirementTearOff();
-
-/// @nodoc
 mixin _$DataRequirement {
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   String? get id => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+
+  /// [type] The type of the required data, specified as the type name of a
+  /// resource. For profiles, this value is set to the type of the base resource
+  ///  of the profile.
   Code? get type => throw _privateConstructorUsedError;
+
+  /// [typeElement] Extensions for type
   @JsonKey(name: '_type')
   Element? get typeElement => throw _privateConstructorUsedError;
+
+  /// [profile] The profile of the required data, specified as the uri of the
+  ///  profile definition.
   List<Canonical>? get profile => throw _privateConstructorUsedError;
+
+  /// [subjectCodeableConcept] The intended subjects of the data requirement.
+  ///  If this element is not provided, a Patient subject is assumed.
   CodeableConcept? get subjectCodeableConcept =>
       throw _privateConstructorUsedError;
+
+  /// [subjectReference] The intended subjects of the data requirement. If this
+  ///  element is not provided, a Patient subject is assumed.
   Reference? get subjectReference => throw _privateConstructorUsedError;
+
+  /// [mustSupport] Indicates that specific elements of the type are referenced
+  /// by the knowledge module and must be supported by the consumer in order to
+  /// obtain an effective evaluation. This does not mean that a value is
+  /// required for this element, only that the consuming system must understand
+  ///  the element and be able to provide values for it if they are available.
+  /// The value of mustSupport SHALL be a FHIRPath resolveable on the type of
+  /// the DataRequirement. The path SHALL consist only of identifiers, constant
+  /// indexers, and .resolve() (see the [Simple FHIRPath
+  ///  Profile](fhirpath.html#simple) for full details).
   List<String>? get mustSupport => throw _privateConstructorUsedError;
+
+  /// [mustSupportElement] Extensions for mustSupport
   @JsonKey(name: '_mustSupport')
   List<Element?>? get mustSupportElement => throw _privateConstructorUsedError;
+
+  /// [codeFilter] Code filters specify additional constraints on the data,
+  /// specifying the value set of interest for a particular element of the data.
+  /// Each code filter defines an additional constraint on the data, i.e. code
+  ///  filters are AND'ed, not OR'ed.
   List<DataRequirementCodeFilter>? get codeFilter =>
       throw _privateConstructorUsedError;
+
+  /// [dateFilter] Date filters specify additional constraints on the data in
+  /// terms of the applicable date range for specific elements. Each date filter
+  /// specifies an additional constraint on the data, i.e. date filters are
+  ///  AND'ed, not OR'ed.
   List<DataRequirementDateFilter>? get dateFilter =>
       throw _privateConstructorUsedError;
+
+  /// [limit] Specifies a maximum number of results that are required (uses the
+  ///  _count search parameter).
   PositiveInt? get limit => throw _privateConstructorUsedError;
+
+  /// [limitElement] Extensions for limit
   @JsonKey(name: '_limit')
   Element? get limitElement => throw _privateConstructorUsedError;
+
+  /// [sort] Specifies the order of the results to be returned.
   List<DataRequirementSort>? get sort => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -716,7 +844,8 @@ mixin _$DataRequirement {
 abstract class $DataRequirementCopyWith<$Res> {
   factory $DataRequirementCopyWith(
           DataRequirement value, $Res Function(DataRequirement) then) =
-      _$DataRequirementCopyWithImpl<$Res>;
+      _$DataRequirementCopyWithImpl<$Res, DataRequirement>;
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -740,14 +869,16 @@ abstract class $DataRequirementCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DataRequirementCopyWithImpl<$Res>
+class _$DataRequirementCopyWithImpl<$Res, $Val extends DataRequirement>
     implements $DataRequirementCopyWith<$Res> {
   _$DataRequirementCopyWithImpl(this._value, this._then);
 
-  final DataRequirement _value;
   // ignore: unused_field
-  final $Res Function(DataRequirement) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -766,77 +897,79 @@ class _$DataRequirementCopyWithImpl<$Res>
     Object? sort = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as Code?,
-      typeElement: typeElement == freezed
+      typeElement: freezed == typeElement
           ? _value.typeElement
           : typeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      profile: profile == freezed
+      profile: freezed == profile
           ? _value.profile
           : profile // ignore: cast_nullable_to_non_nullable
               as List<Canonical>?,
-      subjectCodeableConcept: subjectCodeableConcept == freezed
+      subjectCodeableConcept: freezed == subjectCodeableConcept
           ? _value.subjectCodeableConcept
           : subjectCodeableConcept // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      subjectReference: subjectReference == freezed
+      subjectReference: freezed == subjectReference
           ? _value.subjectReference
           : subjectReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      mustSupport: mustSupport == freezed
+      mustSupport: freezed == mustSupport
           ? _value.mustSupport
           : mustSupport // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      mustSupportElement: mustSupportElement == freezed
+      mustSupportElement: freezed == mustSupportElement
           ? _value.mustSupportElement
           : mustSupportElement // ignore: cast_nullable_to_non_nullable
               as List<Element?>?,
-      codeFilter: codeFilter == freezed
+      codeFilter: freezed == codeFilter
           ? _value.codeFilter
           : codeFilter // ignore: cast_nullable_to_non_nullable
               as List<DataRequirementCodeFilter>?,
-      dateFilter: dateFilter == freezed
+      dateFilter: freezed == dateFilter
           ? _value.dateFilter
           : dateFilter // ignore: cast_nullable_to_non_nullable
               as List<DataRequirementDateFilter>?,
-      limit: limit == freezed
+      limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as PositiveInt?,
-      limitElement: limitElement == freezed
+      limitElement: freezed == limitElement
           ? _value.limitElement
           : limitElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      sort: sort == freezed
+      sort: freezed == sort
           ? _value.sort
           : sort // ignore: cast_nullable_to_non_nullable
               as List<DataRequirementSort>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get typeElement {
     if (_value.typeElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.typeElement!, (value) {
-      return _then(_value.copyWith(typeElement: value));
+      return _then(_value.copyWith(typeElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get subjectCodeableConcept {
     if (_value.subjectCodeableConcept == null) {
       return null;
@@ -844,40 +977,43 @@ class _$DataRequirementCopyWithImpl<$Res>
 
     return $CodeableConceptCopyWith<$Res>(_value.subjectCodeableConcept!,
         (value) {
-      return _then(_value.copyWith(subjectCodeableConcept: value));
+      return _then(_value.copyWith(subjectCodeableConcept: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get subjectReference {
     if (_value.subjectReference == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.subjectReference!, (value) {
-      return _then(_value.copyWith(subjectReference: value));
+      return _then(_value.copyWith(subjectReference: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get limitElement {
     if (_value.limitElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.limitElement!, (value) {
-      return _then(_value.copyWith(limitElement: value));
+      return _then(_value.copyWith(limitElement: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$DataRequirementCopyWith<$Res>
+abstract class _$$_DataRequirementCopyWith<$Res>
     implements $DataRequirementCopyWith<$Res> {
-  factory _$DataRequirementCopyWith(
-          _DataRequirement value, $Res Function(_DataRequirement) then) =
-      __$DataRequirementCopyWithImpl<$Res>;
+  factory _$$_DataRequirementCopyWith(
+          _$_DataRequirement value, $Res Function(_$_DataRequirement) then) =
+      __$$_DataRequirementCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -905,16 +1041,14 @@ abstract class _$DataRequirementCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DataRequirementCopyWithImpl<$Res>
-    extends _$DataRequirementCopyWithImpl<$Res>
-    implements _$DataRequirementCopyWith<$Res> {
-  __$DataRequirementCopyWithImpl(
-      _DataRequirement _value, $Res Function(_DataRequirement) _then)
-      : super(_value, (v) => _then(v as _DataRequirement));
+class __$$_DataRequirementCopyWithImpl<$Res>
+    extends _$DataRequirementCopyWithImpl<$Res, _$_DataRequirement>
+    implements _$$_DataRequirementCopyWith<$Res> {
+  __$$_DataRequirementCopyWithImpl(
+      _$_DataRequirement _value, $Res Function(_$_DataRequirement) _then)
+      : super(_value, _then);
 
-  @override
-  _DataRequirement get _value => super._value as _DataRequirement;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -932,61 +1066,61 @@ class __$DataRequirementCopyWithImpl<$Res>
     Object? limitElement = freezed,
     Object? sort = freezed,
   }) {
-    return _then(_DataRequirement(
-      id: id == freezed
+    return _then(_$_DataRequirement(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as Code?,
-      typeElement: typeElement == freezed
+      typeElement: freezed == typeElement
           ? _value.typeElement
           : typeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      profile: profile == freezed
-          ? _value.profile
+      profile: freezed == profile
+          ? _value._profile
           : profile // ignore: cast_nullable_to_non_nullable
               as List<Canonical>?,
-      subjectCodeableConcept: subjectCodeableConcept == freezed
+      subjectCodeableConcept: freezed == subjectCodeableConcept
           ? _value.subjectCodeableConcept
           : subjectCodeableConcept // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      subjectReference: subjectReference == freezed
+      subjectReference: freezed == subjectReference
           ? _value.subjectReference
           : subjectReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      mustSupport: mustSupport == freezed
-          ? _value.mustSupport
+      mustSupport: freezed == mustSupport
+          ? _value._mustSupport
           : mustSupport // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      mustSupportElement: mustSupportElement == freezed
-          ? _value.mustSupportElement
+      mustSupportElement: freezed == mustSupportElement
+          ? _value._mustSupportElement
           : mustSupportElement // ignore: cast_nullable_to_non_nullable
               as List<Element?>?,
-      codeFilter: codeFilter == freezed
-          ? _value.codeFilter
+      codeFilter: freezed == codeFilter
+          ? _value._codeFilter
           : codeFilter // ignore: cast_nullable_to_non_nullable
               as List<DataRequirementCodeFilter>?,
-      dateFilter: dateFilter == freezed
-          ? _value.dateFilter
+      dateFilter: freezed == dateFilter
+          ? _value._dateFilter
           : dateFilter // ignore: cast_nullable_to_non_nullable
               as List<DataRequirementDateFilter>?,
-      limit: limit == freezed
+      limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as PositiveInt?,
-      limitElement: limitElement == freezed
+      limitElement: freezed == limitElement
           ? _value.limitElement
           : limitElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      sort: sort == freezed
-          ? _value.sort
+      sort: freezed == sort
+          ? _value._sort
           : sort // ignore: cast_nullable_to_non_nullable
               as List<DataRequirementSort>?,
     ));
@@ -998,56 +1132,200 @@ class __$DataRequirementCopyWithImpl<$Res>
 class _$_DataRequirement extends _DataRequirement {
   _$_DataRequirement(
       {this.id,
-      @JsonKey(name: 'extension') this.extension_,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       this.type,
       @JsonKey(name: '_type') this.typeElement,
-      this.profile,
+      final List<Canonical>? profile,
       this.subjectCodeableConcept,
       this.subjectReference,
-      this.mustSupport,
-      @JsonKey(name: '_mustSupport') this.mustSupportElement,
-      this.codeFilter,
-      this.dateFilter,
+      final List<String>? mustSupport,
+      @JsonKey(name: '_mustSupport') final List<Element?>? mustSupportElement,
+      final List<DataRequirementCodeFilter>? codeFilter,
+      final List<DataRequirementDateFilter>? dateFilter,
       this.limit,
       @JsonKey(name: '_limit') this.limitElement,
-      this.sort})
-      : super._();
+      final List<DataRequirementSort>? sort})
+      : _extension_ = extension_,
+        _profile = profile,
+        _mustSupport = mustSupport,
+        _mustSupportElement = mustSupportElement,
+        _codeFilter = codeFilter,
+        _dateFilter = dateFilter,
+        _sort = sort,
+        super._();
 
   factory _$_DataRequirement.fromJson(Map<String, dynamic> json) =>
       _$$_DataRequirementFromJson(json);
 
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   @override
   final String? id;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [type] The type of the required data, specified as the type name of a
+  /// resource. For profiles, this value is set to the type of the base resource
+  ///  of the profile.
   @override
   final Code? type;
+
+  /// [typeElement] Extensions for type
   @override
   @JsonKey(name: '_type')
   final Element? typeElement;
+
+  /// [profile] The profile of the required data, specified as the uri of the
+  ///  profile definition.
+  final List<Canonical>? _profile;
+
+  /// [profile] The profile of the required data, specified as the uri of the
+  ///  profile definition.
   @override
-  final List<Canonical>? profile;
+  List<Canonical>? get profile {
+    final value = _profile;
+    if (value == null) return null;
+    if (_profile is EqualUnmodifiableListView) return _profile;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [subjectCodeableConcept] The intended subjects of the data requirement.
+  ///  If this element is not provided, a Patient subject is assumed.
   @override
   final CodeableConcept? subjectCodeableConcept;
+
+  /// [subjectReference] The intended subjects of the data requirement. If this
+  ///  element is not provided, a Patient subject is assumed.
   @override
   final Reference? subjectReference;
+
+  /// [mustSupport] Indicates that specific elements of the type are referenced
+  /// by the knowledge module and must be supported by the consumer in order to
+  /// obtain an effective evaluation. This does not mean that a value is
+  /// required for this element, only that the consuming system must understand
+  ///  the element and be able to provide values for it if they are available.
+  /// The value of mustSupport SHALL be a FHIRPath resolveable on the type of
+  /// the DataRequirement. The path SHALL consist only of identifiers, constant
+  /// indexers, and .resolve() (see the [Simple FHIRPath
+  ///  Profile](fhirpath.html#simple) for full details).
+  final List<String>? _mustSupport;
+
+  /// [mustSupport] Indicates that specific elements of the type are referenced
+  /// by the knowledge module and must be supported by the consumer in order to
+  /// obtain an effective evaluation. This does not mean that a value is
+  /// required for this element, only that the consuming system must understand
+  ///  the element and be able to provide values for it if they are available.
+  /// The value of mustSupport SHALL be a FHIRPath resolveable on the type of
+  /// the DataRequirement. The path SHALL consist only of identifiers, constant
+  /// indexers, and .resolve() (see the [Simple FHIRPath
+  ///  Profile](fhirpath.html#simple) for full details).
   @override
-  final List<String>? mustSupport;
+  List<String>? get mustSupport {
+    final value = _mustSupport;
+    if (value == null) return null;
+    if (_mustSupport is EqualUnmodifiableListView) return _mustSupport;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [mustSupportElement] Extensions for mustSupport
+  final List<Element?>? _mustSupportElement;
+
+  /// [mustSupportElement] Extensions for mustSupport
   @override
   @JsonKey(name: '_mustSupport')
-  final List<Element?>? mustSupportElement;
+  List<Element?>? get mustSupportElement {
+    final value = _mustSupportElement;
+    if (value == null) return null;
+    if (_mustSupportElement is EqualUnmodifiableListView)
+      return _mustSupportElement;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [codeFilter] Code filters specify additional constraints on the data,
+  /// specifying the value set of interest for a particular element of the data.
+  /// Each code filter defines an additional constraint on the data, i.e. code
+  ///  filters are AND'ed, not OR'ed.
+  final List<DataRequirementCodeFilter>? _codeFilter;
+
+  /// [codeFilter] Code filters specify additional constraints on the data,
+  /// specifying the value set of interest for a particular element of the data.
+  /// Each code filter defines an additional constraint on the data, i.e. code
+  ///  filters are AND'ed, not OR'ed.
   @override
-  final List<DataRequirementCodeFilter>? codeFilter;
+  List<DataRequirementCodeFilter>? get codeFilter {
+    final value = _codeFilter;
+    if (value == null) return null;
+    if (_codeFilter is EqualUnmodifiableListView) return _codeFilter;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [dateFilter] Date filters specify additional constraints on the data in
+  /// terms of the applicable date range for specific elements. Each date filter
+  /// specifies an additional constraint on the data, i.e. date filters are
+  ///  AND'ed, not OR'ed.
+  final List<DataRequirementDateFilter>? _dateFilter;
+
+  /// [dateFilter] Date filters specify additional constraints on the data in
+  /// terms of the applicable date range for specific elements. Each date filter
+  /// specifies an additional constraint on the data, i.e. date filters are
+  ///  AND'ed, not OR'ed.
   @override
-  final List<DataRequirementDateFilter>? dateFilter;
+  List<DataRequirementDateFilter>? get dateFilter {
+    final value = _dateFilter;
+    if (value == null) return null;
+    if (_dateFilter is EqualUnmodifiableListView) return _dateFilter;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [limit] Specifies a maximum number of results that are required (uses the
+  ///  _count search parameter).
   @override
   final PositiveInt? limit;
+
+  /// [limitElement] Extensions for limit
   @override
   @JsonKey(name: '_limit')
   final Element? limitElement;
+
+  /// [sort] Specifies the order of the results to be returned.
+  final List<DataRequirementSort>? _sort;
+
+  /// [sort] Specifies the order of the results to be returned.
   @override
-  final List<DataRequirementSort>? sort;
+  List<DataRequirementSort>? get sort {
+    final value = _sort;
+    if (value == null) return null;
+    if (_sort is EqualUnmodifiableListView) return _sort;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -1057,135 +1335,176 @@ class _$_DataRequirement extends _DataRequirement {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DataRequirement &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_DataRequirement &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.typeElement, typeElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.typeElement, typeElement)) &&
-            (identical(other.profile, profile) ||
-                const DeepCollectionEquality()
-                    .equals(other.profile, profile)) &&
+                other.typeElement == typeElement) &&
+            const DeepCollectionEquality().equals(other._profile, _profile) &&
             (identical(other.subjectCodeableConcept, subjectCodeableConcept) ||
-                const DeepCollectionEquality().equals(
-                    other.subjectCodeableConcept, subjectCodeableConcept)) &&
+                other.subjectCodeableConcept == subjectCodeableConcept) &&
             (identical(other.subjectReference, subjectReference) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectReference, subjectReference)) &&
-            (identical(other.mustSupport, mustSupport) ||
-                const DeepCollectionEquality()
-                    .equals(other.mustSupport, mustSupport)) &&
-            (identical(other.mustSupportElement, mustSupportElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.mustSupportElement, mustSupportElement)) &&
-            (identical(other.codeFilter, codeFilter) ||
-                const DeepCollectionEquality()
-                    .equals(other.codeFilter, codeFilter)) &&
-            (identical(other.dateFilter, dateFilter) ||
-                const DeepCollectionEquality()
-                    .equals(other.dateFilter, dateFilter)) &&
-            (identical(other.limit, limit) ||
-                const DeepCollectionEquality().equals(other.limit, limit)) &&
+                other.subjectReference == subjectReference) &&
+            const DeepCollectionEquality()
+                .equals(other._mustSupport, _mustSupport) &&
+            const DeepCollectionEquality()
+                .equals(other._mustSupportElement, _mustSupportElement) &&
+            const DeepCollectionEquality()
+                .equals(other._codeFilter, _codeFilter) &&
+            const DeepCollectionEquality()
+                .equals(other._dateFilter, _dateFilter) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.limitElement, limitElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.limitElement, limitElement)) &&
-            (identical(other.sort, sort) ||
-                const DeepCollectionEquality().equals(other.sort, sort)));
+                other.limitElement == limitElement) &&
+            const DeepCollectionEquality().equals(other._sort, _sort));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(typeElement) ^
-      const DeepCollectionEquality().hash(profile) ^
-      const DeepCollectionEquality().hash(subjectCodeableConcept) ^
-      const DeepCollectionEquality().hash(subjectReference) ^
-      const DeepCollectionEquality().hash(mustSupport) ^
-      const DeepCollectionEquality().hash(mustSupportElement) ^
-      const DeepCollectionEquality().hash(codeFilter) ^
-      const DeepCollectionEquality().hash(dateFilter) ^
-      const DeepCollectionEquality().hash(limit) ^
-      const DeepCollectionEquality().hash(limitElement) ^
-      const DeepCollectionEquality().hash(sort);
 
   @JsonKey(ignore: true)
   @override
-  _$DataRequirementCopyWith<_DataRequirement> get copyWith =>
-      __$DataRequirementCopyWithImpl<_DataRequirement>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      type,
+      typeElement,
+      const DeepCollectionEquality().hash(_profile),
+      subjectCodeableConcept,
+      subjectReference,
+      const DeepCollectionEquality().hash(_mustSupport),
+      const DeepCollectionEquality().hash(_mustSupportElement),
+      const DeepCollectionEquality().hash(_codeFilter),
+      const DeepCollectionEquality().hash(_dateFilter),
+      limit,
+      limitElement,
+      const DeepCollectionEquality().hash(_sort));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DataRequirementCopyWith<_$_DataRequirement> get copyWith =>
+      __$$_DataRequirementCopyWithImpl<_$_DataRequirement>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DataRequirementToJson(this);
+    return _$$_DataRequirementToJson(
+      this,
+    );
   }
 }
 
 abstract class _DataRequirement extends DataRequirement {
   factory _DataRequirement(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      Code? type,
-      @JsonKey(name: '_type') Element? typeElement,
-      List<Canonical>? profile,
-      CodeableConcept? subjectCodeableConcept,
-      Reference? subjectReference,
-      List<String>? mustSupport,
-      @JsonKey(name: '_mustSupport') List<Element?>? mustSupportElement,
-      List<DataRequirementCodeFilter>? codeFilter,
-      List<DataRequirementDateFilter>? dateFilter,
-      PositiveInt? limit,
-      @JsonKey(name: '_limit') Element? limitElement,
-      List<DataRequirementSort>? sort}) = _$_DataRequirement;
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final Code? type,
+      @JsonKey(name: '_type') final Element? typeElement,
+      final List<Canonical>? profile,
+      final CodeableConcept? subjectCodeableConcept,
+      final Reference? subjectReference,
+      final List<String>? mustSupport,
+      @JsonKey(name: '_mustSupport') final List<Element?>? mustSupportElement,
+      final List<DataRequirementCodeFilter>? codeFilter,
+      final List<DataRequirementDateFilter>? dateFilter,
+      final PositiveInt? limit,
+      @JsonKey(name: '_limit') final Element? limitElement,
+      final List<DataRequirementSort>? sort}) = _$_DataRequirement;
   _DataRequirement._() : super._();
 
   factory _DataRequirement.fromJson(Map<String, dynamic> json) =
       _$_DataRequirement.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
+  String? get id;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
-  Code? get type => throw _privateConstructorUsedError;
+
+  /// [type] The type of the required data, specified as the type name of a
+  /// resource. For profiles, this value is set to the type of the base resource
+  ///  of the profile.
+  Code? get type;
   @override
+
+  /// [typeElement] Extensions for type
   @JsonKey(name: '_type')
-  Element? get typeElement => throw _privateConstructorUsedError;
+  Element? get typeElement;
   @override
-  List<Canonical>? get profile => throw _privateConstructorUsedError;
+
+  /// [profile] The profile of the required data, specified as the uri of the
+  ///  profile definition.
+  List<Canonical>? get profile;
   @override
-  CodeableConcept? get subjectCodeableConcept =>
-      throw _privateConstructorUsedError;
+
+  /// [subjectCodeableConcept] The intended subjects of the data requirement.
+  ///  If this element is not provided, a Patient subject is assumed.
+  CodeableConcept? get subjectCodeableConcept;
   @override
-  Reference? get subjectReference => throw _privateConstructorUsedError;
+
+  /// [subjectReference] The intended subjects of the data requirement. If this
+  ///  element is not provided, a Patient subject is assumed.
+  Reference? get subjectReference;
   @override
-  List<String>? get mustSupport => throw _privateConstructorUsedError;
+
+  /// [mustSupport] Indicates that specific elements of the type are referenced
+  /// by the knowledge module and must be supported by the consumer in order to
+  /// obtain an effective evaluation. This does not mean that a value is
+  /// required for this element, only that the consuming system must understand
+  ///  the element and be able to provide values for it if they are available.
+  /// The value of mustSupport SHALL be a FHIRPath resolveable on the type of
+  /// the DataRequirement. The path SHALL consist only of identifiers, constant
+  /// indexers, and .resolve() (see the [Simple FHIRPath
+  ///  Profile](fhirpath.html#simple) for full details).
+  List<String>? get mustSupport;
   @override
+
+  /// [mustSupportElement] Extensions for mustSupport
   @JsonKey(name: '_mustSupport')
-  List<Element?>? get mustSupportElement => throw _privateConstructorUsedError;
+  List<Element?>? get mustSupportElement;
   @override
-  List<DataRequirementCodeFilter>? get codeFilter =>
-      throw _privateConstructorUsedError;
+
+  /// [codeFilter] Code filters specify additional constraints on the data,
+  /// specifying the value set of interest for a particular element of the data.
+  /// Each code filter defines an additional constraint on the data, i.e. code
+  ///  filters are AND'ed, not OR'ed.
+  List<DataRequirementCodeFilter>? get codeFilter;
   @override
-  List<DataRequirementDateFilter>? get dateFilter =>
-      throw _privateConstructorUsedError;
+
+  /// [dateFilter] Date filters specify additional constraints on the data in
+  /// terms of the applicable date range for specific elements. Each date filter
+  /// specifies an additional constraint on the data, i.e. date filters are
+  ///  AND'ed, not OR'ed.
+  List<DataRequirementDateFilter>? get dateFilter;
   @override
-  PositiveInt? get limit => throw _privateConstructorUsedError;
+
+  /// [limit] Specifies a maximum number of results that are required (uses the
+  ///  _count search parameter).
+  PositiveInt? get limit;
   @override
+
+  /// [limitElement] Extensions for limit
   @JsonKey(name: '_limit')
-  Element? get limitElement => throw _privateConstructorUsedError;
+  Element? get limitElement;
   @override
-  List<DataRequirementSort>? get sort => throw _privateConstructorUsedError;
+
+  /// [sort] Specifies the order of the results to be returned.
+  List<DataRequirementSort>? get sort;
   @override
   @JsonKey(ignore: true)
-  _$DataRequirementCopyWith<_DataRequirement> get copyWith =>
+  _$$_DataRequirementCopyWith<_$_DataRequirement> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1195,54 +1514,70 @@ DataRequirementCodeFilter _$DataRequirementCodeFilterFromJson(
 }
 
 /// @nodoc
-class _$DataRequirementCodeFilterTearOff {
-  const _$DataRequirementCodeFilterTearOff();
-
-  _DataRequirementCodeFilter call(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      List<FhirExtension>? modifierExtension,
-      String? path,
-      @JsonKey(name: '_path') Element? pathElement,
-      String? searchParam,
-      @JsonKey(name: '_searchParam') Element? searchParamElement,
-      Canonical? valueSet,
-      List<Coding>? code}) {
-    return _DataRequirementCodeFilter(
-      id: id,
-      extension_: extension_,
-      modifierExtension: modifierExtension,
-      path: path,
-      pathElement: pathElement,
-      searchParam: searchParam,
-      searchParamElement: searchParamElement,
-      valueSet: valueSet,
-      code: code,
-    );
-  }
-
-  DataRequirementCodeFilter fromJson(Map<String, Object> json) {
-    return DataRequirementCodeFilter.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DataRequirementCodeFilter = _$DataRequirementCodeFilterTearOff();
-
-/// @nodoc
 mixin _$DataRequirementCodeFilter {
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   String? get id => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+
+  /// [path] The code-valued attribute of the filter. The specified path SHALL
+  /// be a FHIRPath resolveable on the specified type of the DataRequirement,
+  /// and SHALL consist only of identifiers, constant indexers, and .resolve().
+  /// The path is allowed to contain qualifiers (.) to traverse sub-elements, as
+  /// well as indexers ([x]) to traverse multiple-cardinality sub-elements (see
+  /// the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
+  /// Note that the index must be an integer constant. The path must resolve to
+  ///  an element of type code, Coding, or CodeableConcept.
   String? get path => throw _privateConstructorUsedError;
+
+  /// [pathElement] Extensions for path
   @JsonKey(name: '_path')
   Element? get pathElement => throw _privateConstructorUsedError;
+
+  /// [searchParam] A token parameter that refers to a search parameter defined
+  /// on the specified type of the DataRequirement, and which searches on
+  ///  elements of type code, Coding, or CodeableConcept.
   String? get searchParam => throw _privateConstructorUsedError;
+
+  /// [searchParamElement] Extensions for searchParam
   @JsonKey(name: '_searchParam')
   Element? get searchParamElement => throw _privateConstructorUsedError;
+
+  /// [valueSet] The valueset for the code filter. The valueSet and code
+  /// elements are additive. If valueSet is specified, the filter will return
+  /// only those data items for which the value of the code-valued element
+  ///  specified in the path is a member of the specified valueset.
   Canonical? get valueSet => throw _privateConstructorUsedError;
+
+  /// [code] The codes for the code filter. If values are given, the filter
+  /// will return only those data items for which the code-valued attribute
+  /// specified by the path has a value that is one of the specified codes. If
+  /// codes are specified in addition to a value set, the filter returns items
+  ///  matching a code in the value set or one of the specified codes.
   List<Coding>? get code => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1255,7 +1590,8 @@ mixin _$DataRequirementCodeFilter {
 abstract class $DataRequirementCodeFilterCopyWith<$Res> {
   factory $DataRequirementCodeFilterCopyWith(DataRequirementCodeFilter value,
           $Res Function(DataRequirementCodeFilter) then) =
-      _$DataRequirementCodeFilterCopyWithImpl<$Res>;
+      _$DataRequirementCodeFilterCopyWithImpl<$Res, DataRequirementCodeFilter>;
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -1272,14 +1608,17 @@ abstract class $DataRequirementCodeFilterCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DataRequirementCodeFilterCopyWithImpl<$Res>
+class _$DataRequirementCodeFilterCopyWithImpl<$Res,
+        $Val extends DataRequirementCodeFilter>
     implements $DataRequirementCodeFilterCopyWith<$Res> {
   _$DataRequirementCodeFilterCopyWithImpl(this._value, this._then);
 
-  final DataRequirementCodeFilter _value;
   // ignore: unused_field
-  final $Res Function(DataRequirementCodeFilter) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -1293,75 +1632,79 @@ class _$DataRequirementCodeFilterCopyWithImpl<$Res>
     Object? code = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      modifierExtension: modifierExtension == freezed
+      modifierExtension: freezed == modifierExtension
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      path: path == freezed
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
-      pathElement: pathElement == freezed
+      pathElement: freezed == pathElement
           ? _value.pathElement
           : pathElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      searchParam: searchParam == freezed
+      searchParam: freezed == searchParam
           ? _value.searchParam
           : searchParam // ignore: cast_nullable_to_non_nullable
               as String?,
-      searchParamElement: searchParamElement == freezed
+      searchParamElement: freezed == searchParamElement
           ? _value.searchParamElement
           : searchParamElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      valueSet: valueSet == freezed
+      valueSet: freezed == valueSet
           ? _value.valueSet
           : valueSet // ignore: cast_nullable_to_non_nullable
               as Canonical?,
-      code: code == freezed
+      code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as List<Coding>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get pathElement {
     if (_value.pathElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.pathElement!, (value) {
-      return _then(_value.copyWith(pathElement: value));
+      return _then(_value.copyWith(pathElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get searchParamElement {
     if (_value.searchParamElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.searchParamElement!, (value) {
-      return _then(_value.copyWith(searchParamElement: value));
+      return _then(_value.copyWith(searchParamElement: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$DataRequirementCodeFilterCopyWith<$Res>
+abstract class _$$_DataRequirementCodeFilterCopyWith<$Res>
     implements $DataRequirementCodeFilterCopyWith<$Res> {
-  factory _$DataRequirementCodeFilterCopyWith(_DataRequirementCodeFilter value,
-          $Res Function(_DataRequirementCodeFilter) then) =
-      __$DataRequirementCodeFilterCopyWithImpl<$Res>;
+  factory _$$_DataRequirementCodeFilterCopyWith(
+          _$_DataRequirementCodeFilter value,
+          $Res Function(_$_DataRequirementCodeFilter) then) =
+      __$$_DataRequirementCodeFilterCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -1380,17 +1723,16 @@ abstract class _$DataRequirementCodeFilterCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DataRequirementCodeFilterCopyWithImpl<$Res>
-    extends _$DataRequirementCodeFilterCopyWithImpl<$Res>
-    implements _$DataRequirementCodeFilterCopyWith<$Res> {
-  __$DataRequirementCodeFilterCopyWithImpl(_DataRequirementCodeFilter _value,
-      $Res Function(_DataRequirementCodeFilter) _then)
-      : super(_value, (v) => _then(v as _DataRequirementCodeFilter));
+class __$$_DataRequirementCodeFilterCopyWithImpl<$Res>
+    extends _$DataRequirementCodeFilterCopyWithImpl<$Res,
+        _$_DataRequirementCodeFilter>
+    implements _$$_DataRequirementCodeFilterCopyWith<$Res> {
+  __$$_DataRequirementCodeFilterCopyWithImpl(
+      _$_DataRequirementCodeFilter _value,
+      $Res Function(_$_DataRequirementCodeFilter) _then)
+      : super(_value, _then);
 
-  @override
-  _DataRequirementCodeFilter get _value =>
-      super._value as _DataRequirementCodeFilter;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -1403,41 +1745,41 @@ class __$DataRequirementCodeFilterCopyWithImpl<$Res>
     Object? valueSet = freezed,
     Object? code = freezed,
   }) {
-    return _then(_DataRequirementCodeFilter(
-      id: id == freezed
+    return _then(_$_DataRequirementCodeFilter(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      modifierExtension: modifierExtension == freezed
-          ? _value.modifierExtension
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      path: path == freezed
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
-      pathElement: pathElement == freezed
+      pathElement: freezed == pathElement
           ? _value.pathElement
           : pathElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      searchParam: searchParam == freezed
+      searchParam: freezed == searchParam
           ? _value.searchParam
           : searchParam // ignore: cast_nullable_to_non_nullable
               as String?,
-      searchParamElement: searchParamElement == freezed
+      searchParamElement: freezed == searchParamElement
           ? _value.searchParamElement
           : searchParamElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      valueSet: valueSet == freezed
+      valueSet: freezed == valueSet
           ? _value.valueSet
           : valueSet // ignore: cast_nullable_to_non_nullable
               as Canonical?,
-      code: code == freezed
-          ? _value.code
+      code: freezed == code
+          ? _value._code
           : code // ignore: cast_nullable_to_non_nullable
               as List<Coding>?,
     ));
@@ -1449,40 +1791,143 @@ class __$DataRequirementCodeFilterCopyWithImpl<$Res>
 class _$_DataRequirementCodeFilter extends _DataRequirementCodeFilter {
   _$_DataRequirementCodeFilter(
       {this.id,
-      @JsonKey(name: 'extension') this.extension_,
-      this.modifierExtension,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
       this.path,
       @JsonKey(name: '_path') this.pathElement,
       this.searchParam,
       @JsonKey(name: '_searchParam') this.searchParamElement,
       this.valueSet,
-      this.code})
-      : super._();
+      final List<Coding>? code})
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _code = code,
+        super._();
 
   factory _$_DataRequirementCodeFilter.fromJson(Map<String, dynamic> json) =>
       _$$_DataRequirementCodeFilterFromJson(json);
 
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   @override
   final String? id;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
+  final List<FhirExtension>? _modifierExtension;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
   @override
-  final List<FhirExtension>? modifierExtension;
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [path] The code-valued attribute of the filter. The specified path SHALL
+  /// be a FHIRPath resolveable on the specified type of the DataRequirement,
+  /// and SHALL consist only of identifiers, constant indexers, and .resolve().
+  /// The path is allowed to contain qualifiers (.) to traverse sub-elements, as
+  /// well as indexers ([x]) to traverse multiple-cardinality sub-elements (see
+  /// the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
+  /// Note that the index must be an integer constant. The path must resolve to
+  ///  an element of type code, Coding, or CodeableConcept.
   @override
   final String? path;
+
+  /// [pathElement] Extensions for path
   @override
   @JsonKey(name: '_path')
   final Element? pathElement;
+
+  /// [searchParam] A token parameter that refers to a search parameter defined
+  /// on the specified type of the DataRequirement, and which searches on
+  ///  elements of type code, Coding, or CodeableConcept.
   @override
   final String? searchParam;
+
+  /// [searchParamElement] Extensions for searchParam
   @override
   @JsonKey(name: '_searchParam')
   final Element? searchParamElement;
+
+  /// [valueSet] The valueset for the code filter. The valueSet and code
+  /// elements are additive. If valueSet is specified, the filter will return
+  /// only those data items for which the value of the code-valued element
+  ///  specified in the path is a member of the specified valueset.
   @override
   final Canonical? valueSet;
+
+  /// [code] The codes for the code filter. If values are given, the filter
+  /// will return only those data items for which the code-valued attribute
+  /// specified by the path has a value that is one of the specified codes. If
+  /// codes are specified in addition to a value set, the filter returns items
+  ///  matching a code in the value set or one of the specified codes.
+  final List<Coding>? _code;
+
+  /// [code] The codes for the code filter. If values are given, the filter
+  /// will return only those data items for which the code-valued attribute
+  /// specified by the path has a value that is one of the specified codes. If
+  /// codes are specified in addition to a value set, the filter returns items
+  ///  matching a code in the value set or one of the specified codes.
   @override
-  final List<Coding>? code;
+  List<Coding>? get code {
+    final value = _code;
+    if (value == null) return null;
+    if (_code is EqualUnmodifiableListView) return _code;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -1492,100 +1937,146 @@ class _$_DataRequirementCodeFilter extends _DataRequirementCodeFilter {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DataRequirementCodeFilter &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
-            (identical(other.modifierExtension, modifierExtension) ||
-                const DeepCollectionEquality()
-                    .equals(other.modifierExtension, modifierExtension)) &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_DataRequirementCodeFilter &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
+            (identical(other.path, path) || other.path == path) &&
             (identical(other.pathElement, pathElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.pathElement, pathElement)) &&
+                other.pathElement == pathElement) &&
             (identical(other.searchParam, searchParam) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchParam, searchParam)) &&
+                other.searchParam == searchParam) &&
             (identical(other.searchParamElement, searchParamElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchParamElement, searchParamElement)) &&
+                other.searchParamElement == searchParamElement) &&
             (identical(other.valueSet, valueSet) ||
-                const DeepCollectionEquality()
-                    .equals(other.valueSet, valueSet)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)));
+                other.valueSet == valueSet) &&
+            const DeepCollectionEquality().equals(other._code, _code));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(modifierExtension) ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(pathElement) ^
-      const DeepCollectionEquality().hash(searchParam) ^
-      const DeepCollectionEquality().hash(searchParamElement) ^
-      const DeepCollectionEquality().hash(valueSet) ^
-      const DeepCollectionEquality().hash(code);
 
   @JsonKey(ignore: true)
   @override
-  _$DataRequirementCodeFilterCopyWith<_DataRequirementCodeFilter>
-      get copyWith =>
-          __$DataRequirementCodeFilterCopyWithImpl<_DataRequirementCodeFilter>(
-              this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      path,
+      pathElement,
+      searchParam,
+      searchParamElement,
+      valueSet,
+      const DeepCollectionEquality().hash(_code));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DataRequirementCodeFilterCopyWith<_$_DataRequirementCodeFilter>
+      get copyWith => __$$_DataRequirementCodeFilterCopyWithImpl<
+          _$_DataRequirementCodeFilter>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DataRequirementCodeFilterToJson(this);
+    return _$$_DataRequirementCodeFilterToJson(
+      this,
+    );
   }
 }
 
 abstract class _DataRequirementCodeFilter extends DataRequirementCodeFilter {
   factory _DataRequirementCodeFilter(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      List<FhirExtension>? modifierExtension,
-      String? path,
-      @JsonKey(name: '_path') Element? pathElement,
-      String? searchParam,
-      @JsonKey(name: '_searchParam') Element? searchParamElement,
-      Canonical? valueSet,
-      List<Coding>? code}) = _$_DataRequirementCodeFilter;
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final String? path,
+      @JsonKey(name: '_path') final Element? pathElement,
+      final String? searchParam,
+      @JsonKey(name: '_searchParam') final Element? searchParamElement,
+      final Canonical? valueSet,
+      final List<Coding>? code}) = _$_DataRequirementCodeFilter;
   _DataRequirementCodeFilter._() : super._();
 
   factory _DataRequirementCodeFilter.fromJson(Map<String, dynamic> json) =
       _$_DataRequirementCodeFilter.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
+  String? get id;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
-  List<FhirExtension>? get modifierExtension =>
-      throw _privateConstructorUsedError;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
+  List<FhirExtension>? get modifierExtension;
   @override
-  String? get path => throw _privateConstructorUsedError;
+
+  /// [path] The code-valued attribute of the filter. The specified path SHALL
+  /// be a FHIRPath resolveable on the specified type of the DataRequirement,
+  /// and SHALL consist only of identifiers, constant indexers, and .resolve().
+  /// The path is allowed to contain qualifiers (.) to traverse sub-elements, as
+  /// well as indexers ([x]) to traverse multiple-cardinality sub-elements (see
+  /// the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
+  /// Note that the index must be an integer constant. The path must resolve to
+  ///  an element of type code, Coding, or CodeableConcept.
+  String? get path;
   @override
+
+  /// [pathElement] Extensions for path
   @JsonKey(name: '_path')
-  Element? get pathElement => throw _privateConstructorUsedError;
+  Element? get pathElement;
   @override
-  String? get searchParam => throw _privateConstructorUsedError;
+
+  /// [searchParam] A token parameter that refers to a search parameter defined
+  /// on the specified type of the DataRequirement, and which searches on
+  ///  elements of type code, Coding, or CodeableConcept.
+  String? get searchParam;
   @override
+
+  /// [searchParamElement] Extensions for searchParam
   @JsonKey(name: '_searchParam')
-  Element? get searchParamElement => throw _privateConstructorUsedError;
+  Element? get searchParamElement;
   @override
-  Canonical? get valueSet => throw _privateConstructorUsedError;
+
+  /// [valueSet] The valueset for the code filter. The valueSet and code
+  /// elements are additive. If valueSet is specified, the filter will return
+  /// only those data items for which the value of the code-valued element
+  ///  specified in the path is a member of the specified valueset.
+  Canonical? get valueSet;
   @override
-  List<Coding>? get code => throw _privateConstructorUsedError;
+
+  /// [code] The codes for the code filter. If values are given, the filter
+  /// will return only those data items for which the code-valued attribute
+  /// specified by the path has a value that is one of the specified codes. If
+  /// codes are specified in addition to a value set, the filter returns items
+  ///  matching a code in the value set or one of the specified codes.
+  List<Coding>? get code;
   @override
   @JsonKey(ignore: true)
-  _$DataRequirementCodeFilterCopyWith<_DataRequirementCodeFilter>
+  _$$_DataRequirementCodeFilterCopyWith<_$_DataRequirementCodeFilter>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1595,61 +2086,85 @@ DataRequirementDateFilter _$DataRequirementDateFilterFromJson(
 }
 
 /// @nodoc
-class _$DataRequirementDateFilterTearOff {
-  const _$DataRequirementDateFilterTearOff();
-
-  _DataRequirementDateFilter call(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      List<FhirExtension>? modifierExtension,
-      String? path,
-      @JsonKey(name: '_path') Element? pathElement,
-      String? searchParam,
-      @JsonKey(name: '_searchParam') Element? searchParamElement,
-      FhirDateTime? valueDateTime,
-      @JsonKey(name: '_valueDateTime') Element? valueDateTimeElement,
-      Period? valuePeriod,
-      FhirDuration? valueDuration}) {
-    return _DataRequirementDateFilter(
-      id: id,
-      extension_: extension_,
-      modifierExtension: modifierExtension,
-      path: path,
-      pathElement: pathElement,
-      searchParam: searchParam,
-      searchParamElement: searchParamElement,
-      valueDateTime: valueDateTime,
-      valueDateTimeElement: valueDateTimeElement,
-      valuePeriod: valuePeriod,
-      valueDuration: valueDuration,
-    );
-  }
-
-  DataRequirementDateFilter fromJson(Map<String, Object> json) {
-    return DataRequirementDateFilter.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DataRequirementDateFilter = _$DataRequirementDateFilterTearOff();
-
-/// @nodoc
 mixin _$DataRequirementDateFilter {
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   String? get id => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+
+  /// [path] The date-valued attribute of the filter. The specified path SHALL
+  /// be a FHIRPath resolveable on the specified type of the DataRequirement,
+  /// and SHALL consist only of identifiers, constant indexers, and .resolve().
+  /// The path is allowed to contain qualifiers (.) to traverse sub-elements, as
+  /// well as indexers ([x]) to traverse multiple-cardinality sub-elements (see
+  /// the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
+  /// Note that the index must be an integer constant. The path must resolve to
+  ///  an element of type date, dateTime, Period, Schedule, or Timing.
   String? get path => throw _privateConstructorUsedError;
+
+  /// [pathElement] Extensions for path
   @JsonKey(name: '_path')
   Element? get pathElement => throw _privateConstructorUsedError;
+
+  /// [searchParam] A date parameter that refers to a search parameter defined
+  /// on the specified type of the DataRequirement, and which searches on
+  ///  elements of type date, dateTime, Period, Schedule, or Timing.
   String? get searchParam => throw _privateConstructorUsedError;
+
+  /// [searchParamElement] Extensions for searchParam
   @JsonKey(name: '_searchParam')
   Element? get searchParamElement => throw _privateConstructorUsedError;
+
+  /// [valueDateTime] The value of the filter. If period is specified, the
+  /// filter will return only those data items that fall within the bounds
+  /// determined by the Period, inclusive of the period boundaries. If dateTime
+  /// is specified, the filter will return only those data items that are equal
+  /// to the specified dateTime. If a Duration is specified, the filter will
+  ///  return only those data items that fall within Duration before now.
   FhirDateTime? get valueDateTime => throw _privateConstructorUsedError;
+
+  /// [valueDateTimeElement] Extensions for valueDateTime
   @JsonKey(name: '_valueDateTime')
   Element? get valueDateTimeElement => throw _privateConstructorUsedError;
+
+  /// [valuePeriod] The value of the filter. If period is specified, the filter
+  /// will return only those data items that fall within the bounds determined
+  /// by the Period, inclusive of the period boundaries. If dateTime is
+  /// specified, the filter will return only those data items that are equal to
+  /// the specified dateTime. If a Duration is specified, the filter will return
+  ///  only those data items that fall within Duration before now.
   Period? get valuePeriod => throw _privateConstructorUsedError;
+
+  /// [valueDuration] The value of the filter. If period is specified, the
+  /// filter will return only those data items that fall within the bounds
+  /// determined by the Period, inclusive of the period boundaries. If dateTime
+  /// is specified, the filter will return only those data items that are equal
+  /// to the specified dateTime. If a Duration is specified, the filter will
+  ///  return only those data items that fall within Duration before now.
   FhirDuration? get valueDuration => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1662,7 +2177,8 @@ mixin _$DataRequirementDateFilter {
 abstract class $DataRequirementDateFilterCopyWith<$Res> {
   factory $DataRequirementDateFilterCopyWith(DataRequirementDateFilter value,
           $Res Function(DataRequirementDateFilter) then) =
-      _$DataRequirementDateFilterCopyWithImpl<$Res>;
+      _$DataRequirementDateFilterCopyWithImpl<$Res, DataRequirementDateFilter>;
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -1684,14 +2200,17 @@ abstract class $DataRequirementDateFilterCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DataRequirementDateFilterCopyWithImpl<$Res>
+class _$DataRequirementDateFilterCopyWithImpl<$Res,
+        $Val extends DataRequirementDateFilter>
     implements $DataRequirementDateFilterCopyWith<$Res> {
   _$DataRequirementDateFilterCopyWithImpl(this._value, this._then);
 
-  final DataRequirementDateFilter _value;
   // ignore: unused_field
-  final $Res Function(DataRequirementDateFilter) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -1707,116 +2226,123 @@ class _$DataRequirementDateFilterCopyWithImpl<$Res>
     Object? valueDuration = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      modifierExtension: modifierExtension == freezed
+      modifierExtension: freezed == modifierExtension
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      path: path == freezed
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
-      pathElement: pathElement == freezed
+      pathElement: freezed == pathElement
           ? _value.pathElement
           : pathElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      searchParam: searchParam == freezed
+      searchParam: freezed == searchParam
           ? _value.searchParam
           : searchParam // ignore: cast_nullable_to_non_nullable
               as String?,
-      searchParamElement: searchParamElement == freezed
+      searchParamElement: freezed == searchParamElement
           ? _value.searchParamElement
           : searchParamElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      valueDateTime: valueDateTime == freezed
+      valueDateTime: freezed == valueDateTime
           ? _value.valueDateTime
           : valueDateTime // ignore: cast_nullable_to_non_nullable
               as FhirDateTime?,
-      valueDateTimeElement: valueDateTimeElement == freezed
+      valueDateTimeElement: freezed == valueDateTimeElement
           ? _value.valueDateTimeElement
           : valueDateTimeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      valuePeriod: valuePeriod == freezed
+      valuePeriod: freezed == valuePeriod
           ? _value.valuePeriod
           : valuePeriod // ignore: cast_nullable_to_non_nullable
               as Period?,
-      valueDuration: valueDuration == freezed
+      valueDuration: freezed == valueDuration
           ? _value.valueDuration
           : valueDuration // ignore: cast_nullable_to_non_nullable
               as FhirDuration?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get pathElement {
     if (_value.pathElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.pathElement!, (value) {
-      return _then(_value.copyWith(pathElement: value));
+      return _then(_value.copyWith(pathElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get searchParamElement {
     if (_value.searchParamElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.searchParamElement!, (value) {
-      return _then(_value.copyWith(searchParamElement: value));
+      return _then(_value.copyWith(searchParamElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get valueDateTimeElement {
     if (_value.valueDateTimeElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.valueDateTimeElement!, (value) {
-      return _then(_value.copyWith(valueDateTimeElement: value));
+      return _then(_value.copyWith(valueDateTimeElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PeriodCopyWith<$Res>? get valuePeriod {
     if (_value.valuePeriod == null) {
       return null;
     }
 
     return $PeriodCopyWith<$Res>(_value.valuePeriod!, (value) {
-      return _then(_value.copyWith(valuePeriod: value));
+      return _then(_value.copyWith(valuePeriod: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $FhirDurationCopyWith<$Res>? get valueDuration {
     if (_value.valueDuration == null) {
       return null;
     }
 
     return $FhirDurationCopyWith<$Res>(_value.valueDuration!, (value) {
-      return _then(_value.copyWith(valueDuration: value));
+      return _then(_value.copyWith(valueDuration: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$DataRequirementDateFilterCopyWith<$Res>
+abstract class _$$_DataRequirementDateFilterCopyWith<$Res>
     implements $DataRequirementDateFilterCopyWith<$Res> {
-  factory _$DataRequirementDateFilterCopyWith(_DataRequirementDateFilter value,
-          $Res Function(_DataRequirementDateFilter) then) =
-      __$DataRequirementDateFilterCopyWithImpl<$Res>;
+  factory _$$_DataRequirementDateFilterCopyWith(
+          _$_DataRequirementDateFilter value,
+          $Res Function(_$_DataRequirementDateFilter) then) =
+      __$$_DataRequirementDateFilterCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -1843,17 +2369,16 @@ abstract class _$DataRequirementDateFilterCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DataRequirementDateFilterCopyWithImpl<$Res>
-    extends _$DataRequirementDateFilterCopyWithImpl<$Res>
-    implements _$DataRequirementDateFilterCopyWith<$Res> {
-  __$DataRequirementDateFilterCopyWithImpl(_DataRequirementDateFilter _value,
-      $Res Function(_DataRequirementDateFilter) _then)
-      : super(_value, (v) => _then(v as _DataRequirementDateFilter));
+class __$$_DataRequirementDateFilterCopyWithImpl<$Res>
+    extends _$DataRequirementDateFilterCopyWithImpl<$Res,
+        _$_DataRequirementDateFilter>
+    implements _$$_DataRequirementDateFilterCopyWith<$Res> {
+  __$$_DataRequirementDateFilterCopyWithImpl(
+      _$_DataRequirementDateFilter _value,
+      $Res Function(_$_DataRequirementDateFilter) _then)
+      : super(_value, _then);
 
-  @override
-  _DataRequirementDateFilter get _value =>
-      super._value as _DataRequirementDateFilter;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -1868,48 +2393,48 @@ class __$DataRequirementDateFilterCopyWithImpl<$Res>
     Object? valuePeriod = freezed,
     Object? valueDuration = freezed,
   }) {
-    return _then(_DataRequirementDateFilter(
-      id: id == freezed
+    return _then(_$_DataRequirementDateFilter(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      modifierExtension: modifierExtension == freezed
-          ? _value.modifierExtension
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      path: path == freezed
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
-      pathElement: pathElement == freezed
+      pathElement: freezed == pathElement
           ? _value.pathElement
           : pathElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      searchParam: searchParam == freezed
+      searchParam: freezed == searchParam
           ? _value.searchParam
           : searchParam // ignore: cast_nullable_to_non_nullable
               as String?,
-      searchParamElement: searchParamElement == freezed
+      searchParamElement: freezed == searchParamElement
           ? _value.searchParamElement
           : searchParamElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      valueDateTime: valueDateTime == freezed
+      valueDateTime: freezed == valueDateTime
           ? _value.valueDateTime
           : valueDateTime // ignore: cast_nullable_to_non_nullable
               as FhirDateTime?,
-      valueDateTimeElement: valueDateTimeElement == freezed
+      valueDateTimeElement: freezed == valueDateTimeElement
           ? _value.valueDateTimeElement
           : valueDateTimeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      valuePeriod: valuePeriod == freezed
+      valuePeriod: freezed == valuePeriod
           ? _value.valuePeriod
           : valuePeriod // ignore: cast_nullable_to_non_nullable
               as Period?,
-      valueDuration: valueDuration == freezed
+      valueDuration: freezed == valueDuration
           ? _value.valueDuration
           : valueDuration // ignore: cast_nullable_to_non_nullable
               as FhirDuration?,
@@ -1922,8 +2447,8 @@ class __$DataRequirementDateFilterCopyWithImpl<$Res>
 class _$_DataRequirementDateFilter extends _DataRequirementDateFilter {
   _$_DataRequirementDateFilter(
       {this.id,
-      @JsonKey(name: 'extension') this.extension_,
-      this.modifierExtension,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
       this.path,
       @JsonKey(name: '_path') this.pathElement,
       this.searchParam,
@@ -1932,35 +2457,136 @@ class _$_DataRequirementDateFilter extends _DataRequirementDateFilter {
       @JsonKey(name: '_valueDateTime') this.valueDateTimeElement,
       this.valuePeriod,
       this.valueDuration})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$_DataRequirementDateFilter.fromJson(Map<String, dynamic> json) =>
       _$$_DataRequirementDateFilterFromJson(json);
 
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   @override
   final String? id;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
+  final List<FhirExtension>? _modifierExtension;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
   @override
-  final List<FhirExtension>? modifierExtension;
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [path] The date-valued attribute of the filter. The specified path SHALL
+  /// be a FHIRPath resolveable on the specified type of the DataRequirement,
+  /// and SHALL consist only of identifiers, constant indexers, and .resolve().
+  /// The path is allowed to contain qualifiers (.) to traverse sub-elements, as
+  /// well as indexers ([x]) to traverse multiple-cardinality sub-elements (see
+  /// the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
+  /// Note that the index must be an integer constant. The path must resolve to
+  ///  an element of type date, dateTime, Period, Schedule, or Timing.
   @override
   final String? path;
+
+  /// [pathElement] Extensions for path
   @override
   @JsonKey(name: '_path')
   final Element? pathElement;
+
+  /// [searchParam] A date parameter that refers to a search parameter defined
+  /// on the specified type of the DataRequirement, and which searches on
+  ///  elements of type date, dateTime, Period, Schedule, or Timing.
   @override
   final String? searchParam;
+
+  /// [searchParamElement] Extensions for searchParam
   @override
   @JsonKey(name: '_searchParam')
   final Element? searchParamElement;
+
+  /// [valueDateTime] The value of the filter. If period is specified, the
+  /// filter will return only those data items that fall within the bounds
+  /// determined by the Period, inclusive of the period boundaries. If dateTime
+  /// is specified, the filter will return only those data items that are equal
+  /// to the specified dateTime. If a Duration is specified, the filter will
+  ///  return only those data items that fall within Duration before now.
   @override
   final FhirDateTime? valueDateTime;
+
+  /// [valueDateTimeElement] Extensions for valueDateTime
   @override
   @JsonKey(name: '_valueDateTime')
   final Element? valueDateTimeElement;
+
+  /// [valuePeriod] The value of the filter. If period is specified, the filter
+  /// will return only those data items that fall within the bounds determined
+  /// by the Period, inclusive of the period boundaries. If dateTime is
+  /// specified, the filter will return only those data items that are equal to
+  /// the specified dateTime. If a Duration is specified, the filter will return
+  ///  only those data items that fall within Duration before now.
   @override
   final Period? valuePeriod;
+
+  /// [valueDuration] The value of the filter. If period is specified, the
+  /// filter will return only those data items that fall within the bounds
+  /// determined by the Period, inclusive of the period boundaries. If dateTime
+  /// is specified, the filter will return only those data items that are equal
+  /// to the specified dateTime. If a Duration is specified, the filter will
+  ///  return only those data items that fall within Duration before now.
   @override
   final FhirDuration? valueDuration;
 
@@ -1972,116 +2598,172 @@ class _$_DataRequirementDateFilter extends _DataRequirementDateFilter {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DataRequirementDateFilter &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
-            (identical(other.modifierExtension, modifierExtension) ||
-                const DeepCollectionEquality()
-                    .equals(other.modifierExtension, modifierExtension)) &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_DataRequirementDateFilter &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
+            (identical(other.path, path) || other.path == path) &&
             (identical(other.pathElement, pathElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.pathElement, pathElement)) &&
+                other.pathElement == pathElement) &&
             (identical(other.searchParam, searchParam) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchParam, searchParam)) &&
+                other.searchParam == searchParam) &&
             (identical(other.searchParamElement, searchParamElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchParamElement, searchParamElement)) &&
+                other.searchParamElement == searchParamElement) &&
             (identical(other.valueDateTime, valueDateTime) ||
-                const DeepCollectionEquality()
-                    .equals(other.valueDateTime, valueDateTime)) &&
+                other.valueDateTime == valueDateTime) &&
             (identical(other.valueDateTimeElement, valueDateTimeElement) ||
-                const DeepCollectionEquality().equals(
-                    other.valueDateTimeElement, valueDateTimeElement)) &&
+                other.valueDateTimeElement == valueDateTimeElement) &&
             (identical(other.valuePeriod, valuePeriod) ||
-                const DeepCollectionEquality()
-                    .equals(other.valuePeriod, valuePeriod)) &&
+                other.valuePeriod == valuePeriod) &&
             (identical(other.valueDuration, valueDuration) ||
-                const DeepCollectionEquality()
-                    .equals(other.valueDuration, valueDuration)));
+                other.valueDuration == valueDuration));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(modifierExtension) ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(pathElement) ^
-      const DeepCollectionEquality().hash(searchParam) ^
-      const DeepCollectionEquality().hash(searchParamElement) ^
-      const DeepCollectionEquality().hash(valueDateTime) ^
-      const DeepCollectionEquality().hash(valueDateTimeElement) ^
-      const DeepCollectionEquality().hash(valuePeriod) ^
-      const DeepCollectionEquality().hash(valueDuration);
 
   @JsonKey(ignore: true)
   @override
-  _$DataRequirementDateFilterCopyWith<_DataRequirementDateFilter>
-      get copyWith =>
-          __$DataRequirementDateFilterCopyWithImpl<_DataRequirementDateFilter>(
-              this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      path,
+      pathElement,
+      searchParam,
+      searchParamElement,
+      valueDateTime,
+      valueDateTimeElement,
+      valuePeriod,
+      valueDuration);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DataRequirementDateFilterCopyWith<_$_DataRequirementDateFilter>
+      get copyWith => __$$_DataRequirementDateFilterCopyWithImpl<
+          _$_DataRequirementDateFilter>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DataRequirementDateFilterToJson(this);
+    return _$$_DataRequirementDateFilterToJson(
+      this,
+    );
   }
 }
 
 abstract class _DataRequirementDateFilter extends DataRequirementDateFilter {
   factory _DataRequirementDateFilter(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      List<FhirExtension>? modifierExtension,
-      String? path,
-      @JsonKey(name: '_path') Element? pathElement,
-      String? searchParam,
-      @JsonKey(name: '_searchParam') Element? searchParamElement,
-      FhirDateTime? valueDateTime,
-      @JsonKey(name: '_valueDateTime') Element? valueDateTimeElement,
-      Period? valuePeriod,
-      FhirDuration? valueDuration}) = _$_DataRequirementDateFilter;
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final String? path,
+      @JsonKey(name: '_path') final Element? pathElement,
+      final String? searchParam,
+      @JsonKey(name: '_searchParam') final Element? searchParamElement,
+      final FhirDateTime? valueDateTime,
+      @JsonKey(name: '_valueDateTime') final Element? valueDateTimeElement,
+      final Period? valuePeriod,
+      final FhirDuration? valueDuration}) = _$_DataRequirementDateFilter;
   _DataRequirementDateFilter._() : super._();
 
   factory _DataRequirementDateFilter.fromJson(Map<String, dynamic> json) =
       _$_DataRequirementDateFilter.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
+  String? get id;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
-  List<FhirExtension>? get modifierExtension =>
-      throw _privateConstructorUsedError;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
+  List<FhirExtension>? get modifierExtension;
   @override
-  String? get path => throw _privateConstructorUsedError;
+
+  /// [path] The date-valued attribute of the filter. The specified path SHALL
+  /// be a FHIRPath resolveable on the specified type of the DataRequirement,
+  /// and SHALL consist only of identifiers, constant indexers, and .resolve().
+  /// The path is allowed to contain qualifiers (.) to traverse sub-elements, as
+  /// well as indexers ([x]) to traverse multiple-cardinality sub-elements (see
+  /// the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
+  /// Note that the index must be an integer constant. The path must resolve to
+  ///  an element of type date, dateTime, Period, Schedule, or Timing.
+  String? get path;
   @override
+
+  /// [pathElement] Extensions for path
   @JsonKey(name: '_path')
-  Element? get pathElement => throw _privateConstructorUsedError;
+  Element? get pathElement;
   @override
-  String? get searchParam => throw _privateConstructorUsedError;
+
+  /// [searchParam] A date parameter that refers to a search parameter defined
+  /// on the specified type of the DataRequirement, and which searches on
+  ///  elements of type date, dateTime, Period, Schedule, or Timing.
+  String? get searchParam;
   @override
+
+  /// [searchParamElement] Extensions for searchParam
   @JsonKey(name: '_searchParam')
-  Element? get searchParamElement => throw _privateConstructorUsedError;
+  Element? get searchParamElement;
   @override
-  FhirDateTime? get valueDateTime => throw _privateConstructorUsedError;
+
+  /// [valueDateTime] The value of the filter. If period is specified, the
+  /// filter will return only those data items that fall within the bounds
+  /// determined by the Period, inclusive of the period boundaries. If dateTime
+  /// is specified, the filter will return only those data items that are equal
+  /// to the specified dateTime. If a Duration is specified, the filter will
+  ///  return only those data items that fall within Duration before now.
+  FhirDateTime? get valueDateTime;
   @override
+
+  /// [valueDateTimeElement] Extensions for valueDateTime
   @JsonKey(name: '_valueDateTime')
-  Element? get valueDateTimeElement => throw _privateConstructorUsedError;
+  Element? get valueDateTimeElement;
   @override
-  Period? get valuePeriod => throw _privateConstructorUsedError;
+
+  /// [valuePeriod] The value of the filter. If period is specified, the filter
+  /// will return only those data items that fall within the bounds determined
+  /// by the Period, inclusive of the period boundaries. If dateTime is
+  /// specified, the filter will return only those data items that are equal to
+  /// the specified dateTime. If a Duration is specified, the filter will return
+  ///  only those data items that fall within Duration before now.
+  Period? get valuePeriod;
   @override
-  FhirDuration? get valueDuration => throw _privateConstructorUsedError;
+
+  /// [valueDuration] The value of the filter. If period is specified, the
+  /// filter will return only those data items that fall within the bounds
+  /// determined by the Period, inclusive of the period boundaries. If dateTime
+  /// is specified, the filter will return only those data items that are equal
+  /// to the specified dateTime. If a Duration is specified, the filter will
+  ///  return only those data items that fall within Duration before now.
+  FhirDuration? get valueDuration;
   @override
   @JsonKey(ignore: true)
-  _$DataRequirementDateFilterCopyWith<_DataRequirementDateFilter>
+  _$$_DataRequirementDateFilterCopyWith<_$_DataRequirementDateFilter>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2090,53 +2772,51 @@ DataRequirementSort _$DataRequirementSortFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$DataRequirementSortTearOff {
-  const _$DataRequirementSortTearOff();
-
-  _DataRequirementSort call(
-      {String? id,
-      @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
-      List<FhirExtension>? modifierExtension,
-      String? path,
-      @JsonKey(name: '_path')
-          Element? pathElement,
-      @JsonKey(unknownEnumValue: DataRequirementSortDirection.unknown)
-          DataRequirementSortDirection? direction,
-      @JsonKey(name: '_direction')
-          Element? directionElement}) {
-    return _DataRequirementSort(
-      id: id,
-      extension_: extension_,
-      modifierExtension: modifierExtension,
-      path: path,
-      pathElement: pathElement,
-      direction: direction,
-      directionElement: directionElement,
-    );
-  }
-
-  DataRequirementSort fromJson(Map<String, Object> json) {
-    return DataRequirementSort.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DataRequirementSort = _$DataRequirementSortTearOff();
-
-/// @nodoc
 mixin _$DataRequirementSort {
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   String? get id => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
   List<FhirExtension>? get modifierExtension =>
       throw _privateConstructorUsedError;
+
+  /// [path] The attribute of the sort. The specified path must be resolvable
+  /// from the type of the required data. The path is allowed to contain
+  /// qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to
+  /// traverse multiple-cardinality sub-elements. Note that the index must be an
+  ///  integer constant.
   String? get path => throw _privateConstructorUsedError;
+
+  /// [pathElement] Extensions for path
   @JsonKey(name: '_path')
   Element? get pathElement => throw _privateConstructorUsedError;
   @JsonKey(unknownEnumValue: DataRequirementSortDirection.unknown)
   DataRequirementSortDirection? get direction =>
       throw _privateConstructorUsedError;
+
+  /// [directionElement] Extensions for direction
   @JsonKey(name: '_direction')
   Element? get directionElement => throw _privateConstructorUsedError;
 
@@ -2150,7 +2830,8 @@ mixin _$DataRequirementSort {
 abstract class $DataRequirementSortCopyWith<$Res> {
   factory $DataRequirementSortCopyWith(
           DataRequirementSort value, $Res Function(DataRequirementSort) then) =
-      _$DataRequirementSortCopyWithImpl<$Res>;
+      _$DataRequirementSortCopyWithImpl<$Res, DataRequirementSort>;
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension')
@@ -2169,14 +2850,16 @@ abstract class $DataRequirementSortCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DataRequirementSortCopyWithImpl<$Res>
+class _$DataRequirementSortCopyWithImpl<$Res, $Val extends DataRequirementSort>
     implements $DataRequirementSortCopyWith<$Res> {
   _$DataRequirementSortCopyWithImpl(this._value, this._then);
 
-  final DataRequirementSort _value;
   // ignore: unused_field
-  final $Res Function(DataRequirementSort) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -2188,67 +2871,70 @@ class _$DataRequirementSortCopyWithImpl<$Res>
     Object? directionElement = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      modifierExtension: modifierExtension == freezed
+      modifierExtension: freezed == modifierExtension
           ? _value.modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      path: path == freezed
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
-      pathElement: pathElement == freezed
+      pathElement: freezed == pathElement
           ? _value.pathElement
           : pathElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      direction: direction == freezed
+      direction: freezed == direction
           ? _value.direction
           : direction // ignore: cast_nullable_to_non_nullable
               as DataRequirementSortDirection?,
-      directionElement: directionElement == freezed
+      directionElement: freezed == directionElement
           ? _value.directionElement
           : directionElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get pathElement {
     if (_value.pathElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.pathElement!, (value) {
-      return _then(_value.copyWith(pathElement: value));
+      return _then(_value.copyWith(pathElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get directionElement {
     if (_value.directionElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.directionElement!, (value) {
-      return _then(_value.copyWith(directionElement: value));
+      return _then(_value.copyWith(directionElement: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$DataRequirementSortCopyWith<$Res>
+abstract class _$$_DataRequirementSortCopyWith<$Res>
     implements $DataRequirementSortCopyWith<$Res> {
-  factory _$DataRequirementSortCopyWith(_DataRequirementSort value,
-          $Res Function(_DataRequirementSort) then) =
-      __$DataRequirementSortCopyWithImpl<$Res>;
+  factory _$$_DataRequirementSortCopyWith(_$_DataRequirementSort value,
+          $Res Function(_$_DataRequirementSort) then) =
+      __$$_DataRequirementSortCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension')
@@ -2269,16 +2955,14 @@ abstract class _$DataRequirementSortCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DataRequirementSortCopyWithImpl<$Res>
-    extends _$DataRequirementSortCopyWithImpl<$Res>
-    implements _$DataRequirementSortCopyWith<$Res> {
-  __$DataRequirementSortCopyWithImpl(
-      _DataRequirementSort _value, $Res Function(_DataRequirementSort) _then)
-      : super(_value, (v) => _then(v as _DataRequirementSort));
+class __$$_DataRequirementSortCopyWithImpl<$Res>
+    extends _$DataRequirementSortCopyWithImpl<$Res, _$_DataRequirementSort>
+    implements _$$_DataRequirementSortCopyWith<$Res> {
+  __$$_DataRequirementSortCopyWithImpl(_$_DataRequirementSort _value,
+      $Res Function(_$_DataRequirementSort) _then)
+      : super(_value, _then);
 
-  @override
-  _DataRequirementSort get _value => super._value as _DataRequirementSort;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -2289,32 +2973,32 @@ class __$DataRequirementSortCopyWithImpl<$Res>
     Object? direction = freezed,
     Object? directionElement = freezed,
   }) {
-    return _then(_DataRequirementSort(
-      id: id == freezed
+    return _then(_$_DataRequirementSort(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      modifierExtension: modifierExtension == freezed
-          ? _value.modifierExtension
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
           : modifierExtension // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      path: path == freezed
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
-      pathElement: pathElement == freezed
+      pathElement: freezed == pathElement
           ? _value.pathElement
           : pathElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      direction: direction == freezed
+      direction: freezed == direction
           ? _value.direction
           : direction // ignore: cast_nullable_to_non_nullable
               as DataRequirementSortDirection?,
-      directionElement: directionElement == freezed
+      directionElement: freezed == directionElement
           ? _value.directionElement
           : directionElement // ignore: cast_nullable_to_non_nullable
               as Element?,
@@ -2328,8 +3012,8 @@ class _$_DataRequirementSort extends _DataRequirementSort {
   _$_DataRequirementSort(
       {this.id,
       @JsonKey(name: 'extension')
-          this.extension_,
-      this.modifierExtension,
+          final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
       this.path,
       @JsonKey(name: '_path')
           this.pathElement,
@@ -2337,26 +3021,97 @@ class _$_DataRequirementSort extends _DataRequirementSort {
           this.direction,
       @JsonKey(name: '_direction')
           this.directionElement})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$_DataRequirementSort.fromJson(Map<String, dynamic> json) =>
       _$$_DataRequirementSortFromJson(json);
 
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   @override
   final String? id;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
+  final List<FhirExtension>? _modifierExtension;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
   @override
-  final List<FhirExtension>? modifierExtension;
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [path] The attribute of the sort. The specified path must be resolvable
+  /// from the type of the required data. The path is allowed to contain
+  /// qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to
+  /// traverse multiple-cardinality sub-elements. Note that the index must be an
+  ///  integer constant.
   @override
   final String? path;
+
+  /// [pathElement] Extensions for path
   @override
   @JsonKey(name: '_path')
   final Element? pathElement;
   @override
   @JsonKey(unknownEnumValue: DataRequirementSortDirection.unknown)
   final DataRequirementSortDirection? direction;
+
+  /// [directionElement] Extensions for direction
   @override
   @JsonKey(name: '_direction')
   final Element? directionElement;
@@ -2369,92 +3124,122 @@ class _$_DataRequirementSort extends _DataRequirementSort {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DataRequirementSort &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
-            (identical(other.modifierExtension, modifierExtension) ||
-                const DeepCollectionEquality()
-                    .equals(other.modifierExtension, modifierExtension)) &&
-            (identical(other.path, path) ||
-                const DeepCollectionEquality().equals(other.path, path)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_DataRequirementSort &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
+            (identical(other.path, path) || other.path == path) &&
             (identical(other.pathElement, pathElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.pathElement, pathElement)) &&
+                other.pathElement == pathElement) &&
             (identical(other.direction, direction) ||
-                const DeepCollectionEquality()
-                    .equals(other.direction, direction)) &&
+                other.direction == direction) &&
             (identical(other.directionElement, directionElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.directionElement, directionElement)));
+                other.directionElement == directionElement));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(modifierExtension) ^
-      const DeepCollectionEquality().hash(path) ^
-      const DeepCollectionEquality().hash(pathElement) ^
-      const DeepCollectionEquality().hash(direction) ^
-      const DeepCollectionEquality().hash(directionElement);
 
   @JsonKey(ignore: true)
   @override
-  _$DataRequirementSortCopyWith<_DataRequirementSort> get copyWith =>
-      __$DataRequirementSortCopyWithImpl<_DataRequirementSort>(
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      path,
+      pathElement,
+      direction,
+      directionElement);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DataRequirementSortCopyWith<_$_DataRequirementSort> get copyWith =>
+      __$$_DataRequirementSortCopyWithImpl<_$_DataRequirementSort>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DataRequirementSortToJson(this);
+    return _$$_DataRequirementSortToJson(
+      this,
+    );
   }
 }
 
 abstract class _DataRequirementSort extends DataRequirementSort {
   factory _DataRequirementSort(
-      {String? id,
+      {final String? id,
       @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
-      List<FhirExtension>? modifierExtension,
-      String? path,
+          final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final String? path,
       @JsonKey(name: '_path')
-          Element? pathElement,
+          final Element? pathElement,
       @JsonKey(unknownEnumValue: DataRequirementSortDirection.unknown)
-          DataRequirementSortDirection? direction,
+          final DataRequirementSortDirection? direction,
       @JsonKey(name: '_direction')
-          Element? directionElement}) = _$_DataRequirementSort;
+          final Element? directionElement}) = _$_DataRequirementSort;
   _DataRequirementSort._() : super._();
 
   factory _DataRequirementSort.fromJson(Map<String, dynamic> json) =
       _$_DataRequirementSort.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
+  String? get id;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
-  List<FhirExtension>? get modifierExtension =>
-      throw _privateConstructorUsedError;
+
+  /// [modifierExtension] May be used to represent additional information that
+  /// is not part of the basic definition of the element and that modifies the
+  /// understanding of the element in which it is contained and/or the
+  /// understanding of the containing element's descendants. Usually modifier
+  /// elements provide negation or qualification. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  /// definition of the extension. Applications processing a resource are
+  ///  required to check for modifier extensions.
+  /// Modifier extensions SHALL NOT change the meaning of any elements on
+  /// Resource or DomainResource (including cannot change the meaning of
+  ///  modifierExtension itself).
+  List<FhirExtension>? get modifierExtension;
   @override
-  String? get path => throw _privateConstructorUsedError;
+
+  /// [path] The attribute of the sort. The specified path must be resolvable
+  /// from the type of the required data. The path is allowed to contain
+  /// qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to
+  /// traverse multiple-cardinality sub-elements. Note that the index must be an
+  ///  integer constant.
+  String? get path;
   @override
+
+  /// [pathElement] Extensions for path
   @JsonKey(name: '_path')
-  Element? get pathElement => throw _privateConstructorUsedError;
+  Element? get pathElement;
   @override
   @JsonKey(unknownEnumValue: DataRequirementSortDirection.unknown)
-  DataRequirementSortDirection? get direction =>
-      throw _privateConstructorUsedError;
+  DataRequirementSortDirection? get direction;
   @override
+
+  /// [directionElement] Extensions for direction
   @JsonKey(name: '_direction')
-  Element? get directionElement => throw _privateConstructorUsedError;
+  Element? get directionElement;
   @override
   @JsonKey(ignore: true)
-  _$DataRequirementSortCopyWith<_DataRequirementSort> get copyWith =>
+  _$$_DataRequirementSortCopyWith<_$_DataRequirementSort> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2463,75 +3248,68 @@ ParameterDefinition _$ParameterDefinitionFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$ParameterDefinitionTearOff {
-  const _$ParameterDefinitionTearOff();
-
-  _ParameterDefinition call(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      Code? name,
-      @JsonKey(name: '_name') Element? nameElement,
-      Code? use,
-      @JsonKey(name: '_use') Element? useElement,
-      Integer? min,
-      @JsonKey(name: '_min') Element? minElement,
-      String? max,
-      @JsonKey(name: '_max') Element? maxElement,
-      String? documentation,
-      @JsonKey(name: '_documentation') Element? documentationElement,
-      Code? type,
-      @JsonKey(name: '_type') Element? typeElement,
-      Canonical? profile}) {
-    return _ParameterDefinition(
-      id: id,
-      extension_: extension_,
-      name: name,
-      nameElement: nameElement,
-      use: use,
-      useElement: useElement,
-      min: min,
-      minElement: minElement,
-      max: max,
-      maxElement: maxElement,
-      documentation: documentation,
-      documentationElement: documentationElement,
-      type: type,
-      typeElement: typeElement,
-      profile: profile,
-    );
-  }
-
-  ParameterDefinition fromJson(Map<String, Object> json) {
-    return ParameterDefinition.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ParameterDefinition = _$ParameterDefinitionTearOff();
-
-/// @nodoc
 mixin _$ParameterDefinition {
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   String? get id => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+
+  /// [name] The name of the parameter used to allow access to the value of the
+  ///  parameter in evaluation contexts.
   Code? get name => throw _privateConstructorUsedError;
+
+  /// [nameElement] Extensions for name
   @JsonKey(name: '_name')
   Element? get nameElement => throw _privateConstructorUsedError;
+
+  /// [use] Whether the parameter is input or output for the module.
   Code? get use => throw _privateConstructorUsedError;
+
+  /// [useElement] Extensions for use
   @JsonKey(name: '_use')
   Element? get useElement => throw _privateConstructorUsedError;
+
+  /// [min] The minimum number of times this parameter SHALL appear in the
+  ///  request or response.
   Integer? get min => throw _privateConstructorUsedError;
+
+  /// [minElement] Extensions for min
   @JsonKey(name: '_min')
   Element? get minElement => throw _privateConstructorUsedError;
+
+  /// [max] The maximum number of times this element is permitted to appear in
+  ///  the request or response.
   String? get max => throw _privateConstructorUsedError;
+
+  /// [maxElement] Extensions for max
   @JsonKey(name: '_max')
   Element? get maxElement => throw _privateConstructorUsedError;
+
+  /// [documentation] A brief discussion of what the parameter is for and how
+  ///  it is used by the module.
   String? get documentation => throw _privateConstructorUsedError;
+
+  /// [documentationElement] Extensions for documentation
   @JsonKey(name: '_documentation')
   Element? get documentationElement => throw _privateConstructorUsedError;
+
+  /// [type] The type of the parameter.
   Code? get type => throw _privateConstructorUsedError;
+
+  /// [typeElement] Extensions for type
   @JsonKey(name: '_type')
   Element? get typeElement => throw _privateConstructorUsedError;
+
+  /// [profile] If specified, this indicates a profile that the input data must
+  ///  conform to, or that the output data will conform to.
   Canonical? get profile => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2544,7 +3322,8 @@ mixin _$ParameterDefinition {
 abstract class $ParameterDefinitionCopyWith<$Res> {
   factory $ParameterDefinitionCopyWith(
           ParameterDefinition value, $Res Function(ParameterDefinition) then) =
-      _$ParameterDefinitionCopyWithImpl<$Res>;
+      _$ParameterDefinitionCopyWithImpl<$Res, ParameterDefinition>;
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -2571,14 +3350,16 @@ abstract class $ParameterDefinitionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ParameterDefinitionCopyWithImpl<$Res>
+class _$ParameterDefinitionCopyWithImpl<$Res, $Val extends ParameterDefinition>
     implements $ParameterDefinitionCopyWith<$Res> {
   _$ParameterDefinitionCopyWithImpl(this._value, this._then);
 
-  final ParameterDefinition _value;
   // ignore: unused_field
-  final $Res Function(ParameterDefinition) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -2598,143 +3379,150 @@ class _$ParameterDefinitionCopyWithImpl<$Res>
     Object? profile = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as Code?,
-      nameElement: nameElement == freezed
+      nameElement: freezed == nameElement
           ? _value.nameElement
           : nameElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      use: use == freezed
+      use: freezed == use
           ? _value.use
           : use // ignore: cast_nullable_to_non_nullable
               as Code?,
-      useElement: useElement == freezed
+      useElement: freezed == useElement
           ? _value.useElement
           : useElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      min: min == freezed
+      min: freezed == min
           ? _value.min
           : min // ignore: cast_nullable_to_non_nullable
               as Integer?,
-      minElement: minElement == freezed
+      minElement: freezed == minElement
           ? _value.minElement
           : minElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      max: max == freezed
+      max: freezed == max
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
               as String?,
-      maxElement: maxElement == freezed
+      maxElement: freezed == maxElement
           ? _value.maxElement
           : maxElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      documentation: documentation == freezed
+      documentation: freezed == documentation
           ? _value.documentation
           : documentation // ignore: cast_nullable_to_non_nullable
               as String?,
-      documentationElement: documentationElement == freezed
+      documentationElement: freezed == documentationElement
           ? _value.documentationElement
           : documentationElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as Code?,
-      typeElement: typeElement == freezed
+      typeElement: freezed == typeElement
           ? _value.typeElement
           : typeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      profile: profile == freezed
+      profile: freezed == profile
           ? _value.profile
           : profile // ignore: cast_nullable_to_non_nullable
               as Canonical?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get nameElement {
     if (_value.nameElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.nameElement!, (value) {
-      return _then(_value.copyWith(nameElement: value));
+      return _then(_value.copyWith(nameElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get useElement {
     if (_value.useElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.useElement!, (value) {
-      return _then(_value.copyWith(useElement: value));
+      return _then(_value.copyWith(useElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get minElement {
     if (_value.minElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.minElement!, (value) {
-      return _then(_value.copyWith(minElement: value));
+      return _then(_value.copyWith(minElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get maxElement {
     if (_value.maxElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.maxElement!, (value) {
-      return _then(_value.copyWith(maxElement: value));
+      return _then(_value.copyWith(maxElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get documentationElement {
     if (_value.documentationElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.documentationElement!, (value) {
-      return _then(_value.copyWith(documentationElement: value));
+      return _then(_value.copyWith(documentationElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get typeElement {
     if (_value.typeElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.typeElement!, (value) {
-      return _then(_value.copyWith(typeElement: value));
+      return _then(_value.copyWith(typeElement: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$ParameterDefinitionCopyWith<$Res>
+abstract class _$$_ParameterDefinitionCopyWith<$Res>
     implements $ParameterDefinitionCopyWith<$Res> {
-  factory _$ParameterDefinitionCopyWith(_ParameterDefinition value,
-          $Res Function(_ParameterDefinition) then) =
-      __$ParameterDefinitionCopyWithImpl<$Res>;
+  factory _$$_ParameterDefinitionCopyWith(_$_ParameterDefinition value,
+          $Res Function(_$_ParameterDefinition) then) =
+      __$$_ParameterDefinitionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -2767,16 +3555,14 @@ abstract class _$ParameterDefinitionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ParameterDefinitionCopyWithImpl<$Res>
-    extends _$ParameterDefinitionCopyWithImpl<$Res>
-    implements _$ParameterDefinitionCopyWith<$Res> {
-  __$ParameterDefinitionCopyWithImpl(
-      _ParameterDefinition _value, $Res Function(_ParameterDefinition) _then)
-      : super(_value, (v) => _then(v as _ParameterDefinition));
+class __$$_ParameterDefinitionCopyWithImpl<$Res>
+    extends _$ParameterDefinitionCopyWithImpl<$Res, _$_ParameterDefinition>
+    implements _$$_ParameterDefinitionCopyWith<$Res> {
+  __$$_ParameterDefinitionCopyWithImpl(_$_ParameterDefinition _value,
+      $Res Function(_$_ParameterDefinition) _then)
+      : super(_value, _then);
 
-  @override
-  _ParameterDefinition get _value => super._value as _ParameterDefinition;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -2795,64 +3581,64 @@ class __$ParameterDefinitionCopyWithImpl<$Res>
     Object? typeElement = freezed,
     Object? profile = freezed,
   }) {
-    return _then(_ParameterDefinition(
-      id: id == freezed
+    return _then(_$_ParameterDefinition(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as Code?,
-      nameElement: nameElement == freezed
+      nameElement: freezed == nameElement
           ? _value.nameElement
           : nameElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      use: use == freezed
+      use: freezed == use
           ? _value.use
           : use // ignore: cast_nullable_to_non_nullable
               as Code?,
-      useElement: useElement == freezed
+      useElement: freezed == useElement
           ? _value.useElement
           : useElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      min: min == freezed
+      min: freezed == min
           ? _value.min
           : min // ignore: cast_nullable_to_non_nullable
               as Integer?,
-      minElement: minElement == freezed
+      minElement: freezed == minElement
           ? _value.minElement
           : minElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      max: max == freezed
+      max: freezed == max
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
               as String?,
-      maxElement: maxElement == freezed
+      maxElement: freezed == maxElement
           ? _value.maxElement
           : maxElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      documentation: documentation == freezed
+      documentation: freezed == documentation
           ? _value.documentation
           : documentation // ignore: cast_nullable_to_non_nullable
               as String?,
-      documentationElement: documentationElement == freezed
+      documentationElement: freezed == documentationElement
           ? _value.documentationElement
           : documentationElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as Code?,
-      typeElement: typeElement == freezed
+      typeElement: freezed == typeElement
           ? _value.typeElement
           : typeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      profile: profile == freezed
+      profile: freezed == profile
           ? _value.profile
           : profile // ignore: cast_nullable_to_non_nullable
               as Canonical?,
@@ -2865,7 +3651,7 @@ class __$ParameterDefinitionCopyWithImpl<$Res>
 class _$_ParameterDefinition extends _ParameterDefinition {
   _$_ParameterDefinition(
       {this.id,
-      @JsonKey(name: 'extension') this.extension_,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       this.name,
       @JsonKey(name: '_name') this.nameElement,
       this.use,
@@ -2879,46 +3665,101 @@ class _$_ParameterDefinition extends _ParameterDefinition {
       this.type,
       @JsonKey(name: '_type') this.typeElement,
       this.profile})
-      : super._();
+      : _extension_ = extension_,
+        super._();
 
   factory _$_ParameterDefinition.fromJson(Map<String, dynamic> json) =>
       _$$_ParameterDefinitionFromJson(json);
 
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   @override
   final String? id;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [name] The name of the parameter used to allow access to the value of the
+  ///  parameter in evaluation contexts.
   @override
   final Code? name;
+
+  /// [nameElement] Extensions for name
   @override
   @JsonKey(name: '_name')
   final Element? nameElement;
+
+  /// [use] Whether the parameter is input or output for the module.
   @override
   final Code? use;
+
+  /// [useElement] Extensions for use
   @override
   @JsonKey(name: '_use')
   final Element? useElement;
+
+  /// [min] The minimum number of times this parameter SHALL appear in the
+  ///  request or response.
   @override
   final Integer? min;
+
+  /// [minElement] Extensions for min
   @override
   @JsonKey(name: '_min')
   final Element? minElement;
+
+  /// [max] The maximum number of times this element is permitted to appear in
+  ///  the request or response.
   @override
   final String? max;
+
+  /// [maxElement] Extensions for max
   @override
   @JsonKey(name: '_max')
   final Element? maxElement;
+
+  /// [documentation] A brief discussion of what the parameter is for and how
+  ///  it is used by the module.
   @override
   final String? documentation;
+
+  /// [documentationElement] Extensions for documentation
   @override
   @JsonKey(name: '_documentation')
   final Element? documentationElement;
+
+  /// [type] The type of the parameter.
   @override
   final Code? type;
+
+  /// [typeElement] Extensions for type
   @override
   @JsonKey(name: '_type')
   final Element? typeElement;
+
+  /// [profile] If specified, this indicates a profile that the input data must
+  ///  conform to, or that the output data will conform to.
   @override
   final Canonical? profile;
 
@@ -2930,140 +3771,171 @@ class _$_ParameterDefinition extends _ParameterDefinition {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ParameterDefinition &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_ParameterDefinition &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.nameElement, nameElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.nameElement, nameElement)) &&
-            (identical(other.use, use) ||
-                const DeepCollectionEquality().equals(other.use, use)) &&
+                other.nameElement == nameElement) &&
+            (identical(other.use, use) || other.use == use) &&
             (identical(other.useElement, useElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.useElement, useElement)) &&
-            (identical(other.min, min) ||
-                const DeepCollectionEquality().equals(other.min, min)) &&
+                other.useElement == useElement) &&
+            (identical(other.min, min) || other.min == min) &&
             (identical(other.minElement, minElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.minElement, minElement)) &&
-            (identical(other.max, max) ||
-                const DeepCollectionEquality().equals(other.max, max)) &&
+                other.minElement == minElement) &&
+            (identical(other.max, max) || other.max == max) &&
             (identical(other.maxElement, maxElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.maxElement, maxElement)) &&
+                other.maxElement == maxElement) &&
             (identical(other.documentation, documentation) ||
-                const DeepCollectionEquality()
-                    .equals(other.documentation, documentation)) &&
+                other.documentation == documentation) &&
             (identical(other.documentationElement, documentationElement) ||
-                const DeepCollectionEquality().equals(
-                    other.documentationElement, documentationElement)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+                other.documentationElement == documentationElement) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.typeElement, typeElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.typeElement, typeElement)) &&
-            (identical(other.profile, profile) ||
-                const DeepCollectionEquality().equals(other.profile, profile)));
+                other.typeElement == typeElement) &&
+            (identical(other.profile, profile) || other.profile == profile));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(nameElement) ^
-      const DeepCollectionEquality().hash(use) ^
-      const DeepCollectionEquality().hash(useElement) ^
-      const DeepCollectionEquality().hash(min) ^
-      const DeepCollectionEquality().hash(minElement) ^
-      const DeepCollectionEquality().hash(max) ^
-      const DeepCollectionEquality().hash(maxElement) ^
-      const DeepCollectionEquality().hash(documentation) ^
-      const DeepCollectionEquality().hash(documentationElement) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(typeElement) ^
-      const DeepCollectionEquality().hash(profile);
 
   @JsonKey(ignore: true)
   @override
-  _$ParameterDefinitionCopyWith<_ParameterDefinition> get copyWith =>
-      __$ParameterDefinitionCopyWithImpl<_ParameterDefinition>(
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      name,
+      nameElement,
+      use,
+      useElement,
+      min,
+      minElement,
+      max,
+      maxElement,
+      documentation,
+      documentationElement,
+      type,
+      typeElement,
+      profile);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ParameterDefinitionCopyWith<_$_ParameterDefinition> get copyWith =>
+      __$$_ParameterDefinitionCopyWithImpl<_$_ParameterDefinition>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ParameterDefinitionToJson(this);
+    return _$$_ParameterDefinitionToJson(
+      this,
+    );
   }
 }
 
 abstract class _ParameterDefinition extends ParameterDefinition {
   factory _ParameterDefinition(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      Code? name,
-      @JsonKey(name: '_name') Element? nameElement,
-      Code? use,
-      @JsonKey(name: '_use') Element? useElement,
-      Integer? min,
-      @JsonKey(name: '_min') Element? minElement,
-      String? max,
-      @JsonKey(name: '_max') Element? maxElement,
-      String? documentation,
-      @JsonKey(name: '_documentation') Element? documentationElement,
-      Code? type,
-      @JsonKey(name: '_type') Element? typeElement,
-      Canonical? profile}) = _$_ParameterDefinition;
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final Code? name,
+      @JsonKey(name: '_name') final Element? nameElement,
+      final Code? use,
+      @JsonKey(name: '_use') final Element? useElement,
+      final Integer? min,
+      @JsonKey(name: '_min') final Element? minElement,
+      final String? max,
+      @JsonKey(name: '_max') final Element? maxElement,
+      final String? documentation,
+      @JsonKey(name: '_documentation') final Element? documentationElement,
+      final Code? type,
+      @JsonKey(name: '_type') final Element? typeElement,
+      final Canonical? profile}) = _$_ParameterDefinition;
   _ParameterDefinition._() : super._();
 
   factory _ParameterDefinition.fromJson(Map<String, dynamic> json) =
       _$_ParameterDefinition.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
+  String? get id;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
-  Code? get name => throw _privateConstructorUsedError;
+
+  /// [name] The name of the parameter used to allow access to the value of the
+  ///  parameter in evaluation contexts.
+  Code? get name;
   @override
+
+  /// [nameElement] Extensions for name
   @JsonKey(name: '_name')
-  Element? get nameElement => throw _privateConstructorUsedError;
+  Element? get nameElement;
   @override
-  Code? get use => throw _privateConstructorUsedError;
+
+  /// [use] Whether the parameter is input or output for the module.
+  Code? get use;
   @override
+
+  /// [useElement] Extensions for use
   @JsonKey(name: '_use')
-  Element? get useElement => throw _privateConstructorUsedError;
+  Element? get useElement;
   @override
-  Integer? get min => throw _privateConstructorUsedError;
+
+  /// [min] The minimum number of times this parameter SHALL appear in the
+  ///  request or response.
+  Integer? get min;
   @override
+
+  /// [minElement] Extensions for min
   @JsonKey(name: '_min')
-  Element? get minElement => throw _privateConstructorUsedError;
+  Element? get minElement;
   @override
-  String? get max => throw _privateConstructorUsedError;
+
+  /// [max] The maximum number of times this element is permitted to appear in
+  ///  the request or response.
+  String? get max;
   @override
+
+  /// [maxElement] Extensions for max
   @JsonKey(name: '_max')
-  Element? get maxElement => throw _privateConstructorUsedError;
+  Element? get maxElement;
   @override
-  String? get documentation => throw _privateConstructorUsedError;
+
+  /// [documentation] A brief discussion of what the parameter is for and how
+  ///  it is used by the module.
+  String? get documentation;
   @override
+
+  /// [documentationElement] Extensions for documentation
   @JsonKey(name: '_documentation')
-  Element? get documentationElement => throw _privateConstructorUsedError;
+  Element? get documentationElement;
   @override
-  Code? get type => throw _privateConstructorUsedError;
+
+  /// [type] The type of the parameter.
+  Code? get type;
   @override
+
+  /// [typeElement] Extensions for type
   @JsonKey(name: '_type')
-  Element? get typeElement => throw _privateConstructorUsedError;
+  Element? get typeElement;
   @override
-  Canonical? get profile => throw _privateConstructorUsedError;
+
+  /// [profile] If specified, this indicates a profile that the input data must
+  ///  conform to, or that the output data will conform to.
+  Canonical? get profile;
   @override
   @JsonKey(ignore: true)
-  _$ParameterDefinitionCopyWith<_ParameterDefinition> get copyWith =>
+  _$$_ParameterDefinitionCopyWith<_$_ParameterDefinition> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -3072,79 +3944,64 @@ RelatedArtifact _$RelatedArtifactFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$RelatedArtifactTearOff {
-  const _$RelatedArtifactTearOff();
-
-  _RelatedArtifact call(
-      {String? id,
-      @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
-      @JsonKey(unknownEnumValue: RelatedArtifactType.unknown)
-          RelatedArtifactType? type,
-      @JsonKey(name: '_type')
-          Element? typeElement,
-      String? label,
-      @JsonKey(name: '_label')
-          Element? labelElement,
-      String? display,
-      @JsonKey(name: '_display')
-          Element? displayElement,
-      Markdown? citation,
-      @JsonKey(name: '_citation')
-          Element? citationElement,
-      FhirUrl? url,
-      @JsonKey(name: '_url')
-          Element? urlElement,
-      Attachment? document,
-      Canonical? resource}) {
-    return _RelatedArtifact(
-      id: id,
-      extension_: extension_,
-      type: type,
-      typeElement: typeElement,
-      label: label,
-      labelElement: labelElement,
-      display: display,
-      displayElement: displayElement,
-      citation: citation,
-      citationElement: citationElement,
-      url: url,
-      urlElement: urlElement,
-      document: document,
-      resource: resource,
-    );
-  }
-
-  RelatedArtifact fromJson(Map<String, Object> json) {
-    return RelatedArtifact.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $RelatedArtifact = _$RelatedArtifactTearOff();
-
-/// @nodoc
 mixin _$RelatedArtifact {
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   String? get id => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   @JsonKey(unknownEnumValue: RelatedArtifactType.unknown)
   RelatedArtifactType? get type => throw _privateConstructorUsedError;
+
+  /// [typeElement] Extensions for type
   @JsonKey(name: '_type')
   Element? get typeElement => throw _privateConstructorUsedError;
+
+  /// [label] A short label that can be used to reference the citation from
+  ///  elsewhere in the containing artifact, such as a footnote index.
   String? get label => throw _privateConstructorUsedError;
+
+  /// [labelElement] Extensions for label
   @JsonKey(name: '_label')
   Element? get labelElement => throw _privateConstructorUsedError;
+
+  /// [display] A brief description of the document or knowledge resource being
+  ///  referenced, suitable for display to a consumer.
   String? get display => throw _privateConstructorUsedError;
+
+  /// [displayElement] Extensions for display
   @JsonKey(name: '_display')
   Element? get displayElement => throw _privateConstructorUsedError;
+
+  /// [citation] A bibliographic citation for the related artifact. This text
+  ///  SHOULD be formatted according to an accepted citation format.
   Markdown? get citation => throw _privateConstructorUsedError;
+
+  /// [citationElement] Extensions for citation
   @JsonKey(name: '_citation')
   Element? get citationElement => throw _privateConstructorUsedError;
+
+  /// [url] A url for the artifact that can be followed to access the actual
+  ///  content.
   FhirUrl? get url => throw _privateConstructorUsedError;
+
+  /// [urlElement] Extensions for url
   @JsonKey(name: '_url')
   Element? get urlElement => throw _privateConstructorUsedError;
+
+  /// [document] The document being referenced, represented as an attachment.
+  ///  This is exclusive with the resource element.
   Attachment? get document => throw _privateConstructorUsedError;
+
+  /// [resource] The related resource, such as a library, value set, profile,
+  ///  or other knowledge resource.
   Canonical? get resource => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -3157,7 +4014,8 @@ mixin _$RelatedArtifact {
 abstract class $RelatedArtifactCopyWith<$Res> {
   factory $RelatedArtifactCopyWith(
           RelatedArtifact value, $Res Function(RelatedArtifact) then) =
-      _$RelatedArtifactCopyWithImpl<$Res>;
+      _$RelatedArtifactCopyWithImpl<$Res, RelatedArtifact>;
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension')
@@ -3190,14 +4048,16 @@ abstract class $RelatedArtifactCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RelatedArtifactCopyWithImpl<$Res>
+class _$RelatedArtifactCopyWithImpl<$Res, $Val extends RelatedArtifact>
     implements $RelatedArtifactCopyWith<$Res> {
   _$RelatedArtifactCopyWithImpl(this._value, this._then);
 
-  final RelatedArtifact _value;
   // ignore: unused_field
-  final $Res Function(RelatedArtifact) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -3216,139 +4076,146 @@ class _$RelatedArtifactCopyWithImpl<$Res>
     Object? resource = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as RelatedArtifactType?,
-      typeElement: typeElement == freezed
+      typeElement: freezed == typeElement
           ? _value.typeElement
           : typeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      label: label == freezed
+      label: freezed == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String?,
-      labelElement: labelElement == freezed
+      labelElement: freezed == labelElement
           ? _value.labelElement
           : labelElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      display: display == freezed
+      display: freezed == display
           ? _value.display
           : display // ignore: cast_nullable_to_non_nullable
               as String?,
-      displayElement: displayElement == freezed
+      displayElement: freezed == displayElement
           ? _value.displayElement
           : displayElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      citation: citation == freezed
+      citation: freezed == citation
           ? _value.citation
           : citation // ignore: cast_nullable_to_non_nullable
               as Markdown?,
-      citationElement: citationElement == freezed
+      citationElement: freezed == citationElement
           ? _value.citationElement
           : citationElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as FhirUrl?,
-      urlElement: urlElement == freezed
+      urlElement: freezed == urlElement
           ? _value.urlElement
           : urlElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      document: document == freezed
+      document: freezed == document
           ? _value.document
           : document // ignore: cast_nullable_to_non_nullable
               as Attachment?,
-      resource: resource == freezed
+      resource: freezed == resource
           ? _value.resource
           : resource // ignore: cast_nullable_to_non_nullable
               as Canonical?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get typeElement {
     if (_value.typeElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.typeElement!, (value) {
-      return _then(_value.copyWith(typeElement: value));
+      return _then(_value.copyWith(typeElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get labelElement {
     if (_value.labelElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.labelElement!, (value) {
-      return _then(_value.copyWith(labelElement: value));
+      return _then(_value.copyWith(labelElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get displayElement {
     if (_value.displayElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.displayElement!, (value) {
-      return _then(_value.copyWith(displayElement: value));
+      return _then(_value.copyWith(displayElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get citationElement {
     if (_value.citationElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.citationElement!, (value) {
-      return _then(_value.copyWith(citationElement: value));
+      return _then(_value.copyWith(citationElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get urlElement {
     if (_value.urlElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.urlElement!, (value) {
-      return _then(_value.copyWith(urlElement: value));
+      return _then(_value.copyWith(urlElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AttachmentCopyWith<$Res>? get document {
     if (_value.document == null) {
       return null;
     }
 
     return $AttachmentCopyWith<$Res>(_value.document!, (value) {
-      return _then(_value.copyWith(document: value));
+      return _then(_value.copyWith(document: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$RelatedArtifactCopyWith<$Res>
+abstract class _$$_RelatedArtifactCopyWith<$Res>
     implements $RelatedArtifactCopyWith<$Res> {
-  factory _$RelatedArtifactCopyWith(
-          _RelatedArtifact value, $Res Function(_RelatedArtifact) then) =
-      __$RelatedArtifactCopyWithImpl<$Res>;
+  factory _$$_RelatedArtifactCopyWith(
+          _$_RelatedArtifact value, $Res Function(_$_RelatedArtifact) then) =
+      __$$_RelatedArtifactCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension')
@@ -3387,16 +4254,14 @@ abstract class _$RelatedArtifactCopyWith<$Res>
 }
 
 /// @nodoc
-class __$RelatedArtifactCopyWithImpl<$Res>
-    extends _$RelatedArtifactCopyWithImpl<$Res>
-    implements _$RelatedArtifactCopyWith<$Res> {
-  __$RelatedArtifactCopyWithImpl(
-      _RelatedArtifact _value, $Res Function(_RelatedArtifact) _then)
-      : super(_value, (v) => _then(v as _RelatedArtifact));
+class __$$_RelatedArtifactCopyWithImpl<$Res>
+    extends _$RelatedArtifactCopyWithImpl<$Res, _$_RelatedArtifact>
+    implements _$$_RelatedArtifactCopyWith<$Res> {
+  __$$_RelatedArtifactCopyWithImpl(
+      _$_RelatedArtifact _value, $Res Function(_$_RelatedArtifact) _then)
+      : super(_value, _then);
 
-  @override
-  _RelatedArtifact get _value => super._value as _RelatedArtifact;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -3414,60 +4279,60 @@ class __$RelatedArtifactCopyWithImpl<$Res>
     Object? document = freezed,
     Object? resource = freezed,
   }) {
-    return _then(_RelatedArtifact(
-      id: id == freezed
+    return _then(_$_RelatedArtifact(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as RelatedArtifactType?,
-      typeElement: typeElement == freezed
+      typeElement: freezed == typeElement
           ? _value.typeElement
           : typeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      label: label == freezed
+      label: freezed == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String?,
-      labelElement: labelElement == freezed
+      labelElement: freezed == labelElement
           ? _value.labelElement
           : labelElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      display: display == freezed
+      display: freezed == display
           ? _value.display
           : display // ignore: cast_nullable_to_non_nullable
               as String?,
-      displayElement: displayElement == freezed
+      displayElement: freezed == displayElement
           ? _value.displayElement
           : displayElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      citation: citation == freezed
+      citation: freezed == citation
           ? _value.citation
           : citation // ignore: cast_nullable_to_non_nullable
               as Markdown?,
-      citationElement: citationElement == freezed
+      citationElement: freezed == citationElement
           ? _value.citationElement
           : citationElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as FhirUrl?,
-      urlElement: urlElement == freezed
+      urlElement: freezed == urlElement
           ? _value.urlElement
           : urlElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      document: document == freezed
+      document: freezed == document
           ? _value.document
           : document // ignore: cast_nullable_to_non_nullable
               as Attachment?,
-      resource: resource == freezed
+      resource: freezed == resource
           ? _value.resource
           : resource // ignore: cast_nullable_to_non_nullable
               as Canonical?,
@@ -3480,7 +4345,7 @@ class __$RelatedArtifactCopyWithImpl<$Res>
 class _$_RelatedArtifact extends _RelatedArtifact {
   _$_RelatedArtifact(
       {this.id,
-      @JsonKey(name: 'extension') this.extension_,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       @JsonKey(unknownEnumValue: RelatedArtifactType.unknown) this.type,
       @JsonKey(name: '_type') this.typeElement,
       this.label,
@@ -3493,44 +4358,97 @@ class _$_RelatedArtifact extends _RelatedArtifact {
       @JsonKey(name: '_url') this.urlElement,
       this.document,
       this.resource})
-      : super._();
+      : _extension_ = extension_,
+        super._();
 
   factory _$_RelatedArtifact.fromJson(Map<String, dynamic> json) =>
       _$$_RelatedArtifactFromJson(json);
 
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   @override
   final String? id;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(unknownEnumValue: RelatedArtifactType.unknown)
   final RelatedArtifactType? type;
+
+  /// [typeElement] Extensions for type
   @override
   @JsonKey(name: '_type')
   final Element? typeElement;
+
+  /// [label] A short label that can be used to reference the citation from
+  ///  elsewhere in the containing artifact, such as a footnote index.
   @override
   final String? label;
+
+  /// [labelElement] Extensions for label
   @override
   @JsonKey(name: '_label')
   final Element? labelElement;
+
+  /// [display] A brief description of the document or knowledge resource being
+  ///  referenced, suitable for display to a consumer.
   @override
   final String? display;
+
+  /// [displayElement] Extensions for display
   @override
   @JsonKey(name: '_display')
   final Element? displayElement;
+
+  /// [citation] A bibliographic citation for the related artifact. This text
+  ///  SHOULD be formatted according to an accepted citation format.
   @override
   final Markdown? citation;
+
+  /// [citationElement] Extensions for citation
   @override
   @JsonKey(name: '_citation')
   final Element? citationElement;
+
+  /// [url] A url for the artifact that can be followed to access the actual
+  ///  content.
   @override
   final FhirUrl? url;
+
+  /// [urlElement] Extensions for url
   @override
   @JsonKey(name: '_url')
   final Element? urlElement;
+
+  /// [document] The document being referenced, represented as an attachment.
+  ///  This is exclusive with the resource element.
   @override
   final Attachment? document;
+
+  /// [resource] The related resource, such as a library, value set, profile,
+  ///  or other knowledge resource.
   @override
   final Canonical? resource;
 
@@ -3542,142 +4460,170 @@ class _$_RelatedArtifact extends _RelatedArtifact {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RelatedArtifact &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_RelatedArtifact &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.typeElement, typeElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.typeElement, typeElement)) &&
-            (identical(other.label, label) ||
-                const DeepCollectionEquality().equals(other.label, label)) &&
+                other.typeElement == typeElement) &&
+            (identical(other.label, label) || other.label == label) &&
             (identical(other.labelElement, labelElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.labelElement, labelElement)) &&
-            (identical(other.display, display) ||
-                const DeepCollectionEquality()
-                    .equals(other.display, display)) &&
+                other.labelElement == labelElement) &&
+            (identical(other.display, display) || other.display == display) &&
             (identical(other.displayElement, displayElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.displayElement, displayElement)) &&
+                other.displayElement == displayElement) &&
             (identical(other.citation, citation) ||
-                const DeepCollectionEquality()
-                    .equals(other.citation, citation)) &&
+                other.citation == citation) &&
             (identical(other.citationElement, citationElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.citationElement, citationElement)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)) &&
+                other.citationElement == citationElement) &&
+            (identical(other.url, url) || other.url == url) &&
             (identical(other.urlElement, urlElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.urlElement, urlElement)) &&
+                other.urlElement == urlElement) &&
             (identical(other.document, document) ||
-                const DeepCollectionEquality()
-                    .equals(other.document, document)) &&
+                other.document == document) &&
             (identical(other.resource, resource) ||
-                const DeepCollectionEquality()
-                    .equals(other.resource, resource)));
+                other.resource == resource));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(typeElement) ^
-      const DeepCollectionEquality().hash(label) ^
-      const DeepCollectionEquality().hash(labelElement) ^
-      const DeepCollectionEquality().hash(display) ^
-      const DeepCollectionEquality().hash(displayElement) ^
-      const DeepCollectionEquality().hash(citation) ^
-      const DeepCollectionEquality().hash(citationElement) ^
-      const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(urlElement) ^
-      const DeepCollectionEquality().hash(document) ^
-      const DeepCollectionEquality().hash(resource);
 
   @JsonKey(ignore: true)
   @override
-  _$RelatedArtifactCopyWith<_RelatedArtifact> get copyWith =>
-      __$RelatedArtifactCopyWithImpl<_RelatedArtifact>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      type,
+      typeElement,
+      label,
+      labelElement,
+      display,
+      displayElement,
+      citation,
+      citationElement,
+      url,
+      urlElement,
+      document,
+      resource);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_RelatedArtifactCopyWith<_$_RelatedArtifact> get copyWith =>
+      __$$_RelatedArtifactCopyWithImpl<_$_RelatedArtifact>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RelatedArtifactToJson(this);
+    return _$$_RelatedArtifactToJson(
+      this,
+    );
   }
 }
 
 abstract class _RelatedArtifact extends RelatedArtifact {
   factory _RelatedArtifact(
-      {String? id,
+      {final String? id,
       @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
+          final List<FhirExtension>? extension_,
       @JsonKey(unknownEnumValue: RelatedArtifactType.unknown)
-          RelatedArtifactType? type,
+          final RelatedArtifactType? type,
       @JsonKey(name: '_type')
-          Element? typeElement,
-      String? label,
+          final Element? typeElement,
+      final String? label,
       @JsonKey(name: '_label')
-          Element? labelElement,
-      String? display,
+          final Element? labelElement,
+      final String? display,
       @JsonKey(name: '_display')
-          Element? displayElement,
-      Markdown? citation,
+          final Element? displayElement,
+      final Markdown? citation,
       @JsonKey(name: '_citation')
-          Element? citationElement,
-      FhirUrl? url,
+          final Element? citationElement,
+      final FhirUrl? url,
       @JsonKey(name: '_url')
-          Element? urlElement,
-      Attachment? document,
-      Canonical? resource}) = _$_RelatedArtifact;
+          final Element? urlElement,
+      final Attachment? document,
+      final Canonical? resource}) = _$_RelatedArtifact;
   _RelatedArtifact._() : super._();
 
   factory _RelatedArtifact.fromJson(Map<String, dynamic> json) =
       _$_RelatedArtifact.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
+  String? get id;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
   @JsonKey(unknownEnumValue: RelatedArtifactType.unknown)
-  RelatedArtifactType? get type => throw _privateConstructorUsedError;
+  RelatedArtifactType? get type;
   @override
+
+  /// [typeElement] Extensions for type
   @JsonKey(name: '_type')
-  Element? get typeElement => throw _privateConstructorUsedError;
+  Element? get typeElement;
   @override
-  String? get label => throw _privateConstructorUsedError;
+
+  /// [label] A short label that can be used to reference the citation from
+  ///  elsewhere in the containing artifact, such as a footnote index.
+  String? get label;
   @override
+
+  /// [labelElement] Extensions for label
   @JsonKey(name: '_label')
-  Element? get labelElement => throw _privateConstructorUsedError;
+  Element? get labelElement;
   @override
-  String? get display => throw _privateConstructorUsedError;
+
+  /// [display] A brief description of the document or knowledge resource being
+  ///  referenced, suitable for display to a consumer.
+  String? get display;
   @override
+
+  /// [displayElement] Extensions for display
   @JsonKey(name: '_display')
-  Element? get displayElement => throw _privateConstructorUsedError;
+  Element? get displayElement;
   @override
-  Markdown? get citation => throw _privateConstructorUsedError;
+
+  /// [citation] A bibliographic citation for the related artifact. This text
+  ///  SHOULD be formatted according to an accepted citation format.
+  Markdown? get citation;
   @override
+
+  /// [citationElement] Extensions for citation
   @JsonKey(name: '_citation')
-  Element? get citationElement => throw _privateConstructorUsedError;
+  Element? get citationElement;
   @override
-  FhirUrl? get url => throw _privateConstructorUsedError;
+
+  /// [url] A url for the artifact that can be followed to access the actual
+  ///  content.
+  FhirUrl? get url;
   @override
+
+  /// [urlElement] Extensions for url
   @JsonKey(name: '_url')
-  Element? get urlElement => throw _privateConstructorUsedError;
+  Element? get urlElement;
   @override
-  Attachment? get document => throw _privateConstructorUsedError;
+
+  /// [document] The document being referenced, represented as an attachment.
+  ///  This is exclusive with the resource element.
+  Attachment? get document;
   @override
-  Canonical? get resource => throw _privateConstructorUsedError;
+
+  /// [resource] The related resource, such as a library, value set, profile,
+  ///  or other knowledge resource.
+  Canonical? get resource;
   @override
   @JsonKey(ignore: true)
-  _$RelatedArtifactCopyWith<_RelatedArtifact> get copyWith =>
+  _$$_RelatedArtifactCopyWith<_$_RelatedArtifact> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -3686,77 +4632,64 @@ TriggerDefinition _$TriggerDefinitionFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$TriggerDefinitionTearOff {
-  const _$TriggerDefinitionTearOff();
-
-  _TriggerDefinition call(
-      {String? id,
-      @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
-      @JsonKey(unknownEnumValue: TriggerDefinitionType.unknown)
-          TriggerDefinitionType? type,
-      @JsonKey(name: '_type')
-          Element? typeElement,
-      String? name,
-      @JsonKey(name: '_name')
-          Element? nameElement,
-      Timing? timingTiming,
-      Reference? timingReference,
-      Date? timingDate,
-      @JsonKey(name: '_timingDate')
-          Element? timingDateElement,
-      FhirDateTime? timingDateTime,
-      @JsonKey(name: '_timingDateTime')
-          Element? timingDateTimeElement,
-      List<DataRequirement>? data,
-      Expression? condition}) {
-    return _TriggerDefinition(
-      id: id,
-      extension_: extension_,
-      type: type,
-      typeElement: typeElement,
-      name: name,
-      nameElement: nameElement,
-      timingTiming: timingTiming,
-      timingReference: timingReference,
-      timingDate: timingDate,
-      timingDateElement: timingDateElement,
-      timingDateTime: timingDateTime,
-      timingDateTimeElement: timingDateTimeElement,
-      data: data,
-      condition: condition,
-    );
-  }
-
-  TriggerDefinition fromJson(Map<String, Object> json) {
-    return TriggerDefinition.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $TriggerDefinition = _$TriggerDefinitionTearOff();
-
-/// @nodoc
 mixin _$TriggerDefinition {
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   String? get id => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   @JsonKey(unknownEnumValue: TriggerDefinitionType.unknown)
   TriggerDefinitionType? get type => throw _privateConstructorUsedError;
+
+  /// [typeElement] Extensions for type
   @JsonKey(name: '_type')
   Element? get typeElement => throw _privateConstructorUsedError;
+
+  /// [name] A formal name for the event. This may be an absolute URI that
+  /// identifies the event formally (e.g. from a trigger registry), or a simple
+  ///  relative URI that identifies the event in a local context.
   String? get name => throw _privateConstructorUsedError;
+
+  /// [nameElement] Extensions for name
   @JsonKey(name: '_name')
   Element? get nameElement => throw _privateConstructorUsedError;
+
+  /// [timingTiming] The timing of the event (if this is a periodic trigger).
   Timing? get timingTiming => throw _privateConstructorUsedError;
+
+  /// [timingReference] The timing of the event (if this is a periodic
+  ///  trigger).
   Reference? get timingReference => throw _privateConstructorUsedError;
+
+  /// [timingDate] The timing of the event (if this is a periodic trigger).
   Date? get timingDate => throw _privateConstructorUsedError;
+
+  /// [timingDateElement] Extensions for timingDate
   @JsonKey(name: '_timingDate')
   Element? get timingDateElement => throw _privateConstructorUsedError;
+
+  /// [timingDateTime] The timing of the event (if this is a periodic trigger).
   FhirDateTime? get timingDateTime => throw _privateConstructorUsedError;
+
+  /// [timingDateTimeElement] Extensions for timingDateTime
   @JsonKey(name: '_timingDateTime')
   Element? get timingDateTimeElement => throw _privateConstructorUsedError;
+
+  /// [data] The triggering data of the event (if this is a data trigger). If
+  /// more than one data is requirement is specified, then all the data
+  ///  requirements must be true.
   List<DataRequirement>? get data => throw _privateConstructorUsedError;
+
+  /// [condition] A boolean-valued expression that is evaluated in the context
+  /// of the container of the trigger definition and returns whether or not the
+  ///  trigger fires.
   Expression? get condition => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -3769,7 +4702,8 @@ mixin _$TriggerDefinition {
 abstract class $TriggerDefinitionCopyWith<$Res> {
   factory $TriggerDefinitionCopyWith(
           TriggerDefinition value, $Res Function(TriggerDefinition) then) =
-      _$TriggerDefinitionCopyWithImpl<$Res>;
+      _$TriggerDefinitionCopyWithImpl<$Res, TriggerDefinition>;
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension')
@@ -3802,14 +4736,16 @@ abstract class $TriggerDefinitionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TriggerDefinitionCopyWithImpl<$Res>
+class _$TriggerDefinitionCopyWithImpl<$Res, $Val extends TriggerDefinition>
     implements $TriggerDefinitionCopyWith<$Res> {
   _$TriggerDefinitionCopyWithImpl(this._value, this._then);
 
-  final TriggerDefinition _value;
   // ignore: unused_field
-  final $Res Function(TriggerDefinition) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -3828,150 +4764,158 @@ class _$TriggerDefinitionCopyWithImpl<$Res>
     Object? condition = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as TriggerDefinitionType?,
-      typeElement: typeElement == freezed
+      typeElement: freezed == typeElement
           ? _value.typeElement
           : typeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      nameElement: nameElement == freezed
+      nameElement: freezed == nameElement
           ? _value.nameElement
           : nameElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      timingTiming: timingTiming == freezed
+      timingTiming: freezed == timingTiming
           ? _value.timingTiming
           : timingTiming // ignore: cast_nullable_to_non_nullable
               as Timing?,
-      timingReference: timingReference == freezed
+      timingReference: freezed == timingReference
           ? _value.timingReference
           : timingReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      timingDate: timingDate == freezed
+      timingDate: freezed == timingDate
           ? _value.timingDate
           : timingDate // ignore: cast_nullable_to_non_nullable
               as Date?,
-      timingDateElement: timingDateElement == freezed
+      timingDateElement: freezed == timingDateElement
           ? _value.timingDateElement
           : timingDateElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      timingDateTime: timingDateTime == freezed
+      timingDateTime: freezed == timingDateTime
           ? _value.timingDateTime
           : timingDateTime // ignore: cast_nullable_to_non_nullable
               as FhirDateTime?,
-      timingDateTimeElement: timingDateTimeElement == freezed
+      timingDateTimeElement: freezed == timingDateTimeElement
           ? _value.timingDateTimeElement
           : timingDateTimeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as List<DataRequirement>?,
-      condition: condition == freezed
+      condition: freezed == condition
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
               as Expression?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get typeElement {
     if (_value.typeElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.typeElement!, (value) {
-      return _then(_value.copyWith(typeElement: value));
+      return _then(_value.copyWith(typeElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get nameElement {
     if (_value.nameElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.nameElement!, (value) {
-      return _then(_value.copyWith(nameElement: value));
+      return _then(_value.copyWith(nameElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TimingCopyWith<$Res>? get timingTiming {
     if (_value.timingTiming == null) {
       return null;
     }
 
     return $TimingCopyWith<$Res>(_value.timingTiming!, (value) {
-      return _then(_value.copyWith(timingTiming: value));
+      return _then(_value.copyWith(timingTiming: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get timingReference {
     if (_value.timingReference == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.timingReference!, (value) {
-      return _then(_value.copyWith(timingReference: value));
+      return _then(_value.copyWith(timingReference: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get timingDateElement {
     if (_value.timingDateElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.timingDateElement!, (value) {
-      return _then(_value.copyWith(timingDateElement: value));
+      return _then(_value.copyWith(timingDateElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get timingDateTimeElement {
     if (_value.timingDateTimeElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.timingDateTimeElement!, (value) {
-      return _then(_value.copyWith(timingDateTimeElement: value));
+      return _then(_value.copyWith(timingDateTimeElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ExpressionCopyWith<$Res>? get condition {
     if (_value.condition == null) {
       return null;
     }
 
     return $ExpressionCopyWith<$Res>(_value.condition!, (value) {
-      return _then(_value.copyWith(condition: value));
+      return _then(_value.copyWith(condition: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$TriggerDefinitionCopyWith<$Res>
+abstract class _$$_TriggerDefinitionCopyWith<$Res>
     implements $TriggerDefinitionCopyWith<$Res> {
-  factory _$TriggerDefinitionCopyWith(
-          _TriggerDefinition value, $Res Function(_TriggerDefinition) then) =
-      __$TriggerDefinitionCopyWithImpl<$Res>;
+  factory _$$_TriggerDefinitionCopyWith(_$_TriggerDefinition value,
+          $Res Function(_$_TriggerDefinition) then) =
+      __$$_TriggerDefinitionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension')
@@ -4011,16 +4955,14 @@ abstract class _$TriggerDefinitionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TriggerDefinitionCopyWithImpl<$Res>
-    extends _$TriggerDefinitionCopyWithImpl<$Res>
-    implements _$TriggerDefinitionCopyWith<$Res> {
-  __$TriggerDefinitionCopyWithImpl(
-      _TriggerDefinition _value, $Res Function(_TriggerDefinition) _then)
-      : super(_value, (v) => _then(v as _TriggerDefinition));
+class __$$_TriggerDefinitionCopyWithImpl<$Res>
+    extends _$TriggerDefinitionCopyWithImpl<$Res, _$_TriggerDefinition>
+    implements _$$_TriggerDefinitionCopyWith<$Res> {
+  __$$_TriggerDefinitionCopyWithImpl(
+      _$_TriggerDefinition _value, $Res Function(_$_TriggerDefinition) _then)
+      : super(_value, _then);
 
-  @override
-  _TriggerDefinition get _value => super._value as _TriggerDefinition;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -4038,60 +4980,60 @@ class __$TriggerDefinitionCopyWithImpl<$Res>
     Object? data = freezed,
     Object? condition = freezed,
   }) {
-    return _then(_TriggerDefinition(
-      id: id == freezed
+    return _then(_$_TriggerDefinition(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as TriggerDefinitionType?,
-      typeElement: typeElement == freezed
+      typeElement: freezed == typeElement
           ? _value.typeElement
           : typeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      nameElement: nameElement == freezed
+      nameElement: freezed == nameElement
           ? _value.nameElement
           : nameElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      timingTiming: timingTiming == freezed
+      timingTiming: freezed == timingTiming
           ? _value.timingTiming
           : timingTiming // ignore: cast_nullable_to_non_nullable
               as Timing?,
-      timingReference: timingReference == freezed
+      timingReference: freezed == timingReference
           ? _value.timingReference
           : timingReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
-      timingDate: timingDate == freezed
+      timingDate: freezed == timingDate
           ? _value.timingDate
           : timingDate // ignore: cast_nullable_to_non_nullable
               as Date?,
-      timingDateElement: timingDateElement == freezed
+      timingDateElement: freezed == timingDateElement
           ? _value.timingDateElement
           : timingDateElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      timingDateTime: timingDateTime == freezed
+      timingDateTime: freezed == timingDateTime
           ? _value.timingDateTime
           : timingDateTime // ignore: cast_nullable_to_non_nullable
               as FhirDateTime?,
-      timingDateTimeElement: timingDateTimeElement == freezed
+      timingDateTimeElement: freezed == timingDateTimeElement
           ? _value.timingDateTimeElement
           : timingDateTimeElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      data: data == freezed
-          ? _value.data
+      data: freezed == data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<DataRequirement>?,
-      condition: condition == freezed
+      condition: freezed == condition
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
               as Expression?,
@@ -4104,7 +5046,7 @@ class __$TriggerDefinitionCopyWithImpl<$Res>
 class _$_TriggerDefinition extends _TriggerDefinition {
   _$_TriggerDefinition(
       {this.id,
-      @JsonKey(name: 'extension') this.extension_,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       @JsonKey(unknownEnumValue: TriggerDefinitionType.unknown) this.type,
       @JsonKey(name: '_type') this.typeElement,
       this.name,
@@ -4115,45 +5057,111 @@ class _$_TriggerDefinition extends _TriggerDefinition {
       @JsonKey(name: '_timingDate') this.timingDateElement,
       this.timingDateTime,
       @JsonKey(name: '_timingDateTime') this.timingDateTimeElement,
-      this.data,
+      final List<DataRequirement>? data,
       this.condition})
-      : super._();
+      : _extension_ = extension_,
+        _data = data,
+        super._();
 
   factory _$_TriggerDefinition.fromJson(Map<String, dynamic> json) =>
       _$$_TriggerDefinitionFromJson(json);
 
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   @override
   final String? id;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(unknownEnumValue: TriggerDefinitionType.unknown)
   final TriggerDefinitionType? type;
+
+  /// [typeElement] Extensions for type
   @override
   @JsonKey(name: '_type')
   final Element? typeElement;
+
+  /// [name] A formal name for the event. This may be an absolute URI that
+  /// identifies the event formally (e.g. from a trigger registry), or a simple
+  ///  relative URI that identifies the event in a local context.
   @override
   final String? name;
+
+  /// [nameElement] Extensions for name
   @override
   @JsonKey(name: '_name')
   final Element? nameElement;
+
+  /// [timingTiming] The timing of the event (if this is a periodic trigger).
   @override
   final Timing? timingTiming;
+
+  /// [timingReference] The timing of the event (if this is a periodic
+  ///  trigger).
   @override
   final Reference? timingReference;
+
+  /// [timingDate] The timing of the event (if this is a periodic trigger).
   @override
   final Date? timingDate;
+
+  /// [timingDateElement] Extensions for timingDate
   @override
   @JsonKey(name: '_timingDate')
   final Element? timingDateElement;
+
+  /// [timingDateTime] The timing of the event (if this is a periodic trigger).
   @override
   final FhirDateTime? timingDateTime;
+
+  /// [timingDateTimeElement] Extensions for timingDateTime
   @override
   @JsonKey(name: '_timingDateTime')
   final Element? timingDateTimeElement;
+
+  /// [data] The triggering data of the event (if this is a data trigger). If
+  /// more than one data is requirement is specified, then all the data
+  ///  requirements must be true.
+  final List<DataRequirement>? _data;
+
+  /// [data] The triggering data of the event (if this is a data trigger). If
+  /// more than one data is requirement is specified, then all the data
+  ///  requirements must be true.
   @override
-  final List<DataRequirement>? data;
+  List<DataRequirement>? get data {
+    final value = _data;
+    if (value == null) return null;
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [condition] A boolean-valued expression that is evaluated in the context
+  /// of the container of the trigger definition and returns whether or not the
+  ///  trigger fires.
   @override
   final Expression? condition;
 
@@ -4165,140 +5173,171 @@ class _$_TriggerDefinition extends _TriggerDefinition {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TriggerDefinition &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_TriggerDefinition &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.typeElement, typeElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.typeElement, typeElement)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+                other.typeElement == typeElement) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.nameElement, nameElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.nameElement, nameElement)) &&
+                other.nameElement == nameElement) &&
             (identical(other.timingTiming, timingTiming) ||
-                const DeepCollectionEquality()
-                    .equals(other.timingTiming, timingTiming)) &&
+                other.timingTiming == timingTiming) &&
             (identical(other.timingReference, timingReference) ||
-                const DeepCollectionEquality()
-                    .equals(other.timingReference, timingReference)) &&
+                other.timingReference == timingReference) &&
             (identical(other.timingDate, timingDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.timingDate, timingDate)) &&
+                other.timingDate == timingDate) &&
             (identical(other.timingDateElement, timingDateElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.timingDateElement, timingDateElement)) &&
+                other.timingDateElement == timingDateElement) &&
             (identical(other.timingDateTime, timingDateTime) ||
-                const DeepCollectionEquality()
-                    .equals(other.timingDateTime, timingDateTime)) &&
+                other.timingDateTime == timingDateTime) &&
             (identical(other.timingDateTimeElement, timingDateTimeElement) ||
-                const DeepCollectionEquality().equals(
-                    other.timingDateTimeElement, timingDateTimeElement)) &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
+                other.timingDateTimeElement == timingDateTimeElement) &&
+            const DeepCollectionEquality().equals(other._data, _data) &&
             (identical(other.condition, condition) ||
-                const DeepCollectionEquality()
-                    .equals(other.condition, condition)));
+                other.condition == condition));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(typeElement) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(nameElement) ^
-      const DeepCollectionEquality().hash(timingTiming) ^
-      const DeepCollectionEquality().hash(timingReference) ^
-      const DeepCollectionEquality().hash(timingDate) ^
-      const DeepCollectionEquality().hash(timingDateElement) ^
-      const DeepCollectionEquality().hash(timingDateTime) ^
-      const DeepCollectionEquality().hash(timingDateTimeElement) ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(condition);
 
   @JsonKey(ignore: true)
   @override
-  _$TriggerDefinitionCopyWith<_TriggerDefinition> get copyWith =>
-      __$TriggerDefinitionCopyWithImpl<_TriggerDefinition>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      type,
+      typeElement,
+      name,
+      nameElement,
+      timingTiming,
+      timingReference,
+      timingDate,
+      timingDateElement,
+      timingDateTime,
+      timingDateTimeElement,
+      const DeepCollectionEquality().hash(_data),
+      condition);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_TriggerDefinitionCopyWith<_$_TriggerDefinition> get copyWith =>
+      __$$_TriggerDefinitionCopyWithImpl<_$_TriggerDefinition>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TriggerDefinitionToJson(this);
+    return _$$_TriggerDefinitionToJson(
+      this,
+    );
   }
 }
 
 abstract class _TriggerDefinition extends TriggerDefinition {
   factory _TriggerDefinition(
-      {String? id,
+      {final String? id,
       @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
+          final List<FhirExtension>? extension_,
       @JsonKey(unknownEnumValue: TriggerDefinitionType.unknown)
-          TriggerDefinitionType? type,
+          final TriggerDefinitionType? type,
       @JsonKey(name: '_type')
-          Element? typeElement,
-      String? name,
+          final Element? typeElement,
+      final String? name,
       @JsonKey(name: '_name')
-          Element? nameElement,
-      Timing? timingTiming,
-      Reference? timingReference,
-      Date? timingDate,
+          final Element? nameElement,
+      final Timing? timingTiming,
+      final Reference? timingReference,
+      final Date? timingDate,
       @JsonKey(name: '_timingDate')
-          Element? timingDateElement,
-      FhirDateTime? timingDateTime,
+          final Element? timingDateElement,
+      final FhirDateTime? timingDateTime,
       @JsonKey(name: '_timingDateTime')
-          Element? timingDateTimeElement,
-      List<DataRequirement>? data,
-      Expression? condition}) = _$_TriggerDefinition;
+          final Element? timingDateTimeElement,
+      final List<DataRequirement>? data,
+      final Expression? condition}) = _$_TriggerDefinition;
   _TriggerDefinition._() : super._();
 
   factory _TriggerDefinition.fromJson(Map<String, dynamic> json) =
       _$_TriggerDefinition.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
+  String? get id;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
   @JsonKey(unknownEnumValue: TriggerDefinitionType.unknown)
-  TriggerDefinitionType? get type => throw _privateConstructorUsedError;
+  TriggerDefinitionType? get type;
   @override
+
+  /// [typeElement] Extensions for type
   @JsonKey(name: '_type')
-  Element? get typeElement => throw _privateConstructorUsedError;
+  Element? get typeElement;
   @override
-  String? get name => throw _privateConstructorUsedError;
+
+  /// [name] A formal name for the event. This may be an absolute URI that
+  /// identifies the event formally (e.g. from a trigger registry), or a simple
+  ///  relative URI that identifies the event in a local context.
+  String? get name;
   @override
+
+  /// [nameElement] Extensions for name
   @JsonKey(name: '_name')
-  Element? get nameElement => throw _privateConstructorUsedError;
+  Element? get nameElement;
   @override
-  Timing? get timingTiming => throw _privateConstructorUsedError;
+
+  /// [timingTiming] The timing of the event (if this is a periodic trigger).
+  Timing? get timingTiming;
   @override
-  Reference? get timingReference => throw _privateConstructorUsedError;
+
+  /// [timingReference] The timing of the event (if this is a periodic
+  ///  trigger).
+  Reference? get timingReference;
   @override
-  Date? get timingDate => throw _privateConstructorUsedError;
+
+  /// [timingDate] The timing of the event (if this is a periodic trigger).
+  Date? get timingDate;
   @override
+
+  /// [timingDateElement] Extensions for timingDate
   @JsonKey(name: '_timingDate')
-  Element? get timingDateElement => throw _privateConstructorUsedError;
+  Element? get timingDateElement;
   @override
-  FhirDateTime? get timingDateTime => throw _privateConstructorUsedError;
+
+  /// [timingDateTime] The timing of the event (if this is a periodic trigger).
+  FhirDateTime? get timingDateTime;
   @override
+
+  /// [timingDateTimeElement] Extensions for timingDateTime
   @JsonKey(name: '_timingDateTime')
-  Element? get timingDateTimeElement => throw _privateConstructorUsedError;
+  Element? get timingDateTimeElement;
   @override
-  List<DataRequirement>? get data => throw _privateConstructorUsedError;
+
+  /// [data] The triggering data of the event (if this is a data trigger). If
+  /// more than one data is requirement is specified, then all the data
+  ///  requirements must be true.
+  List<DataRequirement>? get data;
   @override
-  Expression? get condition => throw _privateConstructorUsedError;
+
+  /// [condition] A boolean-valued expression that is evaluated in the context
+  /// of the container of the trigger definition and returns whether or not the
+  ///  trigger fires.
+  Expression? get condition;
   @override
   @JsonKey(ignore: true)
-  _$TriggerDefinitionCopyWith<_TriggerDefinition> get copyWith =>
+  _$$_TriggerDefinitionCopyWith<_$_TriggerDefinition> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -4307,46 +5346,39 @@ UsageContext _$UsageContextFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$UsageContextTearOff {
-  const _$UsageContextTearOff();
-
-  _UsageContext call(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      required Coding code,
-      CodeableConcept? valueCodeableConcept,
-      Quantity? valueQuantity,
-      Range? valueRange,
-      Reference? valueReference}) {
-    return _UsageContext(
-      id: id,
-      extension_: extension_,
-      code: code,
-      valueCodeableConcept: valueCodeableConcept,
-      valueQuantity: valueQuantity,
-      valueRange: valueRange,
-      valueReference: valueReference,
-    );
-  }
-
-  UsageContext fromJson(Map<String, Object> json) {
-    return UsageContext.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $UsageContext = _$UsageContextTearOff();
-
-/// @nodoc
 mixin _$UsageContext {
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   String? get id => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+
+  /// [code] A code that identifies the type of context being specified by this
+  ///  usage context.
   Coding get code => throw _privateConstructorUsedError;
+
+  /// [valueCodeableConcept] A value that defines the context specified in this
+  ///  context of use. The interpretation of the value is defined by the code.
   CodeableConcept? get valueCodeableConcept =>
       throw _privateConstructorUsedError;
+
+  /// [valueQuantity] A value that defines the context specified in this
+  ///  context of use. The interpretation of the value is defined by the code.
   Quantity? get valueQuantity => throw _privateConstructorUsedError;
+
+  /// [valueRange] A value that defines the context specified in this context
+  ///  of use. The interpretation of the value is defined by the code.
   Range? get valueRange => throw _privateConstructorUsedError;
+
+  /// [valueReference] A value that defines the context specified in this
+  ///  context of use. The interpretation of the value is defined by the code.
   Reference? get valueReference => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -4359,7 +5391,8 @@ mixin _$UsageContext {
 abstract class $UsageContextCopyWith<$Res> {
   factory $UsageContextCopyWith(
           UsageContext value, $Res Function(UsageContext) then) =
-      _$UsageContextCopyWithImpl<$Res>;
+      _$UsageContextCopyWithImpl<$Res, UsageContext>;
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -4377,63 +5410,68 @@ abstract class $UsageContextCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UsageContextCopyWithImpl<$Res> implements $UsageContextCopyWith<$Res> {
+class _$UsageContextCopyWithImpl<$Res, $Val extends UsageContext>
+    implements $UsageContextCopyWith<$Res> {
   _$UsageContextCopyWithImpl(this._value, this._then);
 
-  final UsageContext _value;
   // ignore: unused_field
-  final $Res Function(UsageContext) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? extension_ = freezed,
-    Object? code = freezed,
+    Object? code = null,
     Object? valueCodeableConcept = freezed,
     Object? valueQuantity = freezed,
     Object? valueRange = freezed,
     Object? valueReference = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as Coding,
-      valueCodeableConcept: valueCodeableConcept == freezed
+      valueCodeableConcept: freezed == valueCodeableConcept
           ? _value.valueCodeableConcept
           : valueCodeableConcept // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      valueQuantity: valueQuantity == freezed
+      valueQuantity: freezed == valueQuantity
           ? _value.valueQuantity
           : valueQuantity // ignore: cast_nullable_to_non_nullable
               as Quantity?,
-      valueRange: valueRange == freezed
+      valueRange: freezed == valueRange
           ? _value.valueRange
           : valueRange // ignore: cast_nullable_to_non_nullable
               as Range?,
-      valueReference: valueReference == freezed
+      valueReference: freezed == valueReference
           ? _value.valueReference
           : valueReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodingCopyWith<$Res> get code {
     return $CodingCopyWith<$Res>(_value.code, (value) {
-      return _then(_value.copyWith(code: value));
+      return _then(_value.copyWith(code: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get valueCodeableConcept {
     if (_value.valueCodeableConcept == null) {
       return null;
@@ -4441,51 +5479,55 @@ class _$UsageContextCopyWithImpl<$Res> implements $UsageContextCopyWith<$Res> {
 
     return $CodeableConceptCopyWith<$Res>(_value.valueCodeableConcept!,
         (value) {
-      return _then(_value.copyWith(valueCodeableConcept: value));
+      return _then(_value.copyWith(valueCodeableConcept: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $QuantityCopyWith<$Res>? get valueQuantity {
     if (_value.valueQuantity == null) {
       return null;
     }
 
     return $QuantityCopyWith<$Res>(_value.valueQuantity!, (value) {
-      return _then(_value.copyWith(valueQuantity: value));
+      return _then(_value.copyWith(valueQuantity: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $RangeCopyWith<$Res>? get valueRange {
     if (_value.valueRange == null) {
       return null;
     }
 
     return $RangeCopyWith<$Res>(_value.valueRange!, (value) {
-      return _then(_value.copyWith(valueRange: value));
+      return _then(_value.copyWith(valueRange: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get valueReference {
     if (_value.valueReference == null) {
       return null;
     }
 
     return $ReferenceCopyWith<$Res>(_value.valueReference!, (value) {
-      return _then(_value.copyWith(valueReference: value));
+      return _then(_value.copyWith(valueReference: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$UsageContextCopyWith<$Res>
+abstract class _$$_UsageContextCopyWith<$Res>
     implements $UsageContextCopyWith<$Res> {
-  factory _$UsageContextCopyWith(
-          _UsageContext value, $Res Function(_UsageContext) then) =
-      __$UsageContextCopyWithImpl<$Res>;
+  factory _$$_UsageContextCopyWith(
+          _$_UsageContext value, $Res Function(_$_UsageContext) then) =
+      __$$_UsageContextCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension') List<FhirExtension>? extension_,
@@ -4508,51 +5550,50 @@ abstract class _$UsageContextCopyWith<$Res>
 }
 
 /// @nodoc
-class __$UsageContextCopyWithImpl<$Res> extends _$UsageContextCopyWithImpl<$Res>
-    implements _$UsageContextCopyWith<$Res> {
-  __$UsageContextCopyWithImpl(
-      _UsageContext _value, $Res Function(_UsageContext) _then)
-      : super(_value, (v) => _then(v as _UsageContext));
+class __$$_UsageContextCopyWithImpl<$Res>
+    extends _$UsageContextCopyWithImpl<$Res, _$_UsageContext>
+    implements _$$_UsageContextCopyWith<$Res> {
+  __$$_UsageContextCopyWithImpl(
+      _$_UsageContext _value, $Res Function(_$_UsageContext) _then)
+      : super(_value, _then);
 
-  @override
-  _UsageContext get _value => super._value as _UsageContext;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? extension_ = freezed,
-    Object? code = freezed,
+    Object? code = null,
     Object? valueCodeableConcept = freezed,
     Object? valueQuantity = freezed,
     Object? valueRange = freezed,
     Object? valueReference = freezed,
   }) {
-    return _then(_UsageContext(
-      id: id == freezed
+    return _then(_$_UsageContext(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as Coding,
-      valueCodeableConcept: valueCodeableConcept == freezed
+      valueCodeableConcept: freezed == valueCodeableConcept
           ? _value.valueCodeableConcept
           : valueCodeableConcept // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
-      valueQuantity: valueQuantity == freezed
+      valueQuantity: freezed == valueQuantity
           ? _value.valueQuantity
           : valueQuantity // ignore: cast_nullable_to_non_nullable
               as Quantity?,
-      valueRange: valueRange == freezed
+      valueRange: freezed == valueRange
           ? _value.valueRange
           : valueRange // ignore: cast_nullable_to_non_nullable
               as Range?,
-      valueReference: valueReference == freezed
+      valueReference: freezed == valueReference
           ? _value.valueReference
           : valueReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
@@ -4565,30 +5606,69 @@ class __$UsageContextCopyWithImpl<$Res> extends _$UsageContextCopyWithImpl<$Res>
 class _$_UsageContext extends _UsageContext {
   _$_UsageContext(
       {this.id,
-      @JsonKey(name: 'extension') this.extension_,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       required this.code,
       this.valueCodeableConcept,
       this.valueQuantity,
       this.valueRange,
       this.valueReference})
-      : super._();
+      : _extension_ = extension_,
+        super._();
 
   factory _$_UsageContext.fromJson(Map<String, dynamic> json) =>
       _$$_UsageContextFromJson(json);
 
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   @override
   final String? id;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [code] A code that identifies the type of context being specified by this
+  ///  usage context.
   @override
   final Coding code;
+
+  /// [valueCodeableConcept] A value that defines the context specified in this
+  ///  context of use. The interpretation of the value is defined by the code.
   @override
   final CodeableConcept? valueCodeableConcept;
+
+  /// [valueQuantity] A value that defines the context specified in this
+  ///  context of use. The interpretation of the value is defined by the code.
   @override
   final Quantity? valueQuantity;
+
+  /// [valueRange] A value that defines the context specified in this context
+  ///  of use. The interpretation of the value is defined by the code.
   @override
   final Range? valueRange;
+
+  /// [valueReference] A value that defines the context specified in this
+  ///  context of use. The interpretation of the value is defined by the code.
   @override
   final Reference? valueReference;
 
@@ -4600,83 +5680,105 @@ class _$_UsageContext extends _UsageContext {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UsageContext &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_UsageContext &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            (identical(other.code, code) || other.code == code) &&
             (identical(other.valueCodeableConcept, valueCodeableConcept) ||
-                const DeepCollectionEquality().equals(
-                    other.valueCodeableConcept, valueCodeableConcept)) &&
+                other.valueCodeableConcept == valueCodeableConcept) &&
             (identical(other.valueQuantity, valueQuantity) ||
-                const DeepCollectionEquality()
-                    .equals(other.valueQuantity, valueQuantity)) &&
+                other.valueQuantity == valueQuantity) &&
             (identical(other.valueRange, valueRange) ||
-                const DeepCollectionEquality()
-                    .equals(other.valueRange, valueRange)) &&
+                other.valueRange == valueRange) &&
             (identical(other.valueReference, valueReference) ||
-                const DeepCollectionEquality()
-                    .equals(other.valueReference, valueReference)));
+                other.valueReference == valueReference));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(valueCodeableConcept) ^
-      const DeepCollectionEquality().hash(valueQuantity) ^
-      const DeepCollectionEquality().hash(valueRange) ^
-      const DeepCollectionEquality().hash(valueReference);
 
   @JsonKey(ignore: true)
   @override
-  _$UsageContextCopyWith<_UsageContext> get copyWith =>
-      __$UsageContextCopyWithImpl<_UsageContext>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      code,
+      valueCodeableConcept,
+      valueQuantity,
+      valueRange,
+      valueReference);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_UsageContextCopyWith<_$_UsageContext> get copyWith =>
+      __$$_UsageContextCopyWithImpl<_$_UsageContext>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsageContextToJson(this);
+    return _$$_UsageContextToJson(
+      this,
+    );
   }
 }
 
 abstract class _UsageContext extends UsageContext {
   factory _UsageContext(
-      {String? id,
-      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
-      required Coding code,
-      CodeableConcept? valueCodeableConcept,
-      Quantity? valueQuantity,
-      Range? valueRange,
-      Reference? valueReference}) = _$_UsageContext;
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      required final Coding code,
+      final CodeableConcept? valueCodeableConcept,
+      final Quantity? valueQuantity,
+      final Range? valueRange,
+      final Reference? valueReference}) = _$_UsageContext;
   _UsageContext._() : super._();
 
   factory _UsageContext.fromJson(Map<String, dynamic> json) =
       _$_UsageContext.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
+  String? get id;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
-  Coding get code => throw _privateConstructorUsedError;
+
+  /// [code] A code that identifies the type of context being specified by this
+  ///  usage context.
+  Coding get code;
   @override
-  CodeableConcept? get valueCodeableConcept =>
-      throw _privateConstructorUsedError;
+
+  /// [valueCodeableConcept] A value that defines the context specified in this
+  ///  context of use. The interpretation of the value is defined by the code.
+  CodeableConcept? get valueCodeableConcept;
   @override
-  Quantity? get valueQuantity => throw _privateConstructorUsedError;
+
+  /// [valueQuantity] A value that defines the context specified in this
+  ///  context of use. The interpretation of the value is defined by the code.
+  Quantity? get valueQuantity;
   @override
-  Range? get valueRange => throw _privateConstructorUsedError;
+
+  /// [valueRange] A value that defines the context specified in this context
+  ///  of use. The interpretation of the value is defined by the code.
+  Range? get valueRange;
   @override
-  Reference? get valueReference => throw _privateConstructorUsedError;
+
+  /// [valueReference] A value that defines the context specified in this
+  ///  context of use. The interpretation of the value is defined by the code.
+  Reference? get valueReference;
   @override
   @JsonKey(ignore: true)
-  _$UsageContextCopyWith<_UsageContext> get copyWith =>
+  _$$_UsageContextCopyWith<_$_UsageContext> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -4685,72 +5787,54 @@ Expression _$ExpressionFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$ExpressionTearOff {
-  const _$ExpressionTearOff();
-
-  _Expression call(
-      {String? id,
-      @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
-      String? description,
-      @JsonKey(name: '_description')
-          Element? descriptionElement,
-      Id? name,
-      @JsonKey(name: '_name')
-          Element? nameElement,
-      @JsonKey(unknownEnumValue: ExpressionLanguage.unknown)
-          ExpressionLanguage? language,
-      @JsonKey(name: '_language')
-          Element? languageElement,
-      String? expression,
-      @JsonKey(name: '_expression')
-          Element? expressionElement,
-      FhirUri? reference,
-      @JsonKey(name: '_reference')
-          Element? referenceElement}) {
-    return _Expression(
-      id: id,
-      extension_: extension_,
-      description: description,
-      descriptionElement: descriptionElement,
-      name: name,
-      nameElement: nameElement,
-      language: language,
-      languageElement: languageElement,
-      expression: expression,
-      expressionElement: expressionElement,
-      reference: reference,
-      referenceElement: referenceElement,
-    );
-  }
-
-  Expression fromJson(Map<String, Object> json) {
-    return Expression.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Expression = _$ExpressionTearOff();
-
-/// @nodoc
 mixin _$Expression {
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   String? get id => throw _privateConstructorUsedError;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+
+  /// [description] A brief, natural language description of the condition that
+  ///  effectively communicates the intended semantics.
   String? get description => throw _privateConstructorUsedError;
+
+  /// [descriptionElement] Extensions for description
   @JsonKey(name: '_description')
   Element? get descriptionElement => throw _privateConstructorUsedError;
+
+  /// [name] A short name assigned to the expression to allow for multiple
+  ///  reuse of the expression in the context where it is defined.
   Id? get name => throw _privateConstructorUsedError;
+
+  /// [nameElement] Extensions for name
   @JsonKey(name: '_name')
   Element? get nameElement => throw _privateConstructorUsedError;
   @JsonKey(unknownEnumValue: ExpressionLanguage.unknown)
   ExpressionLanguage? get language => throw _privateConstructorUsedError;
+
+  /// [languageElement] Extensions for language
   @JsonKey(name: '_language')
   Element? get languageElement => throw _privateConstructorUsedError;
+
+  /// [expression] An expression in the specified language that returns a
+  ///  value.
   String? get expression => throw _privateConstructorUsedError;
+
+  /// [expressionElement] Extensions for expression
   @JsonKey(name: '_expression')
   Element? get expressionElement => throw _privateConstructorUsedError;
+
+  /// [reference] A URI that defines where the expression is found.
   FhirUri? get reference => throw _privateConstructorUsedError;
+
+  /// [referenceElement] Extensions for reference
   @JsonKey(name: '_reference')
   Element? get referenceElement => throw _privateConstructorUsedError;
 
@@ -4764,7 +5848,8 @@ mixin _$Expression {
 abstract class $ExpressionCopyWith<$Res> {
   factory $ExpressionCopyWith(
           Expression value, $Res Function(Expression) then) =
-      _$ExpressionCopyWithImpl<$Res>;
+      _$ExpressionCopyWithImpl<$Res, Expression>;
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension')
@@ -4794,13 +5879,16 @@ abstract class $ExpressionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ExpressionCopyWithImpl<$Res> implements $ExpressionCopyWith<$Res> {
+class _$ExpressionCopyWithImpl<$Res, $Val extends Expression>
+    implements $ExpressionCopyWith<$Res> {
   _$ExpressionCopyWithImpl(this._value, this._then);
 
-  final Expression _value;
   // ignore: unused_field
-  final $Res Function(Expression) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -4817,119 +5905,126 @@ class _$ExpressionCopyWithImpl<$Res> implements $ExpressionCopyWith<$Res> {
     Object? referenceElement = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
+      extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      descriptionElement: descriptionElement == freezed
+      descriptionElement: freezed == descriptionElement
           ? _value.descriptionElement
           : descriptionElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as Id?,
-      nameElement: nameElement == freezed
+      nameElement: freezed == nameElement
           ? _value.nameElement
           : nameElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      language: language == freezed
+      language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as ExpressionLanguage?,
-      languageElement: languageElement == freezed
+      languageElement: freezed == languageElement
           ? _value.languageElement
           : languageElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      expression: expression == freezed
+      expression: freezed == expression
           ? _value.expression
           : expression // ignore: cast_nullable_to_non_nullable
               as String?,
-      expressionElement: expressionElement == freezed
+      expressionElement: freezed == expressionElement
           ? _value.expressionElement
           : expressionElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      reference: reference == freezed
+      reference: freezed == reference
           ? _value.reference
           : reference // ignore: cast_nullable_to_non_nullable
               as FhirUri?,
-      referenceElement: referenceElement == freezed
+      referenceElement: freezed == referenceElement
           ? _value.referenceElement
           : referenceElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get descriptionElement {
     if (_value.descriptionElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.descriptionElement!, (value) {
-      return _then(_value.copyWith(descriptionElement: value));
+      return _then(_value.copyWith(descriptionElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get nameElement {
     if (_value.nameElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.nameElement!, (value) {
-      return _then(_value.copyWith(nameElement: value));
+      return _then(_value.copyWith(nameElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get languageElement {
     if (_value.languageElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value));
+      return _then(_value.copyWith(languageElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get expressionElement {
     if (_value.expressionElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.expressionElement!, (value) {
-      return _then(_value.copyWith(expressionElement: value));
+      return _then(_value.copyWith(expressionElement: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ElementCopyWith<$Res>? get referenceElement {
     if (_value.referenceElement == null) {
       return null;
     }
 
     return $ElementCopyWith<$Res>(_value.referenceElement!, (value) {
-      return _then(_value.copyWith(referenceElement: value));
+      return _then(_value.copyWith(referenceElement: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$ExpressionCopyWith<$Res> implements $ExpressionCopyWith<$Res> {
-  factory _$ExpressionCopyWith(
-          _Expression value, $Res Function(_Expression) then) =
-      __$ExpressionCopyWithImpl<$Res>;
+abstract class _$$_ExpressionCopyWith<$Res>
+    implements $ExpressionCopyWith<$Res> {
+  factory _$$_ExpressionCopyWith(
+          _$_Expression value, $Res Function(_$_Expression) then) =
+      __$$_ExpressionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       @JsonKey(name: 'extension')
@@ -4964,15 +6059,14 @@ abstract class _$ExpressionCopyWith<$Res> implements $ExpressionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ExpressionCopyWithImpl<$Res> extends _$ExpressionCopyWithImpl<$Res>
-    implements _$ExpressionCopyWith<$Res> {
-  __$ExpressionCopyWithImpl(
-      _Expression _value, $Res Function(_Expression) _then)
-      : super(_value, (v) => _then(v as _Expression));
+class __$$_ExpressionCopyWithImpl<$Res>
+    extends _$ExpressionCopyWithImpl<$Res, _$_Expression>
+    implements _$$_ExpressionCopyWith<$Res> {
+  __$$_ExpressionCopyWithImpl(
+      _$_Expression _value, $Res Function(_$_Expression) _then)
+      : super(_value, _then);
 
-  @override
-  _Expression get _value => super._value as _Expression;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -4988,52 +6082,52 @@ class __$ExpressionCopyWithImpl<$Res> extends _$ExpressionCopyWithImpl<$Res>
     Object? reference = freezed,
     Object? referenceElement = freezed,
   }) {
-    return _then(_Expression(
-      id: id == freezed
+    return _then(_$_Expression(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      extension_: extension_ == freezed
-          ? _value.extension_
+      extension_: freezed == extension_
+          ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
               as List<FhirExtension>?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      descriptionElement: descriptionElement == freezed
+      descriptionElement: freezed == descriptionElement
           ? _value.descriptionElement
           : descriptionElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as Id?,
-      nameElement: nameElement == freezed
+      nameElement: freezed == nameElement
           ? _value.nameElement
           : nameElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      language: language == freezed
+      language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as ExpressionLanguage?,
-      languageElement: languageElement == freezed
+      languageElement: freezed == languageElement
           ? _value.languageElement
           : languageElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      expression: expression == freezed
+      expression: freezed == expression
           ? _value.expression
           : expression // ignore: cast_nullable_to_non_nullable
               as String?,
-      expressionElement: expressionElement == freezed
+      expressionElement: freezed == expressionElement
           ? _value.expressionElement
           : expressionElement // ignore: cast_nullable_to_non_nullable
               as Element?,
-      reference: reference == freezed
+      reference: freezed == reference
           ? _value.reference
           : reference // ignore: cast_nullable_to_non_nullable
               as FhirUri?,
-      referenceElement: referenceElement == freezed
+      referenceElement: freezed == referenceElement
           ? _value.referenceElement
           : referenceElement // ignore: cast_nullable_to_non_nullable
               as Element?,
@@ -5046,7 +6140,7 @@ class __$ExpressionCopyWithImpl<$Res> extends _$ExpressionCopyWithImpl<$Res>
 class _$_Expression extends _Expression {
   _$_Expression(
       {this.id,
-      @JsonKey(name: 'extension') this.extension_,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       this.description,
       @JsonKey(name: '_description') this.descriptionElement,
       this.name,
@@ -5057,39 +6151,84 @@ class _$_Expression extends _Expression {
       @JsonKey(name: '_expression') this.expressionElement,
       this.reference,
       @JsonKey(name: '_reference') this.referenceElement})
-      : super._();
+      : _extension_ = extension_,
+        super._();
 
   factory _$_Expression.fromJson(Map<String, dynamic> json) =>
       _$$_ExpressionFromJson(json);
 
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
   @override
   final String? id;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
+  final List<FhirExtension>? _extension_;
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @override
   @JsonKey(name: 'extension')
-  final List<FhirExtension>? extension_;
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [description] A brief, natural language description of the condition that
+  ///  effectively communicates the intended semantics.
   @override
   final String? description;
+
+  /// [descriptionElement] Extensions for description
   @override
   @JsonKey(name: '_description')
   final Element? descriptionElement;
+
+  /// [name] A short name assigned to the expression to allow for multiple
+  ///  reuse of the expression in the context where it is defined.
   @override
   final Id? name;
+
+  /// [nameElement] Extensions for name
   @override
   @JsonKey(name: '_name')
   final Element? nameElement;
   @override
   @JsonKey(unknownEnumValue: ExpressionLanguage.unknown)
   final ExpressionLanguage? language;
+
+  /// [languageElement] Extensions for language
   @override
   @JsonKey(name: '_language')
   final Element? languageElement;
+
+  /// [expression] An expression in the specified language that returns a
+  ///  value.
   @override
   final String? expression;
+
+  /// [expressionElement] Extensions for expression
   @override
   @JsonKey(name: '_expression')
   final Element? expressionElement;
+
+  /// [reference] A URI that defines where the expression is found.
   @override
   final FhirUri? reference;
+
+  /// [referenceElement] Extensions for reference
   @override
   @JsonKey(name: '_reference')
   final Element? referenceElement;
@@ -5102,129 +6241,153 @@ class _$_Expression extends _Expression {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Expression &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.extension_, extension_) ||
-                const DeepCollectionEquality()
-                    .equals(other.extension_, extension_)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Expression &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.descriptionElement, descriptionElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.descriptionElement, descriptionElement)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+                other.descriptionElement == descriptionElement) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.nameElement, nameElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.nameElement, nameElement)) &&
+                other.nameElement == nameElement) &&
             (identical(other.language, language) ||
-                const DeepCollectionEquality()
-                    .equals(other.language, language)) &&
+                other.language == language) &&
             (identical(other.languageElement, languageElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.languageElement, languageElement)) &&
+                other.languageElement == languageElement) &&
             (identical(other.expression, expression) ||
-                const DeepCollectionEquality()
-                    .equals(other.expression, expression)) &&
+                other.expression == expression) &&
             (identical(other.expressionElement, expressionElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.expressionElement, expressionElement)) &&
+                other.expressionElement == expressionElement) &&
             (identical(other.reference, reference) ||
-                const DeepCollectionEquality()
-                    .equals(other.reference, reference)) &&
+                other.reference == reference) &&
             (identical(other.referenceElement, referenceElement) ||
-                const DeepCollectionEquality()
-                    .equals(other.referenceElement, referenceElement)));
+                other.referenceElement == referenceElement));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(extension_) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(descriptionElement) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(nameElement) ^
-      const DeepCollectionEquality().hash(language) ^
-      const DeepCollectionEquality().hash(languageElement) ^
-      const DeepCollectionEquality().hash(expression) ^
-      const DeepCollectionEquality().hash(expressionElement) ^
-      const DeepCollectionEquality().hash(reference) ^
-      const DeepCollectionEquality().hash(referenceElement);
 
   @JsonKey(ignore: true)
   @override
-  _$ExpressionCopyWith<_Expression> get copyWith =>
-      __$ExpressionCopyWithImpl<_Expression>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      description,
+      descriptionElement,
+      name,
+      nameElement,
+      language,
+      languageElement,
+      expression,
+      expressionElement,
+      reference,
+      referenceElement);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ExpressionCopyWith<_$_Expression> get copyWith =>
+      __$$_ExpressionCopyWithImpl<_$_Expression>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ExpressionToJson(this);
+    return _$$_ExpressionToJson(
+      this,
+    );
   }
 }
 
 abstract class _Expression extends Expression {
   factory _Expression(
-      {String? id,
+      {final String? id,
       @JsonKey(name: 'extension')
-          List<FhirExtension>? extension_,
-      String? description,
+          final List<FhirExtension>? extension_,
+      final String? description,
       @JsonKey(name: '_description')
-          Element? descriptionElement,
-      Id? name,
+          final Element? descriptionElement,
+      final Id? name,
       @JsonKey(name: '_name')
-          Element? nameElement,
+          final Element? nameElement,
       @JsonKey(unknownEnumValue: ExpressionLanguage.unknown)
-          ExpressionLanguage? language,
+          final ExpressionLanguage? language,
       @JsonKey(name: '_language')
-          Element? languageElement,
-      String? expression,
+          final Element? languageElement,
+      final String? expression,
       @JsonKey(name: '_expression')
-          Element? expressionElement,
-      FhirUri? reference,
+          final Element? expressionElement,
+      final FhirUri? reference,
       @JsonKey(name: '_reference')
-          Element? referenceElement}) = _$_Expression;
+          final Element? referenceElement}) = _$_Expression;
   _Expression._() : super._();
 
   factory _Expression.fromJson(Map<String, dynamic> json) =
       _$_Expression.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] Unique id for the element within a resource (for internal
+  ///  references). This may be any string value that does not contain spaces.
+  String? get id;
   @override
+
+  /// [extension_] May be used to represent additional information that is not
+  /// part of the basic definition of the element. To make the use of extensions
+  /// safe and manageable, there is a strict set of governance  applied to the
+  /// definition and use of extensions. Though any implementer can define an
+  /// extension, there is a set of requirements that SHALL be met as part of the
+  ///  definition of the extension.
   @JsonKey(name: 'extension')
-  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get extension_;
   @override
-  String? get description => throw _privateConstructorUsedError;
+
+  /// [description] A brief, natural language description of the condition that
+  ///  effectively communicates the intended semantics.
+  String? get description;
   @override
+
+  /// [descriptionElement] Extensions for description
   @JsonKey(name: '_description')
-  Element? get descriptionElement => throw _privateConstructorUsedError;
+  Element? get descriptionElement;
   @override
-  Id? get name => throw _privateConstructorUsedError;
+
+  /// [name] A short name assigned to the expression to allow for multiple
+  ///  reuse of the expression in the context where it is defined.
+  Id? get name;
   @override
+
+  /// [nameElement] Extensions for name
   @JsonKey(name: '_name')
-  Element? get nameElement => throw _privateConstructorUsedError;
+  Element? get nameElement;
   @override
   @JsonKey(unknownEnumValue: ExpressionLanguage.unknown)
-  ExpressionLanguage? get language => throw _privateConstructorUsedError;
+  ExpressionLanguage? get language;
   @override
+
+  /// [languageElement] Extensions for language
   @JsonKey(name: '_language')
-  Element? get languageElement => throw _privateConstructorUsedError;
+  Element? get languageElement;
   @override
-  String? get expression => throw _privateConstructorUsedError;
+
+  /// [expression] An expression in the specified language that returns a
+  ///  value.
+  String? get expression;
   @override
+
+  /// [expressionElement] Extensions for expression
   @JsonKey(name: '_expression')
-  Element? get expressionElement => throw _privateConstructorUsedError;
+  Element? get expressionElement;
   @override
-  FhirUri? get reference => throw _privateConstructorUsedError;
+
+  /// [reference] A URI that defines where the expression is found.
+  FhirUri? get reference;
   @override
+
+  /// [referenceElement] Extensions for reference
   @JsonKey(name: '_reference')
-  Element? get referenceElement => throw _privateConstructorUsedError;
+  Element? get referenceElement;
   @override
   @JsonKey(ignore: true)
-  _$ExpressionCopyWith<_Expression> get copyWith =>
+  _$$_ExpressionCopyWith<_$_Expression> get copyWith =>
       throw _privateConstructorUsedError;
 }

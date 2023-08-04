@@ -1,7 +1,9 @@
+// Package imports:
 import 'package:fhir/r4.dart';
-import 'package:fhir_db/r4/database_mode.dart' as mode;
 import 'package:sembast/sembast.dart';
 
+// Project imports:
+import 'package:fhir_db/r4/database_mode.dart' as mode;
 import 'fhir_db.dart';
 
 class ResourceDao {
@@ -65,7 +67,7 @@ class ResourceDao {
       if (resource.resourceType != null) {
         await _addResourceType(password, resource.resourceType!);
 
-        _setStoreType(resource.resourceTypeString()!);
+        _setStoreType(resource.resourceTypeString ?? 'resources');
 
         return resource.id == null
             ? await _insert(password, resource)
@@ -84,12 +86,12 @@ class ResourceDao {
 
   /// function used to save a new resource in the db
   Future<Resource> _insert(String? password, Resource resource) async {
-    final _newResource = resource.newVersion();
+    final newResource = resource.updateVersion().newIdIfNoId();
     await _resourceStore
-        .record(_newResource.id.toString())
-        .put(await _db(password), _newResource.toJson());
+        .record(newResource.id.toString())
+        .put(await _db(password), newResource.toJson());
 
-    return _newResource;
+    return newResource;
   }
 
   /// functions used to update a resource who has already been saved into the
@@ -108,25 +110,27 @@ class ResourceDao {
           .record(historyId)
           .put(await _db(password), oldResource.toJson());
 
-      Resource _newResource;
+      Resource newResource;
 
       switch (databaseMode) {
         case mode.DatabaseMode.PERSISTENCE_DB:
-          _newResource = oldResource.meta == null
-              ? resource.newVersion()
+          newResource = oldResource.meta == null
+              ? resource.updateVersion().newIdIfNoId()
               : oldResource.meta == null
-                  ? resource.newVersion()
-                  : resource.newVersion(oldMeta: oldResource.meta);
+                  ? resource.updateVersion().newIdIfNoId()
+                  : resource
+                      .updateVersion(oldMeta: oldResource.meta)
+                      .newIdIfNoId();
           break;
         case mode.DatabaseMode.CACHE_DB:
-          _newResource = resource;
+          newResource = resource;
           break;
       }
 
       await _resourceStore
           .record(id)
-          .put(await _db(password), _newResource.toJson(), merge: true);
-      return _newResource;
+          .put(await _db(password), newResource.toJson(), merge: true);
+      return newResource;
     }
   }
 
@@ -149,7 +153,7 @@ class ResourceDao {
     String? password, {
     Resource? resource,
     R4ResourceType? resourceType,
-    Id? id,
+    String? id,
     String? field,
     String? value,
   }) async {
@@ -160,7 +164,7 @@ class ResourceDao {
       if (resource != null) {
         finder = Finder(filter: Filter.equals('id', '${resource.id}'));
       } else if (resourceType != null && id != null) {
-        finder = Finder(filter: Filter.equals('id', '$id'));
+        finder = Finder(filter: Filter.equals('id', id));
       } else {
         finder = Finder(filter: Filter.equals(field!, value));
       }
@@ -225,7 +229,7 @@ class ResourceDao {
     String? password,
     Resource? resource,
     R4ResourceType? resourceType,
-    Id? id,
+    String? id,
     String? field,
     String? value,
   ) async {
@@ -236,7 +240,7 @@ class ResourceDao {
       if (resource != null) {
         finder = Finder(filter: Filter.equals('id', '${resource.id}'));
       } else if (resourceType != null && id != null) {
-        finder = Finder(filter: Filter.equals('id', '$id'));
+        finder = Finder(filter: Filter.equals('id', id));
       } else {
         finder = Finder(filter: Filter.equals(field!, value));
       }

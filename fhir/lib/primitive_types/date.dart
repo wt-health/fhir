@@ -1,8 +1,12 @@
+// Dart imports:
 import 'dart:convert';
 
+// Package imports:
 import 'package:yaml/yaml.dart';
 
+// Project imports:
 import 'fhir_date_time_base.dart';
+import 'primitive_type_exceptions.dart';
 
 enum DatePrecision {
   YYYY,
@@ -29,7 +33,8 @@ class Date extends FhirDateTimeBase {
         return Date._(inValue, null, false, DatePrecision.INVALID, e);
       }
     } else {
-      throw ArgumentError('Date cannot be constructed from $inValue.');
+      throw CannotBeConstructed<Date>(
+          'Date cannot be constructed from $inValue.');
     }
   }
 
@@ -48,7 +53,7 @@ class Date extends FhirDateTimeBase {
       ? Date.fromJson(jsonDecode(jsonEncode(loadYaml(yaml))))
       : yaml is YamlMap
           ? Date.fromJson(jsonDecode(jsonEncode(yaml)))
-          : throw FormatException(
+          : throw YamlFormatException<Date>(
               'FormatException: "$json" is not a valid Yaml string or YamlMap.');
 
   final DatePrecision _precision;
@@ -73,8 +78,8 @@ class Date extends FhirDateTimeBase {
           throw const FormatException();
         }
       } on FormatException {
-        throw FormatException(
-            'FormatException: "$value" is not a DateTime, as defined by: '
+        throw PrimitiveTypeFormatException<Date>(
+            'FormatException: "$value" is not a Date, as defined by: '
             'https://www.hl7.org/fhir/datatypes.html#date');
       }
     }
@@ -88,8 +93,8 @@ class Date extends FhirDateTimeBase {
       final int month = int.parse(value.split('-')[1]);
       return DateTime(year, month);
     } else {
-      throw FormatException(
-          'FormatException: "$value" is not a DateTime, as defined by: '
+      throw PrimitiveTypeFormatException<Date>(
+          'FormatException: "$value" is not a Date, as defined by: '
           'https://www.hl7.org/fhir/datatypes.html#date');
     }
   }
@@ -103,8 +108,8 @@ class Date extends FhirDateTimeBase {
       case 10:
         return DatePrecision.YYYYMMDD;
       default:
-        throw FormatException(
-            'FormatException: "$value" is not a DateTime, as defined by: '
+        throw PrimitiveTypeFormatException<Date>(
+            'FormatException: "$value" is not a Date, as defined by: '
             'https://www.hl7.org/fhir/datatypes.html#date');
     }
   }

@@ -7,11 +7,11 @@ part of 'general.dart';
 // **************************************************************************
 
 _$_Account _$$_AccountFromJson(Map<String, dynamic> json) => _$_Account(
-      resourceType: _$enumDecodeNullable(
+      resourceType: $enumDecodeNullable(
               _$R4ResourceTypeEnumMap, json['resourceType'],
               unknownValue: R4ResourceType.Account) ??
           R4ResourceType.Account,
-      id: json['id'] == null ? null : Id.fromJson(json['id']),
+      id: json['id'] as String?,
       meta: json['meta'] == null
           ? null
           : Meta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -41,8 +41,7 @@ _$_Account _$$_AccountFromJson(Map<String, dynamic> json) => _$_Account(
       identifier: (json['identifier'] as List<dynamic>?)
           ?.map((e) => Identifier.fromJson(e as Map<String, dynamic>))
           .toList(),
-      status: _$enumDecodeNullable(_$AccountStatusEnumMap, json['status'],
-          unknownValue: AccountStatus.unknown),
+      status: json['status'] == null ? null : Code.fromJson(json['status']),
       statusElement: json['_status'] == null
           ? null
           : Element.fromJson(json['_status'] as Map<String, dynamic>),
@@ -79,7 +78,7 @@ _$_Account _$$_AccountFromJson(Map<String, dynamic> json) => _$_Account(
 
 Map<String, dynamic> _$$_AccountToJson(_$_Account instance) {
   final val = <String, dynamic>{
-    'resourceType': _$R4ResourceTypeEnumMap[instance.resourceType],
+    'resourceType': _$R4ResourceTypeEnumMap[instance.resourceType]!,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -88,7 +87,7 @@ Map<String, dynamic> _$$_AccountToJson(_$_Account instance) {
     }
   }
 
-  writeNotNull('id', instance.id?.toJson());
+  writeNotNull('id', instance.id);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -103,7 +102,7 @@ Map<String, dynamic> _$$_AccountToJson(_$_Account instance) {
       instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull(
       'identifier', instance.identifier?.map((e) => e.toJson()).toList());
-  writeNotNull('status', _$AccountStatusEnumMap[instance.status]);
+  writeNotNull('status', instance.status?.toJson());
   writeNotNull('_status', instance.statusElement?.toJson());
   writeNotNull('type', instance.type?.toJson());
   writeNotNull('name', instance.name);
@@ -120,46 +119,11 @@ Map<String, dynamic> _$$_AccountToJson(_$_Account instance) {
   return val;
 }
 
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
-
 const _$R4ResourceTypeEnumMap = {
   R4ResourceType.Account: 'Account',
   R4ResourceType.ActivityDefinition: 'ActivityDefinition',
+  R4ResourceType.AdministrableProductDefinition:
+      'AdministrableProductDefinition',
   R4ResourceType.AdverseEvent: 'AdverseEvent',
   R4ResourceType.AllergyIntolerance: 'AllergyIntolerance',
   R4ResourceType.Appointment: 'Appointment',
@@ -176,9 +140,11 @@ const _$R4ResourceTypeEnumMap = {
   R4ResourceType.CatalogEntry: 'CatalogEntry',
   R4ResourceType.ChargeItem: 'ChargeItem',
   R4ResourceType.ChargeItemDefinition: 'ChargeItemDefinition',
+  R4ResourceType.Citation: 'Citation',
   R4ResourceType.Claim: 'Claim',
   R4ResourceType.ClaimResponse: 'ClaimResponse',
   R4ResourceType.ClinicalImpression: 'ClinicalImpression',
+  R4ResourceType.ClinicalUseDefinition: 'ClinicalUseDefinition',
   R4ResourceType.CodeSystem: 'CodeSystem',
   R4ResourceType.Communication: 'Communication',
   R4ResourceType.CommunicationRequest: 'CommunicationRequest',
@@ -200,7 +166,6 @@ const _$R4ResourceTypeEnumMap = {
   R4ResourceType.DiagnosticReport: 'DiagnosticReport',
   R4ResourceType.DocumentManifest: 'DocumentManifest',
   R4ResourceType.DocumentReference: 'DocumentReference',
-  R4ResourceType.EffectEvidenceSynthesis: 'EffectEvidenceSynthesis',
   R4ResourceType.Encounter: 'Encounter',
   R4ResourceType.Endpoint: 'Endpoint',
   R4ResourceType.EnrollmentRequest: 'EnrollmentRequest',
@@ -208,6 +173,7 @@ const _$R4ResourceTypeEnumMap = {
   R4ResourceType.EpisodeOfCare: 'EpisodeOfCare',
   R4ResourceType.EventDefinition: 'EventDefinition',
   R4ResourceType.Evidence: 'Evidence',
+  R4ResourceType.EvidenceReport: 'EvidenceReport',
   R4ResourceType.EvidenceVariable: 'EvidenceVariable',
   R4ResourceType.ExampleScenario: 'ExampleScenario',
   R4ResourceType.ExplanationOfBenefit: 'ExplanationOfBenefit',
@@ -223,12 +189,14 @@ const _$R4ResourceTypeEnumMap = {
   R4ResourceType.ImmunizationEvaluation: 'ImmunizationEvaluation',
   R4ResourceType.ImmunizationRecommendation: 'ImmunizationRecommendation',
   R4ResourceType.ImplementationGuide: 'ImplementationGuide',
+  R4ResourceType.Ingredient: 'Ingredient',
   R4ResourceType.InsurancePlan: 'InsurancePlan',
   R4ResourceType.Invoice: 'Invoice',
   R4ResourceType.Library: 'Library',
   R4ResourceType.Linkage: 'Linkage',
   R4ResourceType.List_: 'List',
   R4ResourceType.Location: 'Location',
+  R4ResourceType.ManufacturedItemDefinition: 'ManufacturedItemDefinition',
   R4ResourceType.Measure: 'Measure',
   R4ResourceType.MeasureReport: 'MeasureReport',
   R4ResourceType.Media: 'Media',
@@ -238,30 +206,20 @@ const _$R4ResourceTypeEnumMap = {
   R4ResourceType.MedicationKnowledge: 'MedicationKnowledge',
   R4ResourceType.MedicationRequest: 'MedicationRequest',
   R4ResourceType.MedicationStatement: 'MedicationStatement',
-  R4ResourceType.MedicinalProduct: 'MedicinalProduct',
-  R4ResourceType.MedicinalProductAuthorization: 'MedicinalProductAuthorization',
-  R4ResourceType.MedicinalProductContraindication:
-      'MedicinalProductContraindication',
-  R4ResourceType.MedicinalProductIndication: 'MedicinalProductIndication',
-  R4ResourceType.MedicinalProductIngredient: 'MedicinalProductIngredient',
-  R4ResourceType.MedicinalProductInteraction: 'MedicinalProductInteraction',
-  R4ResourceType.MedicinalProductManufactured: 'MedicinalProductManufactured',
-  R4ResourceType.MedicinalProductPackaged: 'MedicinalProductPackaged',
-  R4ResourceType.MedicinalProductPharmaceutical:
-      'MedicinalProductPharmaceutical',
-  R4ResourceType.MedicinalProductUndesirableEffect:
-      'MedicinalProductUndesirableEffect',
+  R4ResourceType.MedicinalProductDefinition: 'MedicinalProductDefinition',
   R4ResourceType.MessageDefinition: 'MessageDefinition',
   R4ResourceType.MessageHeader: 'MessageHeader',
   R4ResourceType.MolecularSequence: 'MolecularSequence',
   R4ResourceType.NamingSystem: 'NamingSystem',
   R4ResourceType.NutritionOrder: 'NutritionOrder',
+  R4ResourceType.NutritionProduct: 'NutritionProduct',
   R4ResourceType.Observation: 'Observation',
   R4ResourceType.ObservationDefinition: 'ObservationDefinition',
   R4ResourceType.OperationDefinition: 'OperationDefinition',
   R4ResourceType.OperationOutcome: 'OperationOutcome',
   R4ResourceType.Organization: 'Organization',
   R4ResourceType.OrganizationAffiliation: 'OrganizationAffiliation',
+  R4ResourceType.PackagedProductDefinition: 'PackagedProductDefinition',
   R4ResourceType.Parameters: 'Parameters',
   R4ResourceType.Patient: 'Patient',
   R4ResourceType.PaymentNotice: 'PaymentNotice',
@@ -274,6 +232,7 @@ const _$R4ResourceTypeEnumMap = {
   R4ResourceType.Provenance: 'Provenance',
   R4ResourceType.Questionnaire: 'Questionnaire',
   R4ResourceType.QuestionnaireResponse: 'QuestionnaireResponse',
+  R4ResourceType.RegulatedAuthorization: 'RegulatedAuthorization',
   R4ResourceType.RelatedPerson: 'RelatedPerson',
   R4ResourceType.RequestGroup: 'RequestGroup',
   R4ResourceType.ResearchDefinition: 'ResearchDefinition',
@@ -281,7 +240,6 @@ const _$R4ResourceTypeEnumMap = {
   R4ResourceType.ResearchStudy: 'ResearchStudy',
   R4ResourceType.ResearchSubject: 'ResearchSubject',
   R4ResourceType.RiskAssessment: 'RiskAssessment',
-  R4ResourceType.RiskEvidenceSynthesis: 'RiskEvidenceSynthesis',
   R4ResourceType.Schedule: 'Schedule',
   R4ResourceType.SearchParameter: 'SearchParameter',
   R4ResourceType.ServiceRequest: 'ServiceRequest',
@@ -291,13 +249,10 @@ const _$R4ResourceTypeEnumMap = {
   R4ResourceType.StructureDefinition: 'StructureDefinition',
   R4ResourceType.StructureMap: 'StructureMap',
   R4ResourceType.Subscription: 'Subscription',
+  R4ResourceType.SubscriptionStatus: 'SubscriptionStatus',
+  R4ResourceType.SubscriptionTopic: 'SubscriptionTopic',
   R4ResourceType.Substance: 'Substance',
-  R4ResourceType.SubstanceNucleicAcid: 'SubstanceNucleicAcid',
-  R4ResourceType.SubstancePolymer: 'SubstancePolymer',
-  R4ResourceType.SubstanceProtein: 'SubstanceProtein',
-  R4ResourceType.SubstanceReferenceInformation: 'SubstanceReferenceInformation',
-  R4ResourceType.SubstanceSourceMaterial: 'SubstanceSourceMaterial',
-  R4ResourceType.SubstanceSpecification: 'SubstanceSpecification',
+  R4ResourceType.SubstanceDefinition: 'SubstanceDefinition',
   R4ResourceType.SupplyDelivery: 'SupplyDelivery',
   R4ResourceType.SupplyRequest: 'SupplyRequest',
   R4ResourceType.Task: 'Task',
@@ -307,14 +262,6 @@ const _$R4ResourceTypeEnumMap = {
   R4ResourceType.ValueSet: 'ValueSet',
   R4ResourceType.VerificationResult: 'VerificationResult',
   R4ResourceType.VisionPrescription: 'VisionPrescription',
-};
-
-const _$AccountStatusEnumMap = {
-  AccountStatus.active: 'active',
-  AccountStatus.inactive: 'inactive',
-  AccountStatus.entered_in_error: 'entered-in-error',
-  AccountStatus.on_hold: 'on-hold',
-  AccountStatus.unknown: 'unknown',
 };
 
 _$_AccountCoverage _$$_AccountCoverageFromJson(Map<String, dynamic> json) =>
@@ -397,11 +344,11 @@ Map<String, dynamic> _$$_AccountGuarantorToJson(_$_AccountGuarantor instance) {
 
 _$_ChargeItem _$$_ChargeItemFromJson(Map<String, dynamic> json) =>
     _$_ChargeItem(
-      resourceType: _$enumDecodeNullable(
+      resourceType: $enumDecodeNullable(
               _$R4ResourceTypeEnumMap, json['resourceType'],
               unknownValue: R4ResourceType.ChargeItem) ??
           R4ResourceType.ChargeItem,
-      id: json['id'] == null ? null : Id.fromJson(json['id']),
+      id: json['id'] as String?,
       meta: json['meta'] == null
           ? null
           : Meta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -435,13 +382,13 @@ _$_ChargeItem _$$_ChargeItemFromJson(Map<String, dynamic> json) =>
           ?.map((e) => FhirUri.fromJson(e))
           .toList(),
       definitionUriElement: (json['_definitionUri'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       definitionCanonical: (json['definitionCanonical'] as List<dynamic>?)
           ?.map((e) => Canonical.fromJson(e))
           .toList(),
-      status: _$enumDecodeNullable(_$ChargeItemStatusEnumMap, json['status'],
-          unknownValue: ChargeItemStatus.unknown),
+      status: json['status'] == null ? null : Code.fromJson(json['status']),
       statusElement: json['_status'] == null
           ? null
           : Element.fromJson(json['_status'] as Map<String, dynamic>),
@@ -535,7 +482,7 @@ _$_ChargeItem _$$_ChargeItemFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_ChargeItemToJson(_$_ChargeItem instance) {
   final val = <String, dynamic>{
-    'resourceType': _$R4ResourceTypeEnumMap[instance.resourceType],
+    'resourceType': _$R4ResourceTypeEnumMap[instance.resourceType]!,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -544,7 +491,7 @@ Map<String, dynamic> _$$_ChargeItemToJson(_$_ChargeItem instance) {
     }
   }
 
-  writeNotNull('id', instance.id?.toJson());
+  writeNotNull('id', instance.id);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -565,7 +512,7 @@ Map<String, dynamic> _$$_ChargeItemToJson(_$_ChargeItem instance) {
       instance.definitionUriElement?.map((e) => e?.toJson()).toList());
   writeNotNull('definitionCanonical',
       instance.definitionCanonical?.map((e) => e.toJson()).toList());
-  writeNotNull('status', _$ChargeItemStatusEnumMap[instance.status]);
+  writeNotNull('status', instance.status?.toJson());
   writeNotNull('_status', instance.statusElement?.toJson());
   writeNotNull('partOf', instance.partOf?.map((e) => e.toJson()).toList());
   val['code'] = instance.code.toJson();
@@ -604,16 +551,6 @@ Map<String, dynamic> _$$_ChargeItemToJson(_$_ChargeItem instance) {
       instance.supportingInformation?.map((e) => e.toJson()).toList());
   return val;
 }
-
-const _$ChargeItemStatusEnumMap = {
-  ChargeItemStatus.planned: 'planned',
-  ChargeItemStatus.billable: 'billable',
-  ChargeItemStatus.not_billable: 'not-billable',
-  ChargeItemStatus.aborted: 'aborted',
-  ChargeItemStatus.billed: 'billed',
-  ChargeItemStatus.entered_in_error: 'entered-in-error',
-  ChargeItemStatus.unknown: 'unknown',
-};
 
 _$_ChargeItemPerformer _$$_ChargeItemPerformerFromJson(
         Map<String, dynamic> json) =>
@@ -654,11 +591,11 @@ Map<String, dynamic> _$$_ChargeItemPerformerToJson(
 _$_ChargeItemDefinition _$$_ChargeItemDefinitionFromJson(
         Map<String, dynamic> json) =>
     _$_ChargeItemDefinition(
-      resourceType: _$enumDecodeNullable(
+      resourceType: $enumDecodeNullable(
               _$R4ResourceTypeEnumMap, json['resourceType'],
               unknownValue: R4ResourceType.ChargeItemDefinition) ??
           R4ResourceType.ChargeItemDefinition,
-      id: json['id'] == null ? null : Id.fromJson(json['id']),
+      id: json['id'] as String?,
       meta: json['meta'] == null
           ? null
           : Meta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -704,7 +641,8 @@ _$_ChargeItemDefinition _$$_ChargeItemDefinitionFromJson(
           ?.map((e) => FhirUri.fromJson(e))
           .toList(),
       derivedFromUriElement: (json['_derivedFromUri'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       partOf: (json['partOf'] as List<dynamic>?)
           ?.map((e) => Canonical.fromJson(e))
@@ -712,9 +650,7 @@ _$_ChargeItemDefinition _$$_ChargeItemDefinitionFromJson(
       replaces: (json['replaces'] as List<dynamic>?)
           ?.map((e) => Canonical.fromJson(e))
           .toList(),
-      status: _$enumDecodeNullable(
-          _$ChargeItemDefinitionStatusEnumMap, json['status'],
-          unknownValue: ChargeItemDefinitionStatus.unknown),
+      status: json['status'] == null ? null : Code.fromJson(json['status']),
       statusElement: json['_status'] == null
           ? null
           : Element.fromJson(json['_status'] as Map<String, dynamic>),
@@ -787,7 +723,7 @@ _$_ChargeItemDefinition _$$_ChargeItemDefinitionFromJson(
 Map<String, dynamic> _$$_ChargeItemDefinitionToJson(
     _$_ChargeItemDefinition instance) {
   final val = <String, dynamic>{
-    'resourceType': _$R4ResourceTypeEnumMap[instance.resourceType],
+    'resourceType': _$R4ResourceTypeEnumMap[instance.resourceType]!,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -796,7 +732,7 @@ Map<String, dynamic> _$$_ChargeItemDefinitionToJson(
     }
   }
 
-  writeNotNull('id', instance.id?.toJson());
+  writeNotNull('id', instance.id);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -823,7 +759,7 @@ Map<String, dynamic> _$$_ChargeItemDefinitionToJson(
       instance.derivedFromUriElement?.map((e) => e?.toJson()).toList());
   writeNotNull('partOf', instance.partOf?.map((e) => e.toJson()).toList());
   writeNotNull('replaces', instance.replaces?.map((e) => e.toJson()).toList());
-  writeNotNull('status', _$ChargeItemDefinitionStatusEnumMap[instance.status]);
+  writeNotNull('status', instance.status?.toJson());
   writeNotNull('_status', instance.statusElement?.toJson());
   writeNotNull('experimental', instance.experimental?.toJson());
   writeNotNull('_experimental', instance.experimentalElement?.toJson());
@@ -853,13 +789,6 @@ Map<String, dynamic> _$$_ChargeItemDefinitionToJson(
       'propertyGroup', instance.propertyGroup?.map((e) => e.toJson()).toList());
   return val;
 }
-
-const _$ChargeItemDefinitionStatusEnumMap = {
-  ChargeItemDefinitionStatus.draft: 'draft',
-  ChargeItemDefinitionStatus.active: 'active',
-  ChargeItemDefinitionStatus.retired: 'retired',
-  ChargeItemDefinitionStatus.unknown: 'unknown',
-};
 
 _$_ChargeItemDefinitionApplicability
     _$$_ChargeItemDefinitionApplicabilityFromJson(Map<String, dynamic> json) =>
@@ -1003,11 +932,11 @@ Map<String, dynamic> _$$_ChargeItemDefinitionPriceComponentToJson(
 }
 
 _$_Contract _$$_ContractFromJson(Map<String, dynamic> json) => _$_Contract(
-      resourceType: _$enumDecodeNullable(
+      resourceType: $enumDecodeNullable(
               _$R4ResourceTypeEnumMap, json['resourceType'],
               unknownValue: R4ResourceType.Contract) ??
           R4ResourceType.Contract,
-      id: json['id'] == null ? null : Id.fromJson(json['id']),
+      id: json['id'] as String?,
       meta: json['meta'] == null
           ? null
           : Meta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -1106,7 +1035,8 @@ _$_Contract _$$_ContractFromJson(Map<String, dynamic> json) => _$_Contract(
       alias:
           (json['alias'] as List<dynamic>?)?.map((e) => e as String).toList(),
       aliasElement: (json['_alias'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       author: json['author'] == null
           ? null
@@ -1164,7 +1094,7 @@ _$_Contract _$$_ContractFromJson(Map<String, dynamic> json) => _$_Contract(
 
 Map<String, dynamic> _$$_ContractToJson(_$_Contract instance) {
   final val = <String, dynamic>{
-    'resourceType': _$R4ResourceTypeEnumMap[instance.resourceType],
+    'resourceType': _$R4ResourceTypeEnumMap[instance.resourceType]!,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -1173,7 +1103,7 @@ Map<String, dynamic> _$$_ContractToJson(_$_Contract instance) {
     }
   }
 
-  writeNotNull('id', instance.id?.toJson());
+  writeNotNull('id', instance.id);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -1407,7 +1337,8 @@ _$_ContractSecurityLabel _$$_ContractSecurityLabelFromJson(
           ?.map((e) => UnsignedInt.fromJson(e))
           .toList(),
       numberElement: (json['_number'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       classification:
           Coding.fromJson(json['classification'] as Map<String, dynamic>),
@@ -1480,7 +1411,8 @@ _$_ContractOffer _$$_ContractOfferFromJson(Map<String, dynamic> json) =>
       linkId:
           (json['linkId'] as List<dynamic>?)?.map((e) => e as String).toList(),
       linkIdElement: (json['_linkId'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       securityLabelNumber: (json['securityLabelNumber'] as List<dynamic>?)
           ?.map((e) => UnsignedInt.fromJson(e))
@@ -1711,7 +1643,8 @@ _$_ContractAsset _$$_ContractAssetFromJson(Map<String, dynamic> json) =>
       linkId:
           (json['linkId'] as List<dynamic>?)?.map((e) => e as String).toList(),
       linkIdElement: (json['_linkId'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       answer: (json['answer'] as List<dynamic>?)
           ?.map((e) => ContractAnswer.fromJson(e as Map<String, dynamic>))
@@ -1875,7 +1808,8 @@ _$_ContractValuedItem _$$_ContractValuedItemFromJson(
       linkId:
           (json['linkId'] as List<dynamic>?)?.map((e) => e as String).toList(),
       linkIdElement: (json['_linkId'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       securityLabelNumber: (json['securityLabelNumber'] as List<dynamic>?)
           ?.map((e) => UnsignedInt.fromJson(e))
@@ -1953,7 +1887,8 @@ _$_ContractAction _$$_ContractActionFromJson(Map<String, dynamic> json) =>
       linkId:
           (json['linkId'] as List<dynamic>?)?.map((e) => e as String).toList(),
       linkIdElement: (json['_linkId'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       status: CodeableConcept.fromJson(json['status'] as Map<String, dynamic>),
       context: json['context'] == null
@@ -1963,7 +1898,8 @@ _$_ContractAction _$$_ContractActionFromJson(Map<String, dynamic> json) =>
           ?.map((e) => e as String)
           .toList(),
       contextLinkIdElement: (json['_contextLinkId'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       occurrenceDateTime: json['occurrenceDateTime'] == null
           ? null
@@ -1985,7 +1921,8 @@ _$_ContractAction _$$_ContractActionFromJson(Map<String, dynamic> json) =>
           ?.map((e) => e as String)
           .toList(),
       requesterLinkIdElement: (json['_requesterLinkId'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       performerType: (json['performerType'] as List<dynamic>?)
           ?.map((e) => CodeableConcept.fromJson(e as Map<String, dynamic>))
@@ -2001,7 +1938,8 @@ _$_ContractAction _$$_ContractActionFromJson(Map<String, dynamic> json) =>
           ?.map((e) => e as String)
           .toList(),
       performerLinkIdElement: (json['_performerLinkId'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       reasonCode: (json['reasonCode'] as List<dynamic>?)
           ?.map((e) => CodeableConcept.fromJson(e as Map<String, dynamic>))
@@ -2012,13 +1950,15 @@ _$_ContractAction _$$_ContractActionFromJson(Map<String, dynamic> json) =>
       reason:
           (json['reason'] as List<dynamic>?)?.map((e) => e as String).toList(),
       reasonElement: (json['_reason'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       reasonLinkId: (json['reasonLinkId'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
       reasonLinkIdElement: (json['_reasonLinkId'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       note: (json['note'] as List<dynamic>?)
           ?.map((e) => Annotation.fromJson(e as Map<String, dynamic>))
@@ -2283,11 +2223,11 @@ Map<String, dynamic> _$$_ContractRuleToJson(_$_ContractRule instance) {
 _$_ExplanationOfBenefit _$$_ExplanationOfBenefitFromJson(
         Map<String, dynamic> json) =>
     _$_ExplanationOfBenefit(
-      resourceType: _$enumDecodeNullable(
+      resourceType: $enumDecodeNullable(
               _$R4ResourceTypeEnumMap, json['resourceType'],
               unknownValue: R4ResourceType.ExplanationOfBenefit) ??
           R4ResourceType.ExplanationOfBenefit,
-      id: json['id'] == null ? null : Id.fromJson(json['id']),
+      id: json['id'] as String?,
       meta: json['meta'] == null
           ? null
           : Meta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -2317,9 +2257,7 @@ _$_ExplanationOfBenefit _$$_ExplanationOfBenefitFromJson(
       identifier: (json['identifier'] as List<dynamic>?)
           ?.map((e) => Identifier.fromJson(e as Map<String, dynamic>))
           .toList(),
-      status: _$enumDecodeNullable(
-          _$ExplanationOfBenefitStatusEnumMap, json['status'],
-          unknownValue: ExplanationOfBenefitStatus.unknown),
+      status: json['status'] == null ? null : Code.fromJson(json['status']),
       statusElement: json['_status'] == null
           ? null
           : Element.fromJson(json['_status'] as Map<String, dynamic>),
@@ -2396,7 +2334,8 @@ _$_ExplanationOfBenefit _$$_ExplanationOfBenefitFromJson(
           ?.map((e) => e as String)
           .toList(),
       preAuthRefElement: (json['_preAuthRef'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       preAuthRefPeriod: (json['preAuthRefPeriod'] as List<dynamic>?)
           ?.map((e) => Period.fromJson(e as Map<String, dynamic>))
@@ -2473,7 +2412,7 @@ _$_ExplanationOfBenefit _$$_ExplanationOfBenefitFromJson(
 Map<String, dynamic> _$$_ExplanationOfBenefitToJson(
     _$_ExplanationOfBenefit instance) {
   final val = <String, dynamic>{
-    'resourceType': _$R4ResourceTypeEnumMap[instance.resourceType],
+    'resourceType': _$R4ResourceTypeEnumMap[instance.resourceType]!,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -2482,7 +2421,7 @@ Map<String, dynamic> _$$_ExplanationOfBenefitToJson(
     }
   }
 
-  writeNotNull('id', instance.id?.toJson());
+  writeNotNull('id', instance.id);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -2497,7 +2436,7 @@ Map<String, dynamic> _$$_ExplanationOfBenefitToJson(
       instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull(
       'identifier', instance.identifier?.map((e) => e.toJson()).toList());
-  writeNotNull('status', _$ExplanationOfBenefitStatusEnumMap[instance.status]);
+  writeNotNull('status', instance.status?.toJson());
   writeNotNull('_status', instance.statusElement?.toJson());
   val['type'] = instance.type.toJson();
   writeNotNull('subType', instance.subType?.toJson());
@@ -2557,14 +2496,6 @@ Map<String, dynamic> _$$_ExplanationOfBenefitToJson(
       instance.benefitBalance?.map((e) => e.toJson()).toList());
   return val;
 }
-
-const _$ExplanationOfBenefitStatusEnumMap = {
-  ExplanationOfBenefitStatus.active: 'active',
-  ExplanationOfBenefitStatus.cancelled: 'cancelled',
-  ExplanationOfBenefitStatus.draft: 'draft',
-  ExplanationOfBenefitStatus.entered_in_error: 'entered-in-error',
-  ExplanationOfBenefitStatus.unknown: 'unknown',
-};
 
 _$_ExplanationOfBenefitRelated _$$_ExplanationOfBenefitRelatedFromJson(
         Map<String, dynamic> json) =>
@@ -2939,7 +2870,8 @@ _$_ExplanationOfBenefitInsurance _$$_ExplanationOfBenefitInsuranceFromJson(
           ?.map((e) => e as String)
           .toList(),
       preAuthRefElement: (json['_preAuthRef'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -3036,7 +2968,8 @@ _$_ExplanationOfBenefitItem _$$_ExplanationOfBenefitItemFromJson(
           ?.map((e) => PositiveInt.fromJson(e))
           .toList(),
       careTeamSequenceElement: (json['_careTeamSequence'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       diagnosisSequence: (json['diagnosisSequence'] as List<dynamic>?)
           ?.map((e) => PositiveInt.fromJson(e))
@@ -3120,7 +3053,8 @@ _$_ExplanationOfBenefitItem _$$_ExplanationOfBenefitItemFromJson(
           ?.map((e) => PositiveInt.fromJson(e))
           .toList(),
       noteNumberElement: (json['_noteNumber'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       adjudication: (json['adjudication'] as List<dynamic>?)
           ?.map((e) => ExplanationOfBenefitAdjudication.fromJson(
@@ -3296,7 +3230,8 @@ _$_ExplanationOfBenefitDetail _$$_ExplanationOfBenefitDetailFromJson(
           ?.map((e) => PositiveInt.fromJson(e))
           .toList(),
       noteNumberElement: (json['_noteNumber'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       adjudication: (json['adjudication'] as List<dynamic>?)
           ?.map((e) => ExplanationOfBenefitAdjudication.fromJson(
@@ -3398,7 +3333,8 @@ _$_ExplanationOfBenefitSubDetail _$$_ExplanationOfBenefitSubDetailFromJson(
           ?.map((e) => PositiveInt.fromJson(e))
           .toList(),
       noteNumberElement: (json['_noteNumber'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       adjudication: (json['adjudication'] as List<dynamic>?)
           ?.map((e) => ExplanationOfBenefitAdjudication.fromJson(
@@ -3458,13 +3394,15 @@ _$_ExplanationOfBenefitAddItem _$$_ExplanationOfBenefitAddItemFromJson(
           ?.map((e) => PositiveInt.fromJson(e))
           .toList(),
       itemSequenceElement: (json['_itemSequence'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       detailSequence: (json['detailSequence'] as List<dynamic>?)
           ?.map((e) => PositiveInt.fromJson(e))
           .toList(),
       detailSequenceElement: (json['_detailSequence'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       subDetailSequence: (json['subDetailSequence'] as List<dynamic>?)
           ?.map((e) => PositiveInt.fromJson(e))
@@ -3526,7 +3464,8 @@ _$_ExplanationOfBenefitAddItem _$$_ExplanationOfBenefitAddItemFromJson(
           ?.map((e) => PositiveInt.fromJson(e))
           .toList(),
       noteNumberElement: (json['_noteNumber'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       adjudication: (json['adjudication'] as List<dynamic>?)
           ?.map((e) => ExplanationOfBenefitAdjudication.fromJson(
@@ -3626,7 +3565,8 @@ _$_ExplanationOfBenefitDetail1 _$$_ExplanationOfBenefitDetail1FromJson(
           ?.map((e) => PositiveInt.fromJson(e))
           .toList(),
       noteNumberElement: (json['_noteNumber'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       adjudication: (json['adjudication'] as List<dynamic>?)
           ?.map((e) => ExplanationOfBenefitAdjudication.fromJson(
@@ -3703,7 +3643,8 @@ _$_ExplanationOfBenefitSubDetail1 _$$_ExplanationOfBenefitSubDetail1FromJson(
           ?.map((e) => PositiveInt.fromJson(e))
           .toList(),
       noteNumberElement: (json['_noteNumber'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       adjudication: (json['adjudication'] as List<dynamic>?)
           ?.map((e) => ExplanationOfBenefitAdjudication.fromJson(
@@ -3849,9 +3790,7 @@ _$_ExplanationOfBenefitProcessNote _$$_ExplanationOfBenefitProcessNoteFromJson(
       numberElement: json['_number'] == null
           ? null
           : Element.fromJson(json['_number'] as Map<String, dynamic>),
-      type: _$enumDecodeNullable(
-          _$ExplanationOfBenefitProcessNoteTypeEnumMap, json['type'],
-          unknownValue: ExplanationOfBenefitProcessNoteType.unknown),
+      type: json['type'] == null ? null : Code.fromJson(json['type']),
       typeElement: json['_type'] == null
           ? null
           : Element.fromJson(json['_type'] as Map<String, dynamic>),
@@ -3881,21 +3820,13 @@ Map<String, dynamic> _$$_ExplanationOfBenefitProcessNoteToJson(
       instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('number', instance.number?.toJson());
   writeNotNull('_number', instance.numberElement?.toJson());
-  writeNotNull(
-      'type', _$ExplanationOfBenefitProcessNoteTypeEnumMap[instance.type]);
+  writeNotNull('type', instance.type?.toJson());
   writeNotNull('_type', instance.typeElement?.toJson());
   writeNotNull('text', instance.text);
   writeNotNull('_text', instance.textElement?.toJson());
   writeNotNull('language', instance.language?.toJson());
   return val;
 }
-
-const _$ExplanationOfBenefitProcessNoteTypeEnumMap = {
-  ExplanationOfBenefitProcessNoteType.display: 'display',
-  ExplanationOfBenefitProcessNoteType.print: 'print',
-  ExplanationOfBenefitProcessNoteType.printoper: 'printoper',
-  ExplanationOfBenefitProcessNoteType.unknown: 'unknown',
-};
 
 _$_ExplanationOfBenefitBenefitBalance
     _$$_ExplanationOfBenefitBenefitBalanceFromJson(Map<String, dynamic> json) =>
@@ -4035,11 +3966,11 @@ Map<String, dynamic> _$$_ExplanationOfBenefitFinancialToJson(
 
 _$_InsurancePlan _$$_InsurancePlanFromJson(Map<String, dynamic> json) =>
     _$_InsurancePlan(
-      resourceType: _$enumDecodeNullable(
+      resourceType: $enumDecodeNullable(
               _$R4ResourceTypeEnumMap, json['resourceType'],
               unknownValue: R4ResourceType.InsurancePlan) ??
           R4ResourceType.InsurancePlan,
-      id: json['id'] == null ? null : Id.fromJson(json['id']),
+      id: json['id'] as String?,
       meta: json['meta'] == null
           ? null
           : Meta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -4069,8 +4000,7 @@ _$_InsurancePlan _$$_InsurancePlanFromJson(Map<String, dynamic> json) =>
       identifier: (json['identifier'] as List<dynamic>?)
           ?.map((e) => Identifier.fromJson(e as Map<String, dynamic>))
           .toList(),
-      status: _$enumDecodeNullable(_$InsurancePlanStatusEnumMap, json['status'],
-          unknownValue: InsurancePlanStatus.unknown),
+      status: json['status'] == null ? null : Code.fromJson(json['status']),
       statusElement: json['_status'] == null
           ? null
           : Element.fromJson(json['_status'] as Map<String, dynamic>),
@@ -4084,7 +4014,8 @@ _$_InsurancePlan _$$_InsurancePlanFromJson(Map<String, dynamic> json) =>
       alias:
           (json['alias'] as List<dynamic>?)?.map((e) => e as String).toList(),
       aliasElement: (json['_alias'] as List<dynamic>?)
-          ?.map((e) => Element.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              e == null ? null : Element.fromJson(e as Map<String, dynamic>))
           .toList(),
       period: json['period'] == null
           ? null
@@ -4118,7 +4049,7 @@ _$_InsurancePlan _$$_InsurancePlanFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_InsurancePlanToJson(_$_InsurancePlan instance) {
   final val = <String, dynamic>{
-    'resourceType': _$R4ResourceTypeEnumMap[instance.resourceType],
+    'resourceType': _$R4ResourceTypeEnumMap[instance.resourceType]!,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -4127,7 +4058,7 @@ Map<String, dynamic> _$$_InsurancePlanToJson(_$_InsurancePlan instance) {
     }
   }
 
-  writeNotNull('id', instance.id?.toJson());
+  writeNotNull('id', instance.id);
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('implicitRules', instance.implicitRules?.toJson());
   writeNotNull('_implicitRules', instance.implicitRulesElement?.toJson());
@@ -4142,7 +4073,7 @@ Map<String, dynamic> _$$_InsurancePlanToJson(_$_InsurancePlan instance) {
       instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull(
       'identifier', instance.identifier?.map((e) => e.toJson()).toList());
-  writeNotNull('status', _$InsurancePlanStatusEnumMap[instance.status]);
+  writeNotNull('status', instance.status?.toJson());
   writeNotNull('_status', instance.statusElement?.toJson());
   writeNotNull('type', instance.type?.map((e) => e.toJson()).toList());
   writeNotNull('name', instance.name);
@@ -4162,13 +4093,6 @@ Map<String, dynamic> _$$_InsurancePlanToJson(_$_InsurancePlan instance) {
   writeNotNull('plan', instance.plan?.map((e) => e.toJson()).toList());
   return val;
 }
-
-const _$InsurancePlanStatusEnumMap = {
-  InsurancePlanStatus.draft: 'draft',
-  InsurancePlanStatus.active: 'active',
-  InsurancePlanStatus.retired: 'retired',
-  InsurancePlanStatus.unknown: 'unknown',
-};
 
 _$_InsurancePlanContact _$$_InsurancePlanContactFromJson(
         Map<String, dynamic> json) =>
